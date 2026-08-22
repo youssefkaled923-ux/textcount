@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://textcount.net/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- روابط اللغات المختلفة لتوجيه المحركات بشكل صحيح -->
+    <xhtml:link rel="alternate" hreflang="ar" href="https://textcount.net/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://textcount.net/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://textcount.net/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://textcount.net/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://textcount.net/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://textcount.net/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://textcount.net/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://textcount.net/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://textcount.net/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://textcount.net/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://textcount.net/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://textcount.net/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://textcount.net/?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://textcount.net/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://textcount.net/?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://textcount.net/"/>
+  </url>
+</urlset>
