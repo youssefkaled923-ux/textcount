@@ -1,1 +1,43 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - TextCount.net</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto px-4 py-12 flex-1 text-center">
+    <h1 class="text-3xl font-bold text-slate-50 mb-4">Contact Us</h1>
+    <p class="text-slate-400 mb-8 leading-relaxed">Have questions, feedback, or need help? We would love to hear from you!</p>
+
+    <div class="bg-card-dark border border-border-dark rounded-2xl p-8 shadow-lg">
+      <p class="text-sm text-slate-400 mb-2">Send us an email at:</p>
+      <a href="mailto:support@textcount.net" class="text-xl md:text-2xl font-bold text-accent-sky hover:underline break-all">
+        support@textcount.net
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
+    <p>© 2026 TextCount.net — All rights reserved</p>
+  </footer>
+</body>
+</html>
