@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0f172a">
+<meta name="google-site-verification" content="7tIFTeiL4noGTfpOHVsHFW7TM1gzeFvN5_SweDUG4QQ" />
 <title id="page-title">TextCount.net | Free Character &amp; Word Counter for Content Creators</title>
 <meta id="meta-description" name="description" content="Free online character and word counter for marketers and content creators. Instantly check Google title/description limits, X post length, and TikTok caption length.">
 <meta id="meta-keywords" name="keywords" content="character counter, word counter, text analyzer, SEO character count, meta title length, meta description length, tweet length checker, TikTok caption counter">
@@ -131,6 +132,10 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span id="copy-btn-label" data-i18n="copyBtn"></span>
     </button>
+    <button id="share-btn" type="button" class="inline-flex items-center gap-2 bg-card-dark border border-border-dark text-slate-200 font-semibold px-5 py-2.5 rounded-lg hover:border-accent-sky hover:text-accent-sky active:scale-95 transition focus:outline-none focus:ring-2 focus:ring-accent-sky focus:ring-offset-2 focus:ring-offset-base-dark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+      <span id="share-btn-label" data-i18n="shareBtn"></span>
+    </button>
     <button id="clear-btn" type="button" class="inline-flex items-center gap-2 bg-card-dark border border-border-dark text-slate-200 font-semibold px-5 py-2.5 rounded-lg hover:border-red-500 hover:text-red-400 active:scale-95 transition focus:outline-none focus:ring-2 focus:ring-accent-sky focus:ring-offset-2 focus:ring-offset-base-dark">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg>
       <span data-i18n="clearBtn"></span>
@@ -244,6 +249,8 @@
       limitTikTok: "وصف تيك توك",
       copyBtn: "نسخ النص",
       copiedBtn: "تم النسخ!",
+      shareBtn: "مشاركة الأداة",
+      linkCopiedBtn: "تم نسخ الرابط!",
       clearBtn: "مسح الكل",
       adLabel: "مساحة إعلانية",
       footer: "© 2026 TextCount.net — جميع الحقوق محفوظة",
@@ -269,6 +276,8 @@
       limitTikTok: "TikTok Caption",
       copyBtn: "Copy Text",
       copiedBtn: "Copied!",
+      shareBtn: "Share Tool",
+      linkCopiedBtn: "Link Copied!",
       clearBtn: "Clear All",
       adLabel: "Advertisement",
       footer: "© 2026 TextCount.net — All rights reserved",
@@ -294,6 +303,8 @@
       limitTikTok: "TikTok-Untertitel",
       copyBtn: "Text kopieren",
       copiedBtn: "Kopiert!",
+      shareBtn: "Teilen",
+      linkCopiedBtn: "Link kopiert!",
       clearBtn: "Alles löschen",
       adLabel: "Werbung",
       footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
@@ -319,6 +330,8 @@
       limitTikTok: "Légende TikTok",
       copyBtn: "Copier le texte",
       copiedBtn: "Copié !",
+      shareBtn: "Partager",
+      linkCopiedBtn: "Lien copié !",
       clearBtn: "Tout effacer",
       adLabel: "Publicité",
       footer: "© 2026 TextCount.net — Tous droits réservés",
@@ -344,6 +357,8 @@
       limitTikTok: "Descripción de TikTok",
       copyBtn: "Copiar texto",
       copiedBtn: "¡Copiado!",
+      shareBtn: "Compartir",
+      linkCopiedBtn: "¡Enlace copiado!",
       clearBtn: "Borrar todo",
       adLabel: "Publicidad",
       footer: "© 2026 TextCount.net — Todos los derechos reservados",
@@ -369,6 +384,8 @@
       limitTikTok: "Didascalia TikTok",
       copyBtn: "Copia testo",
       copiedBtn: "Copiato!",
+      shareBtn: "Condividi",
+      linkCopiedBtn: "Link copiato!",
       clearBtn: "Cancella tutto",
       adLabel: "Pubblicità",
       footer: "© 2026 TextCount.net — Tutti i diritti riservati",
@@ -394,6 +411,8 @@
       limitTikTok: "TikTok-onderschrift",
       copyBtn: "Tekst kopiëren",
       copiedBtn: "Gekopieerd!",
+      shareBtn: "Delen",
+      linkCopiedBtn: "Link gekopieerd!",
       clearBtn: "Alles wissen",
       adLabel: "Advertentie",
       footer: "© 2026 TextCount.net — Alle rechten voorbehouden",
@@ -419,6 +438,8 @@
       limitTikTok: "TikTok Açıklaması",
       copyBtn: "Metni Kopyala",
       copiedBtn: "Kopyalandı!",
+      shareBtn: "Paylaş",
+      linkCopiedBtn: "Bağlantı kopyalandı!",
       clearBtn: "Tümünü Temizle",
       adLabel: "Reklam",
       footer: "© 2026 TextCount.net — Tüm hakları saklıdır",
@@ -444,6 +465,8 @@
       limitTikTok: "Legenda do TikTok",
       copyBtn: "Copiar Texto",
       copiedBtn: "Copiado!",
+      shareBtn: "Compartilhar",
+      linkCopiedBtn: "Link copiado!",
       clearBtn: "Limpar Tudo",
       adLabel: "Publicidade",
       footer: "© 2026 TextCount.net — Todos os direitos reservados",
@@ -469,6 +492,8 @@
       limitTikTok: "Подпись TikTok",
       copyBtn: "Копировать текст",
       copiedBtn: "Скопировано!",
+      shareBtn: "Поделиться",
+      linkCopiedBtn: "Ссылка скопирована!",
       clearBtn: "Очистить всё",
       adLabel: "Реклама",
       footer: "© 2026 TextCount.net — Все права защищены",
@@ -494,6 +519,8 @@
       limitTikTok: "TikTok 简介",
       copyBtn: "复制文本",
       copiedBtn: "已复制！",
+      shareBtn: "分享工具",
+      linkCopiedBtn: "链接已复制！",
       clearBtn: "清空全部",
       adLabel: "广告",
       footer: "© 2026 TextCount.net — 保留所有权利",
@@ -519,6 +546,8 @@
       limitTikTok: "TikTok キャプション",
       copyBtn: "テキストをコピー",
       copiedBtn: "コピーしました！",
+      shareBtn: "共有する",
+      linkCopiedBtn: "リンクをコピーしました！",
       clearBtn: "すべて消去",
       adLabel: "広告",
       footer: "© 2026 TextCount.net — 全著作権所有",
@@ -544,6 +573,8 @@
       limitTikTok: "TikTok कैप्शन",
       copyBtn: "टेक्स्ट कॉपी करें",
       copiedBtn: "कॉपी हो गया!",
+      shareBtn: "शेयर करें",
+      linkCopiedBtn: "लिंक कॉपी हो गया!",
       clearBtn: "सब साफ़ करें",
       adLabel: "विज्ञापन",
       footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित",
@@ -569,6 +600,8 @@
       limitTikTok: "TikTok ক্যাপশন",
       copyBtn: "টেক্সট কপি করুন",
       copiedBtn: "কপি হয়েছে!",
+      shareBtn: "শেয়ার করুন",
+      linkCopiedBtn: "লিঙ্ক কপি হয়েছে!",
       clearBtn: "সব মুছুন",
       adLabel: "বিজ্ঞাপন",
       footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত",
@@ -594,6 +627,8 @@
       limitTikTok: "TikTok کیپشن",
       copyBtn: "ٹیکسٹ کاپی کریں",
       copiedBtn: "کاپی ہو گیا!",
+      shareBtn: "شیئر کریں",
+      linkCopiedBtn: "لنک کاپی ہو گیا!",
       clearBtn: "سب صاف کریں",
       adLabel: "اشتہار",
       footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں",
@@ -622,6 +657,8 @@
   var textInput = document.getElementById("text-input");
   var copyBtn = document.getElementById("copy-btn");
   var copyBtnLabel = document.getElementById("copy-btn-label");
+  var shareBtn = document.getElementById("share-btn");
+  var shareBtnLabel = document.getElementById("share-btn-label");
   var clearBtn = document.getElementById("clear-btn");
 
   var metaDescriptionTag = document.getElementById("meta-description");
@@ -739,6 +776,20 @@
     limitConfigs.forEach(function (cfg) {
       updateLimitBar(cfg.key, withSpaces, cfg.limit);
     });
+
+    // Auto-save text into localStorage
+    try {
+      localStorage.setItem("textcount_draft", text);
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function loadSavedDraft() {
+    try {
+      var savedText = localStorage.getItem("textcount_draft");
+      if (savedText) {
+        textInput.value = savedText;
+      }
+    } catch (e) { /* storage unavailable */ }
   }
 
   function detectInitialLang() {
@@ -779,6 +830,28 @@
     }
   });
 
+  shareBtn.addEventListener("click", function () {
+    var shareData = {
+      title: translations[currentLang].title,
+      url: window.location.href
+    };
+    var restore = function () {
+      shareBtnLabel.textContent = translations[currentLang].shareBtn;
+    };
+    var showLinkCopied = function () {
+      shareBtnLabel.textContent = translations[currentLang].linkCopiedBtn;
+      setTimeout(restore, 1500);
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(function () { /* user cancelled share */ });
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(window.location.href).then(showLinkCopied);
+    } else {
+      showLinkCopied();
+    }
+  });
+
   clearBtn.addEventListener("click", function () {
     textInput.value = "";
     updateStats();
@@ -792,6 +865,7 @@
 
   injectHreflangTags();
   setLanguage(detectInitialLang());
+  loadSavedDraft();
   updateStats();
 })();
 </script>
