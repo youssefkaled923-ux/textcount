@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Writing Resources - TextCount.net</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+  <!-- Header -->
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 py-10 flex-1">
+    <h1 class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
+    <p class="text-slate-400 mb-8">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
+
+    <!-- Blog Articles Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Article Card 1 -->
+      <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
+        <div>
+          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content</span>
+          <h2 class="text-xl font-bold text-slate-100 mt-2 mb-3">
+            <a href="blog/seo-word-count-guide.html" class="hover:underline">The Ultimate Word Count Guide for SEO in 2026</a>
+          </h2>
+          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+            Discover the ideal word counts for blog posts, product pages, and social media content to boost your Google rankings.
+          </p>
+        </div>
+        <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
+          <span>5 min read</span>
+          <a href="blog/seo-word-count-guide.html" class="text-accent-sky font-medium hover:underline">Read Article &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
+    <p>© 2026 TextCount.net — All rights reserved</p>
+  </footer>
+</body>
+</html>
