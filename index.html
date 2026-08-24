@@ -85,7 +85,7 @@
     <textarea id="text-input" rows="8" spellcheck="false" class="w-full bg-transparent resize-y outline-none p-4 text-slate-100 placeholder-slate-500 text-base md:text-lg leading-relaxed"></textarea>
   </div>
 
-  <!-- Quick Text Actions (إجراءات التنظيف السريع) -->
+  <!-- Quick Text Actions -->
   <div class="flex flex-wrap gap-2 mb-6">
     <button id="btn-clean-spaces" data-i18n="cleanSpacesBtn" class="text-xs bg-base-dark border border-border-dark px-3 py-1.5 rounded-md hover:border-accent-sky text-slate-300 hover:text-white transition">✨ Clean Extra Spaces</button>
     <button id="btn-uppercase" data-i18n="uppercaseBtn" class="text-xs bg-base-dark border border-border-dark px-3 py-1.5 rounded-md hover:border-accent-sky text-slate-300 hover:text-white transition">UPPERCASE</button>
@@ -126,16 +126,16 @@
   <!-- Reading & Speaking Time -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
     <div class="bg-card-dark border border-border-dark rounded-xl p-4 flex items-center justify-between">
-      <span data-i18n="readingTimeLabel" class="text-sm font-medium text-slate-300">⏱️ Reading Time (200 wpm):</span>
+      <span data-i18n="readingTimeLabel" class="text-sm font-medium text-slate-300">⏱️ Reading Time:</span>
       <span id="reading-time" class="font-mono-nums font-bold text-accent-sky text-sm">0 sec</span>
     </div>
     <div class="bg-card-dark border border-border-dark rounded-xl p-4 flex items-center justify-between">
-      <span data-i18n="speakingTimeLabel" class="text-sm font-medium text-slate-300">🎙️ Speaking Time (130 wpm):</span>
+      <span data-i18n="speakingTimeLabel" class="text-sm font-medium text-slate-300">🎙️ Speaking Time:</span>
       <span id="speaking-time" class="font-mono-nums font-bold text-accent-sky text-sm">0 sec</span>
     </div>
   </div>
 
-  <!-- Top Keywords Density (International SEO Enabled) -->
+  <!-- Top Keywords Density -->
   <div class="bg-card-dark border border-border-dark rounded-2xl p-6 mb-10">
     <h3 data-i18n="keywordDensityTitle" class="text-lg font-bold text-slate-100 mb-4 flex items-center gap-2">
       📊 Top Keyword Density
@@ -186,6 +186,25 @@
     </div>
   </div>
 
+  <!-- FAQ Section (Fully Multilingual) -->
+  <section class="border-t border-border-dark pt-10 mt-10">
+    <h2 data-i18n="faqTitle" class="text-2xl font-bold text-slate-100 mb-6"></h2>
+    <div class="space-y-4">
+      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
+        <h3 data-i18n="faqQ1" class="font-bold text-slate-100 text-lg mb-2"></h3>
+        <p data-i18n="faqA1" class="text-slate-400 text-sm leading-relaxed"></p>
+      </div>
+      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
+        <h3 data-i18n="faqQ2" class="font-bold text-slate-100 text-lg mb-2"></h3>
+        <p data-i18n="faqA2" class="text-slate-400 text-sm leading-relaxed"></p>
+      </div>
+      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
+        <h3 data-i18n="faqQ3" class="font-bold text-slate-100 text-lg mb-2"></h3>
+        <p data-i18n="faqA3" class="text-slate-400 text-sm leading-relaxed"></p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
@@ -228,6 +247,13 @@
       limitGoogleDesc: "وصف جوجل (Meta Description)",
       limitX: "منشور منصة X (تويتر)",
       limitTikTok: "وصف تيك توك",
+      faqTitle: "الأسئلة الشائعة (FAQ)",
+      faqQ1: "كيف تعمل أداة TextCount.net؟",
+      faqA1: "تحسب الأداة الحروف والكلمات والأسطر فورياً داخل متصفحك. لا يتم تخزين أي جزء من نصك أو إرساله لسيرفراتنا لضمان الخصوصية التامة.",
+      faqQ2: "لماذا يعد متابعة حدود الحروف مهماً للـ SEO؟",
+      faqA2: "محركات البحث كجوجل تقطع العناوين التي تتجاوز 60 حرفاً والأوصاف التي تتجاوز 160 حرفاً. الالتزام بالحدود يضمن ظهور نتائجك بوضوح للزوار.",
+      faqQ3: "هل الأداة مجانية بالكامل؟",
+      faqA3: "نعم، الأداة مجانية 100% وبدون أي قيود على الاستخدام للمكتّبين وصنّاع المحتوى.",
       copyBtn: "نسخ النص",
       copiedBtn: "تم النسخ!",
       clearBtn: "مسح الكل",
@@ -258,6 +284,13 @@
       limitGoogleDesc: "Google Meta Description",
       limitX: "X Post",
       limitTikTok: "TikTok Caption",
+      faqTitle: "Frequently Asked Questions (FAQ)",
+      faqQ1: "How does TextCount.net work?",
+      faqA1: "TextCount.net calculates characters, words, and lines in real time right in your browser. None of your entered text is stored or sent to any server.",
+      faqQ2: "Why is tracking character limits important for SEO?",
+      faqA2: "Search engines like Google truncate title tags longer than 60 characters and meta descriptions longer than 160 characters to keep snippets clean.",
+      faqQ3: "Is TextCount.net free to use?",
+      faqA3: "Yes, TextCount.net is 100% free with unlimited usage for content creators, copywriters, and marketers.",
       copyBtn: "Copy Text",
       copiedBtn: "Copied!",
       clearBtn: "Clear All",
@@ -288,6 +321,13 @@
       limitGoogleDesc: "Google Meta-Beschreibung",
       limitX: "X Beitrag",
       limitTikTok: "TikTok Bildunterschrift",
+      faqTitle: "Häufig gestellte Fragen (FAQ)",
+      faqQ1: "Wie funktioniert TextCount.net?",
+      faqA1: "TextCount.net berechnet Zeichen, Wörter und Zeilen in Echtzeit direkt in Ihrem Browser. Ihre Daten werden nicht gespeichert.",
+      faqQ2: "Warum sind Zeichenlimits für SEO wichtig?",
+      faqA2: "Suchmaschinen wie Google kürzen Title-Tags über 60 Zeichen und Meta-Beschreibungen über 160 Zeichen ab.",
+      faqQ3: "Ist TextCount.net kostenlos?",
+      faqA3: "Ja, TextCount.net ist zu 100% kostenlos und ohne Nutzungseinschränkungen.",
       copyBtn: "Text kopieren",
       copiedBtn: "Kopiert!",
       clearBtn: "Alles löschen",
@@ -318,6 +358,13 @@
       limitGoogleDesc: "Description Google Meta",
       limitX: "Publication X",
       limitTikTok: "Légende TikTok",
+      faqTitle: "Foire Aux Questions (FAQ)",
+      faqQ1: "Comment fonctionne TextCount.net ?",
+      faqA1: "TextCount.net calcule les caractères et les mots en temps réel directement dans votre navigateur en toute confidentialité.",
+      faqQ2: "Pourquoi suivre les limites de caractères pour le SEO ?",
+      faqA2: "Google tronque les balises de titre de plus de 60 caractères et les méta-descriptions de plus de 160 caractères.",
+      faqQ3: "Est-ce gratuit ?",
+      faqA3: "Oui, TextCount.net est 100% gratuit et illimité.",
       copyBtn: "Copier le texte",
       copiedBtn: "Copié !",
       clearBtn: "Tout effacer",
@@ -348,6 +395,13 @@
       limitGoogleDesc: "Descripción Google Meta",
       limitX: "Publicación en X",
       limitTikTok: "Subtítulo de TikTok",
+      faqTitle: "Preguntas Frecuentes (FAQ)",
+      faqQ1: "¿Cómo funciona TextCount.net?",
+      faqA1: "Calcula caracteres, palabras y líneas en tiempo real directamente en tu navegador sin guardar datos.",
+      faqQ2: "¿Por qué son importantes los límites para SEO?",
+      faqA2: "Los motores de búsqueda como Google truncan títulos de más de 60 caracteres y descripciones de más de 160.",
+      faqQ3: "¿Es de uso gratuito?",
+      faqA3: "Sí, es 100% gratuito e ilimitado.",
       copyBtn: "Copiar texto",
       copiedBtn: "¡Copiado!",
       clearBtn: "Borrar todo",
@@ -378,6 +432,13 @@
       limitGoogleDesc: "Meta Descrizione Google",
       limitX: "Post su X",
       limitTikTok: "Didascalia TikTok",
+      faqTitle: "Domande Frequenti (FAQ)",
+      faqQ1: "Come funziona TextCount.net?",
+      faqA1: "Calcola caratteri e parole in tempo reale nel tuo browser garantendo la massima privacy.",
+      faqQ2: "Perché i limiti di caratteri sono importanti per il SEO?",
+      faqA2: "Google tronca i titoli superiori a 60 caratteri e le meta descrizioni superiori a 160 caratteri.",
+      faqQ3: "È gratuito?",
+      faqA3: "Sì, TextCount.net è gratuito al 100%.",
       copyBtn: "Copia testo",
       copiedBtn: "Copiato!",
       clearBtn: "Cancella tutto",
@@ -408,6 +469,13 @@
       limitGoogleDesc: "Google Meta Beschrijving",
       limitX: "X Bericht",
       limitTikTok: "TikTok Bijschrift",
+      faqTitle: "Veelgestelde Vragen (FAQ)",
+      faqQ1: "Hoe werkt TextCount.net?",
+      faqA1: "TextCount.net telt tekens en woorden direct in uw browser zonder gegevens op te slaan.",
+      faqQ2: "Waarom zijn karakterlimieten belangrijk voor SEO?",
+      faqA2: "Google kapt titels langer dan 60 tekens en beschrijvingen langer dan 160 tekens af.",
+      faqQ3: "Is het gratis?",
+      faqA3: "Ja, TextCount.net is 100% gratis.",
       copyBtn: "Tekst kopiëren",
       copiedBtn: "Gekopieerd!",
       clearBtn: "Alles wissen",
@@ -438,6 +506,13 @@
       limitGoogleDesc: "Google Meta Açıklama",
       limitX: "X Gönderisi",
       limitTikTok: "TikTok Açıklaması",
+      faqTitle: "Sıkça Sorulan Sorular (SSS)",
+      faqQ1: "TextCount.net nasıl çalışır?",
+      faqA1: "Metninizi doğrudan tarayıcınızda anlık olarak analiz eder, hiçbir veriyi sunuculara kaydetmez.",
+      faqQ2: "Karakter sınırları SEO için neden önemlidir?",
+      faqA2: "Google, 60 karakterden uzun başlıkları ve 160 karakterden uzun açıklamaları keser.",
+      faqQ3: "Kullanımı ücretsiz mi?",
+      faqA3: "Evet, TextCount.net %100 ücretsizdir.",
       copyBtn: "Metni Kopyala",
       copiedBtn: "Kopyalandı!",
       clearBtn: "Tümünü Temizle",
@@ -468,6 +543,13 @@
       limitGoogleDesc: "Meta Descrição do Google",
       limitX: "Publicação no X",
       limitTikTok: "Legenda do TikTok",
+      faqTitle: "Perguntas Frequentes (FAQ)",
+      faqQ1: "Como o TextCount.net funciona?",
+      faqA1: "Ele calcula caracteres e palavras em tempo real diretamente no seu navegador em total privacidade.",
+      faqQ2: "Por que limites de caracteres importam no SEO?",
+      faqA2: "O Google trunca títulos com mais de 60 caracteres e descrições com mais de 160 caracteres.",
+      faqQ3: "É gratuito?",
+      faqA3: "Sim, o TextCount.net é 100% gratuito.",
       copyBtn: "Copiar Texto",
       copiedBtn: "Copiado!",
       clearBtn: "Limpar Tudo",
@@ -498,6 +580,13 @@
       limitGoogleDesc: "Google Meta Описание",
       limitX: "Пост в X",
       limitTikTok: "Подпись в TikTok",
+      faqTitle: "Часто Задаваемые Вопросы (FAQ)",
+      faqQ1: "Как работает TextCount.net?",
+      faqA1: "Сервис моментально считает символы прямо в вашем браузере, не сохраняя введенные данные.",
+      faqQ2: "Почему лимиты символов важны для SEO?",
+      faqA2: "Поисковики вроде Google обрезают заголовки длиннее 60 символов и описания длиннее 160 символов.",
+      faqQ3: "Это бесплатно?",
+      faqA3: "Да, TextCount.net на 100% бесплатен.",
       copyBtn: "Копировать",
       copiedBtn: "Скопировано!",
       clearBtn: "Очистить всё",
@@ -528,6 +617,13 @@
       limitGoogleDesc: "Google Meta 描述",
       limitX: "X (Twitter) 帖子",
       limitTikTok: "TikTok 文案限制",
+      faqTitle: "常见问题解答 (FAQ)",
+      faqQ1: "TextCount.net 是如何工作的？",
+      faqA1: "TextCount.net 直接在您的浏览器中实时计算字符和词数，保证隐私安全。",
+      faqQ2: "为什么字符限制对 SEO 如此重要？",
+      faqA2: "Google 会截断超过 60 个字符的标题和超过 160 个字符的 Meta 描述。",
+      faqQ3: "该工具免费吗？",
+      faqA3: "是的，TextCount.net 100% 免费且无使用限制。",
       copyBtn: "复制文本",
       copiedBtn: "已复制！",
       clearBtn: "清空所有",
@@ -539,7 +635,7 @@
     ja: {
       heading: "文字数＆単語数 counters",
       subheading: "コンテンツクリエイターのためのリアルタイム無料テキスト解析ツール",
-      placeholder: " here にテキストを入力または貼り付け...",
+      placeholder: "ここにテキストを入力または貼り付け...",
       cleanSpacesBtn: "✨ 余分なスペースを削除",
       uppercaseBtn: "大文字に変換",
       lowercaseBtn: "小文字に変換",
@@ -558,9 +654,16 @@
       limitGoogleDesc: "Google Meta 説明文",
       limitX: "X (Twitter) 投稿",
       limitTikTok: "TikTok キャプション",
+      faqTitle: "よくある質問 (FAQ)",
+      faqQ1: "TextCount.net の仕組みは？",
+      faqA1: "ブラウザ上でリアルタイムに文字数を計算します。入力データは一切保存されません。",
+      faqQ2: "なぜSEOで文字数制限が重要ですか？",
+      faqA2: "Googleは60文字を超えるタイトルや160文字を超える説明文を省略して表示するためです。",
+      faqQ3: "無料で利用できますか？",
+      faqA3: "はい、TextCount.net は100%無料で制限なく利用できます。",
       copyBtn: "テキストをコピー",
       copiedBtn: "コピー完了！",
-      clearBtn: "すべて clear",
+      clearBtn: "すべてクリア",
       blogLink: "ブログ",
       footer: "© 2026 TextCount.net — All rights reserved",
       unitSec: "秒",
@@ -588,6 +691,13 @@
       limitGoogleDesc: "गूगल मेटा विवरण",
       limitX: "X पोस्ट",
       limitTikTok: "टिकटॉक कैप्शन",
+      faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
+      faqQ1: "TextCount.net कैसे काम करता है?",
+      faqA1: "यह टूल आपके ब्राउज़र में रीयल-टाइम में टेक्स्ट की गणना करता है। आपका डेटा सुरक्षित रहता है।",
+      faqQ2: "SEO के लिए वर्ण सीमाएँ क्यों आवश्यक हैं?",
+      faqA2: "गूगल 60 अक्षरों से अधिक के शीर्षकों और 160 अक्षरों से अधिक के विवरणों को काट देता है।",
+      faqQ3: "क्या यह मुफ़्त है?",
+      faqA3: "हाँ, TextCount.net 100% मुफ़्त है।",
       copyBtn: "टेक्स्ट कॉपी करें",
       copiedBtn: "कॉपी हो गया!",
       clearBtn: "सब साफ़ करें",
@@ -618,6 +728,13 @@
       limitGoogleDesc: "গুগল মেটা বিবরণ",
       limitX: "X পোস্ট",
       limitTikTok: "টিকটক ক্যাপশন",
+      faqTitle: "সাধারণ জিজ্ঞাসা (FAQ)",
+      faqQ1: "TextCount.net কীভাবে কাজ করে?",
+      faqA1: "এটি আপনার ব্রাউজারে রিয়েল-টাইমে অক্ষর এবং শব্দ গণনা করে সম্পূর্ণ গোপনীয়তার সাথে।",
+      faqQ2: "SEO এর জন্য সীমার হিসাব রাখা কেন গুরুত্বপূর্ণ?",
+      faqA2: "গুগল ৬০ অক্ষরের বেশি শিরোনাম এবং ১৬০ অক্ষরের বেশি মেটা বিবরণ কেটে প্রদর্শন করে।",
+      faqQ3: "এটি কি বিনামূল্যে ব্যবহারযোগ্য?",
+      faqA3: "হ্যাঁ, TextCount.net ১০০% বিনামূল্যে ব্যবহারযোগ্য।",
       copyBtn: "অনুলিপি করুন",
       copiedBtn: "অনুলিপি করা হয়েছে!",
       clearBtn: "সব মুছুন",
@@ -648,6 +765,13 @@
       limitGoogleDesc: "گوگل میٹا ڈسکرپشن",
       limitX: "ایکس (ٹوئٹر) پوسٹ",
       limitTikTok: "ٹک ٹاک کیپشن",
+      faqTitle: "بثرت پوچھے گئے سوالات (FAQ)",
+      faqQ1: "TextCount.net کیسے کام کرتا ہے؟",
+      faqA1: "یہ ٹول آپ کے براؤزر میں فوری طور پر الفاظ اور حروف کا شمار کرتا ہے بغیر کسی ڈیٹا کے ذخیرہ کے۔",
+      faqQ2: "SEO کے لیے حروف کی حد کا خیال رکھنا کیوں ضروری ہے؟",
+      faqA2: "گوگل 60 حروف سے زیادہ ٹائٹل اور 160 حروف سے زیادہ میٹا ڈسکرپشن کو کاٹ دیتا ہے۔",
+      faqQ3: "کیا یہ ٹول مفت ہے؟",
+      faqA3: "جی ہاں، TextCount.net بالکل 100% مفت ہے۔",
       copyBtn: "کاپی کریں",
       copiedBtn: "کاپی ہو گیا!",
       clearBtn: "سب صاف کریں",
@@ -658,7 +782,6 @@
     }
   };
 
-  // International SEO Stop Words Dictionary for 15 Languages
   var stopWordsDb = {
     ar: ["في", "من", "على", "أن", "عن", "كان", "إلى", "هذا", "هذه", "مع", "التي", "الذي", "أو", "لا", "ما", "هو", "هي"],
     en: ["the", "and", "to", "a", "of", "in", "i", "is", "that", "it", "on", "you", "this", "for", "with", "my", "has", "or", "at", "be", "was", "an", "are", "from", "as", "by", "not"],
@@ -728,16 +851,13 @@
     document.getElementById("stat-words").textContent = words.toLocaleString();
     document.getElementById("stat-lines").textContent = lines.toLocaleString();
 
-    // Reading & Speaking Time Calculation
     var readSecs = Math.ceil((words / 200) * 60);
     var speakSecs = Math.ceil((words / 130) * 60);
     document.getElementById("reading-time").textContent = formatTime(readSecs, currentLang);
     document.getElementById("speaking-time").textContent = formatTime(speakSecs, currentLang);
 
-    // International SEO Keyword Density Filter
     updateKeywordDensity(wordsArr, currentLang);
 
-    // Platform Limits Progress Bars
     updateLimit("googleTitle", charsWith, 60);
     updateLimit("googleDesc", charsWith, 160);
     updateLimit("xPost", charsWith, 280);
@@ -797,7 +917,6 @@
     barEl.className = val > max ? "h-full bg-red-500 transition-all duration-300" : "h-full bg-accent-sky transition-all duration-300";
   }
 
-  // Quick Text Actions Events
   document.getElementById("btn-clean-spaces").addEventListener("click", function() {
     textInput.value = textInput.value.replace(/\s+/g, ' ').trim();
     updateStats();
@@ -841,7 +960,6 @@
 
   textInput.addEventListener("input", updateStats);
 
-  // App Initialization
   var initLang = getLang();
   setLanguage(initLang);
 
