@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- الصفحة الرئيسية وتعدد اللغات -->
   <url>
     <loc>https://textcount.pages.dev/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     
-    <!-- روابط اللغات الـ 15 المعتمدة على نطاق pages.dev -->
     <xhtml:link rel="alternate" hreflang="ar" href="https://textcount.pages.dev/?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://textcount.pages.dev/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://textcount.pages.dev/?lang=de"/>
@@ -25,4 +26,43 @@
     <xhtml:link rel="alternate" hreflang="ur" href="https://textcount.pages.dev/?lang=ur"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://textcount.pages.dev/"/>
   </url>
+
+  <!-- صفحة المدونة الرئيسية -->
+  <url>
+    <loc>https://textcount.pages.dev/blog.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- مقالات المدونة -->
+  <url>
+    <loc>https://textcount.pages.dev/blog/seo-word-count-guide.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- الصفحات الثابتة والتنظيمية -->
+  <url>
+    <loc>https://textcount.pages.dev/about.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://textcount.pages.dev/privacy.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://textcount.pages.dev/contact.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
