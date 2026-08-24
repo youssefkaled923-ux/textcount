@@ -20,23 +20,13 @@
     <div class="max-w-4xl mx-auto flex justify-between items-center">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
+        <a href="/" id="back-link" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
         <select id="lang-select-blog" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-accent-sky">
-          <option value="ar">العربية</option>
           <option value="en" selected>English</option>
+          <option value="ar">العربية</option>
           <option value="de">Deutsch</option>
           <option value="fr">Français</option>
           <option value="es">Español</option>
-          <option value="it">Italiano</option>
-          <option value="nl">Nederlands</option>
-          <option value="tr">Türkçe</option>
-          <option value="pt">Português</option>
-          <option value="ru">Русский</option>
-          <option value="zh">中文</option>
-          <option value="ja">日本語</option>
-          <option value="hi">हिन्दी</option>
-          <option value="bn">বাংলা</option>
-          <option value="ur">اردو</option>
         </select>
       </div>
     </div>
@@ -52,51 +42,51 @@
       <!-- Article 1 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
-          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content</span>
+          <span id="cat-1" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content</span>
           <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
-            <a href="blog/seo-word-count-guide.html" class="hover:underline">The Ultimate Word Count Guide for SEO in 2026</a>
+            <a href="blog/seo-word-count-guide.html" id="art1-title" class="hover:underline">The Ultimate Word Count Guide for SEO in 2026</a>
           </h2>
-          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+          <p id="art1-desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
             Discover the ideal word counts for blog posts, product pages, and social media content to boost your Google rankings.
           </p>
         </div>
         <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
-          <span>5 min read</span>
-          <a href="blog/seo-word-count-guide.html" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
+          <span id="art1-time">5 min read</span>
+          <a href="blog/seo-word-count-guide.html" id="art1-link" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
         </div>
       </article>
 
       <!-- Article 2 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
-          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Social Media</span>
+          <span id="cat-2" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Social Media</span>
           <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
-            <a href="blog/social-media-character-limits.html" class="hover:underline">Social Media Character Limits Guide (2026)</a>
+            <a href="blog/social-media-character-limits.html" id="art2-title" class="hover:underline">Social Media Character Limits Guide (2026)</a>
           </h2>
-          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+          <p id="art2-desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
             Master post length rules across X (Twitter), LinkedIn, and Instagram to write uninterrupted captions that convert.
           </p>
         </div>
         <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
-          <span>4 min read</span>
-          <a href="blog/social-media-character-limits.html" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
+          <span id="art2-time">4 min read</span>
+          <a href="blog/social-media-character-limits.html" id="art2-link" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
         </div>
       </article>
 
       <!-- Article 3 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
-          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Speech & Speaking</span>
+          <span id="cat-3" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Speech & Speaking</span>
           <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
-            <a href="blog/speech-length-by-word-count.html" class="hover:underline">Speech Length by Word Count: How Many Words?</a>
+            <a href="blog/speech-length-by-word-count.html" id="art3-title" class="hover:underline">Speech Length by Word Count: How Many Words?</a>
           </h2>
-          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+          <p id="art3-desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
             Calculate exact speech durations for YouTube video scripts, presentations, and TED talks based on speaking speeds.
           </p>
         </div>
         <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
-          <span>4 min read</span>
-          <a href="blog/speech-length-by-word-count.html" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
+          <span id="art3-time">4 min read</span>
+          <a href="blog/speech-length-by-word-count.html" id="art3-link" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
         </div>
       </article>
 
@@ -104,17 +94,85 @@
   </main>
 
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p id="footer-text">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
   <script>
-    document.getElementById('lang-select-blog').addEventListener('change', function() {
-      var lang = this.value;
-      if (lang === 'ar' || lang === 'ur') {
-        document.documentElement.dir = 'rtl';
-      } else {
-        document.documentElement.dir = 'ltr';
+    const translations = {
+      en: {
+        backLink: "&larr; Back to Tool",
+        title: "Writing & SEO Resources",
+        desc: "Guides, tips, and insights to help you write better content and optimize your word count for search engines.",
+        cat1: "SEO & Content",
+        art1Title: "The Ultimate Word Count Guide for SEO in 2026",
+        art1Desc: "Discover the ideal word counts for blog posts, product pages, and social media content to boost your Google rankings.",
+        art1Time: "5 min read",
+        readMore: "Read &rarr;",
+        cat2: "Social Media",
+        art2Title: "Social Media Character Limits Guide (2026)",
+        art2Desc: "Master post length rules across X (Twitter), LinkedIn, and Instagram to write uninterrupted captions that convert.",
+        art2Time: "4 min read",
+        cat3: "Speech & Speaking",
+        art3Title: "Speech Length by Word Count: How Many Words?",
+        art3Desc: "Calculate exact speech durations for YouTube video scripts, presentations, and TED talks based on speaking speeds.",
+        art3Time: "4 min read",
+        footer: "© 2026 TextCount.net — All rights reserved"
+      },
+      ar: {
+        backLink: "العودة إلى الأداة &rarr;",
+        title: "مصادر الكتابة وتحسين محركات البحث",
+        desc: "أدلة وتلميحات وأفكار لمساعدتك على كتابة محتوى أفضل وتعديل عدد الكلمات لمحركات البحث.",
+        cat1: "السيو والمحتوى",
+        art1Title: "الدليل الشامل لعدد الكلمات لتحسين السيو لعام 2026",
+        art1Desc: "اكتشف عدد الكلمات المثالي للمقالات، صفحات المنتجات، ومحتوى التواصل الاجتماعي لرفع ترتيبك في جوجل.",
+        art1Time: "قراءة 5 دقائق",
+        readMore: "&larr; اقرأ",
+        cat2: "وسائل التواصل الاجتماعي",
+        art2Title: "دليل حدود الحروف لوسائل التواصل الاجتماعي (2026)",
+        art2Desc: "تعرف على حدود النصوص في إكس (تويتر)، لينكد إن، وإنستغرام لكتابة منشورات ممتازة.",
+        art2Time: "قراءة 4 دقائق",
+        cat3: "الخطاب والإلقاء",
+        art3Title: "مدة الخطاب بحسب عدد الكلمات: كم كلمة تحتاج؟",
+        art3Desc: "احسب مدة إلقاء النص بالضبط لفيديوهات يوتيوب والعروض التقديمية بناءً على سرعة التحدث.",
+        art3Time: "قراءة 4 دقائق",
+        footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
       }
+    };
+
+    document.getElementById('lang-select-blog').addEventListener('change', function() {
+      const lang = this.value;
+      const isRtl = lang === 'ar' || lang === 'ur';
+      
+      // 1. تغيير الاتجاه ولغة المستند
+      document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+
+      // 2. تحديث النصوص بناءً على اللغة المحددة
+      const t = translations[lang] || translations['en'];
+
+      document.getElementById('back-link').innerHTML = t.backLink;
+      document.getElementById('blog-title').textContent = t.title;
+      document.getElementById('blog-desc').textContent = t.desc;
+
+      document.getElementById('cat-1').textContent = t.cat1;
+      document.getElementById('art1-title').textContent = t.art1Title;
+      document.getElementById('art1-desc').textContent = t.desc;
+      document.getElementById('art1-time').textContent = t.art1Time;
+      document.getElementById('art1-link').innerHTML = t.readMore;
+
+      document.getElementById('cat-2').textContent = t.cat2;
+      document.getElementById('art2-title').textContent = t.art2Title;
+      document.getElementById('art2-desc').textContent = t.art2Desc;
+      document.getElementById('art2-time').textContent = t.art2Time;
+      document.getElementById('art2-link').innerHTML = t.readMore;
+
+      document.getElementById('cat-3').textContent = t.cat3;
+      document.getElementById('art3-title').textContent = t.art3Title;
+      document.getElementById('art3-desc').textContent = t.art3Desc;
+      document.getElementById('art3-time').textContent = t.art3Time;
+      document.getElementById('art3-link').innerHTML = t.readMore;
+
+      document.getElementById('footer-text').textContent = t.footer;
     });
   </script>
 </body>
