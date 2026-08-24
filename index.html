@@ -1,969 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0f172a">
-<title id="page-title">TextCount.net | Free Character &amp; Word Counter for Content Creators</title>
-<meta id="meta-description" name="description" content="Free online character and word counter for marketers and content creators. Instantly check Google title/description limits, X post length, and TikTok caption length.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' font-weight='bold' fill='%2338bdf8' text-anchor='middle'%3ETc%3C/text%3E%3C/svg%3E">
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          'base-dark': '#0f172a',
-          'card-dark': '#1e293b',
-          'border-dark': '#334155',
-          'accent-sky': '#38bdf8',
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TextCount.net - Free Word & Character Counter Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
         }
       }
-    }
-  };
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', 'Tajawal', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans Devanagari', 'Noto Sans Bengali', system-ui, sans-serif; }
-  .font-mono-nums { font-family: monospace; font-variant-numeric: tabular-nums; }
-  textarea::-webkit-scrollbar { width: 10px; }
-  textarea::-webkit-scrollbar-track { background: transparent; }
-  textarea::-webkit-scrollbar-thumb { background-color: #334155; border-radius: 999px; }
-  select#lang-select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.65rem center; background-size: 1.1em; }
-  html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
-</style>
-</head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col">
-
-<header class="sticky top-0 z-50 bg-base-dark/90 backdrop-blur border-b border-border-dark">
-  <div class="max-w-4xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
-    <div class="flex items-center gap-2">
-      <span class="relative flex h-2.5 w-2.5">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-sky opacity-60"></span>
-        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-sky"></span>
-      </span>
-      <a href="/" class="font-mono-nums text-lg md:text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
-    </div>
-    <div class="flex items-center gap-4">
-      <a href="blog.html" data-i18n="blogLink" class="text-sm font-medium text-slate-300 hover:text-accent-sky transition">Blog</a>
-      <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
-        <option value="ar">العربية</option>
-        <option value="en">English</option>
-        <option value="de">Deutsch</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-        <option value="it">Italiano</option>
-        <option value="nl">Nederlands</option>
-        <option value="tr">Türkçe</option>
-        <option value="pt">Português</option>
-        <option value="ru">Русский</option>
-        <option value="zh">中文</option>
-        <option value="ja">日本語</option>
-        <option value="hi">हिन्दी</option>
-        <option value="bn">বাংলা</option>
-        <option value="ur">اردو</option>
-      </select>
-    </div>
-  </div>
-</header>
-
-<main class="flex-1 w-full max-w-4xl mx-auto px-4 md:px-8 py-10 md:py-14">
-
-  <div class="text-center mb-8">
-    <h1 id="heading" data-i18n="heading" class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-50 mb-3"></h1>
-    <p data-i18n="subheading" class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto"></p>
-  </div>
-
-  <div class="bg-card-dark border border-border-dark rounded-2xl p-2 mb-4 focus-within:ring-2 focus-within:ring-accent-sky transition">
-    <textarea id="text-input" rows="8" spellcheck="false" class="w-full bg-transparent resize-y outline-none p-4 text-slate-100 placeholder-slate-500 text-base md:text-lg leading-relaxed"></textarea>
-  </div>
-
-  <!-- Quick Text Actions -->
-  <div class="flex flex-wrap gap-2 mb-6">
-    <button id="btn-clean-spaces" data-i18n="cleanSpacesBtn" class="text-xs bg-base-dark border border-border-dark px-3 py-1.5 rounded-md hover:border-accent-sky text-slate-300 hover:text-white transition">✨ Clean Extra Spaces</button>
-    <button id="btn-uppercase" data-i18n="uppercaseBtn" class="text-xs bg-base-dark border border-border-dark px-3 py-1.5 rounded-md hover:border-accent-sky text-slate-300 hover:text-white transition">UPPERCASE</button>
-    <button id="btn-lowercase" data-i18n="lowercaseBtn" class="text-xs bg-base-dark border border-border-dark px-3 py-1.5 rounded-md hover:border-accent-sky text-slate-300 hover:text-white transition">lowercase</button>
-    <button id="btn-titlecase" data-i18n="titlecaseBtn" class="text-xs bg-base-dark border border-border-dark px-3 py-1.5 rounded-md hover:border-accent-sky text-slate-300 hover:text-white transition">Title Case</button>
-  </div>
-
-  <!-- Main Action Buttons -->
-  <div class="flex flex-wrap gap-3 justify-center mb-10">
-    <button id="copy-btn" type="button" class="inline-flex items-center gap-2 bg-accent-sky text-base-dark font-semibold px-5 py-2.5 rounded-lg hover:brightness-110 active:scale-95 transition">
-      <span id="copy-btn-label" data-i18n="copyBtn">Copy Text</span>
-    </button>
-    <button id="clear-btn" type="button" class="inline-flex items-center gap-2 bg-card-dark border border-border-dark text-slate-200 font-semibold px-5 py-2.5 rounded-lg hover:border-red-500 hover:text-red-400 active:scale-95 transition">
-      <span data-i18n="clearBtn">Clear All</span>
-    </button>
-  </div>
-
-  <!-- Counters Grid -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <div class="bg-card-dark border border-border-dark rounded-xl p-5 text-center">
-      <p id="stat-chars-with-spaces" class="font-mono-nums text-3xl font-bold text-accent-sky mb-1">0</p>
-      <p data-i18n="statCharsWithSpaces" class="text-slate-400 text-xs"></p>
-    </div>
-    <div class="bg-card-dark border border-border-dark rounded-xl p-5 text-center">
-      <p id="stat-chars-no-spaces" class="font-mono-nums text-3xl font-bold text-accent-sky mb-1">0</p>
-      <p data-i18n="statCharsNoSpaces" class="text-slate-400 text-xs"></p>
-    </div>
-    <div class="bg-card-dark border border-border-dark rounded-xl p-5 text-center">
-      <p id="stat-words" class="font-mono-nums text-3xl font-bold text-accent-sky mb-1">0</p>
-      <p data-i18n="statWords" class="text-slate-400 text-xs"></p>
-    </div>
-    <div class="bg-card-dark border border-border-dark rounded-xl p-5 text-center">
-      <p id="stat-lines" class="font-mono-nums text-3xl font-bold text-accent-sky mb-1">0</p>
-      <p data-i18n="statLines" class="text-slate-400 text-xs"></p>
-    </div>
-  </div>
-
-  <!-- Reading & Speaking Time -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-    <div class="bg-card-dark border border-border-dark rounded-xl p-4 flex items-center justify-between">
-      <span data-i18n="readingTimeLabel" class="text-sm font-medium text-slate-300">⏱️ Reading Time:</span>
-      <span id="reading-time" class="font-mono-nums font-bold text-accent-sky text-sm">0 sec</span>
-    </div>
-    <div class="bg-card-dark border border-border-dark rounded-xl p-4 flex items-center justify-between">
-      <span data-i18n="speakingTimeLabel" class="text-sm font-medium text-slate-300">🎙️ Speaking Time:</span>
-      <span id="speaking-time" class="font-mono-nums font-bold text-accent-sky text-sm">0 sec</span>
-    </div>
-  </div>
-
-  <!-- Top Keywords Density -->
-  <div class="bg-card-dark border border-border-dark rounded-2xl p-6 mb-10">
-    <h3 data-i18n="keywordDensityTitle" class="text-lg font-bold text-slate-100 mb-4 flex items-center gap-2">
-      📊 Top Keyword Density
-    </h3>
-    <div id="keywords-list" class="space-y-3">
-      <p data-i18n="keywordPrompt" class="text-slate-500 text-sm">Start typing to see keyword density analysis...</p>
-    </div>
-  </div>
-
-  <!-- Platform Limits -->
-  <h2 data-i18n="limitsTitle" class="text-xl font-bold text-slate-100 mb-4"></h2>
-  <div class="bg-card-dark border border-border-dark rounded-2xl p-6 space-y-6 mb-10">
-    <div>
-      <div class="flex justify-between items-center mb-2 gap-3">
-        <span data-i18n="limitGoogleTitle" class="text-sm font-medium text-slate-300"></span>
-        <span id="count-googleTitle" class="font-mono-nums text-sm text-accent-sky">0 / 60</span>
-      </div>
-      <div class="w-full h-2 bg-base-dark rounded-full overflow-hidden border border-border-dark">
-        <div id="bar-googleTitle" class="h-full bg-accent-sky transition-all duration-300" style="width:0%"></div>
-      </div>
-    </div>
-    <div>
-      <div class="flex justify-between items-center mb-2 gap-3">
-        <span data-i18n="limitGoogleDesc" class="text-sm font-medium text-slate-300"></span>
-        <span id="count-googleDesc" class="font-mono-nums text-sm text-accent-sky">0 / 160</span>
-      </div>
-      <div class="w-full h-2 bg-base-dark rounded-full overflow-hidden border border-border-dark">
-        <div id="bar-googleDesc" class="h-full bg-accent-sky transition-all duration-300" style="width:0%"></div>
-      </div>
-    </div>
-    <div>
-      <div class="flex justify-between items-center mb-2 gap-3">
-        <span data-i18n="limitX" class="text-sm font-medium text-slate-300"></span>
-        <span id="count-xPost" class="font-mono-nums text-sm text-accent-sky">0 / 280</span>
-      </div>
-      <div class="w-full h-2 bg-base-dark rounded-full overflow-hidden border border-border-dark">
-        <div id="bar-xPost" class="h-full bg-accent-sky transition-all duration-300" style="width:0%"></div>
-      </div>
-    </div>
-    <div>
-      <div class="flex justify-between items-center mb-2 gap-3">
-        <span data-i18n="limitTikTok" class="text-sm font-medium text-slate-300"></span>
-        <span id="count-tiktok" class="font-mono-nums text-sm text-accent-sky">0 / 2200</span>
-      </div>
-      <div class="w-full h-2 bg-base-dark rounded-full overflow-hidden border border-border-dark">
-        <div id="bar-tiktok" class="h-full bg-accent-sky transition-all duration-300" style="width:0%"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ Section (Fully Multilingual) -->
-  <section class="border-t border-border-dark pt-10 mt-10">
-    <h2 data-i18n="faqTitle" class="text-2xl font-bold text-slate-100 mb-6"></h2>
-    <div class="space-y-4">
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ1" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA1" class="text-slate-400 text-sm leading-relaxed"></p>
-      </div>
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ2" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA2" class="text-slate-400 text-sm leading-relaxed"></p>
-      </div>
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ3" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA3" class="text-slate-400 text-sm leading-relaxed"></p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-  <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p data-i18n="footer"></p>
-    <div class="flex items-center gap-4 text-slate-400">
-      <a href="about.html" class="hover:text-accent-sky transition">About Us</a>
-      <span>•</span>
-      <a href="privacy.html" class="hover:text-accent-sky transition">Privacy Policy</a>
-      <span>•</span>
-      <a href="contact.html" class="hover:text-accent-sky transition">Contact Us</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function () {
-  "use strict";
-
-  var translations = {
-    ar: {
-      heading: "عداد الحروف والكلمات",
-      subheading: "أداة فورية ومجانية لتحليل النصوص لصناع المحتوى والمسوقين",
-      placeholder: "ابدأ الكتابة أو الصق نصك هنا...",
-      cleanSpacesBtn: "✨ إزالة المسافات الزائدة",
-      uppercaseBtn: "حروف كبيرة (UPPER)",
-      lowercaseBtn: "حروف صغيرة (lower)",
-      titlecaseBtn: "بداية الأسطر كبيرة (Title)",
-      statCharsWithSpaces: "حرف (مع المسافات)",
-      statCharsNoSpaces: "حرف (بدون مسافات)",
-      statWords: "كلمة",
-      statLines: "سطر",
-      readingTimeLabel: "⏱️ وقت القراءة المتوقع:",
-      speakingTimeLabel: "🎙️ وقت الإلقاء الصوتي:",
-      keywordDensityTitle: "📊 كثافة الكلمات المفتاحية (SEO)",
-      keywordPrompt: "ابدأ الكتابة لتحليل أكثر الكلمات تكراراً...",
-      noKeywordsFound: "لم يتم العثور على كلمات مفتاحية بارزة بعد.",
-      limitsTitle: "حدود المنصات",
-      limitGoogleTitle: "عنوان جوجل (Meta Title)",
-      limitGoogleDesc: "وصف جوجل (Meta Description)",
-      limitX: "منشور منصة X (تويتر)",
-      limitTikTok: "وصف تيك توك",
-      faqTitle: "الأسئلة الشائعة (FAQ)",
-      faqQ1: "كيف تعمل أداة TextCount.net؟",
-      faqA1: "تحسب الأداة الحروف والكلمات والأسطر فورياً داخل متصفحك. لا يتم تخزين أي جزء من نصك أو إرساله لسيرفراتنا لضمان الخصوصية التامة.",
-      faqQ2: "لماذا يعد متابعة حدود الحروف مهماً للـ SEO؟",
-      faqA2: "محركات البحث كجوجل تقطع العناوين التي تتجاوز 60 حرفاً والأوصاف التي تتجاوز 160 حرفاً. الالتزام بالحدود يضمن ظهور نتائجك بوضوح للزوار.",
-      faqQ3: "هل الأداة مجانية بالكامل؟",
-      faqA3: "نعم، الأداة مجانية 100% وبدون أي قيود على الاستخدام للمكتّبين وصنّاع المحتوى.",
-      copyBtn: "نسخ النص",
-      copiedBtn: "تم النسخ!",
-      clearBtn: "مسح الكل",
-      blogLink: "المدونة",
-      footer: "© 2026 TextCount.net — جميع الحقوق محفوظة",
-      unitSec: "ثانية",
-      unitMin: "دقيقة"
-    },
-    en: {
-      heading: "Character & Word Counter",
-      subheading: "An instant, free tool to analyze your text for marketers and creators",
-      placeholder: "Start typing or paste your text here...",
-      cleanSpacesBtn: "✨ Clean Extra Spaces",
-      uppercaseBtn: "UPPERCASE",
-      lowercaseBtn: "lowercase",
-      titlecaseBtn: "Title Case",
-      statCharsWithSpaces: "Characters (with spaces)",
-      statCharsNoSpaces: "Characters (no spaces)",
-      statWords: "Words",
-      statLines: "Lines",
-      readingTimeLabel: "⏱️ Reading Time:",
-      speakingTimeLabel: "🎙️ Speaking Time:",
-      keywordDensityTitle: "📊 Top Keyword Density (SEO)",
-      keywordPrompt: "Start typing to see keyword density analysis...",
-      noKeywordsFound: "No prominent keywords found yet.",
-      limitsTitle: "Platform Limits",
-      limitGoogleTitle: "Google Meta Title",
-      limitGoogleDesc: "Google Meta Description",
-      limitX: "X Post",
-      limitTikTok: "TikTok Caption",
-      faqTitle: "Frequently Asked Questions (FAQ)",
-      faqQ1: "How does TextCount.net work?",
-      faqA1: "TextCount.net calculates characters, words, and lines in real time right in your browser. None of your entered text is stored or sent to any server.",
-      faqQ2: "Why is tracking character limits important for SEO?",
-      faqA2: "Search engines like Google truncate title tags longer than 60 characters and meta descriptions longer than 160 characters to keep snippets clean.",
-      faqQ3: "Is TextCount.net free to use?",
-      faqA3: "Yes, TextCount.net is 100% free with unlimited usage for content creators, copywriters, and marketers.",
-      copyBtn: "Copy Text",
-      copiedBtn: "Copied!",
-      clearBtn: "Clear All",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — All rights reserved",
-      unitSec: "sec",
-      unitMin: "min"
-    },
-    de: {
-      heading: "Zeichen- & Wortzähler",
-      subheading: "Kostenloses Online-Tool zur Textanalyse für Marketer und Ersteller",
-      placeholder: "Tippen Sie oder fügen Sie Ihren Text hier ein...",
-      cleanSpacesBtn: "✨ Leerzeichen bereinigen",
-      uppercaseBtn: "GROSSBUCHSTABEN",
-      lowercaseBtn: "kleinbuchstaben",
-      titlecaseBtn: "Titelformat",
-      statCharsWithSpaces: "Zeichen (mit Leerzeichen)",
-      statCharsNoSpaces: "Zeichen (ohne Leerzeichen)",
-      statWords: "Wörter",
-      statLines: "Zeilen",
-      readingTimeLabel: "⏱️ Lesezeit:",
-      speakingTimeLabel: "🎙️ Sprechzeit:",
-      keywordDensityTitle: "📊 Dichte der Schlüsselwörter",
-      keywordPrompt: "Beginnen Sie zu tippen, um die Schlüsselwortdichte zu sehen...",
-      noKeywordsFound: "Noch keine auffälligen Schlüsselwörter gefunden.",
-      limitsTitle: "Plattform-Limits",
-      limitGoogleTitle: "Google Meta-Titel",
-      limitGoogleDesc: "Google Meta-Beschreibung",
-      limitX: "X Beitrag",
-      limitTikTok: "TikTok Bildunterschrift",
-      faqTitle: "Häufig gestellte Fragen (FAQ)",
-      faqQ1: "Wie funktioniert TextCount.net?",
-      faqA1: "TextCount.net berechnet Zeichen, Wörter und Zeilen in Echtzeit direkt in Ihrem Browser. Ihre Daten werden nicht gespeichert.",
-      faqQ2: "Warum sind Zeichenlimits für SEO wichtig?",
-      faqA2: "Suchmaschinen wie Google kürzen Title-Tags über 60 Zeichen und Meta-Beschreibungen über 160 Zeichen ab.",
-      faqQ3: "Ist TextCount.net kostenlos?",
-      faqA3: "Ja, TextCount.net ist zu 100% kostenlos und ohne Nutzungseinschränkungen.",
-      copyBtn: "Text kopieren",
-      copiedBtn: "Kopiert!",
-      clearBtn: "Alles löschen",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
-      unitSec: "Sek",
-      unitMin: "Min"
-    },
-    fr: {
-      heading: "Compteur de Caractères et Mots",
-      subheading: "Outil gratuit pour analyser votre texte pour créateurs et spécialistes",
-      placeholder: "Commencez à taper ou collez votre texte ici...",
-      cleanSpacesBtn: "✨ Nettoyer les espaces",
-      uppercaseBtn: "MAJUSCULES",
-      lowercaseBtn: "minuscules",
-      titlecaseBtn: "Casse De Titre",
-      statCharsWithSpaces: "Caractères (avec espaces)",
-      statCharsNoSpaces: "Caractères (sans espaces)",
-      statWords: "Mots",
-      statLines: "Lignes",
-      readingTimeLabel: "⏱️ Temps de lecture:",
-      speakingTimeLabel: "🎙️ Temps de parole:",
-      keywordDensityTitle: "📊 Densité des mots-clés",
-      keywordPrompt: "Tapez du texte pour voir l'analyse des mots-clés...",
-      noKeywordsFound: "Aucun mot-clé pertinent trouvé pour le moment.",
-      limitsTitle: "Limites de plateforme",
-      limitGoogleTitle: "Titre Google Meta",
-      limitGoogleDesc: "Description Google Meta",
-      limitX: "Publication X",
-      limitTikTok: "Légende TikTok",
-      faqTitle: "Foire Aux Questions (FAQ)",
-      faqQ1: "Comment fonctionne TextCount.net ?",
-      faqA1: "TextCount.net calcule les caractères et les mots en temps réel directement dans votre navigateur en toute confidentialité.",
-      faqQ2: "Pourquoi suivre les limites de caractères pour le SEO ?",
-      faqA2: "Google tronque les balises de titre de plus de 60 caractères et les méta-descriptions de plus de 160 caractères.",
-      faqQ3: "Est-ce gratuit ?",
-      faqA3: "Oui, TextCount.net est 100% gratuit et illimité.",
-      copyBtn: "Copier le texte",
-      copiedBtn: "Copié !",
-      clearBtn: "Tout effacer",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Tous droits réservés",
-      unitSec: "sec",
-      unitMin: "min"
-    },
-    es: {
-      heading: "Contador de Caracteres y Palabras",
-      subheading: "Herramienta gratuita para analizar textos para creadores y especialistas",
-      placeholder: "Empieza a escribir o pega tu texto aquí...",
-      cleanSpacesBtn: "✨ Limpiar espacios",
-      uppercaseBtn: "MAYÚSCULAS",
-      lowercaseBtn: "minúsculas",
-      titlecaseBtn: "Tipo Título",
-      statCharsWithSpaces: "Caracteres (con espacios)",
-      statCharsNoSpaces: "Caracteres (sin espacios)",
-      statWords: "Palabras",
-      statLines: "Líneas",
-      readingTimeLabel: "⏱️ Tiempo de lectura:",
-      speakingTimeLabel: "🎙️ Tiempo de discurso:",
-      keywordDensityTitle: "📊 Densidad de palabras clave",
-      keywordPrompt: "Empieza a escribir para analizar palabras clave...",
-      noKeywordsFound: "Aún no se encontraron palabras clave relevantes.",
-      limitsTitle: "Límites de plataforma",
-      limitGoogleTitle: "Título Google Meta",
-      limitGoogleDesc: "Descripción Google Meta",
-      limitX: "Publicación en X",
-      limitTikTok: "Subtítulo de TikTok",
-      faqTitle: "Preguntas Frecuentes (FAQ)",
-      faqQ1: "¿Cómo funciona TextCount.net?",
-      faqA1: "Calcula caracteres, palabras y líneas en tiempo real directamente en tu navegador sin guardar datos.",
-      faqQ2: "¿Por qué son importantes los límites para SEO?",
-      faqA2: "Los motores de búsqueda como Google truncan títulos de más de 60 caracteres y descripciones de más de 160.",
-      faqQ3: "¿Es de uso gratuito?",
-      faqA3: "Sí, es 100% gratuito e ilimitado.",
-      copyBtn: "Copiar texto",
-      copiedBtn: "¡Copiado!",
-      clearBtn: "Borrar todo",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Todos los derechos reservados",
-      unitSec: "seg",
-      unitMin: "min"
-    },
-    it: {
-      heading: "Conteggio Caratteri e Parole",
-      subheading: "Strumento gratuito per analizzare i tuoi testi per creator e marketer",
-      placeholder: "Inizia a digitare o incolla il testo qui...",
-      cleanSpacesBtn: "✨ Rimuovi spazi extra",
-      uppercaseBtn: "MAIUSCOLO",
-      lowercaseBtn: "minuscolo",
-      titlecaseBtn: "Iniziali Maiuscole",
-      statCharsWithSpaces: "Caratteri (con spazi)",
-      statCharsNoSpaces: "Caratteri (senza spazi)",
-      statWords: "Parole",
-      statLines: "Righe",
-      readingTimeLabel: "⏱️ Tempo di lettura:",
-      speakingTimeLabel: "🎙️ Tempo di discorso:",
-      keywordDensityTitle: "📊 Densità parole chiave",
-      keywordPrompt: "Digita per analizzare la densità delle parole...",
-      noKeywordsFound: "Nessuna parola chiave rilevante trovata.",
-      limitsTitle: "Limiti della piattaforma",
-      limitGoogleTitle: "Meta Titolo Google",
-      limitGoogleDesc: "Meta Descrizione Google",
-      limitX: "Post su X",
-      limitTikTok: "Didascalia TikTok",
-      faqTitle: "Domande Frequenti (FAQ)",
-      faqQ1: "Come funziona TextCount.net?",
-      faqA1: "Calcola caratteri e parole in tempo reale nel tuo browser garantendo la massima privacy.",
-      faqQ2: "Perché i limiti di caratteri sono importanti per il SEO?",
-      faqA2: "Google tronca i titoli superiori a 60 caratteri e le meta descrizioni superiori a 160 caratteri.",
-      faqQ3: "È gratuito?",
-      faqA3: "Sì, TextCount.net è gratuito al 100%.",
-      copyBtn: "Copia testo",
-      copiedBtn: "Copiato!",
-      clearBtn: "Cancella tutto",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Tutti i diritti riservati",
-      unitSec: "sec",
-      unitMin: "min"
-    },
-    nl: {
-      heading: "Tekens- en Woordenteller",
-      subheading: "Gratis online tool om uw tekst te analyseren voor makers en marketeers",
-      placeholder: "Begin met typen of plak uw tekst hier...",
-      cleanSpacesBtn: "✨ Extra spaties wissen",
-      uppercaseBtn: "HOOFDLETTERS",
-      lowercaseBtn: "kleine letters",
-      titlecaseBtn: "Titel Hoofdletters",
-      statCharsWithSpaces: "Tekens (met spaties)",
-      statCharsNoSpaces: "Tekens (zonder spaties)",
-      statWords: "Woorden",
-      statLines: "Regels",
-      readingTimeLabel: "⏱️ Leestijd:",
-      speakingTimeLabel: "🎙️ Spreektijd:",
-      keywordDensityTitle: "📊 Zoekwoorddichtheid",
-      keywordPrompt: "Typ om zoekwoorddichtheid te bekijken...",
-      noKeywordsFound: "Nog geen relevante zoekwoorden gevonden.",
-      limitsTitle: "Platformlimieten",
-      limitGoogleTitle: "Google Meta Titel",
-      limitGoogleDesc: "Google Meta Beschrijving",
-      limitX: "X Bericht",
-      limitTikTok: "TikTok Bijschrift",
-      faqTitle: "Veelgestelde Vragen (FAQ)",
-      faqQ1: "Hoe werkt TextCount.net?",
-      faqA1: "TextCount.net telt tekens en woorden direct in uw browser zonder gegevens op te slaan.",
-      faqQ2: "Waarom zijn karakterlimieten belangrijk voor SEO?",
-      faqA2: "Google kapt titels langer dan 60 tekens en beschrijvingen langer dan 160 tekens af.",
-      faqQ3: "Is het gratis?",
-      faqA3: "Ja, TextCount.net is 100% gratis.",
-      copyBtn: "Tekst kopiëren",
-      copiedBtn: "Gekopieerd!",
-      clearBtn: "Alles wissen",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Alle rechten voorbehouden",
-      unitSec: "sec",
-      unitMin: "min"
-    },
-    tr: {
-      heading: "Karakter ve Kelime Sayacı",
-      subheading: "İçerik üreticileri ve pazarlamacılar için ücretsiz metin analiz aracı",
-      placeholder: "Yazmaya başlayın veya metninizi buraya yapıştırın...",
-      cleanSpacesBtn: "✨ Fazla Boşlukları Temizle",
-      uppercaseBtn: "BÜYÜK HARF",
-      lowercaseBtn: "küçük harf",
-      titlecaseBtn: "Başlık Düzeni",
-      statCharsWithSpaces: "Karakter (boşluklu)",
-      statCharsNoSpaces: "Karakter (boşluksuz)",
-      statWords: "Kelime",
-      statLines: "Satır",
-      readingTimeLabel: "⏱️ Okuma Süresi:",
-      speakingTimeLabel: "🎙️ Konuşma Süresi:",
-      keywordDensityTitle: "📊 Anahtar Kelime Yoğunluğu",
-      keywordPrompt: "Yoğunluğu görmek için yazmaya başlayın...",
-      noKeywordsFound: "Henüz öne çıkan anahtar kelime bulunamadı.",
-      limitsTitle: "Platform Sınırları",
-      limitGoogleTitle: "Google Meta Başlık",
-      limitGoogleDesc: "Google Meta Açıklama",
-      limitX: "X Gönderisi",
-      limitTikTok: "TikTok Açıklaması",
-      faqTitle: "Sıkça Sorulan Sorular (SSS)",
-      faqQ1: "TextCount.net nasıl çalışır?",
-      faqA1: "Metninizi doğrudan tarayıcınızda anlık olarak analiz eder, hiçbir veriyi sunuculara kaydetmez.",
-      faqQ2: "Karakter sınırları SEO için neden önemlidir?",
-      faqA2: "Google, 60 karakterden uzun başlıkları ve 160 karakterden uzun açıklamaları keser.",
-      faqQ3: "Kullanımı ücretsiz mi?",
-      faqA3: "Evet, TextCount.net %100 ücretsizdir.",
-      copyBtn: "Metni Kopyala",
-      copiedBtn: "Kopyalandı!",
-      clearBtn: "Tümünü Temizle",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Tüm hakları saklıdır",
-      unitSec: "sn",
-      unitMin: "dk"
-    },
-    pt: {
-      heading: "Contador de Caracteres e Palavras",
-      subheading: "Ferramenta gratuita para analisar textos para criadores e profissionais",
-      placeholder: "Comece a digitar ou cole seu texto aqui...",
-      cleanSpacesBtn: "✨ Limpar Espaços Extras",
-      uppercaseBtn: "MAIÚSCULAS",
-      lowercaseBtn: "minúsculas",
-      titlecaseBtn: "Primeira Maiúscula",
-      statCharsWithSpaces: "Caracteres (com espaços)",
-      statCharsNoSpaces: "Caracteres (sem espaços)",
-      statWords: "Palavras",
-      statLines: "Linhas",
-      readingTimeLabel: "⏱️ Tempo de leitura:",
-      speakingTimeLabel: "🎙️ Tempo de fala:",
-      keywordDensityTitle: "📊 Densidade de palavras-chave",
-      keywordPrompt: "Digite para ver a análise de palavras-chave...",
-      noKeywordsFound: "Nenhuma palavra-chave relevante encontrada.",
-      limitsTitle: "Limites de Plataforma",
-      limitGoogleTitle: "Meta Título do Google",
-      limitGoogleDesc: "Meta Descrição do Google",
-      limitX: "Publicação no X",
-      limitTikTok: "Legenda do TikTok",
-      faqTitle: "Perguntas Frequentes (FAQ)",
-      faqQ1: "Como o TextCount.net funciona?",
-      faqA1: "Ele calcula caracteres e palavras em tempo real diretamente no seu navegador em total privacidade.",
-      faqQ2: "Por que limites de caracteres importam no SEO?",
-      faqA2: "O Google trunca títulos com mais de 60 caracteres e descrições com mais de 160 caracteres.",
-      faqQ3: "É gratuito?",
-      faqA3: "Sim, o TextCount.net é 100% gratuito.",
-      copyBtn: "Copiar Texto",
-      copiedBtn: "Copiado!",
-      clearBtn: "Limpar Tudo",
-      blogLink: "Blog",
-      footer: "© 2026 TextCount.net — Todos os direitos reservados",
-      unitSec: "seg",
-      unitMin: "min"
-    },
-    ru: {
-      heading: "Счетчик Символов и Слов",
-      subheading: "Бесплатный инструмент для анализа текста маркетологам и авторам",
-      placeholder: "Начните вводить текст или вставьте его сюда...",
-      cleanSpacesBtn: "✨ Удалить лишние пробелы",
-      uppercaseBtn: "ПРОПИСНЫЕ",
-      lowercaseBtn: "строчные",
-      titlecaseBtn: "Как В Заголовках",
-      statCharsWithSpaces: "Символов (с пробелами)",
-      statCharsNoSpaces: "Символов (без пробелов)",
-      statWords: "Слов",
-      statLines: "Строк",
-      readingTimeLabel: "⏱️ Время чтения:",
-      speakingTimeLabel: "🎙️ Время произношения:",
-      keywordDensityTitle: "📊 Плотность ключевых слов",
-      keywordPrompt: "Начните ввод для анализа ключевых слов...",
-      noKeywordsFound: "Ключевые слова пока не найдены.",
-      limitsTitle: "Ограничения платформ",
-      limitGoogleTitle: "Google Meta Заголовок",
-      limitGoogleDesc: "Google Meta Описание",
-      limitX: "Пост в X",
-      limitTikTok: "Подпись в TikTok",
-      faqTitle: "Часто Задаваемые Вопросы (FAQ)",
-      faqQ1: "Как работает TextCount.net?",
-      faqA1: "Сервис моментально считает символы прямо в вашем браузере, не сохраняя введенные данные.",
-      faqQ2: "Почему лимиты символов важны для SEO?",
-      faqA2: "Поисковики вроде Google обрезают заголовки длиннее 60 символов и описания длиннее 160 символов.",
-      faqQ3: "Это бесплатно?",
-      faqA3: "Да, TextCount.net на 100% бесплатен.",
-      copyBtn: "Копировать",
-      copiedBtn: "Скопировано!",
-      clearBtn: "Очистить всё",
-      blogLink: "Блог",
-      footer: "© 2026 TextCount.net — Все права защищены",
-      unitSec: "сек",
-      unitMin: "мин"
-    },
-    zh: {
-      heading: "字符与字数统计器",
-      subheading: "为内容创作者和出海创作者打造的免费文本实时分析工具",
-      placeholder: "在此处开始输入或粘贴您的文本...",
-      cleanSpacesBtn: "✨ 清理多余空格",
-      uppercaseBtn: "转换为大写",
-      lowercaseBtn: "转换为小写",
-      titlecaseBtn: "首字母大写",
-      statCharsWithSpaces: "字符数 (含空格)",
-      statCharsNoSpaces: "字符数 (不含空格)",
-      statWords: "词数/字数",
-      statLines: "行数",
-      readingTimeLabel: "⏱️ 预计阅读时间:",
-      speakingTimeLabel: "🎙️ 预计朗读时间:",
-      keywordDensityTitle: "📊 关键词密度分析 (SEO)",
-      keywordPrompt: "开始输入以查看关键词密度分析...",
-      noKeywordsFound: "暂未发现突出关键词。",
-      limitsTitle: "社交平台字数限制",
-      limitGoogleTitle: "Google Meta 标题",
-      limitGoogleDesc: "Google Meta 描述",
-      limitX: "X (Twitter) 帖子",
-      limitTikTok: "TikTok 文案限制",
-      faqTitle: "常见问题解答 (FAQ)",
-      faqQ1: "TextCount.net 是如何工作的？",
-      faqA1: "TextCount.net 直接在您的浏览器中实时计算字符和词数，保证隐私安全。",
-      faqQ2: "为什么字符限制对 SEO 如此重要？",
-      faqA2: "Google 会截断超过 60 个字符的标题和超过 160 个字符的 Meta 描述。",
-      faqQ3: "该工具免费吗？",
-      faqA3: "是的，TextCount.net 100% 免费且无使用限制。",
-      copyBtn: "复制文本",
-      copiedBtn: "已复制！",
-      clearBtn: "清空所有",
-      blogLink: "博客",
-      footer: "© 2026 TextCount.net — 保留所有权利",
-      unitSec: "秒",
-      unitMin: "分"
-    },
-    ja: {
-      heading: "文字数＆単語数 counters",
-      subheading: "コンテンツクリエイターのためのリアルタイム無料テキスト解析ツール",
-      placeholder: "ここにテキストを入力または貼り付け...",
-      cleanSpacesBtn: "✨ 余分なスペースを削除",
-      uppercaseBtn: "大文字に変換",
-      lowercaseBtn: "小文字に変換",
-      titlecaseBtn: "先頭を大文字",
-      statCharsWithSpaces: "文字数 (スペース込み)",
-      statCharsNoSpaces: "文字数 (スペースなし)",
-      statWords: "単語数",
-      statLines: "行数",
-      readingTimeLabel: "⏱️ 読了目安時間:",
-      speakingTimeLabel: "🎙️ 朗読目安時間:",
-      keywordDensityTitle: "📊 キーワード出現頻度 (SEO)",
-      keywordPrompt: "入力するとキーワード分析が表示されます...",
-      noKeywordsFound: "特徴的なキーワードは見つかりませんでした。",
-      limitsTitle: "プラットフォームの制限",
-      limitGoogleTitle: "Google Meta タイトル",
-      limitGoogleDesc: "Google Meta 説明文",
-      limitX: "X (Twitter) 投稿",
-      limitTikTok: "TikTok キャプション",
-      faqTitle: "よくある質問 (FAQ)",
-      faqQ1: "TextCount.net の仕組みは？",
-      faqA1: "ブラウザ上でリアルタイムに文字数を計算します。入力データは一切保存されません。",
-      faqQ2: "なぜSEOで文字数制限が重要ですか？",
-      faqA2: "Googleは60文字を超えるタイトルや160文字を超える説明文を省略して表示するためです。",
-      faqQ3: "無料で利用できますか？",
-      faqA3: "はい、TextCount.net は100%無料で制限なく利用できます。",
-      copyBtn: "テキストをコピー",
-      copiedBtn: "コピー完了！",
-      clearBtn: "すべてクリア",
-      blogLink: "ブログ",
-      footer: "© 2026 TextCount.net — All rights reserved",
-      unitSec: "秒",
-      unitMin: "分"
-    },
-    hi: {
-      heading: "अक्षर और शब्द काउंटर",
-      subheading: "कंटेंट रचनाकारों और विपणनकर्ताओं के लिए नि:शुल्क टेक्स्ट विश्लेषण टूल",
-      placeholder: "यहाँ लिखना शुरू करें या टेक्स्ट पेस्ट करें...",
-      cleanSpacesBtn: "✨ अतिरिक्त स्थान हटाएँ",
-      uppercaseBtn: "बड़े अक्षर (UPPER)",
-      lowercaseBtn: "छोटे अक्षर (lower)",
-      titlecaseBtn: "शीर्षक केस (Title)",
-      statCharsWithSpaces: "कुल अक्षर (स्पेस सहित)",
-      statCharsNoSpaces: "अक्षर (बिना स्पेस)",
-      statWords: "कुल शब्द",
-      statLines: "पंक्तियाँ (Lines)",
-      readingTimeLabel: "⏱️ पढ़ने का समय:",
-      speakingTimeLabel: "🎙️ बोलने का समय:",
-      keywordDensityTitle: "📊 कीवर्ड घनत्व (SEO Density)",
-      keywordPrompt: "कीवर्ड विश्लेषण देखने के लिए टाइप करना शुरू करें...",
-      noKeywordsFound: "अभी तक कोई प्रमुख कीवर्ड नहीं मिला।",
-      limitsTitle: "प्लेटफ़ॉर्म सीमाएँ",
-      limitGoogleTitle: "गूगल मेटा शीर्षक",
-      limitGoogleDesc: "गूगल मेटा विवरण",
-      limitX: "X पोस्ट",
-      limitTikTok: "टिकटॉक कैप्शन",
-      faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
-      faqQ1: "TextCount.net कैसे काम करता है?",
-      faqA1: "यह टूल आपके ब्राउज़र में रीयल-टाइम में टेक्स्ट की गणना करता है। आपका डेटा सुरक्षित रहता है।",
-      faqQ2: "SEO के लिए वर्ण सीमाएँ क्यों आवश्यक हैं?",
-      faqA2: "गूगल 60 अक्षरों से अधिक के शीर्षकों और 160 अक्षरों से अधिक के विवरणों को काट देता है।",
-      faqQ3: "क्या यह मुफ़्त है?",
-      faqA3: "हाँ, TextCount.net 100% मुफ़्त है।",
-      copyBtn: "टेक्स्ट कॉपी करें",
-      copiedBtn: "कॉपी हो गया!",
-      clearBtn: "सब साफ़ करें",
-      blogLink: "ब्लॉग",
-      footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित",
-      unitSec: "सेकंड",
-      unitMin: "मिनट"
-    },
-    bn: {
-      heading: "অক্ষর এবং শব্দ কাউন্টার",
-      subheading: "মার্কেটার এবং কনটেন্ট নির্মাতাদের জন্য একটি তাত্ক্ষণিক বিনামূল্যে টেক্সট টুল",
-      placeholder: "এখানে টাইপ করুন বা টেক্সট পেস্ট করুন...",
-      cleanSpacesBtn: "✨ অতিরিক্ত স্পেস সরান",
-      uppercaseBtn: "বড় হাতের অক্ষর",
-      lowercaseBtn: "ছোট হাতের অক্ষর",
-      titlecaseBtn: "টাইটেল কেস",
-      statCharsWithSpaces: "মোট অক্ষর (স্পেসসহ)",
-      statCharsNoSpaces: "অক্ষর (স্পেস ছাড়া)",
-      statWords: "শব্দ সংখ্যা",
-      statLines: "লাইন সংখ্যা",
-      readingTimeLabel: "⏱️ পড়ার সময়:",
-      speakingTimeLabel: "🎙️ কথা বলার সময়:",
-      keywordDensityTitle: "📊 কীওয়ার্ড ঘনত্ব (SEO)",
-      keywordPrompt: "কীওয়ার্ড বিশ্লেষণ দেখতে টাইপ করা শুরু করুন...",
-      noKeywordsFound: "এখনো কোনো প্রধান কীওয়ার্ড পাওয়া যায়নি।",
-      limitsTitle: "প্ল্যাটফর্ম সীমা",
-      limitGoogleTitle: "গুগল মেটা টাইটেল",
-      limitGoogleDesc: "গুগল মেটা বিবরণ",
-      limitX: "X পোস্ট",
-      limitTikTok: "টিকটক ক্যাপশন",
-      faqTitle: "সাধারণ জিজ্ঞাসা (FAQ)",
-      faqQ1: "TextCount.net কীভাবে কাজ করে?",
-      faqA1: "এটি আপনার ব্রাউজারে রিয়েল-টাইমে অক্ষর এবং শব্দ গণনা করে সম্পূর্ণ গোপনীয়তার সাথে।",
-      faqQ2: "SEO এর জন্য সীমার হিসাব রাখা কেন গুরুত্বপূর্ণ?",
-      faqA2: "গুগল ৬০ অক্ষরের বেশি শিরোনাম এবং ১৬০ অক্ষরের বেশি মেটা বিবরণ কেটে প্রদর্শন করে।",
-      faqQ3: "এটি কি বিনামূল্যে ব্যবহারযোগ্য?",
-      faqA3: "হ্যাঁ, TextCount.net ১০০% বিনামূল্যে ব্যবহারযোগ্য।",
-      copyBtn: "অনুলিপি করুন",
-      copiedBtn: "অনুলিপি করা হয়েছে!",
-      clearBtn: "সব মুছুন",
-      blogLink: "ব্লগ",
-      footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত",
-      unitSec: "সেকেন্ড",
-      unitMin: "মিনিট"
-    },
-    ur: {
-      heading: "حروف اور الفاظ کا کاؤنٹر",
-      subheading: "مواد تخلیق کاروں کے لیے متن کا تجزیہ کرنے والا مفت اور فوری ٹول",
-      placeholder: "یہاں لکھنا شروع کریں یا اپنا متن پیسٹ کریں...",
-      cleanSpacesBtn: "✨ اضافی فاصلے ختم کریں",
-      uppercaseBtn: "بڑے حروف (UPPER)",
-      lowercaseBtn: "چھوٹے حروف (lower)",
-      titlecaseBtn: "ٹائٹل کیس (Title)",
-      statCharsWithSpaces: "کل حروف (اسپیس کے ساتھ)",
-      statCharsNoSpaces: "حروف (بغیر اسپیس)",
-      statWords: "الفاظ",
-      statLines: "سطور",
-      readingTimeLabel: "⏱️ پڑھنے کا وقت:",
-      speakingTimeLabel: "🎙️ بولنے کا وقت:",
-      keywordDensityTitle: "📊 اہم الفاظ کی کثافت (SEO)",
-      keywordPrompt: "تجزیہ دیکھنے کے لیے لکھنا شروع کریں...",
-      noKeywordsFound: "ابھی تک کوئی اہم کی ورڈ نہیں ملا۔",
-      limitsTitle: "پلیٹ فارم کی حدیں",
-      limitGoogleTitle: "گوگل میٹا ٹائٹل",
-      limitGoogleDesc: "گوگل میٹا ڈسکرپشن",
-      limitX: "ایکس (ٹوئٹر) پوسٹ",
-      limitTikTok: "ٹک ٹاک کیپشن",
-      faqTitle: "بثرت پوچھے گئے سوالات (FAQ)",
-      faqQ1: "TextCount.net کیسے کام کرتا ہے؟",
-      faqA1: "یہ ٹول آپ کے براؤزر میں فوری طور پر الفاظ اور حروف کا شمار کرتا ہے بغیر کسی ڈیٹا کے ذخیرہ کے۔",
-      faqQ2: "SEO کے لیے حروف کی حد کا خیال رکھنا کیوں ضروری ہے؟",
-      faqA2: "گوگل 60 حروف سے زیادہ ٹائٹل اور 160 حروف سے زیادہ میٹا ڈسکرپشن کو کاٹ دیتا ہے۔",
-      faqQ3: "کیا یہ ٹول مفت ہے؟",
-      faqA3: "جی ہاں، TextCount.net بالکل 100% مفت ہے۔",
-      copyBtn: "کاپی کریں",
-      copiedBtn: "کاپی ہو گیا!",
-      clearBtn: "سب صاف کریں",
-      blogLink: "بلاگ",
-      footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں",
-      unitSec: "سیکنڈ",
-      unitMin: "منٹ"
-    }
-  };
-
-  var stopWordsDb = {
-    ar: ["في", "من", "على", "أن", "عن", "كان", "إلى", "هذا", "هذه", "مع", "التي", "الذي", "أو", "لا", "ما", "هو", "هي"],
-    en: ["the", "and", "to", "a", "of", "in", "i", "is", "that", "it", "on", "you", "this", "for", "with", "my", "has", "or", "at", "be", "was", "an", "are", "from", "as", "by", "not"],
-    de: ["und", "die", "der", "das", "dass", "ist", "in", "zu", "den", "mit", "von", "für", "auf", "ein", "eine", "nicht", "dem"],
-    fr: ["et", "de", "le", "la", "les", "un", "une", "des", "en", "est", "dans", "pour", "que", "qui", "pas", "sur", "du"],
-    es: ["y", "de", "el", "la", "los", "las", "un", "una", "en", "que", "es", "por", "para", "con", "no", "del", "su"],
-    it: ["e", "di", "il", "la", "che", "in", "un", "una", "per", "sono", "con", "da", "non", "del", "dei", "se"],
-    nl: ["en", "van", "de", "het", "een", "in", "is", "dat", "op", "met", "voor", "niet", "om", "ook", "als"],
-    tr: ["ve", "bir", "bu", "da", "de", "için", "ile", "o", "kadar", "daha", "gibi", "çok", "var", "yok"],
-    pt: ["e", "de", "o", "a", "os", "as", "um", "uma", "em", "que", "é", "por", "para", "com", "não", "do", "da"],
-    ru: ["и", "в", "не", "на", "я", "с", "что", "по", "пользователя", "это", "как", "из", "за", "от"],
-    zh: ["的", "了", "在", "是", "我", "有", "和", "就", "不", "人", "都", "一", "一个", "上", "也", "很", "到"],
-    ja: ["の", "に", "は", "を", "た", "が", "で", "て", "と", "し", "れ", "さ", "ある", "いる", "も", "する"],
-    hi: ["और", "का", "एक", "में", "की", "है", "यह", "के", "से", "पर", "को", "ने", "हो", "तो", "भी"],
-    bn: ["এবং", "এর", "একটি", "এ", "করে", "হলো", "এই", "থেকে", "কে", "তা", "না", "বা", "জন্য"],
-    ur: ["اور", "کا", "ایک", "میں", "کی", "ہے", "یہ", "کے", "سے", "پر", "کو", "نے", "ہو", "تو", "بھی"]
-  };
-
-  var textInput = document.getElementById("text-input");
-  var langSelect = document.getElementById("lang-select");
-
-  function getLang() {
-    var params = new URLSearchParams(window.location.search);
-    var urlLang = params.get("lang");
-    if (urlLang && translations[urlLang]) return urlLang;
-    var navLang = (navigator.language || "").slice(0, 2).toLowerCase();
-    if (translations[navLang]) return navLang;
-    return "en";
-  }
-
-  function setLanguage(lang) {
-    var data = translations[lang] || translations.en;
-    document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+    };
+  </script>
+  <style>
+    /* إخفاء شريط جوجل العلوي وتصحيح الإزاحة */
+    .goog-te-banner-frame.skiptranslate { display: none !important; }
+    body { top: 0px !important; }
     
-    document.title = (data.heading || "Character & Word Counter") + " | TextCount.net";
-    textInput.placeholder = data.placeholder;
-
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n");
-      if (data[key]) el.textContent = data[key];
-    });
-
-    langSelect.value = lang;
-    updateStats();
-  }
-
-  function formatTime(seconds, lang) {
-    var data = translations[lang] || translations.en;
-    if (seconds < 60) return seconds + " " + data.unitSec;
-    var mins = Math.floor(seconds / 60);
-    var secs = seconds % 60;
-    return mins + " " + data.unitMin + (secs > 0 ? " " + secs + " " + data.unitSec : "");
-  }
-
-  function updateStats() {
-    var currentLang = langSelect.value;
-    var text = textInput.value;
-    var charsWith = text.length;
-    var charsNo = text.replace(/\s/g, "").length;
-    var wordsArr = text.trim() === "" ? [] : text.trim().split(/\s+/);
-    var words = wordsArr.length;
-    var lines = text === "" ? 0 : text.split(/\r\n|\r|\n/).length;
-
-    document.getElementById("stat-chars-with-spaces").textContent = charsWith.toLocaleString();
-    document.getElementById("stat-chars-no-spaces").textContent = charsNo.toLocaleString();
-    document.getElementById("stat-words").textContent = words.toLocaleString();
-    document.getElementById("stat-lines").textContent = lines.toLocaleString();
-
-    var readSecs = Math.ceil((words / 200) * 60);
-    var speakSecs = Math.ceil((words / 130) * 60);
-    document.getElementById("reading-time").textContent = formatTime(readSecs, currentLang);
-    document.getElementById("speaking-time").textContent = formatTime(speakSecs, currentLang);
-
-    updateKeywordDensity(wordsArr, currentLang);
-
-    updateLimit("googleTitle", charsWith, 60);
-    updateLimit("googleDesc", charsWith, 160);
-    updateLimit("xPost", charsWith, 280);
-    updateLimit("tiktok", charsWith, 2200);
-  }
-
-  function updateKeywordDensity(wordsArr, currentLang) {
-    var listEl = document.getElementById("keywords-list");
-    var data = translations[currentLang] || translations.en;
-
-    if (wordsArr.length === 0) {
-      listEl.innerHTML = '<p class="text-slate-500 text-sm">' + data.keywordPrompt + '</p>';
-      return;
+    /* تخصيص مظهر قائمة الاختيار لتناسب القالب الداكن */
+    .goog-te-gadget-simple {
+      background-color: #1e293b !important;
+      border: 1px solid #334155 !important;
+      padding: 4px 8px !important;
+      border-radius: 0.5rem !important;
+      font-size: 0.875rem !important;
     }
-
-    var freq = {};
-    var stops = stopWordsDb[currentLang] || stopWordsDb.en;
-
-    wordsArr.forEach(function(w) {
-      var clean = w.toLowerCase().replace(/[^\w\u0600-\u06FF\u0750-\u077F\u0900-\u097F\u0980-\u09FF\u3040-\u30FF\u4E00-\u9FFF]/g, "");
-      if (clean.length > 1 && !stops.includes(clean)) {
-        freq[clean] = (freq[clean] || 0) + 1;
-      }
-    });
-
-    var sorted = Object.keys(freq).map(function(key) {
-      return [key, freq[key]];
-    }).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 5);
-
-    if (sorted.length === 0) {
-      listEl.innerHTML = '<p class="text-slate-500 text-sm">' + data.noKeywordsFound + '</p>';
-      return;
+    .goog-te-gadget-simple .goog-te-menu-value span {
+      color: #f8fafc !important;
     }
+    .goog-te-gadget-icon { display: none !important; }
+    .goog-te-gadget-simple .goog-te-menu-value {
+      margin: 0 !important;
+    }
+  </style>
+</head>
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+  <!-- Header -->
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <div class="flex items-center gap-4">
+        <a href="/blog.html" class="text-sm text-accent-sky hover:underline">Blog</a>
+        <!-- Google Translate Widget Mount Point -->
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </header>
 
-    var html = "";
-    sorted.forEach(function(item) {
-      var pct = ((item[1] / wordsArr.length) * 100).toFixed(1);
-      html += '<div class="flex items-center justify-between text-sm">' +
-        '<span class="font-medium text-slate-200">' + item[0] + '</span>' +
-        '<div class="flex items-center gap-3">' +
-          '<span class="text-xs text-slate-400 font-mono-nums">' + item[1] + ' (' + pct + '%)</span>' +
-          '<div class="w-24 h-1.5 bg-base-dark rounded-full overflow-hidden border border-border-dark">' +
-            '<div class="h-full bg-accent-sky" style="width:' + Math.min(pct * 5, 100) + '%"></div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
+  <!-- Main Content / Main Tool Container -->
+  <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-50 mb-3">Real-Time Word & Character Counter</h1>
+      <p class="text-slate-400 text-sm md:text-base max-w-xl mx-auto">Analyze your text metrics, estimate reading and speech duration, and optimize content for SEO & social media limits instantly.</p>
+    </div>
+
+    <!-- Live Counter Card -->
+    <div class="bg-card-dark border border-border-dark rounded-xl p-6 shadow-xl mb-8">
+      <textarea 
+        id="text-input" 
+        rows="8" 
+        placeholder="Type or paste your content here..." 
+        class="w-full bg-base-dark text-slate-100 placeholder-slate-500 border border-border-dark rounded-lg p-4 focus:outline-none focus:border-accent-sky transition resize-y text-base mb-6"
+      ></textarea>
+
+      <!-- Counter Metrics Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div class="bg-base-dark p-4 rounded-lg border border-border-dark">
+          <span class="block text-2xl font-bold text-accent-sky" id="word-count">0</span>
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Words</span>
+        </div>
+        <div class="bg-base-dark p-4 rounded-lg border border-border-dark">
+          <span class="block text-2xl font-bold text-accent-sky" id="char-count">0</span>
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Characters</span>
+        </div>
+        <div class="bg-base-dark p-4 rounded-lg border border-border-dark">
+          <span class="block text-2xl font-bold text-accent-sky" id="reading-time">0m</span>
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Reading Time</span>
+        </div>
+        <div class="bg-base-dark p-4 rounded-lg border border-border-dark">
+          <span class="block text-2xl font-bold text-accent-sky" id="speaking-time">0m</span>
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Speaking Time</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
+    <p>© 2026 TextCount.net — All rights reserved</p>
+  </footer>
+
+  <!-- Basic Counter Script -->
+  <script>
+    const textInput = document.getElementById('text-input');
+    const wordCountEl = document.getElementById('word-count');
+    const charCountEl = document.getElementById('char-count');
+    const readingTimeEl = document.getElementById('reading-time');
+    const speakingTimeEl = document.getElementById('speaking-time');
+
+    textInput.addEventListener('input', () => {
+      const text = textInput.value;
+      const characters = text.length;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      
+      // Average reading speed: 200 wpm, speaking speed: 130 wpm
+      const readMins = Math.ceil(words / 200);
+      const speakMins = Math.ceil(words / 130);
+
+      charCountEl.textContent = characters;
+      wordCountEl.textContent = words;
+      readingTimeEl.textContent = `${words > 0 ? readMins : 0}m`;
+      speakingTimeEl.textContent = `${words > 0 ? speakMins : 0}m`;
     });
-    listEl.innerHTML = html;
-  }
+  </script>
 
-  function updateLimit(id, val, max) {
-    var countEl = document.getElementById("count-" + id);
-    var barEl = document.getElementById("bar-" + id);
-    countEl.textContent = val + " / " + max;
-    var pct = Math.min((val / max) * 100, 100);
-    barEl.style.width = pct + "%";
-    barEl.className = val > max ? "h-full bg-red-500 transition-all duration-300" : "h-full bg-accent-sky transition-all duration-300";
-  }
-
-  document.getElementById("btn-clean-spaces").addEventListener("click", function() {
-    textInput.value = textInput.value.replace(/\s+/g, ' ').trim();
-    updateStats();
-  });
-  document.getElementById("btn-uppercase").addEventListener("click", function() {
-    textInput.value = textInput.value.toUpperCase();
-    updateStats();
-  });
-  document.getElementById("btn-lowercase").addEventListener("click", function() {
-    textInput.value = textInput.value.toLowerCase();
-    updateStats();
-  });
-  document.getElementById("btn-titlecase").addEventListener("click", function() {
-    textInput.value = textInput.value.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    updateStats();
-  });
-
-  document.getElementById("clear-btn").addEventListener("click", function () {
-    textInput.value = "";
-    updateStats();
-  });
-
-  document.getElementById("copy-btn").addEventListener("click", function () {
-    if(!textInput.value) return;
-    navigator.clipboard.writeText(textInput.value).then(function() {
-      var label = document.getElementById("copy-btn-label");
-      var original = label.textContent;
-      var currentLang = langSelect.value;
-      label.textContent = (translations[currentLang] || translations.en).copiedBtn;
-      setTimeout(function() { label.textContent = original; }, 2000);
-    });
-  });
-
-  langSelect.addEventListener("change", function () {
-    var lang = this.value;
-    var url = new URL(window.location);
-    url.searchParams.set("lang", lang);
-    window.history.pushState({}, "", url);
-    setLanguage(lang);
-  });
-
-  textInput.addEventListener("input", updateStats);
-
-  var initLang = getLang();
-  setLanguage(initLang);
-
-})();
-</script>
+  <!-- Google Translate Widget Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
