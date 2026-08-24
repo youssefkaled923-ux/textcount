@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - TextCount.net</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-1">
+    <h1 class="text-3xl font-bold text-slate-50 mb-6">About Us</h1>
+    <p class="text-slate-400 mb-8">Empowering writers, students, and SEO professionals with fast, private text analysis tools.</p>
+
+    <div class="space-y-6 text-slate-300 leading-relaxed">
+      <section>
+        <h2 class="text-xl font-semibold text-slate-100 mb-2">Our Mission</h2>
+        <p>At TextCount.net, our goal is to provide a fast, reliable, and privacy-focused utility tool for counting words, characters, sentences, and paragraphs in real time. We believe that simple online tools should be completely free, lightweight, and respectful of user data.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-100 mb-2">Why Choose TextCount?</h2>
+        <ul class="list-disc list-inside space-y-2 text-slate-300 pl-2">
+          <li><strong class="text-slate-100">100% Privacy-First:</strong> All text calculations happen client-side in your web browser. Your text is never stored, sent to any server, or saved anywhere.</li>
+          <li><strong class="text-slate-100">Multilingual Support:</strong> Designed to work smoothly across 15+ major global languages.</li>
+          <li><strong class="text-slate-100">Blazing Fast Performance:</strong> Built with clean, modern web technologies to load instantly on both mobile devices and desktops.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-100 mb-2">Who We Are</h2>
+        <p>TextCount.net was developed as a lightweight utility project dedicated to enhancing digital content creation. Whether you are crafting social media posts, optimizing articles for SEO, or writing academic essays, our tools are tailored to streamline your workflow without distractions.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-100 mb-2">Get in Touch</h2>
+        <p>Have suggestions or feedback to improve our tool? We’d love to hear from you! Visit our <a href="contact.html" class="text-accent-sky hover:underline">Contact Us</a> page or drop us an email.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
+    <p>© 2026 TextCount.net — All rights reserved</p>
+  </footer>
+</body>
+</html>
