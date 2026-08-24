@@ -19,13 +19,32 @@
   <header class="border-b border-border-dark py-4 px-6">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
-      <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
+      <div class="flex items-center gap-4">
+        <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
+        <select id="lang-select-blog" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-accent-sky">
+          <option value="ar">العربية</option>
+          <option value="en" selected>English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
-    <h1 class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
-    <p class="text-slate-400 mb-8">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
+    <h1 id="blog-title" class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
+    <p id="blog-desc" class="text-slate-400 mb-8">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
 
     <!-- Articles Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -87,5 +106,16 @@
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
     <p>© 2026 TextCount.net — All rights reserved</p>
   </footer>
+
+  <script>
+    document.getElementById('lang-select-blog').addEventListener('change', function() {
+      var lang = this.value;
+      if (lang === 'ar' || lang === 'ur') {
+        document.documentElement.dir = 'rtl';
+      } else {
+        document.documentElement.dir = 'ltr';
+      }
+    });
+  </script>
 </body>
 </html>
