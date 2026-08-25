@@ -60,6 +60,9 @@
   textarea::-webkit-scrollbar-thumb { background-color: #334155; border-radius: 999px; }
   select#lang-select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.65rem center; background-size: 1.1em; }
   html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
+  .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; }
+  .faq-item.active .faq-content { max-height: 500px; }
+  .faq-item.active svg { transform: rotate(180deg); }
 </style>
 </head>
 <body class="bg-base-dark text-slate-100 min-h-screen flex flex-col">
@@ -219,7 +222,7 @@
     </div>
   </div>
 
-  <!-- Expanded Comprehensive Guide & Instructions Section (Enriched with 118+ more words & fully translated) -->
+  <!-- Expanded Comprehensive Guide & Instructions Section -->
   <section class="border-t border-border-dark pt-10 mt-10">
     <h2 data-i18n="guideTitle" class="text-2xl font-bold text-slate-100 mb-6"></h2>
     
@@ -261,7 +264,6 @@
         <p data-i18n="guideP5"></p>
       </div>
 
-      <!-- Newly Added Sub-section to increase word count and depth -->
       <div>
         <h3 data-i18n="guideH6" class="text-lg font-bold text-slate-100 mb-2"></h3>
         <p data-i18n="guideP6"></p>
@@ -269,32 +271,99 @@
     </div>
   </section>
 
-  <!-- Expanded FAQ Section (Added 2 new FAQs for extra depth & fully multilingual) -->
+  <!-- Expanded FAQ Section (Interactive Accordion with Rich Content for Creators) -->
   <section class="border-t border-border-dark pt-10 mt-10">
     <h2 data-i18n="faqTitle" class="text-2xl font-bold text-slate-100 mb-6"></h2>
-    <div class="space-y-4">
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ1" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA1" class="text-slate-400 text-sm leading-relaxed"></p>
+    <div class="space-y-4" id="faq-container">
+      
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ1" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA1"></p>
+        </div>
       </div>
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ2" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA2" class="text-slate-400 text-sm leading-relaxed"></p>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ2" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA2"></p>
+        </div>
       </div>
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ3" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA3" class="text-slate-400 text-sm leading-relaxed"></p>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ3" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA3"></p>
+        </div>
       </div>
-      <!-- Newly Added FAQ 4 -->
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ4" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA4" class="text-slate-400 text-sm leading-relaxed"></p>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ4" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA4"></p>
+        </div>
       </div>
-      <!-- Newly Added FAQ 5 -->
-      <div class="bg-card-dark border border-border-dark rounded-xl p-5">
-        <h3 data-i18n="faqQ5" class="font-bold text-slate-100 text-lg mb-2"></h3>
-        <p data-i18n="faqA5" class="text-slate-400 text-sm leading-relaxed"></p>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ5" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA5"></p>
+        </div>
       </div>
+
+      <!-- FAQ 6 (New Creator-focused) -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ6" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA6"></p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 (New Creator-focused) -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ7" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA7"></p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 (New Creator-focused) -->
+      <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
+        <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
+          <span data-i18n="faqQ8" class="font-bold text-slate-100 text-base md:text-lg"></span>
+          <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+          <p data-i18n="faqA8"></p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -385,17 +454,23 @@
       guideP5: "من خلال ميزة تحليل كثافة الكلمات المفتاحية، تستطيع الأداة استخراج الكلمات الأكثر تكراراً في مقالك مع استبعاد الكلمات الشائعة (Stop Words)، مما يمكنك من تحسين ظهور موقعك في نتائج محركات البحث وزيادة الزيارات العضوية عبر التركيز على الكلمات المستهدفة بشكل احترافي ومدروس.",
       guideH6: "لماذا يعتمد صناع المحتوى على عدادات الكلمات؟",
       guideP6: "يعتمد كتاب المحتوى والمسوقون الرقميون بشكل دائم على أدوات العد اللحظية لضمان التوافق مع متطلبات المنصات المختلفة واختبار سرعة القراءة والإلقاء، مما يساعد في تحسين جودة التدوينات ومنشورات وسائل التواصل الاجتماعي ورفع معدلات التفاعل بفعالية مطلقة دون إهدار للوقت والجهد.",
-      faqTitle: "الأسئلة الشائعة (FAQ)",
-      faqQ1: "كيف تعمل أداة TextCount.net؟",
-      faqA1: "تحسب الأداة الحروف والكلمات والأسطر فورياً داخل متصفحك. لا يتم تخزين أي جزء من نصك أو إرساله لسيرفراتنا لضمان الخصوصية التامة.",
-      faqQ2: "لماذا يعد متابعة حدود الحروف مهماً للـ SEO؟",
-      faqA2: "محركات البحث كجوجل تقطع العناوين التي تتجاوز 60 حرفاً والأوصاف التي تتجاوز 160 حرفاً. الالتزام بالحدود يضمن ظهور نتائجك بوضوح للزوار.",
-      faqQ3: "هل الأداة مجانية بالكامل؟",
-      faqA3: "نعم، الأداة مجانية 100% وبدون أي قيود على الاستخدام للمكتّبين وصنّاع المحتوى.",
-      faqQ4: "هل يتم حفظ النصوص التي أقوم بإدخالها في الأداة؟",
-      faqA4: "لا يتم حفظ أو إرسال أي نص تقم بكتابته أو لصقه؛ حيث تتم جميع عمليات المعالجة والحساب بشكل محلي ومباشر داخل متصفح الإنترنت الخاص بك لضمان الأمان.",
-      faqQ5: "كيف تساعدني أداة قياس وقت القراءة والإلقاء؟",
-      faqA5: "تفيدك هذه الميزة في تقدير الزمن اللازم لقراءة المقال بصمت أو إلقائه صوتياً في مقاطع الفيديو (مثل يوتيوب وتيك توك) بناءً على المعدلات الطبيعية للإنسان.",
+      faqTitle: "الأسئلة الشائعة لصناع المحتوى والكتّاب (FAQ)",
+      faqQ1: "كيف تعمل أداة TextCount.net في حساب الكلمات والحروف؟",
+      faqA1: "تحسب الأداة الحروف والكلمات والأسطر بشكل لحظي داخل متصفحك فور كتابة أو لصق النص. تعتمد الأداة على خوارزميات برمجية دقيقة تفصل بين الكلمات باستخدام المسافات والرموز المعيارية، دون الحاجة لإرسال أي بيانات لخوادم خارجية، مما يضمن سرعة استجابة فائقة وخصوصية كاملة لجميع نصوصك السرية.",
+      faqQ2: "لماذا يعد متابعة حدود الحروف في عناوين وأوصاف جوجل مهماً للـ SEO؟",
+      faqA2: "محركات البحث مثل جوجل تعرض طولاً محدداً لنتائج البحث؛ فعناوين الميتا (Meta Titles) التي تتجاوز 60 حرفاً والأوصاف (Meta Descriptions) التي تتجاوز 160 حرفاً يتم اقتطاعها وإضافتها بـ (...) مما يقلل من جاذبية الرابط ويخفض معدل النقر (CTR). مساعدتك في البقاء ضمن هذه الحدود يضمن ظهور رسالتك التسويقية كاملة للزوار.",
+      faqQ3: "هل هذه الأداة مجانية بالكامل لصناع المحتوى؟",
+      faqA3: "نعم، أداة TextCount.net مجانية بنسبة 100% ودون أي قيود على عدد الكلمات أو مرات الاستخدام. يمكن لكتاب المقالات، الصحفيين، والمسوقين الاستفادة من كافة ميزات التحليل، عداد المنصات، وقياس وقت القراءة بلا توقف وبدون الحاجة لتسجيل حساب أو دفع اشتراكات مالية.",
+      faqQ4: "هل يتم حفظ النصوص والمقالات التي أقوم بإدخالها في الأداة؟",
+      faqA4: "اطمئن تماماً؛ لا يتم حفظ أو تخزين أو نقل أي نص تقم بكتابته أو لصقه في الأداة نهائياً. تتم كافة العمليات الحسابية والتحليلية بشكل محلي (Client-Side) داخل ذاكرة متصفح الإنترنت الخاص بك فقط، مما يوفر بيئة آمنة تماماً للمؤلفين وصناع المحتوى الذين يتعاملون مع مسودات حصرية وسرية.",
+      faqQ5: "كيف تساعدني أداة قياس وقت القراءة والإلقاء في مقاطع الفيديو؟",
+      faqA5: "تعتمد الأداة على متوسط معدل القراءة البشري (200 كلمة في الدقيقة للقراءة الصامتة و130 كلمة في الدقيقة للإلقاء الصوتي). بالنسبة لصناع محتوى يوتيوب وتيك توك، يساعدك هذا المؤشر في معرفة المدة التقريبية التي سيستغرقها السيناريو الخاص بك عند إلقائه صوتياً، مما يسهل ضبط إيقاع الفيديو ومطابقته للمدة المستهدفة.",
+      faqQ6: "ما هي فوائد ميزة تحليل كثافة الكلمات المفتاحية لصناع المحتوى؟",
+      faqA6: "تساعدك ميزة تحليل الكثافة على معرفة أكثر المصطلحات تكراراً في مقالك واستبعاد الكلمات الشائعة تلقائياً. هذا يتيح لك التحقق من أنك تقوم باستهداف الكلمات المفتاحية الرئيسية بنسبة مناسبة (تتراوح عادة بين 1% إلى 2.5%) لتجنب الحشو المفرط (Keyword Stuffing) وضمان تصدر المقال في نتائج محركات البحث.",
+      faqQ7: "هل تدعم الأداة اللغات المختلفة واللغة العربية بشكل صحيح؟",
+      faqA7: "نعم، تم تصميم الأداة بدعم كامل ومتطور للعديد من اللغات العالمية واللغة العربية بما تتضمنه من تشكيل، حروف خاصة، وعلامات ترقيم، بالإضافة إلى دعم الاتجاه من اليمين إلى اليسار (RTL) بشكل مثالي يضمن تجربة استخدام سلسة ومريحة لجميع الكتّاب حول العالم.",
+      faqQ8: "كيف يمكنني استخدام أزرار التنسيق السريع لتحسين كتابتي؟",
+      faqA8: "تتوفر أزرار مساعدة سريعة تتيح لك إزالة المسافات المزدوجة والفراغات الزائدة بضغطة زر، أو تحويل حالة الحروف الإنجليزية إلى أحرف كبيرة (UPPERCASE) أو صغيرة (lowercase)، أو ضبط عناوين المقالات لتصبح بأسلوب الحروف الكبيرة في البداية (Title Case)، مما يوفر عليك وقتاً طويلاً في تدقيق وتنسيق المسودات قبل نشرها.",
       copyBtn: "نسخ النص",
       copiedBtn: "تم النسخ!",
       clearBtn: "مسح الكل",
@@ -460,17 +535,23 @@
       guideP5: "Through keyword density tracking, the tool extracts frequent words while filtering out stop words, enabling you to boost search rankings and organic traffic by focusing on target terms professionally.",
       guideH6: "Why Content Creators Rely on Word Counters",
       guideP6: "Content writers and digital marketers continuously rely on real-time counting tools to ensure compliance with multiple platform requirements and test reading/speaking speeds, optimizing post quality and engagement rates seamlessly without wasting effort.",
-      faqTitle: "Frequently Asked Questions (FAQ)",
-      faqQ1: "How does TextCount.net work?",
-      faqA1: "TextCount.net calculates characters, words, and lines in real time right in your browser. None of your entered text is stored or sent to any server.",
-      faqQ2: "Why is tracking character limits important for SEO?",
-      faqA2: "Search engines like Google truncate title tags longer than 60 characters and meta descriptions longer than 160 characters to keep snippets clean.",
-      faqQ3: "Is TextCount.net free to use?",
-      faqA3: "Yes, TextCount.net is 100% free with unlimited usage for content creators, copywriters, and marketers.",
-      faqQ4: "Are my texts saved or stored anywhere?",
-      faqA4: "No texts you type or paste are ever stored or transmitted; all processing and calculation happen completely locally inside your web browser for ultimate security.",
-      faqQ5: "How do reading and speaking time calculators help me?",
-      faqA5: "This feature estimates the time required to silently read an article or speak it out loud in videos (like YouTube and TikTok) based on normal human pacing.",
+      faqTitle: "Frequently Asked Questions for Creators & Writers (FAQ)",
+      faqQ1: "How does TextCount.net calculate words and characters?",
+      faqA1: "The tool calculates characters, words, and lines instantly in your browser as you type or paste text. It uses precise algorithms to separate words using standard spacing and delimiters, without sending any data to external servers, ensuring lightning-fast response and total privacy.",
+      faqQ2: "Why is tracking character limits for Google titles and descriptions important for SEO?",
+      faqA2: "Search engines like Google display a specific character length for search snippets. Meta titles exceeding 60 characters and meta descriptions exceeding 160 characters get truncated with ellipses (...), reducing click-through rates (CTR). Staying within these limits ensures your complete marketing message is visible.",
+      faqQ3: "Is this tool completely free for content creators?",
+      faqA3: "Yes, TextCount.net is 100% free with no limits on word count or usage frequency. Article writers, journalists, and marketers can access all analysis features, platform limit trackers, and reading time calculators continuously without creating an account or paying subscriptions.",
+      faqQ4: "Are my texts and articles saved or stored anywhere?",
+      faqA4: "Rest assured; no texts you type or paste are ever saved, stored, or transmitted anywhere. All processing and calculations happen locally (Client-Side) inside your web browser memory only, providing a completely secure environment for authors handling exclusive drafts.",
+      faqQ5: "How do reading and speaking time calculators help video creators?",
+      faqA5: "The tool relies on average human reading speeds (200 words per minute for silent reading, 130 words per minute for voice-over). For YouTube and TikTok creators, this metric estimates how long your script will take when spoken aloud, helping you pace your videos accurately.",
+      faqQ6: "What are the benefits of keyword density analysis for content creators?",
+      faqA6: "Keyword density tracking extracts the most frequent terms in your article while automatically filtering out stop words. This helps you verify target keyword percentages (ideally 1% to 2.5%) to prevent keyword stuffing and ensure better search engine rankings.",
+      faqQ7: "Does the tool properly support different languages and Arabic text?",
+      faqA7: "Yes, the tool is fully designed with advanced support for multiple global languages and Arabic, including diacritics, special characters, and RTL (Right-to-Left) layouts, ensuring a smooth and comfortable experience for writers worldwide.",
+      faqQ8: "How can I use quick formatting buttons to improve my writing?",
+      faqA8: "Quick helper buttons let you remove double spaces with a click, convert English letter cases to UPPERCASE or lowercase, or format headings in Title Case, saving you hours of proofreading and text cleanup before publishing.",
       copyBtn: "Copy Text",
       copiedBtn: "Copied!",
       clearBtn: "Clear All",
@@ -535,26 +616,32 @@
       guideH5Desc: "Ermitteln Sie die wichtigsten Keywords für Ihr Ranking.",
       guideH6: "Warum Content-Ersteller Wortzähler nutzen",
       guideP6: "Ersteller nutzen Echtzeit-Zähler, um Plattformanforderungen einzuhalten und Lesezeiten zu testen.",
-      faqTitle: "Häufig gestellte Fragen (FAQ)",
-      faqQ1: "Wie funktioniert TextCount.net?",
-      faqA1: "TextCount.net berechnet Zeichen, Wörter und Zeilen in Echtzeit direkt in Ihrem Browser. Ihre Daten werden nicht gespeichert.",
+      faqTitle: "Häufig gestellte Fragen für Ersteller (FAQ)",
+      faqQ1: "Wie berechnet TextCount.net Wörter und Zeichen?",
+      faqA1: "Das Tool ermittelt Werte in Echtzeit direkt in Ihrem Browser. Es speichert keine Daten und garantiert absolute Privatsphäre.",
       faqQ2: "Warum sind Zeichenlimits für SEO wichtig?",
-      faqA2: "Suchmaschinen wie Google kürzen Title-Tags über 60 Zeichen und Meta-Beschreibungen über 160 Zeichen ab.",
-      faqQ3: "Ist TextCount.net kostenlos?",
-      faqA3: "Ja, TextCount.net ist zu 100% kostenlos und ohne Nutzungseinschränkungen.",
-      faqQ4: "Werden meine Texte irgendwo gespeichert?",
-      faqA4: "Nein, Ihre Texte werden lokal in Ihrem Browser verarbeitet und niemals auf Servern gespeichert.",
-      faqQ5: "Wie helfen Lese- und Sprechzeitberechnungen?",
-      faqA5: "Sie schätzen die Zeit für das stumme Lesen oder Vorlesen in Videos ein.",
+      faqA2: "Google kürzt Titel über 60 Zeichen und Beschreibungen über 160 Zeichen ab, um Snippets übersichtlich zu halten.",
+      faqQ3: "Ist die Nutzung völlig kostenlos?",
+      faqA3: "Ja, TextCount.net ist zu 100% kostenlos und ohne Einschränkungen nutzbar.",
+      faqQ4: "Werden meine eingegebenen Texte gespeichert?",
+      faqA4: "Nein, keine Texte werden jemals gespeichert; die gesamte Verarbeitung erfolgt lokal im Browser.",
+      faqQ5: "Wie helfen Lese- und Sprechzeiten Video-Erstellern?",
+      faqA5: "Sie schätzen die Zeit für das stumme Lesen oder Vorlesen in Videos basierend auf dem menschlichen Durchschnittstempo ein.",
+      faqQ6: "Welche Vorteile bietet die Keyword-Dichte-Analyse?",
+      faqA6: "Sie hilft Ihnen, Schlüsselwörter optimal zu gewichten und Keyword-Stuffing zu vermeiden.",
+      faqQ7: "Unterstützt das Tool verschiedene Sprachen?",
+      faqA7: "Ja, es bietet umfassende Unterstützung für zahlreiche Weltsprachen.",
+      faqQ8: "Wie funktionieren die Schnellformatierungs-Buttons?",
+      faqA8: "Sie ermöglichen das sofortige Bereinigen von Leerzeichen und Ändern der Groß- und Kleinschreibung.",
       copyBtn: "Text kopieren",
       copiedBtn: "Kopiert!",
       clearBtn: "Alles löschen",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
       aboutUsLink: "Über uns",
-      privacyPolicyLink: "Datenschutz-Bestimmungen",
+      privacyPolicyLink: "Datenschutz",
       termsOfServiceLink: "Nutzungsbedingungen",
-      contactUsLink: "Kontaktieren Sie uns",
+      contactUsLink: "Kontakt",
       unitSec: "Sek",
       unitMin: "Min"
     },
@@ -605,31 +692,35 @@
       guideToolLi4Title: "Casse De Titre",
       guideToolLi4Desc: "Format titre pour les en-têtes.",
       guideH4: "Suivi des limites de plateformes",
-      guideH4Desc: "Adaptez vos textes pour Google et les réseaux sociaux.",
       guideH5: "Analyse de la densité des mots-clés SEO",
-      guideH5Desc: "Améliorez votre référencement naturel.",
       guideH6: "Pourquoi les créateurs utilisent-ils des compteurs de mots ?",
       guideP6: "Les rédacteurs s'appuient sur des outils en temps réel pour respecter les contraintes de plateformes.",
-      faqTitle: "Foire Aux Questions (FAQ)",
-      faqQ1: "Comment fonctionne TextCount.net ?",
-      faqA1: "TextCount.net calcule les caractères et les mots en temps réel directement dans votre navigateur en toute confidentialité.",
-      faqQ2: "Pourquoi suivre les limites de caractères pour le SEO ?",
-      faqA2: "Google tronque les balises de titre de plus de 60 caractères et les méta-descriptions de plus de 160 caractères.",
-      faqQ3: "Est-ce gratuit ?",
+      faqTitle: "Foire Aux Questions pour Créateurs (FAQ)",
+      faqQ1: "Comment TextCount.net calcule-t-il les mots ?",
+      faqA1: "Il effectue des calculs en temps réel directement dans votre navigateur en toute confidentialité.",
+      faqQ2: "Pourquoi respecter les limites de caractères SEO ?",
+      faqA2: "Google tronque les titres de plus de 60 caractères et descriptions de plus de 160 caractères.",
+      faqQ3: "Est-ce entièrement gratuit ?",
       faqA3: "Oui, TextCount.net est 100% gratuit et illimité.",
       faqQ4: "Mes textes sont-ils enregistrés ?",
-      faqA4: "Non, aucun texte n'est stocké ; le traitement est entièrement local.",
+      faqA4: "Non, aucun texte n'est stocké ; tout est traité localement.",
       faqQ5: "À quoi servent les temps de lecture et de parole ?",
-      faqA5: "Ils estiment le temps nécessaire pour lire ou prononcer le texte.",
+      faqA5: "Ils estiment le temps nécessaire pour lire ou prononcer le texte pour vos vidéos.",
+      faqQ6: "Quels sont les avantages de la densité des mots-clés ?",
+      faqA6: "Elle permet d'éviter le bourrage de mots-clés et d'optimiser le référencement.",
+      faqQ7: "L'outil prend-il en charge plusieurs langues ?",
+      faqA7: "Oui, il prend en charge de nombreuses langues et dispositions.",
+      faqQ8: "Comment utiliser les outils de formatage rapide ?",
+      faqA8: "Ils permettent de modifier la casse et de nettoyer les espaces en un clic.",
       copyBtn: "Copier le texte",
       copiedBtn: "Copié !",
       clearBtn: "Tout effacer",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Tous droits réservés",
-      aboutUsLink: "À propos de nous",
-      privacyPolicyLink: "Politique de confidentialité",
-      termsOfServiceLink: "Conditions d'utilisation",
-      contactUsLink: "Contactez-nous",
+      aboutUsLink: "À propos",
+      privacyPolicyLink: "Confidentialité",
+      termsOfServiceLink: "Conditions",
+      contactUsLink: "Contact",
       unitSec: "sec",
       unitMin: "min"
     },
@@ -680,30 +771,34 @@
       guideToolLi4Title: "Tipo Título",
       guideToolLi4Desc: "Formato inicial de títulos.",
       guideH4: "Control de límites de plataformas",
-      guideH4Desc: "Optimiza para Google y redes sociales.",
       guideH5: "Densidad de palabras clave para SEO",
-      guideH5Desc: "Mejora tu posicionamiento web.",
       guideH6: "Por qué los creadores confían en contadores de palabras",
       guideP6: "Los redactores dependen de herramientas en tiempo real para cumplir con requisitos.",
-      faqTitle: "Preguntas Frecuentes (FAQ)",
-      faqQ1: "¿Cómo funciona TextCount.net?",
-      faqA1: "Calcula caracteres, palabras y líneas en tiempo real directamente en tu navegador sin guardar datos.",
-      faqQ2: "¿Por qué son importantes los límites para SEO?",
-      faqA2: "Los motores de búsqueda como Google truncan títulos de más de 60 caracteres y descripciones de más de 160.",
-      faqQ3: "¿Es de uso gratuito?",
-      faqA3: "Sí, es 100% gratuito e ilimitado.",
-      faqQ4: "¿Se guardan mis textos?",
+      faqTitle: "Preguntas Frecuentes para Creadores (FAQ)",
+      faqQ1: "¿Cómo calcula TextCount.net las palabras?",
+      faqA1: "Realiza cálculos en tiempo real directamente en tu navegador garantizando privacidad absoluta.",
+      faqQ2: "¿Por qué son importantes los límites de caracteres para SEO?",
+      faqA2: "Google recorta títulos de más de 60 caracteres y descripciones de más de 160 caracteres.",
+      faqQ3: "¿Es una herramienta gratuita?",
+      faqA3: "Sí, TextCount.net es 100% gratuito e ilimitado.",
+      faqQ4: "¿Se guardan mis textos en algún servidor?",
       faqA4: "No, ningún texto se almacena; todo se procesa de forma local en tu navegador.",
       faqQ5: "¿Para qué sirven los tiempos de lectura y discurso?",
-      faqA5: "Estiman el tiempo necesario para leer o pronunciar el texto.",
+      faqA5: "Estiman el tiempo necesario para leer o pronunciar guiones en videos.",
+      faqQ6: "¿Cuáles son los beneficios de la densidad de palabras clave?",
+      faqA6: "Ayuda a evitar el exceso de palabras clave y optimizar el posicionamiento.",
+      faqQ7: "¿Soporta varios idiomas?",
+      faqA7: "Sí, cuenta con soporte completo para múltiples idiomas.",
+      faqQ8: "¿Cómo usar los botones de formato rápido?",
+      faqA8: "Permiten ajustar mayúsculas, minúsculas y limpiar espacios con un solo clic.",
       copyBtn: "Copiar texto",
       copiedBtn: "¡Copiado!",
       clearBtn: "Borrar todo",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Todos los derechos reservados",
       aboutUsLink: "Sobre nosotros",
-      privacyPolicyLink: "Política de privacidad",
-      termsOfServiceLink: "Términos de servicio",
+      privacyPolicyLink: "Privacidad",
+      termsOfServiceLink: "Términos",
       contactUsLink: "Contacto",
       unitSec: "seg",
       unitMin: "min"
@@ -755,31 +850,35 @@
       guideToolLi4Title: "Iniziali Maiuscole",
       guideToolLi4Desc: "Maiuscole iniziali parole.",
       guideH4: "Monitoraggio dei limiti delle piattaforme",
-      guideH4Desc: "Gestisci Google e social media.",
       guideH5: "Analisi della densità delle parole chiave SEO",
-      guideH5Desc: "Ottimizza i tuoi contenuti per i motori di ricerca.",
       guideH6: "Perché i creator usano i contatori di parole",
       guideP6: "I redattori si affidano a strumenti in tempo reale per rispettare i requisiti.",
-      faqTitle: "Domande Frequenti (FAQ)",
-      faqQ1: "Come funziona TextCount.net?",
-      faqA1: "Calcola caratteri e parole in tempo reale nel tuo browser garantendo la massima privacy.",
+      faqTitle: "Domande Frequenti per Creator (FAQ)",
+      faqQ1: "Come calcola TextCount.net le parole?",
+      faqA1: "Calcola in tempo reale direttamente nel browser garantendo la massima privacy.",
       faqQ2: "Perché i limiti di caratteri sono importanti per il SEO?",
-      faqA2: "Google tronca i titoli superiori a 60 caratteri e le meta descrizioni superiori a 160 caratteri.",
-      faqQ3: "È gratuito?",
+      faqA2: "Google tronca i titoli superiori a 60 caratteri e le descrizioni superiori a 160.",
+      faqQ3: "È uno strumento gratuito?",
       faqA3: "Sì, TextCount.net è gratuito al 100%.",
-      faqQ4: "I miei testi vengono salvati?",
+      faqQ4: "I miei testi vengono salvati sui server?",
       faqA4: "No, nessun testo viene memorizzato; tutto viene elaborato localmente.",
-      faqQ5: "A cosa servono i tempi di lettura e discorso?",
-      faqA5: "Stimano il tempo necessario per leggere o pronunciare il testo.",
+      faqQ5: "A cosa servono i tempi di lettura e discorso per i video?",
+      faqA5: "Stimano il tempo necessario per pronunciare i testi nei video.",
+      faqQ6: "Quali sono i vantaggi dell'analisi della densità?",
+      faqA6: "Aiuta a evitare il keyword stuffing e a migliorare il posizionamento.",
+      faqQ7: "Il sito supporta più lingue?",
+      faqA7: "Sì, supporta molteplici lingue globali.",
+      faqQ8: "Come usare i pulsanti di formattazione rapida?",
+      faqA8: "Permettono di modificare le maiuscole e ripulire gli spazi con un clic.",
       copyBtn: "Copia testo",
       copiedBtn: "Copiato!",
       clearBtn: "Cancella tutto",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Tutti i diritti riservati",
       aboutUsLink: "Chi siamo",
-      privacyPolicyLink: "Informativa sulla privacy",
-      termsOfServiceLink: "Termini di servizio",
-      contactUsLink: "Contattaci",
+      privacyPolicyLink: "Privacy",
+      termsOfServiceLink: "Termini",
+      contactUsLink: "Contatti",
       unitSec: "sec",
       unitMin: "min"
     },
@@ -830,31 +929,35 @@
       guideToolLi4Title: "Titel Hoofdletters",
       guideToolLi4Desc: "Start elk woord met een hoofdletter.",
       guideH4: "Platformlimieten bijhouden",
-      guideH4Desc: "Ideaal voor Google en social media.",
       guideH5: "SEO-zoekwoorddichtheid",
-      guideH5Desc: "Verbeter uw online vindbaarheid.",
       guideH6: "Waarom makers woordentellers gebruiken",
       guideP6: "Schrijvers vertrouwen op realtime tools om aan platformvereisten te voldoen.",
-      faqTitle: "Veelgestelde Vragen (FAQ)",
-      faqQ1: "Hoe werkt TextCount.net?",
-      faqA1: "TextCount.net telt tekens en woorden direct in uw browser zonder gegevens op te slaan.",
+      faqTitle: "Veelgestelde Vragen voor Makers (FAQ)",
+      faqQ1: "Hoe berekent TextCount.net woorden?",
+      faqA1: "Het telt direct in uw browser in realtime met volledige privacy.",
       faqQ2: "Waarom zijn karakterlimieten belangrijk voor SEO?",
       faqA2: "Google kapt titels langer dan 60 tekens en beschrijvingen langer dan 160 tekens af.",
-      faqQ3: "Is het gratis?",
+      faqQ3: "Is deze tool gratis?",
       faqA3: "Ja, TextCount.net is 100% gratis.",
       faqQ4: "Worden mijn teksten opgeslagen?",
       faqA4: "Nee, er wordt geen tekst opgeslagen; alles wordt lokaal verwerkt.",
-      faqQ5: "Waar dienen lees- en spreektijd toe?",
-      faqA5: "Ze schatten de tijd in die nodig is om de tekst te lezen of uit te spreken.",
+      faqQ5: "Waar dienen lees- en spreektijd toe voor video's?",
+      faqA5: "Ze schatten de tijd in die nodig is om scripts uit te spreken.",
+      faqQ6: "Wat zijn de voordelen van zoekwoorddichtheid?",
+      faqA6: "Het helpt om overmatige herhaling te voorkomen en de SEO te verbeteren.",
+      faqQ7: "Ondersteunt de tool meerdere talen?",
+      faqA7: "Ja, het ondersteunt vele talen wereldwijd.",
+      faqQ8: "Hoe gebruik je snelle opmaakknoppen?",
+      faqA8: "Hiermee kunt u hoofdletters wijzigen en spaties wissen met één klik.",
       copyBtn: "Tekst kopiëren",
       copiedBtn: "Gekopieerd!",
       clearBtn: "Alles wissen",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Alle rechten voorbehouden",
       aboutUsLink: "Over ons",
-      privacyPolicyLink: "Privacybeleid",
-      termsOfServiceLink: "Gebruiksvoorwaarden",
-      contactUsLink: "Contact opnemen",
+      privacyPolicyLink: "Privacy",
+      termsOfServiceLink: "Voorwaarden",
+      contactUsLink: "Contact",
       unitSec: "sec",
       unitMin: "min"
     },
@@ -905,30 +1008,34 @@
       guideToolLi4Title: "Başlık Düzeni",
       guideToolLi4Desc: "Her kelimenin baş harfini büyük yapar.",
       guideH4: "Platform Sınırlarını Takip Etme",
-      guideH4Desc: "Google ve sosyal medya limitlerine uyum sağlayın.",
       guideH5: "SEO İçin Anahtar Kelime Yoğunluğu",
-      guideH5Desc: "Arama motoru optimizasyonunuzu güçlendirin.",
       guideH6: "İçerik Üreticileri Neden Kelime Sayacı Kullanır?",
       guideP6: "Yazarlar, platform gereksinimlerine uymak için gerçek zamanlı sayaçlara güvenir.",
-      faqTitle: "Sıkça Sorulan Sorular (SSS)",
-      faqQ1: "TextCount.net nasıl çalışır?",
-      faqA1: "Metninizi doğrudan tarayıcınızda anlık olarak analiz eder, hiçbir veriyi sunuculara kaydetmez.",
-      faqQ2: "Karakter sınırları SEO için neden önemlidir?",
-      faqA2: "Google, 60 karakterden uzun başlıkları ve 160 karakterden uzun açıklamaları keser.",
-      faqQ3: "Kullanımı ücretsiz mi?",
-      faqA3: "Evet, TextCount.net %100 ücretsizdir.",
-      faqQ4: "Metinlerim kaydediliyor mu?",
-      faqA4: "Hayır, metinleriniz saklanmaz; tüm işlemler yerel olarak tarayıcınızda gerçekleşir.",
-      faqQ5: "Okuma ve konuşma süresi hesaplayıcıları ne işe yarar?",
-      faqA5: "Metni okumak veya seslendirmek için gereken tahmini süreyi gösterir.",
+      faqTitle: "İçerik Üreticileri İçin Sıkça Sorulan Sorular (SSS)",
+      faqQ1: "TextCount.net kelime ve karakterleri nasıl hesaplar?",
+      faqA1: "Tarayıcınızda anlık olarak hesaplama yapar, hiçbir veriyi sunucuya kaydetmeyerek gizlilik sağlar.",
+      faqQ2: "SEO için Google başlık ve açıklama sınırları neden önemlidir?",
+      faqA2: "Google 60 karakterden uzun başlıkları ve 160 karakterden uzun açıklamaları keser.",
+      faqQ3: "Araç tamamen ücretsiz mi?",
+      faqA3: "Evet, TextCount.net %100 ücretsizdir ve kullanım sınırı yoktur.",
+      faqQ4: "Metinlerim sunucularda saklanıyor mu?",
+      faqA4: "Hayır, metinleriniz saklanmaz; işlemler tamamen tarayıcınızda yerel olarak gerçekleşir.",
+      faqQ5: "Okuma ve konuşma süresi hesaplayıcıları video üreticilerine nasıl yardımcı olur?",
+      faqA5: "Senaryonuzun seslendirildiğinde ne kadar süreceğini tahmin etmenizi sağlar.",
+      faqQ6: "Anahtar kelime yoğunluğu analizinin faydaları nelerdir?",
+      faqA6: "Kelime yığılmasını önlemenize ve SEO performansınızı artırmanıza yardımcı olur.",
+      faqQ7: "Araç farklı dilleri destekliyor mu?",
+      faqA7: "Evet, Türkçe dahil birçok dünya dilini tam olarak destekler.",
+      faqQ8: "Hızlı biçimlendirme butonları nasıl kullanılır?",
+      faqA8: "Tek tıkla boşlukları temizlemenizi ve harf düzenini değiştirmenizi sağlar.",
       copyBtn: "Metni Kopyala",
       copiedBtn: "Kopyalandı!",
       clearBtn: "Tümünü Temizle",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Tüm hakları saklıdır",
       aboutUsLink: "Hakkımızda",
-      privacyPolicyLink: "Gizlilik Politikası",
-      termsOfServiceLink: "Kullanım Şartları",
+      privacyPolicyLink: "Gizlilik",
+      termsOfServiceLink: "Şartlar",
       contactUsLink: "İletişim",
       unitSec: "sn",
       unitMin: "dk"
@@ -980,30 +1087,34 @@
       guideToolLi4Title: "Primeira Maiúscula",
       guideToolLi4Desc: "Formata em formato de título.",
       guideH4: "Acompanhamento de Limites de Plataforma",
-      guideH4Desc: "Otimize para Google e redes sociais.",
       guideH5: "Densidade de Palavras-Chave para SEO",
-      guideH5Desc: "Melhore o seu ranqueamento nos motores de busca.",
       guideH6: "Por que criadores usam contadores de palavras",
       guideP6: "Redatores confiam em ferramentas em tempo real para cumprir requisitos.",
-      faqTitle: "Perguntas Frequentes (FAQ)",
-      faqQ1: "Como o TextCount.net funciona?",
-      faqA1: "Ele calcula caracteres e palavras em tempo real diretamente no seu navegador em total privacidade.",
-      faqQ2: "Por que limites de caracteres importam no SEO?",
-      faqA2: "O Google trunca títulos com mais de 60 caracteres e descrições com mais de 160 caracteres.",
-      faqQ3: "É gratuito?",
-      faqA3: "Sim, o TextCount.net é 100% gratuito.",
-      faqQ4: "Meus textos são salvos?",
-      faqA4: "Não, nenhum texto é armazenado; todo o processamento é feito localmente no navegador.",
-      faqQ5: "Para que servem os tempos de leitura e fala?",
-      faqA5: "Eles estimam o tempo necessário para ler ou falar o texto.",
+      faqTitle: "Perguntas Frequentes para Criadores (FAQ)",
+      faqQ1: "Como o TextCount.net calcula palavras e caracteres?",
+      faqA1: "Ele calcula em tempo real diretamente no seu navegador em total privacidade.",
+      faqQ2: "Por que os limites de caracteres importam no SEO?",
+      faqA2: "O Google trunca títulos com mais de 60 caracteres e descrições com mais de 160.",
+      faqQ3: "A ferramenta é totalmente gratuita?",
+      faqA3: "Sim, o TextCount.net é 100% gratuito e sem limites.",
+      faqQ4: "Meus textos são salvos em servidores?",
+      faqA4: "Não, nenhum texto é armazenado; tudo é processado localmente no navegador.",
+      faqQ5: "Para que servem os tempos de leitura e fala para vídeos?",
+      faqA5: "Eles estimam o tempo necessário para falar os roteiros em vídeos.",
+      faqQ6: "Quais são os benefícios da densidade de palavras-chave?",
+      faqA6: "Ajuda a evitar excessos e a melhorar o posicionamento nos buscadores.",
+      faqQ7: "O site suporta vários idiomas?",
+      faqA7: "Sim, possui suporte completo a diversos idiomas globais.",
+      faqQ8: "Como usar os botões de formatação rápida?",
+      faqA8: "Eles permitem ajustar maiúsculas e limpar espaços com um clique.",
       copyBtn: "Copiar Texto",
       copiedBtn: "Copiado!",
       clearBtn: "Limpar Tudo",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Todos os direitos reservados",
       aboutUsLink: "Sobre Nós",
-      privacyPolicyLink: "Política de Privacidade",
-      termsOfServiceLink: "Termos de Serviço",
+      privacyPolicyLink: "Privacidade",
+      termsOfServiceLink: "Termos",
       contactUsLink: "Contato",
       unitSec: "seg",
       unitMin: "min"
@@ -1055,30 +1166,34 @@
       guideToolLi4Title: "Как В Заголовках",
       guideToolLi4Desc: "Каждое слово с заглавной буквы.",
       guideH4: "Отслеживание лимитов платформ",
-      guideH4Desc: "Соблюдайте ограничения Google и соцсетей.",
       guideH5: "Плотность ключевых слов для SEO",
-      guideH5Desc: "Анализируйте частоту употребления терминов.",
       guideH6: "Зачем авторам использовать счетчики слов",
       guideP6: "Писатели полагаются на инструменты реального времени для соблюдения требований.",
-      faqTitle: "Часто Задаваемые Вопросы (FAQ)",
-      faqQ1: "Как работает TextCount.net?",
-      faqA1: "Сервис моментально считает символы прямо в вашем браузере, не сохраняя введенные данные.",
-      faqQ2: "Почему лимиты символов важны для SEO?",
-      faqA2: "Поисковики вроде Google обрезают заголовки длиннее 60 символов и описания длиннее 160 символов.",
-      faqQ3: "Это бесплатно?",
-      faqA3: "Да, TextCount.net на 100% бесплатен.",
-      faqQ4: "Сохраняются ли мои тексты?",
+      faqTitle: "Часто Задаваемые Вопросы для Авторов (FAQ)",
+      faqQ1: "Как TextCount.net считает слова и символы?",
+      faqA1: "Сервис моментально считает символы прямо в браузере в режиме реального времени, обеспечивая конфиденциальность.",
+      faqQ2: "Почему лимиты символов важны для SEO в Google?",
+      faqA2: "Google обрезает заголовки длиннее 60 символов и описания длиннее 160 символов.",
+      faqQ3: "Инструмент полностью бесплатен?",
+      faqA3: "Да, TextCount.net бесплатен на 100% без ограничений на использование.",
+      faqQ4: "Сохраняются ли мои тексты на серверах?",
       faqA4: "Нет, тексты не сохраняются; вся обработка происходит локально в браузере.",
-      faqQ5: "Зачем нужны таймеры чтения и речи?",
-      faqA5: "Они оценивают время, необходимое для чтения или произнесения текста.",
+      faqQ5: "Зачем нужны таймеры чтения и речи для видео?",
+      faqA5: "Они оценивают время, необходимое для произнесения сценариев в видеороликах.",
+      faqQ6: "Каковы преимущества анализа плотности ключевых слов?",
+      faqA6: "Это помогает избежать переспама и улучшить SEO-показатели статьи.",
+      faqQ7: "Поддерживает ли сервис разные языки?",
+      faqA7: "Да, инструмент полностью поддерживает множество мировых языков.",
+      faqQ8: "Как пользоваться кнопками быстрого форматирования?",
+      faqA8: "Они позволяют очистить пробелы и изменить регистр текста в один клик.",
       copyBtn: "Копировать",
       copiedBtn: "Скопировано!",
       clearBtn: "Очистить всё",
       blogLink: "Блог",
       footer: "© 2026 TextCount.net — Все права защищены",
       aboutUsLink: "О нас",
-      privacyPolicyLink: "Политика конфиденциальности",
-      termsOfServiceLink: "Условия использования",
+      privacyPolicyLink: "Конфиденциальность",
+      termsOfServiceLink: "Условия",
       contactUsLink: "Контакты",
       unitSec: "сек",
       unitMin: "мин"
@@ -1130,22 +1245,26 @@
       guideToolLi4Title: "首字母大写",
       guideToolLi4Desc: "将每个单词首字母大写。",
       guideH4: "平台字数限制追踪",
-      guideH4Desc: "轻松适配 Google 标题、X 平台及 TikTok 文案长度。",
       guideH5: "SEO 关键词密度分析",
-      guideH5Desc: "智能过滤停用词，精准提炼高频核心词汇。",
       guideH6: "为什么创作者需要字数统计工具",
       guideP6: "内容写作者依赖实时工具来确保符合多平台字数标准，提升互动率。",
-      faqTitle: "常见问题解答 (FAQ)",
-      faqQ1: "TextCount.net 是如何工作的？",
-      faqA1: "TextCount.net 直接在您的浏览器中实时计算字符和词数，保证隐私安全。",
-      faqQ2: "为什么字符限制对 SEO 如此重要？",
-      faqA2: "Google 会截断超过 60 个字符的标题和超过 160 个字符的 Meta 描述。",
-      faqQ3: "该工具免费吗？",
-      faqA3: "是的，TextCount.net 100% 免费且无使用限制。",
-      faqQ4: "我的文本会被保存吗？",
-      faqA4: "不会，所有输入的内容都不会被存储或发送，完全在浏览器本地完成处理。",
-      faqQ5: "阅读和朗读时间计算器有何作用？",
-      faqA5: "它们根据人类正常语速估算静默阅读或口头朗读视频所需的时间。",
+      faqTitle: "面向创作者的常见问题解答 (FAQ)",
+      faqQ1: "TextCount.net 如何计算字数和字符？",
+      faqA1: "它在您的浏览器中实时进行本地计算，无需发送到外部服务器，绝对保证隐私安全。",
+      faqQ2: "为什么 Google 标题和描述的字符限制对 SEO 很重要？",
+      faqA2: "Google 会截断超过 60 个字符的标题和超过 160 个字符的描述，影响点击率。",
+      faqQ3: "这个工具完全免费吗？",
+      faqA3: "是的，TextCount.net 100% 免费且无任何使用次数限制。",
+      faqQ4: "我的文章和文本会被保存到服务器吗？",
+      faqA4: "绝对不会；所有文本处理均在浏览器本地完成，绝不存储或传输任何数据。",
+      faqQ5: "阅读和朗读时间计算器对视频创作者有什么帮助？",
+      faqA5: "它们能帮您预估口播视频脚本的朗读时长，精准把控视频节奏。",
+      faqQ6: "关键词密度分析有什么好处？",
+      faqA6: "可防止关键词堆砌并确保核心搜索词占比合理，提升文章 SEO 排名。",
+      faqQ7: "该工具支持多种语言吗？",
+      faqA7: "是的，完美支持包括中文在内的多种全球主流语言。",
+      faqQ8: "如何使用快捷排版按钮？",
+      faqA8: "一键即可清理多余空格、切换大小写或设置标题格式。",
       copyBtn: "复制文本",
       copiedBtn: "已复制！",
       clearBtn: "清空所有",
@@ -1205,29 +1324,33 @@
       guideToolLi4Title: "先頭を大文字",
       guideToolLi4Desc: "単語の頭文字を大文字にします。",
       guideH4: "プラットフォーム制限の追跡",
-      guideH4Desc: "Google やソーシャルメディアの文字数制限に最適です。",
       guideH5: "SEO キーワード密度の分析",
-      guideH5Desc: "検索エンジン向けの最適化をサポートします。",
       guideH6: "クリエイターが文字数カウンターに頼る理由",
       guideP6: "ライターは、複数プラットフォームの要件に適合させるためにリアルタイムツールを活用します。",
-      faqTitle: "よくある質問 (FAQ)",
-      faqQ1: "TextCount.net の仕組みは？",
-      faqA1: "ブラウザ上でリアルタイムに文字数を計算します。入力データは一切保存されません。",
-      faqQ2: "なぜSEOで文字数制限が重要ですか？",
+      faqTitle: "クリエイター向けよくある質問 (FAQ)",
+      faqQ1: "TextCount.net はどのように文字数を計算しますか？",
+      faqA1: "ブラウザ上でリアルタイムにローカル計算するため、プライバシーが完全に保護されます。",
+      faqQ2: "SEOにおいてGoogleの文字数制限が重要な理由は？",
       faqA2: "Googleは60文字を超えるタイトルや160文字を超える説明文を省略して表示するためです。",
-      faqQ3: "無料で利用できますか？",
+      faqQ3: "このツールは完全に無料ですか？",
       faqA3: "はい、TextCount.net は100%無料で制限なく利用できます。",
-      faqQ4: "入力したテキストは保存されますか？",
-      faqA4: "いいえ、テキストは保存されません。すべての処理はブラウザ内でローカルに行われます。",
-      faqQ5: "読了時間や朗読時間の計算はどのように役立ちますか？",
-      faqA5: "一般的な人間のペースに基づいて、記事の読了や動画での発話に必要な時間を推定します。",
+      faqQ4: "入力したテキストはサーバーに保存されますか？",
+      faqA4: "いいえ、テキストは一切保存されません。すべての処理はブラウザ内で行われます。",
+      faqQ5: "読了時間や朗読時間は動画クリエイターにどう役立ちますか？",
+      faqA5: "YouTubeやTikTokの台本読み上げ時間を正確に予測できます。",
+      faqQ6: "キーワード密度分析のメリットは何ですか？",
+      faqA6: "キーワードの詰め込みを防ぎ、検索順位の向上をサポートします。",
+      faqQ7: "多言語に対応していますか？",
+      faqA7: "はい、日本語を含む多くの主要言語をサポートしています。",
+      faqQ8: "クイックフォーマットボタンの使い方は？",
+      faqA8: "ワンクリックでスペースの削除や大文字・小文字の変換が可能です。",
       copyBtn: "テキストをコピー",
       copiedBtn: "コピー完了！",
       clearBtn: "すべてクリア",
       blogLink: "ブログ",
       footer: "© 2026 TextCount.net — All rights reserved",
       aboutUsLink: "私たちについて",
-      privacyPolicyLink: "プライバシーポリシー",
+      privacyPolicyLink: "プライバシー",
       termsOfServiceLink: "利用規約",
       contactUsLink: "お問い合わせ",
       unitSec: "秒",
@@ -1270,41 +1393,37 @@
       guideLi4Title: "पंक्तियाँ",
       guideLi4Desc: "टेक्स्ट में मौजूद कुल पंक्तियों को प्रदर्शित करता है।",
       guideH3: "त्वरित टेक्स्ट स्वरूपण उपकरण",
-      guideP3: "एक क्लिक से टेक्स्ट के मामलों को संशोधित करें:",
-      guideToolLi1Title: "अतिरिक्त स्थान हटाएँ",
-      guideToolLi1Desc: "डबल स्पेस को हटाकर टेक्स्ट को साफ करता है।",
-      guideToolLi2Title: "बड़े अक्षर (UPPER)",
-      guideToolLi2Desc: "सभी अंग्रेजी अक्षरों को बड़े अक्षरों में बदलता है।",
-      guideToolLi3Title: "छोटे अक्षर (lower)",
-      guideToolLi3Desc: "सभी अक्षरों को छोटे रूप में बदलता है।",
-      guideToolLi4Title: "शीर्षक केस (Title)",
-      guideToolLi4Desc: "प्रत्येक शब्द को बड़े अक्षर से शुरू करता है।",
+      guideH3Desc: "एक क्लिक से टेक्स्ट मामलों को बदलें।",
       guideH4: "प्लेटफ़ॉर्म सीमाओं की ट्रैकिंग",
-      guideH4Desc: "गूगल और सोशल मीडिया के मानकों के अनुरूप टेक्स्ट सेट करें।",
       guideH5: "SEO के लिए कीवर्ड घनत्व का महत्व",
-      guideH5Desc: "सर्च इंजन रैंकिंग में सुधार के लिए मुख्य शब्दों का विश्लेषण करें।",
       guideH6: "कंटेंट निर्माता शब्द काउंटरों पर क्यों भरोसा करते हैं?",
       guideP6: "लेखक कई प्लेटफ़ॉर्म आवश्यकताओं का पालन करने के लिए रीयल-टाइम टूल का उपयोग करते हैं।",
-      faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
-      faqQ1: "TextCount.net कैसे काम करता है?",
-      faqA1: "यह टूल आपके ब्राउज़र में रीयल-टाइम में टेक्स्ट की गणना करता है। आपका डेटा सुरक्षित रहता है।",
-      faqQ2: "SEO के लिए वर्ण सीमाएँ क्यों आवश्यक हैं?",
-      faqA2: "गूगल 60 अक्षरों से अधिक के शीर्षकों और 160 अक्षरों से अधिक के विवरणों को काट देता है।",
-      faqQ3: "क्या यह मुफ़्त है?",
-      faqA3: "हाँ, TextCount.net 100% मुफ़्त है।",
-      faqQ4: "क्या मेरा टेक्स्ट सहेजा जाता है?",
-      faqA4: "नहीं, आपका टेक्स्ट सहेजा नहीं जाता है; सभी प्रोसेसिंग आपके ब्राउज़र में स्थानीय रूप से होती है।",
-      faqQ5: "पढ़ने और बोलने के समय कैलकुलेटर कैसे मदद करते हैं?",
-      faqA5: "वे सामान्य गति के आधार पर पढ़ने या बोलने के अनुमानित समय की गणना करते हैं।",
+      faqTitle: "कंटेंट निर्माताओं के लिए अक्सर पूछे जाने वाले प्रश्न (FAQ)",
+      faqQ1: "TextCount.net शब्दों और अक्षरों की गणना कैसे करता है?",
+      faqA1: "यह आपके ब्राउज़र में रीयल-टाइम में स्थानीय रूप से गणना करता है, जिससे पूर्ण गोपनीयता बनी रहती है।",
+      faqQ2: "SEO के लिए गूगल मेटा सीमाओं का पालन क्यों जरूरी है?",
+      faqA2: "गूगल 60 अक्षरों से अधिक के शीर्षकों और 160 से अधिक के विवरणों को काट देता है।",
+      faqQ3: "क्या यह टूल पूरी तरह से मुफ़्त है?",
+      faqA3: "हाँ, TextCount.net 100% मुफ़्त है और इसकी कोई सीमा नहीं है।",
+      faqQ4: "क्या मेरे टेक्स्ट सर्वर पर सहेजे जाते हैं?",
+      faqA4: "नहीं, कोई भी टेक्स्ट सहेजा नहीं जाता है; सभी प्रक्रियाएं आपके ब्राउज़र में होती हैं।",
+      faqQ5: "पढ़نے और बोलने के समय कैलकुलेटर वीडियो निर्माताओं की कैसे मदद करते हैं?",
+      faqA5: "वे वीडियो स्क्रिप्ट के बोलने के समय का सटीक अनुमान लगाने में मदद करते हैं।",
+      faqQ6: "कीवर्ड घनत्व विश्लेषण के क्या लाभ हैं?",
+      faqA6: "यह कीवर्ड स्टफिंग से बचने और सर्च रैंकिंग सुधारने में मदद करता है।",
+      faqQ7: "क्या यह विभिन्न भाषाओं का समर्थन करता है?",
+      faqA7: "हाँ, यह कई वैश्विक भाषाओं और हिंदी का पूरा समर्थन करता है।",
+      faqQ8: "त्वरित स्वरूपण बटनों का उपयोग कैसे करें?",
+      faqA8: "वे एक क्लिक से स्पेस साफ करने और केस बदलने में मदद करते हैं।",
       copyBtn: "टेक्स्ट कॉपी करें",
       copiedBtn: "कॉपी हो गया!",
       clearBtn: "सब साफ़ करें",
       blogLink: "ब्लॉग",
       footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित",
       aboutUsLink: "हमारे बारे में",
-      privacyPolicyLink: "गोपनीयता नीति",
-      termsOfServiceLink: "सेवा की शर्तें",
-      contactUsLink: "संपर्क करें",
+      privacyPolicyLink: "गोपनीयता",
+      termsOfServiceLink: "शर्तें",
+      contactUsLink: "संपर्क",
       unitSec: "सेकंड",
       unitMin: "मिनट"
     },
@@ -1345,41 +1464,36 @@
       guideLi4Title: "লাইন সংখ্যা",
       guideLi4Desc: "টেক্সটের মোট লাইনের সংখ্যা প্রদর্শন করে।",
       guideH3: "দ্রুত টেক্সট ফরম্যাটিং টুল",
-      guideP3: "এক ক্লিকেই লেখার কেস পরিবর্তন করুন:",
-      guideToolLi1Title: "অতিরিক্ত স্পেস সরান",
-      guideToolLi1Desc: "ডাবল স্পেস স্বয়ংক্রিয়ভাবে মুছে পরিষ্কার করে।",
-      guideToolLi2Title: "বড় হাতের অক্ষর",
-      guideToolLi2Desc: "সব ইংরেজি অক্ষর বড় হাতে রূপান্তর করে।",
-      guideToolLi3Title: "ছোট হাতের অক্ষর",
-      guideToolLi3Desc: "সব অক্ষর ছোট হাতে রূপান্তর করে।",
-      guideToolLi4Title: "টাইটেল কেস",
-      guideToolLi4Desc: "প্রতিটি শব্দের প্রথম অক্ষর বড় করে।",
       guideH4: "প্ল্যাটফর্ম সীমা ট্র্যাকিং",
-      guideH4Desc: "গুগল এবং সোশ্যাল মিডিয়ার নিয়ম অনুযায়ী মান বজায় রাখুন।",
       guideH5: "SEO এর জন্য কীওয়ার্ড ঘনত্ব বিশ্লেষণ",
-      guideH5Desc: "সার্চ ইঞ্জিন র‍্যাঙ্কিং উন্নত করতে ফোকাস কীওয়ার্ড জানুন।",
       guideH6: "কেন কনটেন্ট নির্মাতারা শব্দ কাউন্টারের উপর নির্ভর করেন",
       guideP6: "লেখকরা বিভিন্ন প্ল্যাটফর্মের প্রয়োজনীয়তা পূরণ করতে রিয়েল-টাইম টুল ব্যবহার করেন।",
-      faqTitle: "সাধারণ জিজ্ঞাসা (FAQ)",
-      faqQ1: "TextCount.net কীভাবে কাজ করে?",
-      faqA1: "এটি আপনার ব্রাউজারে রিয়েল-টাইমে অক্ষর এবং শব্দ গণনা করে সম্পূর্ণ গোপনীয়তার সাথে।",
-      faqQ2: "SEO এর জন্য সীমার হিসাব রাখা কেন গুরুত্বপূর্ণ?",
-      faqA2: "গুগল ৬০ অক্ষরের বেশি শিরোনাম এবং ১৬০ অক্ষরের বেশি মেটা বিবরণ কেটে প্রদর্শন করে।",
-      faqQ3: "এটি কি বিনামূল্যে ব্যবহারযোগ্য?",
-      faqA3: "হ্যাঁ, TextCount.net ১০০% বিনামূল্যে ব্যবহারযোগ্য।",
-      faqQ4: "আমার টেক্সট কি কোথাও সংরক্ষণ করা হয়?",
-      faqA4: "না, কোনো টেক্সট সংরক্ষণ করা হয় না; সমস্ত প্রক্রিয়াকরণ আপনার ব্রাউজারে স্থানীয়ভাবে হয়।",
-      faqQ5: "পড়ার এবং বলার সময় ক্যালকুলেটর কীভাবে সাহায্য করে?",
-      faqA5: "এগুলি স্বাভাবিক মানুষের গতির উপর ভিত্তি করে পড়ার বা কথা বলার আনুমানিক সময় অনুমান করে।",
+      faqTitle: "কনটেন্ট নির্মাতাদের জন্য সাধারণ জিজ্ঞাসা (FAQ)",
+      faqQ1: "TextCount.net কীভাবে শব্দ এবং অক্ষর গণনা করে?",
+      faqA1: "এটি আপনার ব্রাউজারে রিয়েল-টাইমে স্থানীয়ভাবে গণনা করে সম্পূর্ণ গোপনীয়তা নিশ্চিত করে।",
+      faqQ2: "SEO-এর জন্য গুগল মেটা সীমার গুরুত্ব কেন?",
+      faqA2: "গুগল ৬০ অক্ষরের বেশি শিরোনাম এবং ১৬০ অক্ষরের বেশি বিবরণ কেটে দেয়।",
+      faqQ3: "এই টুলটি কি সম্পূর্ণ বিনামূল্যে ব্যবহারযোগ্য?",
+      faqA3: "হ্যাঁ, TextCount.net ১০০% বিনামূল্যে এবং কোনো সীমাবদ্ধতা ছাড়াই ব্যবহার করা যায়।",
+      faqQ4: "আমার টেক্সট কি সার্ভারে সংরক্ষণ করা হয়?",
+      faqA4: "না, কোনো টেক্সট সংরক্ষণ করা হয় না; সমস্ত প্রক্রিয়াকরণ ব্রাউজারে locally সম্পন্ন হয়।",
+      faqQ5: "পড়ার এবং বলার সময় ক্যালকুলেটর ভিডিও নির্মাতাদের কীভাবে সাহায্য করে?",
+      faqA5: "এগুলি ভিডিও স্ক্রিপ্টের ভয়েসওভার সময় নিখুঁতভাবে অনুমান করতে সাহায্য করে।",
+      faqQ6: "কীওয়ার্ড ঘনত্ব বিশ্লেষণের সুবিধা কী?",
+      faqA6: "এটি কীওয়ার্ড স্টাফিং এড়াতে এবং সার্চ র‍্যাঙ্কিং উন্নত করতে সাহায্য করে।",
+      faqQ7: "টুলটি কি বিভিন্ন ভাষা সমর্থন করে?",
+      faqA7: "হ্যাঁ, এটি বাংলা সহ বিশ্বব্যাপী বহু ভাষা সমর্থন করে।",
+      faqQ8: "দ্রুত ফরম্যাটিং বোতাম কীভাবে ব্যবহার করব?",
+      faqA8: "এক ক্লিকেই স্পেস পরিষ্কার করতে এবং অক্ষরের কেস পরিবর্তন করতে পারবেন।",
       copyBtn: "অনুলিপি করুন",
       copiedBtn: "অনুলিপি করা হয়েছে!",
       clearBtn: "সব মুছুন",
       blogLink: "ব্লগ",
       footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত",
       aboutUsLink: "আমাদের সম্পর্কে",
-      privacyPolicyLink: "গোপনীয়তা নীতি",
-      termsOfServiceLink: "ব্যবহারের শর্তাবলী",
-      contactUsLink: "যোগাযোগ করুন",
+      privacyPolicyLink: "গোপনীয়তা",
+      termsOfServiceLink: "শর্তাবলী",
+      contactUsLink: "যোগাযোগ",
       unitSec: "সেকেন্ড",
       unitMin: "মিনিট"
     },
@@ -1420,41 +1534,36 @@
       guideLi4Title: "سطور",
       guideLi4Desc: "متن میں موجود حقیقی لائنوں کی تعداد بتاتا ہے۔",
       guideH3: "فوری متن کی فارمیٹنگ کے اوزار",
-      guideP3: "ایک کلک کے ساتھ حروف کے انداز کو تبدیل کریں:",
-      guideToolLi1Title: "اضافی فاصلے ختم کریں",
-      guideToolLi1Desc: "ڈبل اسپیس اور غیر ضروری خالی حصوں کو خودکار طور پر صاف کرتا ہے۔",
-      guideToolLi2Title: "बड़े حروف (UPPER)",
-      guideToolLi2Desc: "تمام انگریزی حروف کو بڑے حروف میں بدلتا ہے۔",
-      guideToolLi3Title: "چھوٹے حروف (lower)",
-      guideToolLi3Desc: "تمام حروف کو چھوٹے حروف میں تبدیل کرتا ہے۔",
-      guideToolLi4Title: "ٹائٹل کیس (Title)",
-      guideToolLi4Desc: "ہر لفظ کے پہلے حرف کو بڑا کرتا ہے۔",
       guideH4: "پلیٹ فارم کی حدوں کا تعاقب",
-      guideH4Desc: "گوگل اور سوشل میڈیا کے معیارات کے مطابق متن کو ترتیب دیں۔",
       guideH5: "ایس ای او کے لیے کلیدی الفاظ کی کثافت کا تجزیہ",
-      guideH5Desc: "حدف بنائے گئے الفاظ پر توجہ دے کر سرچ رینکنگ کو بہتر بنائیں۔",
       guideH6: "مواد کے تخلیق کار لفظی کاؤنٹرز پر کیوں انحصار کرتے ہیں؟",
       guideP6: "مصنفین اور ڈیجیٹل مارکیٹرز متعدد پلیٹ فارمز کے تقاضوں کو پورا کرنے کے لیے اس ٹول کا استعمال کرتے ہیں۔",
-      faqTitle: "بثرت پوچھے گئے سوالات (FAQ)",
-      faqQ1: "TextCount.net کیسے کام کرتا ہے؟",
-      faqA1: "یہ ٹول آپ کے براؤزر میں فوری طور پر الفاظ اور حروف کا شمار کرتا ہے بغیر کسی ڈیٹا کے ذخیرہ کے۔",
-      faqQ2: "SEO کے لیے حروف کی حد کا خیال رکھنا کیوں ضروری ہے؟",
-      faqA2: "گوگل 60 حروف سے زیادہ ٹائٹل اور 160 حروف سے زیادہ میٹا ڈسکرپشن کو کاٹ دیتا ہے۔",
-      faqQ3: "کیا یہ ٹول مفت ہے؟",
-      faqA3: "جی ہاں، TextCount.net بالکل 100% مفت ہے۔",
-      faqQ4: "کیا میرے متن کو محفوظ کیا جاتا ہے؟",
-      faqA4: "نہیں، آپ کا کوئی بھی متن محفوظ نہیں کیا جاتا؛ تمام کارروائی آپ کے براؤزر میں مقامی طور پر ہوتی ہے۔",
-      faqQ5: "پڑھنے اور بولنے کے وقت کے کیلکولیٹر کیسے مدد کرتے ہیں؟",
-      faqA5: "وہ انسان کی عام رفتار کی بنیاد پر پڑھنے یا بولنے کے متوقع وقت کا اندازہ لگاتے ہیں۔",
+      faqTitle: "تخلیق کاروں کے لیے اکثر پوچھے جانے والے سوالات (FAQ)",
+      faqQ1: "TextCount.net الفاظ اور حروف کا حساب کیسے لگاتا ہے؟",
+      faqA1: "یہ آپ کے براؤزر میں فوری طور پر مقامی طور پر حساب کرتا ہے، جو مکمل رازداری کی ضمانت دیتا ہے۔",
+      faqQ2: "SEO کے لیے گوگل میٹا کی حدوں کا خیال رکھنا کیوں ضروری ہے؟",
+      faqA2: "گوگل 60 حروف سے زیادہ ٹائٹل اور 160 حروف سے زیادہ ڈسکرپشن کو کاٹ دیتا ہے۔",
+      faqQ3: "کیا یہ ٹول مکمل طور پر مفت ہے؟",
+      faqA3: "جی ہاں، TextCount.net بالکل 100% مفت ہے اور اس کی کوئی حد نہیں۔",
+      faqQ4: "کیا میرے متن کو سرورز پر محفوظ کیا جاتا ہے؟",
+      faqA4: "نہیں، کوئی متن محفوظ نہیں کیا جاتا؛ تمام کارروائی آپ کے براؤزر میں ہوتی ہے۔",
+      faqQ5: "پڑھنے اور بولنے کے وقت کے کیلکولیشنز ویڈیو تخلیق کاروں کی کیسے مدد کرتے ہیں؟",
+      faqA5: "وہ ویڈیو اسکرپٹس کے بولنے کے وقت کا صحیح اندازہ لگانے میں مدد کرتے ہیں۔",
+      faqQ6: "کلیدی الفاظ کی کثافت کے تجزیے کے کیا فوائد ہیں؟",
+      faqA6: "یہ الفاظ کے زیادہ استعمال سے بچنے اور سرچ رینکنگ کو بہتر بنانے میں مدد کرتا ہے۔",
+      faqQ7: "کیا یہ مختلف زبانوں کی حمایت کرتا ہے؟",
+      faqA7: "جی ہاں، یہ اردو سمیت دنیا بھر کی متعدد زبانوں کی مکمل حمایت کرتا ہے۔",
+      faqQ8: "فوری فارمیٹنگ کے بٹن کیسے استعمال کریں؟",
+      faqA8: "یہ ایک کلک سے اسپیس صاف کرنے اور کیس تبدیل کرنے کی اجازت دیتے ہیں۔",
       copyBtn: "کاپی کریں",
       copiedBtn: "کاپی ہو گیا!",
       clearBtn: "سب صاف کریں",
-      blogLink: "بلاگ",
+      blogLink: "بلاغ",
       footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں",
       aboutUsLink: "ہمارے بارے میں",
-      privacyPolicyLink: "رازداری کی پالیسی",
-      termsOfServiceLink: "استعمال کی شرائط",
-      contactUsLink: "ہم سے رابطہ کریں",
+      privacyPolicyLink: "رازداری",
+      termsOfServiceLink: "شرائط",
+      contactUsLink: "رابطہ",
       unitSec: "سیکنڈ",
       unitMin: "منٹ"
     }
@@ -1475,7 +1584,7 @@
     ja: ["の", "に", "は", "を", "た", "が", "で", "て", "と", "し", "れ", "さ", "ある", "いる", "も", "する"],
     hi: ["और", "का", "एक", "में", "की", "है", "यह", "के", "से", "पर", "को", "ने", "हो", "तो", "भी"],
     bn: ["এবং", "এর", "একটি", "এ", "করে", "হলো", "এই", "থেকে", "কে", "তা", "না", "বা", "জন্য"],
-    ur: ["اور", "کا", "ایک", "میں", "کی", "ہے", "یہ", "کے", "سے", "पर", "کو", "نے", "ہو", "تو", "بھی"]
+    ur: ["اور", "کا", "ایک", "میں", "کی", "ہے", "یہ", "کے", "سے", "पर", "को", "ने", "हो", "تو", "भी"]
   };
 
   var textInput = document.getElementById("text-input");
@@ -1602,6 +1711,23 @@
     barEl.style.width = pct + "%";
     barEl.className = val > max ? "h-full bg-red-500 transition-all duration-300" : "h-full bg-accent-sky transition-all duration-300";
   }
+
+  // FAQ Accordion Handler
+  document.querySelectorAll(".faq-toggle").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      var item = this.parentElement;
+      var isActive = item.classList.contains("active");
+      
+      // Optional: Close all other items
+      document.querySelectorAll(".faq-item").forEach(function(el) {
+        el.classList.remove("active");
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
 
   document.getElementById("btn-clean-spaces").addEventListener("click", function() {
     textInput.value = textInput.value.replace(/\s+/g, ' ').trim();
