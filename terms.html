@@ -1,94 +1,354 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - TextCount.net</title>
+  <title id="page-title">Terms of Service - TextCount.net</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
         }
       }
     };
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* إخفاء شريط جوجل العلوي وتصحيح الإزاحة */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    
-    /* تخصيص مظهر قائمة الاختيار لتناسب القالب الداكن */
-    .goog-te-gadget-simple {
-      background-color: #1e293b !important;
-      border: 1px solid #334155 !important;
-      padding: 4px 8px !important;
-      border-radius: 0.5rem !important;
-      font-size: 0.875rem !important;
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
     }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: #f8fafc !important;
-    }
-    .goog-te-gadget-icon { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      margin: 0 !important;
-    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
   </style>
 </head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+  
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
-        <div id="google_translate_element"></div>
+        <a href="/" data-i18n="backToHome" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 py-10 flex-1">
-    <h1 class="text-3xl font-bold text-slate-50 mb-6">Terms of Service</h1>
-    <p class="text-slate-400 mb-4">Last updated: August 2026</p>
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-1 w-full">
+    <h1 data-i18n="tosTitle" class="text-3xl font-bold text-slate-50 mb-6">Terms of Service</h1>
+    <p data-i18n="tosLastUpdated" class="text-slate-400 mb-8">Last updated: August 2026</p>
 
-    <div class="space-y-6 text-slate-300 leading-relaxed">
+    <div class="space-y-8 text-slate-300 leading-relaxed">
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">1. Acceptance of Terms</h2>
-        <p>By accessing and using TextCount.net, you accept and agree to be bound by the terms and provision of this agreement.</p>
+        <h2 data-i18n="tosH1" class="text-xl font-semibold text-slate-100 mb-3">1. Acceptance of Terms</h2>
+        <p data-i18n="tosP1">By accessing and using TextCount.net, you accept and agree to be bound by the terms and provision of this agreement.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">2. Use of Service</h2>
-        <p>TextCount.net provides free text analysis tools. You agree to use the website for lawful purposes only and not to disrupt the functionality of the service.</p>
+        <h2 data-i18n="tosH2" class="text-xl font-semibold text-slate-100 mb-3">2. Use of Service</h2>
+        <p data-i18n="tosP2">TextCount.net provides free text analysis tools. You agree to use the website for lawful purposes only and not to disrupt the functionality of the service.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">3. Disclaimer of Warranties</h2>
-        <p>The tool is provided "as is" without any guarantees. While we strive for accuracy, we cannot guarantee that the calculations will always be error-free.</p>
+        <h2 data-i18n="tosH3" class="text-xl font-semibold text-slate-100 mb-3">3. Disclaimer of Warranties</h2>
+        <p data-i18n="tosP3">The tool is provided "as is" without any guarantees. While we strive for accuracy, we cannot guarantee that the calculations will always be error-free.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">4. Changes to Terms</h2>
-        <p>We reserve the right to modify these terms at any time without prior notice.</p>
+        <h2 data-i18n="tosH4" class="text-xl font-semibold text-slate-100 mb-3">4. Changes to Terms</h2>
+        <p data-i18n="tosP4">We reserve the right to modify these terms at any time without prior notice.</p>
       </section>
     </div>
   </main>
 
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToHome: "← Back to Home",
+          tosTitle: "Terms of Service",
+          tosLastUpdated: "Last updated: August 2026",
+          tosH1: "1. Acceptance of Terms",
+          tosP1: "By accessing and using TextCount.net, you accept and agree to be bound by the terms and provision of this agreement.",
+          tosH2: "2. Use of Service",
+          tosP2: "TextCount.net provides free text analysis tools. You agree to use the website for lawful purposes only and not to disrupt the functionality of the service.",
+          tosH3: "3. Disclaimer of Warranties",
+          tosP3: "The tool is provided 'as is' without any guarantees. While we strive for accuracy, we cannot guarantee that the calculations will always be error-free.",
+          tosH4: "4. Changes to Terms",
+          tosP4: "We reserve the right to modify these terms at any time without prior notice.",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToHome: "← العودة للرئيسية",
+          tosTitle: "شروط الخدمة",
+          tosLastUpdated: "آخر تحديث: أغسطس 2026",
+          tosH1: "1. قبول الشروط",
+          tosP1: "من خلال الوصول إلى TextCount.net واستخدامه، فإنك تقبل وتوافق على الالتزام بشروط وأحكام هذه الاتفاقية.",
+          tosH2: "2. استخدام الخدمة",
+          tosP2: "يوفر TextCount.net أدوات مجانية لتحليل النصوص. أنت توافق على استخدام الموقع لأغراض قانونية فقط وعدم تعطيل وظائف الخدمة.",
+          tosH3: "3. إخلاء المسؤولية عن الضمانات",
+          tosP3: "يتم توفير الأداة 'كما هي' دون أي ضمانات. بينما نسعى جاهدين لتحري الدقة، لا يمكننا ضمان أن تكون الحسابات خالية من الأخطاء دائمًا.",
+          tosH4: "4. التغييرات على الشروط",
+          tosP4: "نحتفظ بالحق في تعديل هذه الشروط في أي وقت دون إشعار مسبق.",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToHome: "← Zurück zur Startseite",
+          tosTitle: "Nutzungsbedingungen",
+          tosLastUpdated: "Letzte Aktualisierung: August 2026",
+          tosH1: "1. Annahme der Bedingungen",
+          tosP1: "Durch den Zugriff auf und die Nutzung von TextCount.net akzeptieren Sie die Bedingungen dieser Vereinbarung.",
+          tosH2: "2. Nutzung des Dienstes",
+          tosP2: "Sie stimmen zu, die Website nur für rechtmäßige Zwecke zu nutzen und die Funktionalität nicht zu stören.",
+          tosH3: "3. Haftungsausschluss",
+          tosP3: "Das Tool wird 'wie besehen' ohne jegliche Garantien zur Verfügung gestellt.",
+          tosH4: "4. Änderungen der Bedingungen",
+          tosP4: "Wir behalten uns das Recht vor, diese Bedingungen jederzeit unangekündigt zu ändern.",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToHome: "← Retour à l'accueil",
+          tosTitle: "Conditions d'utilisation",
+          tosLastUpdated: "Dernière mise à jour : Août 2026",
+          tosH1: "1. Acceptation des conditions",
+          tosP1: "En accédant et en utilisant TextCount.net, vous acceptez d'être lié par les conditions de cet accord.",
+          tosH2: "2. Utilisation du service",
+          tosP2: "Vous acceptez d'utiliser le site Web à des fins légales uniquement et de ne pas perturber le service.",
+          tosH3: "3. Exclusion de garanties",
+          tosP3: "L'outil est fourni 'tel quel' sans aucune garantie d'exactitude absolue.",
+          tosH4: "4. Modifications des conditions",
+          tosP4: "Nous nous réservons le droit de modifier ces conditions à tout moment sans préavis.",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToHome: "← Volver al inicio",
+          tosTitle: "Términos de Servicio",
+          tosLastUpdated: "Última actualización: Agosto 2026",
+          tosH1: "1. Aceptación de los Términos",
+          tosP1: "Al acceder y utilizar TextCount.net, usted acepta estar sujeto a los términos de este acuerdo.",
+          tosH2: "2. Uso del Servicio",
+          tosP2: "Usted acepta utilizar el sitio web solo para fines legales y no interrumpir la funcionalidad.",
+          tosH3: "3. Renuncia de Garantías",
+          tosP3: "La herramienta se proporciona 'tal cual' sin garantías de ningún tipo.",
+          tosH4: "4. Cambios en los Términos",
+          tosP4: "Nos reservamos el derecho de modificar estos términos en cualquier momento sin previo aviso.",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToHome: "← Torna alla Home",
+          tosTitle: "Termini di Servizio",
+          tosLastUpdated: "Ultimo aggiornamento: Agosto 2026",
+          tosH1: "1. Accettazione dei Termini",
+          tosP1: "Accedendo e utilizzando TextCount.net, accetti di essere vincolato dai termini di questo accordo.",
+          tosH2: "2. Uso del Servizio",
+          tosP2: "Accetti di utilizzare il sito web solo per scopi legali e di non interrompere la funzionalità.",
+          tosH3: "3. Esclusione di Garanzie",
+          tosP3: "Lo strumento è fornito 'così com'è' senza alcuna garanzia.",
+          tosH4: "4. Modifiche ai Termini",
+          tosP4: "Ci riserviamo il diritto di modificare questi termini in qualsiasi momento senza preavviso.",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToHome: "← Terug naar Home",
+          tosTitle: "Servicevoorwaarden",
+          tosLastUpdated: "Laatst bijgewerkt: Augustus 2026",
+          tosH1: "1. Acceptatie van Voorwaarden",
+          tosP1: "Door TextCount.net te openen en te gebruiken, gaat u akkoord met de voorwaarden van deze overeenkomst.",
+          tosH2: "2. Gebruik van de Service",
+          tosP2: "U gaat ermee akkoord de website alleen voor wettige doeleinden te gebruiken.",
+          tosH3: "3. Afwijzing van Garanties",
+          tosP3: "De tool wordt 'as is' geleverd zonder enige garanties.",
+          tosH4: "4. Wijzigingen in Voorwaarden",
+          tosP4: "We behouden ons het recht voor om deze voorwaarden op elk moment zonder voorafgaande kennisgeving te wijzigen.",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToHome: "← Ana Sayfaya Dön",
+          tosTitle: "Hizmet Şartları",
+          tosLastUpdated: "Son güncelleme: Ağustos 2026",
+          tosH1: "1. Şartların Kabulü",
+          tosP1: "TextCount.net'e erişerek ve kullanarak bu sözleşmenin şartlarını kabul etmiş olursunuz.",
+          tosH2: "2. Hizmetin Kullanımı",
+          tosP2: "Web sitesini yalnızca yasal amaçlar için kullanmayı kabul edersiniz.",
+          tosH3: "3. Garanti Reddi",
+          tosP3: "Araç herhangi bir garanti olmaksızın 'olduğu gibi' sağlanmaktadır.",
+          tosH4: "4. Şartlarda Değişiklik",
+          tosP4: "Bu şartları önceden bildirmeksizin değiştirme hakkını saklı tutuyoruz.",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToHome: "← Voltar ao Início",
+          tosTitle: "Termos de Serviço",
+          tosLastUpdated: "Última atualização: Agosto de 2026",
+          tosH1: "1. Aceitação dos Termos",
+          tosP1: "Ao acessar e usar o TextCount.net, você aceita os termos deste acordo.",
+          tosH2: "2. Uso do Serviço",
+          tosP2: "Você concorda em usar o site apenas para fins legais e não interromper o serviço.",
+          tosH3: "3. Isenção de Garantias",
+          tosP3: "A ferramenta é fornecida 'como está' sem quaisquer garantias.",
+          tosH4: "4. Alterações nos Termos",
+          tosP4: "Reservamo-nos o direito de modificar estes termos a qualquer momento sem aviso prévio.",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToHome: "← Вернуться на главную",
+          tosTitle: "Условия использования",
+          tosLastUpdated: "Последнее обновление: Август 2026",
+          tosH1: "1. Принятие условий",
+          tosP1: "Используя TextCount.net, вы соглашаетесь с условиями данного соглашения.",
+          tosH2: "2. Использование сервиса",
+          tosP2: "Вы обязуетесь использовать сайт только в законных целях.",
+          tosH3: "3. Отказ от гарантий",
+          tosP3: "Инструмент предоставляется «как есть» без каких-либо гарантий.",
+          tosH4: "4. Изменение условий",
+          tosP4: "Мы оставляем за собой право изменять эти условия в любое время без уведомления.",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToHome: "← 返回首页",
+          tosTitle: "服务条款",
+          tosLastUpdated: "最后更新：2026年8月",
+          tosH1: "1. 接受条款",
+          tosP1: "通过访问和使用 TextCount.net，即表示您接受并同意受本协议条款的约束。",
+          tosH2: "2. 服务使用",
+          tosP2: "您同意仅出于合法目的使用本网站，且不破坏服务的正常运行。",
+          tosH3: "3. 免责声明",
+          tosP3: "该工具按“原样”提供，没有任何保证。我们无法保证计算绝对无误。",
+          tosH4: "4. 条款修改",
+          tosP4: "我们保留随时修改这些条款的权利，恕不另行通知。",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToHome: "← ホームに戻る",
+          tosTitle: "利用規約",
+          tosLastUpdated: "最終更新日: 2026年8月",
+          tosH1: "1. 規約の同意",
+          tosP1: "TextCount.netを利用することにより、本規約に同意したものとみなされます。",
+          tosH2: "2. サービスの利用",
+          tosP2: "合法的な目的でのみサイトを使用し、機能を妨害しないことに同意するものとします。",
+          tosH3: "3. 免責事項",
+          tosP3: "ツールは「現状のまま」提供され、いかなる保証もありません。",
+          tosH4: "4. 規約の変更",
+          tosP4: "当社は、予告なしにいつでもこれらの条件を変更する権利を留保します。",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToHome: "← होम पर वापस जाएँ",
+          tosTitle: "सेवा की शर्तें",
+          tosLastUpdated: "अंतिम अपडेट: अगस्त 2026",
+          tosH1: "1. शर्तों की स्वीकृति",
+          tosP1: "TextCount.net का उपयोग करके, आप इस समझौते की शर्तों से बाध्य होने के लिए सहमत हैं।",
+          tosH2: "2. सेवा का उपयोग",
+          tosP2: "आप वेबसाइट का उपयोग केवल कानूनी उद्देश्यों के लिए करने के लिए सहमत हैं।",
+          tosH3: "3. वारंटी का अस्वीकरण",
+          tosP3: "उपकरण 'जैसा है' प्रदान किया जाता है बिना किसी गारंटी के।",
+          tosH4: "4. शर्तों में बदलाव",
+          tosP4: "हम किसी भी समय बिना पूर्व सूचना के इन शर्तों को संशोधित करने का अधिकार सुरक्षित रखते हैं।",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToHome: "← হোমে ফিরে যান",
+          tosTitle: "পরিষেবার শর্তাবলী",
+          tosLastUpdated: "সর্বশেষ আপডেট: আগস্ট ২০২৬",
+          tosH1: "1. শর্তাবলী গ্রহণ",
+          tosP1: "TextCount.net ব্যবহার করার মাধ্যমে, আপনি এই চুক্তির শর্তাবলীতে সম্মত হচ্ছেন।",
+          tosH2: "2. পরিষেবার ব্যবহার",
+          tosP2: "আপনি শুধুমাত্র আইনি উদ্দেশ্যে ওয়েবসাইট ব্যবহার করতে সম্মত হচ্ছেন।",
+          tosH3: "3. ওয়ারেন্টি অস্বীকৃতি",
+          tosP3: "টুলটি কোনো গ্যারান্টি ছাড়াই 'যেমন আছে' তেমন প্রদান করা হয়।",
+          tosH4: "4. শর্তাবলী পরিবর্তন",
+          tosP4: "আমরা কোনো পূর্ব বিজ্ঞপ্তি ছাড়াই যে কোনো সময় এই শর্তাবলী পরিবর্তন করার অধিকার সংরক্ষণ করি।",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToHome: "← ہوم پر واپس جائیں",
+          tosTitle: "سروس کی شرائط",
+          tosLastUpdated: "آخری اپ ڈیٹ: اگست 2026",
+          tosH1: "1. شرائط کی منظوری",
+          tosP1: "TextCount.net استعمال کر کے، آپ اس معاہدے کی شرائط کے پابند ہونے سے اتفاق کرتے ہیں۔",
+          tosH2: "2. سروس کا استعمال",
+          tosP2: "آپ ویب سائٹ کو صرف قانونی مقاصد کے لیے استعمال کرنے سے اتفاق کرتے ہیں۔",
+          tosH3: "3. وارنٹی کی تردید",
+          tosP3: "یہ ٹول 'جیسا ہے' کی بنیاد پر فراہم کیا جاتا ہے بغیر کسی ضمانت کے۔",
+          tosH4: "4. شرائط میں تبدیلیاں",
+          tosP4: "ہم بغیر پیشگی اطلاع کے کسی بھی وقت ان شرائط میں ترمیم کرنے کا حق محفوظ رکھتے ہیں۔",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.tosTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      // تهيئة اللغة عند تحميل الصفحة بناءً على ما تم اختياره مسبقاً
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
