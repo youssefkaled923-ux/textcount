@@ -1,94 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - TextCount.net</title>
+  <title id="page-title">Privacy Policy - TextCount.net</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
         }
       }
     };
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* إخفاء شريط جوجل العلوي وتصحيح الإزاحة */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    
-    /* تخصيص مظهر قائمة الاختيار لتناسب القالب الداكن */
-    .goog-te-gadget-simple {
-      background-color: #1e293b !important;
-      border: 1px solid #334155 !important;
-      padding: 4px 8px !important;
-      border-radius: 0.5rem !important;
-      font-size: 0.875rem !important;
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
     }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: #f8fafc !important;
-    }
-    .goog-te-gadget-icon { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      margin: 0 !important;
-    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
   </style>
 </head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+  
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
-        <div id="google_translate_element"></div>
+        <a href="/" data-i18n="backToHome" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 py-10 flex-1">
-    <h1 class="text-3xl font-bold text-slate-50 mb-6">Privacy Policy</h1>
-    <p class="text-slate-400 mb-4">Last updated: August 2026</p>
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-1 w-full">
+    <h1 data-i18n="privacyTitle" class="text-3xl font-bold text-slate-50 mb-6">Privacy Policy</h1>
+    <p data-i18n="privacyLastUpdated" class="text-slate-400 mb-8">Last updated: August 2026</p>
 
-    <div class="space-y-6 text-slate-300 leading-relaxed">
+    <div class="space-y-8 text-slate-300 leading-relaxed">
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">1. Overview</h2>
-        <p>At TextCount.net, your privacy is extremely important to us. We do not collect, store, or share any personal text you enter into our character and word counter tool. All processing happens locally in your browser.</p>
+        <h2 data-i18n="privacyH1" class="text-xl font-semibold text-slate-100 mb-3">1. Overview</h2>
+        <p data-i18n="privacyP1">At TextCount.net, your privacy is extremely important to us. We do not collect, store, or share any personal text you enter into our character and word counter tool. All processing happens locally in your browser.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">2. Cookies & Advertising</h2>
-        <p>We use third-party advertising companies (such as Google AdSense) to serve ads when you visit our website. These companies may use cookies to serve ads based on your prior visits to our website or other websites on the Internet.</p>
+        <h2 data-i18n="privacyH2" class="text-xl font-semibold text-slate-100 mb-3">2. Cookies & Advertising</h2>
+        <p data-i18n="privacyP2">We use third-party advertising companies (such as Google AdSense) to serve ads when you visit our website. These companies may use cookies to serve ads based on your prior visits to our website or other websites on the Internet.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">3. Analytics</h2>
-        <p>We may use basic analytics tools to monitor website traffic and improve user experience without collecting personally identifiable information.</p>
+        <h2 data-i18n="privacyH3" class="text-xl font-semibold text-slate-100 mb-3">3. Analytics</h2>
+        <p data-i18n="privacyP3">We may use basic analytics tools to monitor website traffic and improve user experience without collecting personally identifiable information.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-slate-100 mb-2">4. Contact Us</h2>
-        <p>If you have any questions regarding this Privacy Policy, please feel free to <a href="contact.html" class="text-accent-sky hover:underline">contact us</a>.</p>
+        <h2 data-i18n="privacyH4" class="text-xl font-semibold text-slate-100 mb-3">4. Contact Us</h2>
+        <p id="privacy-contact-p">
+          <span data-i18n="privacyP4_1">If you have any questions regarding this Privacy Policy, please feel free to </span>
+          <a href="contact.html" data-i18n="privacyP4_link" class="text-accent-sky hover:underline">contact us</a>.
+        </p>
       </section>
     </div>
   </main>
 
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToHome: "← Back to Home",
+          privacyTitle: "Privacy Policy",
+          privacyLastUpdated: "Last updated: August 2026",
+          privacyH1: "1. Overview",
+          privacyP1: "At TextCount.net, your privacy is extremely important to us. We do not collect, store, or share any personal text you enter into our character and word counter tool. All processing happens locally in your browser.",
+          privacyH2: "2. Cookies & Advertising",
+          privacyP2: "We use third-party advertising companies (such as Google AdSense) to serve ads when you visit our website. These companies may use cookies to serve ads based on your prior visits to our website or other websites on the Internet.",
+          privacyH3: "3. Analytics",
+          privacyP3: "We may use basic analytics tools to monitor website traffic and improve user experience without collecting personally identifiable information.",
+          privacyH4: "4. Contact Us",
+          privacyP4_1: "If you have any questions regarding this Privacy Policy, please feel free to ",
+          privacyP4_link: "contact us",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToHome: "← العودة للرئيسية",
+          privacyTitle: "سياسة الخصوصية",
+          privacyLastUpdated: "آخر تحديث: أغسطس 2026",
+          privacyH1: "1. نظرة عامة",
+          privacyP1: "في TextCount.net، خصوصيتك مهمة للغاية بالنسبة لنا. نحن لا نجمع أو نخزن أو نشارك أي نص شخصي تدخله في أداة عد الحروف والكلمات. يتم معالجة كل شيء محليًا داخل متصفحك.",
+          privacyH2: "2. ملفات تعريف الارتباط والإعلانات",
+          privacyP2: "نحن نستخدم شركات إعلانية خارجية (مثل Google AdSense) لعرض الإعلانات عند زيارتك لموقعنا. قد تستخدم هذه الشركات ملفات تعريف الارتباط لعرض الإعلانات بناءً على زياراتك السابقة لموقعنا أو لمواقع أخرى.",
+          privacyH3: "3. التحليلات",
+          privacyP3: "قد نستخدم أدوات تحليلات أساسية لمراقبة حركة المرور على الموقع وتحسين تجربة المستخدم دون جمع أي معلومات تحدد الهوية الشخصية.",
+          privacyH4: "4. اتصل بنا",
+          privacyP4_1: "إذا كان لديك أي أسئلة بشأن سياسة الخصوصية هذه، فلا تتردد في ",
+          privacyP4_link: "الاتصال بنا",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToHome: "← Zurück zur Startseite",
+          privacyTitle: "Datenschutz-Bestimmungen",
+          privacyLastUpdated: "Letzte Aktualisierung: August 2026",
+          privacyH1: "1. Übersicht",
+          privacyP1: "Ihre Privatsphäre ist uns sehr wichtig. Wir speichern oder teilen keine eingegebenen Texte.",
+          privacyH2: "2. Cookies & Werbung",
+          privacyP2: "Wir nutzen Drittanbieter für Werbung, die möglicherweise Cookies verwenden.",
+          privacyH3: "3. Analytik",
+          privacyP3: "Wir können einfache Analysetools verwenden, ohne personenbezogene Daten zu sammeln.",
+          privacyH4: "4. Kontaktieren Sie uns",
+          privacyP4_1: "Wenn Sie Fragen haben, können Sie uns gerne ",
+          privacyP4_link: "kontaktieren",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToHome: "← Retour à l'accueil",
+          privacyTitle: "Politique de confidentialité",
+          privacyLastUpdated: "Dernière mise à jour : Août 2026",
+          privacyH1: "1. Aperçu",
+          privacyP1: "Votre confidentialité est essentielle. Nous ne collectons ni ne stockons vos textes.",
+          privacyH2: "2. Cookies et publicité",
+          privacyP2: "Nous utilisons des régies publicitaires tierces qui peuvent utiliser des cookies.",
+          privacyH3: "3. Analytique",
+          privacyP3: "Nous pouvons utiliser des outils d'analyse de base sans collecter de données personnelles.",
+          privacyH4: "4. Contactez-nous",
+          privacyP4_1: "Si vous avez des questions, n'hésitez pas à ",
+          privacyP4_link: "nous contacter",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToHome: "← Volver al inicio",
+          privacyTitle: "Política de Privacidad",
+          privacyLastUpdated: "Última actualización: Agosto 2026",
+          privacyH1: "1. Descripción general",
+          privacyP1: "Su privacidad es sumamente importante. No recopilamos ni almacenamos su texto.",
+          privacyH2: "2. Cookies y Publicidad",
+          privacyP2: "Utilizamos empresas de publicidad de terceros que pueden utilizar cookies.",
+          privacyH3: "3. Analítica",
+          privacyP3: "Podemos utilizar herramientas analíticas básicas sin recopilar información personal.",
+          privacyH4: "4. Contáctenos",
+          privacyP4_1: "Si tiene alguna pregunta, no dude en ",
+          privacyP4_link: "contactarnos",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToHome: "← Torna alla Home",
+          privacyTitle: "Informativa sulla Privacy",
+          privacyLastUpdated: "Ultimo aggiornamento: Agosto 2026",
+          privacyH1: "1. Panoramica",
+          privacyP1: "La tua privacy è fondamentale. Non raccogliamo né memorizziamo alcun testo.",
+          privacyH2: "2. Cookie e Pubblicità",
+          privacyP2: "Utilizziamo società pubblicitarie di terze parti che potrebbero utilizzare i cookie.",
+          privacyH3: "3. Statistiche",
+          privacyP3: "Possiamo utilizzare strumenti di analisi base senza raccogliere dati personali.",
+          privacyH4: "4. Contattaci",
+          privacyP4_1: "Se hai domande, non esitare a ",
+          privacyP4_link: "contattarci",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToHome: "← Terug naar Home",
+          privacyTitle: "Privacybeleid",
+          privacyLastUpdated: "Laatst bijgewerkt: Augustus 2026",
+          privacyH1: "1. Overzicht",
+          privacyP1: "Uw privacy is erg belangrijk. We verzamelen of slaan geen van uw teksten op.",
+          privacyH2: "2. Cookies & Advertenties",
+          privacyP2: "We gebruiken externe advertentiebedrijven die cookies kunnen gebruiken.",
+          privacyH3: "3. Analytische gegevens",
+          privacyP3: "We kunnen basisanalysetools gebruiken zonder persoonlijke gegevens zu verzamelen.",
+          privacyH4: "4. Contact met ons opnemen",
+          privacyP4_1: "Als u vragen heeft, neem dan gerust ",
+          privacyP4_link: "contact met ons op",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToHome: "← Ana Sayfaya Dön",
+          privacyTitle: "Gizlilik Politikası",
+          privacyLastUpdated: "Son güncelleme: Ağustos 2026",
+          privacyH1: "1. Genel Bakış",
+          privacyP1: "Gizliliğiniz bizim için çok önemlidir. Girdiğiniz metinleri toplamıyoruz veya saklamıyoruz.",
+          privacyH2: "2. Çerezler ve Reklamlar",
+          privacyP2: "Çerez kullanabilecek üçüncü taraf reklam şirketlerini kullanıyoruz.",
+          privacyH3: "3. Analitik",
+          privacyP3: "Kişisel verileri toplamadan temel analiz araçlarını kullanabiliriz.",
+          privacyH4: "4. Bize Ulaşın",
+          privacyP4_1: "Sorularınız varsa, lütfen bizimle ",
+          privacyP4_link: "iletişime geçin",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToHome: "← Voltar ao Início",
+          privacyTitle: "Política de Privacidade",
+          privacyLastUpdated: "Última atualização: Agosto de 2026",
+          privacyH1: "1. Visão Geral",
+          privacyP1: "Sua privacidade é muito importante. Não coletamos nem armazenamos seus textos.",
+          privacyH2: "2. Cookies e Publicidade",
+          privacyP2: "Usamos empresas de publicidade de terceiros que podem usar cookies.",
+          privacyH3: "3. Análise",
+          privacyP3: "Podemos usar ferramentas básicas de análise sem coletar dados pessoais.",
+          privacyH4: "4. Fale Conosco",
+          privacyP4_1: "Se você tiver dúvidas, sinta-se à vontade para ",
+          privacyP4_link: "entrar em contato",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToHome: "← Вернуться на главную",
+          privacyTitle: "Политика конфиденциальности",
+          privacyLastUpdated: "Последнее обновление: Август 2026",
+          privacyH1: "1. Обзор",
+          privacyP1: "Ваша конфиденциальность очень важна. Мы не собираем и не сохраняем ваш текст.",
+          privacyH2: "2. Файлы cookie и реклама",
+          privacyP2: "Мы используем сторонние рекламные компании, которые могут использовать cookie.",
+          privacyH3: "3. Аналитика",
+          privacyP3: "Мы можем использовать базовые инструменты аналитики без сбора личных данных.",
+          privacyH4: "4. Связаться с нами",
+          privacyP4_1: "Если у вас есть вопросы, пожалуйста, ",
+          privacyP4_link: "свяжитесь с нами",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToHome: "← 返回首页",
+          privacyTitle: "隐私政策",
+          privacyLastUpdated: "最后更新：2026年8月",
+          privacyH1: "1. 概述",
+          privacyP1: "您的隐私对我们非常重要。我们不会收集或存储您输入的任何文本。",
+          privacyH2: "2. Cookie 和 Common 广告",
+          privacyP2: "我们使用第三方广告公司，这些公司可能会使用 Cookie。",
+          privacyH3: "3. 分析",
+          privacyP3: "我们可能会使用基础分析工具，而不收集个人身份信息。",
+          privacyH4: "4. 联系我们",
+          privacyP4_1: "如果您有任何疑问，请随时",
+          privacyP4_link: "联系我们",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToHome: "← ホームに戻る",
+          privacyTitle: "プライバシーポリシー",
+          privacyLastUpdated: "最終更新日: 2026年8月",
+          privacyH1: "1. 概要",
+          privacyP1: "プライバシーは非常に重要です。入力されたテキストを収集または保存することはありません。",
+          privacyH2: "2. Cookieと広告",
+          privacyP2: "Cookieを使用する可能性のあるサードパーティの広告 me 会社を利用しています。",
+          privacyH3: "3. アナリティクス",
+          privacyP3: "個人情報を収集することなく、基本的な分析ツールを使用する場合があります。",
+          privacyH4: "4. お問い合わせ",
+          privacyP4_1: "ご質問がある場合は、お気軽に",
+          privacyP4_link: "お問い合わせください",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToHome: "← होम पर वापस जाएँ",
+          privacyTitle: "गोपनीयता नीति",
+          privacyLastUpdated: "अंतिम अपडेट: अगस्त 2026",
+          privacyH1: "1. अवलोकन",
+          privacyP1: "आपकी गोपनीयता हमारे लिए महत्वपूर्ण है। हम आपके द्वारा दर्ज टेक्स्ट को एकत्र या संग्रहीत नहीं करते हैं।",
+          privacyH2: "2. कुकीज़ और विज्ञापन",
+          privacyP2: "हम तृतीय-पक्ष विज्ञापन कंपनियों का उपयोग करते हैं जो कुकीज़ का उपयोग कर सकती हैं।",
+          privacyH3: "3. एनालिटिक्स",
+          privacyP3: "हम व्यक्तिगत पहचान योग्य जानकारी एकत्र किए बिना बुनियादी विश्लेषण का उपयोग कर सकते हैं।",
+          privacyH4: "4. हमसे संपर्क करें",
+          privacyP4_1: "यदि आपके कोई प्रश्न हैं, तो बेझिझक ",
+          privacyP4_link: "हमसे संपर्क करें",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToHome: "← হোমে ফিরে যান",
+          privacyTitle: "গোপনীয়তা নীতি",
+          privacyLastUpdated: "সর্বশেষ আপডেট: আগস্ট ২০২৬",
+          privacyH1: "1. সংক্ষিপ্ত বিবরণ",
+          privacyP1: "আপনার গোপনীয়তা আমাদের কাছে খুব গুরুত্বপূর্ণ। আমরা আপনার লেখা টেক্সট সংরক্ষণ করি না।",
+          privacyH2: "2. কুকিজ এবং বিজ্ঞাপন",
+          privacyP2: "আমরা তৃতীয় পক্ষের বিজ্ঞাপন সংস্থাগুলি ব্যবহার করি যা কুকিজ ব্যবহার করতে পারে।",
+          privacyH3: "3. অ্যানালিটিক্স",
+          privacyP3: "আমরা ব্যক্তিগত তথ্য সংগ্রহ না করেই মৌলিক বিশ্লেষণ সরঞ্জাম ব্যবহার করতে পারি।",
+          privacyH4: "4. যোগাযোগ করুন",
+          privacyP4_1: "আপনার কোনো প্রশ্ন থাকলে, নির্দ্বিধায় ",
+          privacyP4_link: "আমাদের সাথে যোগাযোগ করুন",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToHome: "← ہوم پر واپس جائیں",
+          privacyTitle: "پرائیویسی پالیسی",
+          privacyLastUpdated: "آخری اپ ڈیٹ: اگست 2026",
+          privacyH1: "1. جائزہ",
+          privacyP1: "آپ کی پرائیویسی ہمارے لیے انتہائی اہم ہے۔ ہم آپ کے داخل کردہ متن کو محفوظ یا شیئر نہیں کرتے۔",
+          privacyH2: "2. کوکیز اور اشتہارات",
+          privacyP2: "ہم فریق ثالث کی اشتہاری کمپنیوں کا استعمال کرتے ہیں جو کوکیز کا استعمال کر سکتی ہیں۔",
+          privacyH3: "3. تجزيات",
+          privacyP3: "ہم ذاتی معلومات جمع کیے بغیر بنیادی تجزیاتی ٹولز استعمال کر سکتے ہیں۔",
+          privacyH4: "4. ہم سے رابطہ کریں",
+          privacyP4_1: "اگر آپ کے کوئی سوالات ہیں، تو بلا جھجھک ",
+          privacyP4_link: "ہم سے رابطہ کریں",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.privacyTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
