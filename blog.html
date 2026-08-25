@@ -45,7 +45,7 @@
 <body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
 
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
         <a href="/" data-i18n="backToHome" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
@@ -72,11 +72,15 @@
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
-    <h1 data-i18n="blogTitle" class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
-    <p data-i18n="blogDesc" class="text-slate-400 mb-8">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
+  <main class="max-w-6xl mx-auto px-4 py-10 flex-1 w-full">
+    <div class="max-w-3xl mb-10">
+      <h1 data-i18n="blogTitle" class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
+      <p data-i18n="blogDesc" class="text-slate-400">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- شبكة المقالات (6 مدونات بمواضيع مختلفة ومتنوعة) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
       <!-- Article 1 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
@@ -127,12 +131,64 @@
           <a href="blog/speech-length-by-word-count.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
         </div>
       </article>
+
+      <!-- Article 4 (جديدة: كثافة الكلمات المفتاحية) -->
+      <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
+        <div>
+          <span data-i18n="cat4" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO Metrics</span>
+          <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
+            <a href="blog/keyword-density-optimization.html" data-i18n="art4Title" class="hover:underline">What is Keyword Density and How to Optimize It</a>
+          </h2>
+          <p data-i18n="art4Desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
+            Understand safe keyword percentages (1% - 3%) and how to avoid keyword stuffing penalties in modern SEO.
+          </p>
+        </div>
+        <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
+          <span data-i18n="art4ReadTime">4 min read</span>
+          <a href="blog/keyword-density-optimization.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Article 5 (جديدة: عناوين وأوصاف الميتا) -->
+      <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
+        <div>
+          <span data-i18n="cat5" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">On-Page SEO</span>
+          <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
+            <a href="blog/meta-title-description-length.html" data-i18n="art5Title" class="hover:underline">Meta Titles and Descriptions Best Practices</a>
+          </h2>
+          <p data-i18n="art5Desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
+            Master 50-character title limits and 150-character descriptions to maximize organic click-through rates (CTR).
+          </p>
+        </div>
+        <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
+          <span data-i18n="art5ReadTime">3 min read</span>
+          <a href="blog/meta-title-description-length.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Article 6 (جديدة: تجربة المستخدم ومعدل الارتداد) -->
+      <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
+        <div>
+          <span data-i18n="cat6" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">User Experience</span>
+          <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
+            <a href="blog/content-length-and-bounce-rate.html" data-i18n="art6Title" class="hover:underline">How Content Length Affects Bounce Rates</a>
+          </h2>
+          <p data-i18n="art6Desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
+            Learn formatting techniques and strategic content pacing to encourage visitors to stay longer on your web pages.
+          </p>
+        </div>
+        <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
+          <span data-i18n="art6ReadTime">4 min read</span>
+          <a href="blog/content-length-and-bounce-rate.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
+        </div>
+      </article>
+
     </div>
   </main>
 
-  <!-- التذييل (Footer) المحدث ليحتوي على جميع الصفحات المهمة -->
+  <!-- التذييل (Footer) -->
   <footer class="border-t border-border-dark py-6 px-4 text-center text-slate-500 text-xs">
-    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
       <div class="flex items-center flex-wrap justify-center gap-3 text-slate-400">
         <a href="/about.html" data-i18n="footerAbout" class="hover:text-accent-sky transition">About</a>
@@ -167,6 +223,18 @@
           art3Title: "Speech Length by Word Count: How Many Words?",
           art3Desc: "Calculate exact speech durations for YouTube video scripts, presentations, and TED talks based on speaking speeds.",
           art3ReadTime: "4 min read",
+          cat4: "SEO Metrics",
+          art4Title: "What is Keyword Density and How to Optimize It",
+          art4Desc: "Understand safe keyword percentages (1% - 3%) and how to avoid keyword stuffing penalties in modern SEO.",
+          art4ReadTime: "4 min read",
+          cat5: "On-Page SEO",
+          art5Title: "Meta Titles and Descriptions Best Practices",
+          art5Desc: "Master 50-character title limits and 150-character descriptions to maximize organic click-through rates (CTR).",
+          art5ReadTime: "3 min read",
+          cat6: "User Experience",
+          art6Title: "How Content Length Affects Bounce Rates",
+          art6Desc: "Learn formatting techniques and strategic content pacing to encourage visitors to stay longer on your web pages.",
+          art6ReadTime: "4 min read",
           readMore: "Read",
           footer: "© 2026 TextCount.net — All rights reserved",
           footerAbout: "About",
@@ -190,6 +258,18 @@
           art3Title: "طول الخطاب حسب عدد الكلمات: كم كلمة تحتاج؟",
           art3Desc: "احسب مدة الخطاب الدقيقة لنصوص فيديوهات يوتيوب والعروض التقديمية وكلمات TED بناءً على سرعة الحديث.",
           art3ReadTime: "قراءة 4 دقائق",
+          cat4: "مقاييس السيو",
+          art4Title: "ما هي كثافة الكلمات المفتاحية وكيف تحسنها",
+          art4Desc: "فهم النسبة المئوية الآمنة للكلمات المفتاحية (1% - 3%) وتجنب عقوبات الحشو في السيو الحديث.",
+          art4ReadTime: "قراءة 4 دقائق",
+          cat5: "السيو الداخلي",
+          art5Title: "أفضل ممارسات عناوين وأوصاف الميتا (Meta)",
+          art5Desc: "اضبط حدود 50 حرفاً للعناوين و150 حرفاً للأوصاف لزيادة معدل النقر العضوي (CTR).",
+          art5ReadTime: "قراءة 3 دقائق",
+          cat6: "تجربة المستخدم",
+          art6Title: "كيف تؤثر إطالة النصوص على معدل الارتداد",
+          art6Desc: "تعرف على تقنيات التنسيق وتوجيه المحتوى لتشجيع الزوار على البقاء لفترة أطول في صفحاتك.",
+          art6ReadTime: "قراءة 4 دقائق",
           readMore: "اقرأ",
           footer: "© 2026 TextCount.net — جميع الحقوق محفوظة",
           footerAbout: "من نحن",
@@ -213,6 +293,18 @@
           art3Title: "Redelänge nach Wortanzahl: Wie viele Wörter?",
           art3Desc: "Berechnen Sie exakte Redezeiten für Videos und Präsentationen.",
           art3ReadTime: "4 Min. Lesezeit",
+          cat4: "SEO-Metriken",
+          art4Title: "Was ist Keyword-Dichte und wie optimiert man sie?",
+          art4Desc: "Verstehen Sie sichere Keyword-Prozentsätze und vermeiden Sie Keyword-Stuffing.",
+          art4ReadTime: "4 Min. Lesezeit",
+          cat5: "On-Page SEO",
+          art5Title: "Meta-Titel und -Beschreibungen Best Practices",
+          art5Desc: "Meistern Sie Titel und Beschreibungen zur Maximierung der CTR.",
+          art5ReadTime: "3 Min. Lesezeit",
+          cat6: "User Experience",
+          art6Title: "Wie die Textlänge die Absprungrate beeinflusst",
+          art6Desc: "Erfahren Sie Formatierungstechniken, um Besucher länger zu binden.",
+          art6ReadTime: "4 Min. Lesezeit",
           readMore: "Lesen",
           footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
           footerAbout: "Über uns",
@@ -236,6 +328,18 @@
           art3Title: "Durée d'un discours selon le nombre de mots",
           art3Desc: "Calculez la durée exacte pour vos scripts YouTube et présentations.",
           art3ReadTime: "4 min de lecture",
+          cat4: "Métriques SEO",
+          art4Title: "Qu'est-ce que la densité de mots-clés et comment l'optimiser",
+          art4Desc: "Comprenez les pourcentages sécurisés et évitez le bourrage de mots-clés.",
+          art4ReadTime: "4 min de lecture",
+          cat5: "SEO On-Page",
+          art5Title: "Bonnes pratiques pour les balises Meta Title et Description",
+          art5Desc: "Maîtrisez les limites de caractères pour maximiser vos taux de clics.",
+          art5ReadTime: "3 min de lecture",
+          cat6: "Expérience Utilisateur",
+          art6Title: "Comment la longueur du contenu affecte le taux de rebond",
+          art6Desc: "Apprenez des techniques de mise en forme pour retenir vos visiteurs.",
+          art6ReadTime: "4 min de lecture",
           readMore: "Lire",
           footer: "© 2026 TextCount.net — Tous droits réservés",
           footerAbout: "À propos",
@@ -259,6 +363,18 @@
           art3Title: "Duración del discurso por recuento de palabras",
           art3Desc: "Calcule la duración exacta para guiones de YouTube y presentaciones.",
           art3ReadTime: "4 min de lectura",
+          cat4: "Métricas SEO",
+          art4Title: "Qué es la densidad de palabras clave y cómo optimizarla",
+          art4Desc: "Comprenda los porcentajes seguros y evite penalizaciones.",
+          art4ReadTime: "4 min de lectura",
+          cat5: "SEO On-Page",
+          art5Title: "Mejores prácticas para títulos y descripciones Meta",
+          art5Desc: "Domina los límites para maximizar las tasas de clics.",
+          art5ReadTime: "3 min de lectura",
+          cat6: "Experiencia de Usuario",
+          art6Title: "Cómo la longitud del contenido afecta la tasa de rebote",
+          art6Desc: "Aprenda técnicas de formato para retener a los visitantes por más tiempo.",
+          art6ReadTime: "4 min de lectura",
           readMore: "Leer",
           footer: "© 2026 TextCount.net — Todos los derechos reservados",
           footerAbout: "Sobre nosotros",
@@ -282,6 +398,18 @@
           art3Title: "Lunghezza del discorso in base al conteggio parole",
           art3Desc: "Calcola la durata esatta per script YouTube e presentazioni.",
           art3ReadTime: "4 min di lettura",
+          cat4: "Metriche SEO",
+          art4Title: "Cos'è la densità delle parole chiave e come ottimizzarla",
+          art4Desc: "Comprendi le percentuali sicure ed evita il keyword stuffing.",
+          art4ReadTime: "4 min di lettura",
+          cat5: "SEO On-Page",
+          art5Title: "Best practice per Meta Title e Description",
+          art5Desc: "Ottimizza i limiti di caratteri per massimizzare il CTR.",
+          art5ReadTime: "3 min di lettura",
+          cat6: "Esperienza Utente",
+          art6Title: "Come la lunghezza del contenuto influisce sul bounce rate",
+          art6Desc: "Impara tecniche di formattazione per trattenere i visitatori.",
+          art6ReadTime: "4 min di lettura",
           readMore: "Leggi",
           footer: "© 2026 TextCount.net — Tutti i diritti riservati",
           footerAbout: "Chi siamo",
@@ -305,6 +433,18 @@
           art3Title: "Lengte van toespraak op basis van woordenaantal",
           art3Desc: "Bereken exacte spreektijden voor YouTube-scripts en presentaties.",
           art3ReadTime: "4 min leestijd",
+          cat4: "SEO Metriek",
+          art4Title: "Wat is keyword density en hoe optimaliseer je dit?",
+          art4Desc: "Begrijp veilige percentages en voorkom keyword stuffing.",
+          art4ReadTime: "4 min leestijd",
+          cat5: "On-Page SEO",
+          art5Title: "Beste praktijken voor Meta Titels en Omschrijvingen",
+          art5Desc: "Beheers tekenlimieten om doorklikratio's te maximaliseren.",
+          art5ReadTime: "3 min leestijd",
+          cat6: "Gebruikerservaring",
+          art6Title: "Hoe tekstlengte het bouncepercentage beïnvloedt",
+          art6Desc: "Leer opmaaktechnieken om bezoekers langer vast te houden.",
+          art6ReadTime: "4 min leestijd",
           readMore: "Lezen",
           footer: "© 2026 TextCount.net — Alle rechten voorbehouden",
           footerAbout: "Over ons",
@@ -328,6 +468,18 @@
           art3Title: "Kelime Sayısına Göre Konuşma Süresi",
           art3Desc: "YouTube metinleri ve sunumlar için kesin konuşma sürelerini hesaplayın.",
           art3ReadTime: "4 dk okuma",
+          cat4: "SEO Metrikleri",
+          art4Title: "Anahtar Kelime Yoğunluğu Nedir ve Nasıl Optimize Edilir?",
+          art4Desc: "Güvenli oranları öğrenin ve anahtar kelime yığılmasından kaçının.",
+          art4ReadTime: "4 dk okuma",
+          cat5: "On-Page SEO",
+          art5Title: "Meta Başlık ve Açıklamaları İçin En İyi Uygulamalar",
+          art5Desc: "Tıklama oranlarını artırmak için karakter sınırlarında uzmanlaşın.",
+          art5ReadTime: "3 dk okuma",
+          cat6: "Kullanıcı Deneyimi",
+          art6Title: "İçerik Uzunluğu Hemen Çıkma Oranını Nasıl Etkiler?",
+          art6Desc: "Ziyaretçileri daha uzun süre tutmak için biçimlendirme teknikleri.",
+          art6ReadTime: "4 dk okuma",
           readMore: "Oku",
           footer: "© 2026 TextCount.net — Tüm hakları saklıdır",
           footerAbout: "Hakkımızda",
@@ -351,6 +503,18 @@
           art3Title: "Duração do discurso por contagem de palavras",
           art3Desc: "Calcule a duração exata para roteiros do YouTube e apresentações.",
           art3ReadTime: "4 min de leitura",
+          cat4: "Métricas SEO",
+          art4Title: "O que é Densidade de Palavras-Chave e Como Otimizá-la",
+          art4Desc: "Compreenda percentuais seguros e evite penalizações por excesso.",
+          art4ReadTime: "4 min de leitura",
+          cat5: "SEO On-Page",
+          art5Title: "Boas Práticas para Títulos e Descrições Meta",
+          art5Desc: "Domine os limites de caracteres para maximizar a taxa de cliques.",
+          art5ReadTime: "3 min de leitura",
+          cat6: "Experiência do Usuário",
+          art6Title: "Como o Comprimento do Conteúdo Afeta a Rejeição (Bounce Rate)",
+          art6Desc: "Aprenda técnicas de formatação para manter os usuários na página.",
+          art6ReadTime: "4 min de leitura",
           readMore: "Ler",
           footer: "© 2026 TextCount.net — Todos os direitos reservados",
           footerAbout: "Sobre nós",
@@ -374,6 +538,18 @@
           art3Title: "Длительность речи по количеству слов",
           art3Desc: "Рассчитайте точное время для сценариев YouTube и презентаций.",
           art3ReadTime: "4 мин чтения",
+          cat4: "SEO Метрики",
+          art4Title: "Что такое плотность ключевых слов и как ее оптимизировать",
+          art4Desc: "Изучите безопасные пропорции и избегайте спама ключевыми словами.",
+          art4ReadTime: "4 мин чтения",
+          cat5: "On-Page SEO",
+          art5Title: "Лучшие практики для мета-тегов Title и Description",
+          art5Desc: "Оптимизируйте длину для максимального роста кликабельности (CTR).",
+          art5ReadTime: "3 мин чтения",
+          cat6: "Пользовательский опыт",
+          art6Title: "Как объем контента влияет на показатель отказов",
+          art6Desc: "Изучите методы структурирования текста для удержания читателей.",
+          art6ReadTime: "4 мин чтения",
           readMore: "Читать",
           footer: "© 2026 TextCount.net — Все права защищены",
           footerAbout: "О нас",
@@ -393,10 +569,22 @@
           art2Title: "社交媒体字符限制指南（2026年）",
           art2Desc: "掌握 X、LinkedIn 和 Instagram 的文案字数规则。",
           art2ReadTime: "阅读时间 4 分钟",
-          cat3: "演讲与口craft",
+          cat3: "演讲与口才",
           art3Title: "按字数计算演讲时长：需要多少字？",
           art3Desc: "计算 YouTube 视频脚本和演示文稿的准确演讲时长。",
           art3ReadTime: "阅读时间 4 分钟",
+          cat4: "SEO 指标",
+          art4Title: "什么是关键词密度以及如何进行优化",
+          art4Desc: "了解安全的关键词比例并避免关键词堆砌惩罚。",
+          art4ReadTime: "阅读时间 4 分钟",
+          cat5: "页面 SEO",
+          art5Title: "Meta 标题和描述的最佳实践",
+          art5Desc: "掌握字符限制以最大化自然点击率 (CTR)。",
+          art5ReadTime: "阅读时间 3 分钟",
+          cat6: "用户体验",
+          art6Title: "内容长度如何影响跳出率",
+          art6Desc: "了解排版技巧和内容节奏，吸引访客在网页上停留更长时间。",
+          art6ReadTime: "阅读时间 4 分钟",
           readMore: "阅读",
           footer: "© 2026 TextCount.net — 保留所有权利",
           footerAbout: "关于我们",
@@ -420,6 +608,18 @@
           art3Title: "文字数から計算するスピーチ時間：何文字必要？",
           art3Desc: "YouTubeスクリプトやプレゼンの正確な話し時間を計算。",
           art3ReadTime: "読了時間 4分",
+          cat4: "SEO指標",
+          art4Title: "キーワード密度とは？その最適化方法",
+          art4Desc: "安全なキーワード比率を理解し、キーワードの詰め込みペナルティを防ぐ。",
+          art4ReadTime: "読了時間 4分",
+          cat5: "オンページSEO",
+          art5Title: "メタタイトルとメタディスクリプションのベストプラクティス",
+          art5Desc: "文字数制限をマスターしてオーガニックCTRを最大化する。",
+          art5ReadTime: "読了時間 3分",
+          cat6: "ユーザー体験",
+          art6Title: "コンテンツの長さが直帰率に与える影響",
+          art6Desc: "ユーザーの滞 留時間を延ばすためのフォーマット戦術。",
+          art6ReadTime: "読了時間 4分",
           readMore: "読む",
           footer: "© 2026 TextCount.net — All rights reserved",
           footerAbout: "運営会社",
@@ -443,11 +643,23 @@
           art3Title: "शब्द संख्या के अनुसार भाषण की लंबाई: कितने शब्द?",
           art3Desc: "YouTube वीडियो स्क्रिप्ट और प्रस्तुतियों के लिए सटीक समय की गणना करें।",
           art3ReadTime: "4 मिनट का पठन",
+          cat4: "SEO मेट्रیکس",
+          art4Title: "कीवर्ड घनत्व क्या है और इसे कैसे अनुकूलित करें",
+          art4Desc: "सुरक्षित कीवर्ड प्रतिशत समझें और कीवर्ड स्टफिंग से बचें।",
+          art4ReadTime: "4 मिनट का पठन",
+          cat5: "ऑन-पेज SEO",
+          art5Title: "मेटा शीर्षक और विवरण सर्वोत्तम अभ्यास",
+          art5Desc: "CTR बढ़ाने के लिए वर्ण सीमा में महारत हासिल करें।",
+          art5ReadTime: "3 मिनट का पठन",
+          cat6: "उपयोगकर्ता अनुभव",
+          art6Title: "सामग्री की लंबाई उछाल दर (Bounce Rate) को कैसे प्रभावित करती है",
+          art6Desc: "पाठकों को अधिक समय तक रोकने के लिए स्वरूपण तकनीकें सीखें।",
+          art6ReadTime: "4 मिनट का पठन",
           readMore: "पढ़ें",
           footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित",
-          footerAbout: "हमारे بارے में",
+          footerAbout: "हमारे बारे में",
           footerPrivacy: "गोपनीयता नीति",
-          footerTerms: "उपयोग की شरतें",
+          footerTerms: "उपयोग की शर्तें",
           footerContact: "संपर्क करें"
         },
         bn: {
@@ -466,6 +678,18 @@
           art3Title: "শব্দ সংখ্যা অনুযায়ী বক্তব্যের দৈর্ঘ্য: কত শব্দ প্রয়োজন?",
           art3Desc: "ইউটিউব স্ক্রিপ্ট এবং প্রেজেন্টেশনের জন্য সঠিক সময় গণনা করুন।",
           art3ReadTime: "৪ মিনিট পড়ার সময়",
+          cat4: "এসইও মেট্রিক্স",
+          art4Title: "কিওয়ার্ড ডেনসিটি কী এবং কীভাবে এটি অপ্টিমাইজ করবেন",
+          art4Desc: "নিরাপদ কিওয়ার্ড অনুপাত বুঝুন এবং কিওয়ার্ড স্টাফিং এড়িয়ে চলুন।",
+          art4ReadTime: "৪ মিনিট পড়ার সময়",
+          cat5: "অন-পেজ এসইও",
+          art5Title: "মেটা টাইটেল এবং ডেসক্রিপশনের সেরা অভ্যাস",
+          art5Desc: "ক্লিক-থ্রু রেট (CTR) বাড়াতে ক্যারেক্টার সীমা আয়ত্ত করুন।",
+          art5ReadTime: "৩ মিনিট পড়ার সময়",
+          cat6: "ব্যবহারকারী অভিজ্ঞতা",
+          art6Title: "কন্টেন্টের দৈর্ঘ্য কীভাবে বাউন্স রেটকে প্রভাবিত করে",
+          art6Desc: "ব্যবহারকারীদের দীর্ঘক্ষণ ধরে রাখতে ফরম্যাটিং কৌশল শিখুন।",
+          art6ReadTime: "৪ মিনিট পড়ার সময়",
           readMore: "পড়ুন",
           footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত",
           footerAbout: "আমাদের সম্পর্কে",
@@ -476,25 +700,37 @@
         ur: {
           backToHome: "← ٹول پر واپس جائیں",
           blogTitle: "رائٹنگ اور SEO وسائل",
-          blogDesc: "بہتر مواد لکھنے اور سرچ انجن کے لیے الفاظ کی تعداد کو بہتر بنانے کی رہنمائی۔",
-          cat1: "SEO اور مواد",
-          art1Title: "2026 میں SEO کے لیے الفاظ کی تعداد کی حتمی گائیڈ",
-          art1Desc: "گوگل رینکنگ کو بڑھانے کے لیے بلاگ پوسٹس کے لیے مثالی الفاظ کی تعداد دریافت کریں۔",
-          art1ReadTime: "5 منٹ کا مطالعہ",
+          blogDesc: "بہتر مواد لکھنے اور سرچ انجن के लिए الفاظ की تعداد کو بہتر بنانے की رہنمائی۔",
+          cat1: "SEO और مواد",
+          art1Title: "2026 में SEO के लिए الفاظ की تعداد की حتمی گائیڈ",
+          art1Desc: "گوگل رینکنگ کو بڑھانے के लिए بلاگ پوسٹس کے لیے مثالی الفاظ کی تعداد دریافت کریں۔",
+          art1ReadTime: "5 منٹ का مطالعہ",
           cat2: "سوشل میڈیا",
-          art2Title: "سوشل میڈیا حروف کی حد کی گائیڈ (2026)",
-          art2Desc: "X، LinkedIn اور Instagram پر پوسٹ کی لمبائی کے قواعد میں مہارت حاصل کریں۔",
+          art2Title: "سوشل میڈیا حروف की حد की گائیڈ (2026)",
+          art2Desc: "X، LinkedIn और Instagram पर पोस्ट की لمبائی के قواعد में महारत हासिल करें।",
           art2ReadTime: "4 منٹ کا مطالعہ",
-          cat3: "تقریر اور خطاب",
-          art3Title: "الفاظ کی تعداد کے لحاظ سے تقریر کی لمبائی",
-          art3Desc: "یوٹیوب اسکرپٹس اور پریزنٹیشنز کے لیے تقریر کے درست وقت کا حساب لگائیں۔",
+          cat3: "تقریر और خطاب",
+          art3Title: "الفاظ की تعداد के لحاظ से تقریر की لمبائی",
+          art3Desc: "يوٹیوب اسکرپٹس اور پریزنٹیشنز के लिए تقریر के درست وقت का حساب لگائیں۔",
           art3ReadTime: "4 منٹ का مطالعہ",
+          cat4: "SEO میٹرکس",
+          art4Title: "Keyword Density کیا ہے اور اس کی اصلاح کیسے کی جائے",
+          art4Desc: "محفوظ تناسب کو سمجھیں اور کی ورڈ سٹفنگ سے بچیں۔",
+          art4ReadTime: "4 منٹ کا مطالعہ",
+          cat5: "آن پیج SEO",
+          art5Title: "میٹا ٹائٹلز اور ڈسکرپشن کے بہترین طریقے",
+          art5Desc: "سی ٹی آر (CTR) کو زیادہ سے زیادہ کرنے کے لیے حروف کی حد کو سمجھیں۔",
+          art5ReadTime: "3 منٹ का مطالعہ",
+          cat6: "صارف का تجربہ",
+          art6Title: "مواد کی لمبائی باؤنس ریٹ کو کیسے متاثر کرتی है",
+          art6Desc: "صارفین کو طویل عرصے تک روکے رکھنے کے لیے فارمیٹنگ کی حکمت عملی۔",
+          art6ReadTime: "4 منٹ का مطالعہ",
           readMore: "پڑھیں",
           footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں",
           footerAbout: "ہمارے بارے میں",
           footerPrivacy: "پالیسی رازداری",
-          footerTerms: "استعمال کی شرائط",
-          footerContact: "ہم سے رابطہ کریں"
+          footerTerms: "استعمال की شرائط",
+          footerContact: "हम से رابطہ करें"
         }
       };
 
