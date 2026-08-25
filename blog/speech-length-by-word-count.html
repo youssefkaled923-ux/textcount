@@ -1,584 +1,501 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Speech Length Calculator: How Many Words Per Minute? - TextCount.net</title>
-  
-  <!-- Google AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722744839434318"
-     crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Speech Length Calculator: How Many Words Per Minute? - TextCount.net</title>
+  
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722744839434318"
+     crossorigin="anonymous"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { 
-            'base-dark': '#0f172a', 
-            'card-dark': '#1e293b', 
-            'border-dark': '#334155', 
-            'accent-sky': '#38bdf8' 
-          }
-        }
-      }
-    };
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
+        }
+      }
+    };
+  </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
-    select#lang-select { 
-      -webkit-appearance: none; 
-      appearance: none; 
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
-      background-repeat: no-repeat; 
-      background-position: right 0.65rem center; 
-      background-size: 1.1em; 
-    }
-    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
-  </style>
+  <style>
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
+    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
+  </style>
 </head>
 <body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
 
-  <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
-      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <div class="flex items-center gap-4">
+        <a href="/blog.html" data-i18n="backToBlog" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-1 w-full">
+    <article>
+      <header class="mb-8">
+        <span data-i18n="category" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Speech & Presentation</span>
+        <h1 data-i18n="articleTitle" class="text-3xl md:text-4xl font-bold text-slate-50 mt-2 mb-4">Speech Length by Word Count: How Many Words Do You Need?</h1>
+        <p data-i18n="publishMeta" class="text-slate-400 text-sm">Published: August 2026 • 4 min read</p>
+      </header>
+
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p data-i18n="p1">Whether you are preparing a YouTube script, a TED talk, or a university presentation, understanding the relationship between word count and speaking time is crucial.</p>
+
+        <h2 data-i18n="headingSpeed" class="text-2xl font-bold text-slate-100 mt-8 mb-3">Average Speaking Speed</h2>
+        <p>
+          <span data-i18n="p2Start">The average speaker talks at a rate of </span>
+          <strong data-i18n="p2Bold" class="text-slate-100">130 to 150 words per minute (WPM)</strong>. 
+          <span data-i18n="p2End">Presentation speeches with pauses typically sit around 125 WPM, while fast-paced video voiceovers hit 160 WPM.</span>
+        </p>
+
+        <h2 data-i18n="headingTable" class="text-2xl font-bold text-slate-100 mt-8 mb-3">Quick Word-to-Speech Reference Table</h2>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-start text-sm text-slate-300 bg-card-dark border border-border-dark rounded-lg">
+            <thead class="bg-base-dark text-slate-100 border-b border-border-dark">
+              <tr>
+                <th data-i18n="thDuration" class="p-3 text-start">Speech Duration</th>
+                <th data-i18n="thSlow" class="p-3 text-start">Slow Pace (110 WPM)</th>
+                <th data-i18n="thAvg" class="p-3 text-start">Average Pace (130 WPM)</th>
+                <th data-i18n="thFast" class="p-3 text-start">Fast Pace (160 WPM)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border-dark">
+              <tr>
+                <td data-i18n="row1Duration" class="p-3 font-semibold text-slate-100">1 Minute</td>
+                <td data-i18n="row1Slow" class="p-3">110 words</td>
+                <td data-i18n="row1Avg" class="p-3">130 words</td>
+                <td data-i18n="row1Fast" class="p-3">160 words</td>
+              </tr>
+              <tr>
+                <td data-i18n="row2Duration" class="p-3 font-semibold text-slate-100">3 Minutes</td>
+                <td data-i18n="row2Slow" class="p-3">330 words</td>
+                <td data-i18n="row2Avg" class="p-3">390 words</td>
+                <td data-i18n="row2Fast" class="p-3">480 words</td>
+              </tr>
+              <tr>
+                <td data-i18n="row3Duration" class="p-3 font-semibold text-slate-100">5 Minutes</td>
+                <td data-i18n="row3Slow" class="p-3">550 words</td>
+                <td data-i18n="row3Avg" class="p-3">650 words</td>
+                <td data-i18n="row3Fast" class="p-3">800 words</td>
+              </tr>
+              <tr>
+                <td data-i18n="row4Duration" class="p-3 font-semibold text-slate-100">10 Minutes</td>
+                <td data-i18n="row4Slow" class="p-3">1,100 words</td>
+                <td data-i18n="row4Avg" class="p-3">1,300 words</td>
+                <td data-i18n="row4Fast" class="p-3">1,600 words</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-4">
+          <span data-i18n="p3Start">Use the built-in speech timer on </span>
+          <a href="/" class="text-accent-sky hover:underline">TextCount.net</a>
+          <span data-i18n="p3End"> to accurately estimate your exact speaking duration in real-time.</span>
+        </p>
+      </div>
+    </article>
+  </main>
+
+<footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
+      <!-- روابط إضافية للفوتر إن وجدت مثل سياسة الخصوصية أو شروط الاستخدام -->
       <div class="flex items-center gap-4">
-        <a href="/blog.html" data-i18n="backToBlog" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
-        
-        <!-- قائمة اختيار اللغة -->
-        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
-          <option value="ar">العربية</option>
-          <option value="en">English</option>
-          <option value="de">Deutsch</option>
-          <option value="fr">Français</option>
-          <option value="es">Español</option>
-          <option value="it">Italiano</option>
-          <option value="nl">Nederlands</option>
-          <option value="tr">Türkçe</option>
-          <option value="pt">Português</option>
-          <option value="ru">Русский</option>
-          <option value="zh">中文</option>
-          <option value="ja">日本語</option>
-          <option value="hi">हिन्दी</option>
-          <option value="bn">বাংলা</option>
-          <option value="ur">اردو</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-3xl mx-auto px-4 py-10 flex-1 w-full">
-    <article>
-      <header class="mb-8">
-        <span data-i18n="category" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Speech & Presentation</span>
-        <h1 data-i18n="articleTitle" class="text-3xl md:text-4xl font-bold text-slate-50 mt-2 mb-4">Speech Length by Word Count: How Many Words Do You Need?</h1>
-        <p data-i18n="publishMeta" class="text-slate-400 text-sm">Published: August 2026 • 4 min read</p>
-      </header>
-
-      <div class="space-y-6 text-slate-300 leading-relaxed">
-        <p data-i18n="p1">Whether you are preparing a YouTube script, a TED talk, or a university presentation, understanding the relationship between word count and speaking time is crucial.</p>
-
-        <h2 data-i18n="headingSpeed" class="text-2xl font-bold text-slate-100 mt-8 mb-3">Average Speaking Speed</h2>
-        <p>
-          <span data-i18n="p2Start">The average speaker talks at a rate of </span>
-          <strong data-i18n="p2Bold" class="text-slate-100">130 to 150 words per minute (WPM)</strong>. 
-          <span data-i18n="p2End">Presentation speeches with pauses typically sit around 125 WPM, while fast-paced video voiceovers hit 160 WPM.</span>
-        </p>
-
-        <h2 data-i18n="headingTable" class="text-2xl font-bold text-slate-100 mt-8 mb-3">Quick Word-to-Speech Reference Table</h2>
-        
-        <div class="overflow-x-auto">
-          <table class="w-full text-start text-sm text-slate-300 bg-card-dark border border-border-dark rounded-lg">
-            <thead class="bg-base-dark text-slate-100 border-b border-border-dark">
-              <tr>
-                <th data-i18n="thDuration" class="p-3 text-start">Speech Duration</th>
-                <th data-i18n="thSlow" class="p-3 text-start">Slow Pace (110 WPM)</th>
-                <th data-i18n="thAvg" class="p-3 text-start">Average Pace (130 WPM)</th>
-                <th data-i18n="thFast" class="p-3 text-start">Fast Pace (160 WPM)</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-border-dark">
-              <tr>
-                <td data-i18n="row1Duration" class="p-3 font-semibold text-slate-100">1 Minute</td>
-                <td data-i18n="row1Slow" class="p-3">110 words</td>
-                <td data-i18n="row1Avg" class="p-3">130 words</td>
-                <td data-i18n="row1Fast" class="p-3">160 words</td>
-              </tr>
-              <tr>
-                <td data-i18n="row2Duration" class="p-3 font-semibold text-slate-100">3 Minutes</td>
-                <td data-i18n="row2Slow" class="p-3">330 words</td>
-                <td data-i18n="row2Avg" class="p-3">390 words</td>
-                <td data-i18n="row2Fast" class="p-3">480 words</td>
-              </tr>
-              <tr>
-                <td data-i18n="row3Duration" class="p-3 font-semibold text-slate-100">5 Minutes</td>
-                <td data-i18n="row3Slow" class="p-3">550 words</td>
-                <td data-i18n="row3Avg" class="p-3">650 words</td>
-                <td data-i18n="row3Fast" class="p-3">800 words</td>
-              </tr>
-              <tr>
-                <td data-i18n="row4Duration" class="p-3 font-semibold text-slate-100">10 Minutes</td>
-                <td data-i18n="row4Slow" class="p-3">1,100 words</td>
-                <td data-i18n="row4Avg" class="p-3">1,300 words</td>
-                <td data-i18n="row4Fast" class="p-3">1,600 words</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="mt-4">
-          <span data-i18n="p3Start">Use the built-in speech timer on </span>
-          <a href="/" class="text-accent-sky hover:underline">TextCount.net</a>
-          <span data-i18n="p3End"> to accurately estimate your exact speaking duration in real-time.</span>
-        </p>
-      </div>
-    </article>
-  </main>
-
-  <!-- الفوتر المحدث بنفس تصميم الكود السابق -->
-  <footer class="border-t border-border-dark bg-card-dark py-8 px-6 text-slate-400 text-sm">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-start">
-      <div>
-        <a href="/" class="text-lg font-bold text-slate-100">TextCount<span class="text-accent-sky">.net</span></a>
-        <p class="text-xs text-slate-500 mt-1" data-i18n="footerDesc">Professional text analysis and counting tools.</p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-300">
         <a href="/privacy.html" class="hover:text-accent-sky transition-colors" data-i18n="privacyPolicy">Privacy Policy</a>
         <a href="/terms.html" class="hover:text-accent-sky transition-colors" data-i18n="termsOfService">Terms of Service</a>
-        <a href="/contact.html" class="hover:text-accent-sky transition-colors" data-i18n="contactUs">Contact Us</a>
-        <a href="/blog.html" class="hover:text-accent-sky transition-colors" data-i18n="blog">Blog</a>
-      </div>
-      <div class="text-xs text-slate-500">
-        <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
       </div>
     </div>
   </footer>
+  
+  <script>
+    (function () {
+      "use strict";
 
-  <script>
-    (function () {
-      "use strict";
+      var translations = {
+        en: {
+          backToBlog: "← Back to Blog",
+          category: "Speech & Presentation",
+          articleTitle: "Speech Length by Word Count: How Many Words Do You Need?",
+          publishMeta: "Published: August 2026 • 4 min read",
+          p1: "Whether you are preparing a YouTube script, a TED talk, or a university presentation, understanding the relationship between word count and speaking time is crucial.",
+          headingSpeed: "Average Speaking Speed",
+          p2Start: "The average speaker talks at a rate of ",
+          p2Bold: "130 to 150 words per minute (WPM)",
+          p2End: ". Presentation speeches with pauses typically sit around 125 WPM, while fast-paced video voiceovers hit 160 WPM.",
+          headingTable: "Quick Word-to-Speech Reference Table",
+          thDuration: "Speech Duration",
+          thSlow: "Slow Pace (110 WPM)",
+          thAvg: "Average Pace (130 WPM)",
+          thFast: "Fast Pace (160 WPM)",
+          row1Duration: "1 Minute", row1Slow: "110 words", row1Avg: "130 words", row1Fast: "160 words",
+          row2Duration: "3 Minutes", row2Slow: "330 words", row2Avg: "390 words", row2Fast: "480 words",
+          row3Duration: "5 Minutes", row3Slow: "550 words", row3Avg: "650 words", row3Fast: "800 words",
+          row4Duration: "10 Minutes", row4Slow: "1,100 words", row4Avg: "1,300 words", row4Fast: "1,600 words",
+          p3Start: "Use the built-in speech timer on ",
+          p3End: " to accurately estimate your exact speaking duration in real-time.",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToBlog: "← العودة للمدونة",
+          category: "الخطابة والعروض التقديمية",
+          articleTitle: "حساب طول الخطاب حسب عدد الكلمات: كم كلمة تحتاج؟",
+          publishMeta: "تاريخ النشر: أغسطس 2026 • قراءة في 4 دقائق",
+          p1: "سواء كنت تعد نصًا لفيديو يوتيوب، أو كلمة لمنصة TED، أو عرضًا تقديميًا جامعيًا، فإن فهم العلاقة بين عدد الكلمات وزمن الإلقاء أمر بالغ الأهمية.",
+          headingSpeed: "متوسط سرعة التحدث",
+          p2Start: "يتحدث المتحدث المتوسط بمعدل ",
+          p2Bold: "130 إلى 150 كلمة في الدقيقة (WPM)",
+          p2End: ". وعادة ما تكون العروض التقديمية التي تتخللها وقفات حوالي 125 كلمة/دقيقة، بينما يصل التعليق الصوتي السريع إلى 160 كلمة/دقيقة.",
+          headingTable: "جدول مرجعي سريع لتحويل الكلمات إلى وقت",
+          thDuration: "مدة الخطاب",
+          thSlow: "بطيء (110 كلمة/د)",
+          thAvg: "متوسط (130 كلمة/د)",
+          thFast: "سريع (160 كلمة/د)",
+          row1Duration: "دقيقة واحدة", row1Slow: "110 كلمة", row1Avg: "130 كلمة", row1Fast: "160 كلمة",
+          row2Duration: "3 دقائق", row2Slow: "330 كلمة", row2Avg: "390 كلمة", row2Fast: "480 كلمة",
+          row3Duration: "5 دقائق", row3Slow: "550 كلمة", row3Avg: "650 كلمة", row3Fast: "800 كلمة",
+          row4Duration: "10 دقائق", row4Slow: "1,100 كلمة", row4Avg: "1,300 كلمة", row4Fast: "1,600 كلمة",
+          p3Start: "استخدم مؤقت الخطاب المدمج في ",
+          p3End: " لتقدير مدة إلقائك بدقة في الوقت الفعلي.",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToBlog: "← Zurück zum Blog",
+          category: "Rede & Präsentation",
+          articleTitle: "Redelänge nach Wortanzahl: Wie viele Wörter brauchen Sie?",
+          publishMeta: "Veröffentlicht: August 2026 • 4 Min. Lesezeit",
+          p1: "Egal ob Sie ein YouTube-Skript, einen TED-Talk oder eine Präsentation vorbereiten: Das Verhältnis von Wortanzahl zu Sprechzeit ist entscheidend.",
+          headingSpeed: "Durchschnittliche Sprechgeschwindigkeit",
+          p2Start: "Der durchschnittliche Redner spricht ",
+          p2Bold: "130 bis 150 Wörter pro Minute (WPM)",
+          p2End: ". Präsentationen liegen meist bei 125 WPM, schnelle Voiceover bei 160 WPM.",
+          headingTable: "Referenztabelle: Wörter in Sprechzeit",
+          thDuration: "Dauer", thSlow: "Langsam (110 WPM)", thAvg: "Durchschnitt (130 WPM)", thFast: "Schnell (160 WPM)",
+          row1Duration: "1 Minute", row1Slow: "110 Wörter", row1Avg: "130 Wörter", row1Fast: "160 Wörter",
+          row2Duration: "3 Minuten", row2Slow: "330 Wörter", row2Avg: "390 Wörter", row2Fast: "480 Wörter",
+          row3Duration: "5 Minuten", row3Slow: "550 Wörter", row3Avg: "650 Wörter", row3Fast: "800 Wörter",
+          row4Duration: "10 Minuten", row4Slow: "1.100 Wörter", row4Avg: "1.300 Wörter", row4Fast: "1.600 Wörter",
+          p3Start: "Nutzen Sie den integrierten Sprach-Timer auf ",
+          p3End: " für eine genaue Schätzung.",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToBlog: "← Retour au Blog",
+          category: "Discours & Présentation",
+          articleTitle: "Durée d'un discours par nombre de mots : De combien de mots avez-vous besoin ?",
+          publishMeta: "Publié : Août 2026 • 4 min de lecture",
+          p1: "Que vous prépariez un script YouTube ou une présentation, comprendre la relation entre nombre de mots et temps de parole est essentiel.",
+          headingSpeed: "Vitesse moyenne de parole",
+          p2Start: "Un orateur moyen parle à un rythme de ",
+          p2Bold: "130 à 150 mots par minute (WPM)",
+          p2End: ". Les présentations se situent vers 125 WPM, tandis que les voix off rapides atteignent 160 WPM.",
+          headingTable: "Tableau de référence rapide",
+          thDuration: "Durée", thSlow: "Lent (110 WPM)", thAvg: "Moyen (130 WPM)", thFast: "Rapide (160 WPM)",
+          row1Duration: "1 Minute", row1Slow: "110 mots", row1Avg: "130 mots", row1Fast: "160 mots",
+          row2Duration: "3 Minutes", row2Slow: "330 mots", row2Avg: "390 mots", row2Fast: "480 mots",
+          row3Duration: "5 Minutes", row3Slow: "550 mots", row3Avg: "650 mots", row3Fast: "800 mots",
+          row4Duration: "10 Minutes", row4Slow: "1 100 mots", row4Avg: "1 300 mots", row4Fast: "1 600 mots",
+          p3Start: "Utilisez le minuteur de discours intégré sur ",
+          p3End: " pour une estimation précise.",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToBlog: "← Volver al Blog",
+          category: "Discurso y Presentación",
+          articleTitle: "Duración del discurso por número de palabras: ¿Cuántas palabras necesitas?",
+          publishMeta: "Publicado: Agosto 2026 • 4 min de lectura",
+          p1: "Ya sea que prepares un guion para YouTube o una presentación, comprender la relación entre palabras y tiempo es crucial.",
+          headingSpeed: "Velocidad promedio de habla",
+          p2Start: "Un orador promedio habla a una velocidad de ",
+          p2Bold: "130 a 150 palabras por minuto (WPM)",
+          p2End: ". Las presentaciones suelen estar en torno a 125 WPM, mientras que las locuciones rápidas alcanzan las 160 WPM.",
+          headingTable: "Tabla de referencia rápida",
+          thDuration: "Duración", thSlow: "Lento (110 WPM)", thAvg: "Promedio (130 WPM)", thFast: "Rápido (160 WPM)",
+          row1Duration: "1 Minuto", row1Slow: "110 palabras", row1Avg: "130 palabras", row1Fast: "160 palabras",
+          row2Duration: "3 Minutos", row2Slow: "330 palabras", row2Avg: "390 palabras", row2Fast: "480 palabras",
+          row3Duration: "5 Minutos", row3Slow: "550 palabras", row3Avg: "650 palabras", row3Fast: "800 palabras",
+          row4Duration: "10 Minutos", row4Slow: "1,100 palabras", row4Avg: "1,300 palabras", row4Fast: "1,600 palabras",
+          p3Start: "Utiliza el temporizador de voz integrado en ",
+          p3End: " para estimar la duración con precisión.",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToBlog: "← Torna al Blog",
+          category: "Discorso & Presentazione",
+          articleTitle: "Lunghezza del discorso per numero di parole: Quante parole servono?",
+          publishMeta: "Pubblicato: Agosto 2026 • 4 min di lettura",
+          p1: "Che tu stia preparando uno script per YouTube o una presentazione, comprendere la relazione tra parole e tempo è fondamentale.",
+          headingSpeed: "Velocità media di parlata",
+          p2Start: "Un oratore medio parla a un ritmo di ",
+          p2Bold: "da 130 a 150 parole al minuto (WPM)",
+          p2End: ". Le presentazioni si attestano intorno a 125 WPM, mentre i voiceover veloci raggiungono 160 WPM.",
+          headingTable: "Tabella di riferimento rapida",
+          thDuration: "Durata", thSlow: "Lento (110 WPM)", thAvg: "Medio (130 WPM)", thFast: "Veloce (160 WPM)",
+          row1Duration: "1 Minuto", row1Slow: "110 parole", row1Avg: "130 parole", row1Fast: "160 parole",
+          row2Duration: "3 Minuti", row2Slow: "330 parole", row2Avg: "390 parole", row2Fast: "480 parole",
+          row3Duration: "5 Minuti", row3Slow: "550 parole", row3Avg: "650 parole", row3Fast: "800 parole",
+          row4Duration: "10 Minuti", row4Slow: "1.100 parole", row4Avg: "1.300 parole", row4Fast: "1.600 parole",
+          p3Start: "Usa il timer per discorsi integrato su ",
+          p3End: " per calcolare la durata esatta.",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToBlog: "← Terug naar Blog",
+          category: "Speech & Presentatie",
+          articleTitle: "Speechlengte op basis van woordenaantal: Hoeveel woorden heb je nodig?",
+          publishMeta: "Gepubliceerd: Augustus 2026 • 4 min leestijd",
+          p1: "Of je nu een YouTube-script of een presentatie voorbereidt, inzicht in de relatie tussen woordenaantal en spreektijd is essentieel.",
+          headingSpeed: "Gemiddelde spreeksnelheid",
+          p2Start: "Een gemiddelde spreker spreekt  ",
+          p2Bold: "130 tot 150 woorden per minute (WPM)",
+          p2End: ". Presentaties liggen rond de 125 WPM, snelle voice-overs behalen 160 WPM.",
+          headingTable: "Snelle referentietabel",
+          thDuration: "Duur", thSlow: "Langzaam (110 WPM)", thAvg: "Gemiddeld (130 WPM)", thFast: "Snel (160 WPM)",
+          row1Duration: "1 Minuut", row1Slow: "110 woorden", row1Avg: "130 woorden", row1Fast: "160 woorden",
+          row2Duration: "3 Minuten", row2Slow: "330 woorden", row2Avg: "390 woorden", row2Fast: "480 woorden",
+          row3Duration: "5 Minuten", row3Slow: "550 woorden", row3Avg: "650 woorden", row3Fast: "800 woorden",
+          row4Duration: "10 Minuten", row4Slow: "1.100 woorden", row4Avg: "1.300 woorden", row4Fast: "1.600 woorden",
+          p3Start: "Gebruik de ingebouwde spraaktimer op ",
+          p3End: " voor een nauwkeurige schatting.",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToBlog: "← Bloğa Dön",
+          category: "Konuşma ve Sunum",
+          articleTitle: "Kelime Sayısına Göre Konuşma Süresi: Kaç Kelimeye İhtiyacınız Var?",
+          publishMeta: "Yayınlanma: Ağustos 2026 • 4 dk okuma",
+          p1: "Bir YouTube senaryosu veya sunum hazırlarken, kelime sayısı ile konuşma süresi arasındaki ilişkiyi anlamak çok önemlidir.",
+          headingSpeed: "Ortalama Konuşma Hızı",
+          p2Start: "Ortalama bir konuşmacı dakikada ",
+          p2Bold: "130 ila 150 kelime (WPM)",
+          p2End: " hızında konuşur. Duraklamalı sunumlar yaklaşık 125 WPM, hızlı seslendirmeler ise 160 WPM'ye ulaşır.",
+          headingTable: "Hızlı Referans Tablosu",
+          thDuration: "Konuşma Süresi", thSlow: "Yavaş (110 WPM)", thAvg: "Ortalama (130 WPM)", thFast: "Hızlı (160 WPM)",
+          row1Duration: "1 Dakika", row1Slow: "110 kelime", row1Avg: "130 kelime", row1Fast: "160 kelime",
+          row2Duration: "3 Dakika", row2Slow: "330 kelime", row2Avg: "390 kelime", row2Fast: "480 kelime",
+          row3Duration: "5 Dakika", row3Slow: "550 kelime", row3Avg: "650 kelime", row3Fast: "800 kelime",
+          row4Duration: "10 Dakika", row4Slow: "1.100 kelime", row4Avg: "1.300 kelime", row4Fast: "1.600 kelime",
+          p3Start: "Tam konuşma sürenizi tahmin etmek için ",
+          p3End: " üzerindeki konuşma zamanlayıcısını kullanın.",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToBlog: "← Voltar ao Blog",
+          category: "Discurso e Apresentação",
+          articleTitle: "Duração do discurso por número de palavras: De quantas palavras você precisa?",
+          publishMeta: "Publicado: Agosto 2026 • 4 min de leitura",
+          p1: "Seja preparando um roteiro do YouTube ou uma apresentação, entender a relação entre palavras e tempo é crucial.",
+          headingSpeed: "Velocidade média de fala",
+          p2Start: "Um orador médio fala a uma taxa de ",
+          p2Bold: "130 a 150 palavras por minuto (WPM)",
+          p2End: ". Apresentações costumam ficar em 125 WPM, enquanto locuções rápidas atingem 160 WPM.",
+          headingTable: "Tabela de referência rápida",
+          thDuration: "Duração", thSlow: "Lento (110 WPM)", thAvg: "Médio (130 WPM)", thFast: "Rápido (160 WPM)",
+          row1Duration: "1 Minuto", row1Slow: "110 palavras", row1Avg: "130 palavras", row1Fast: "160 palavras",
+          row2Duration: "3 Minutos", row2Slow: "330 palavras", row2Avg: "390 palavras", row2Fast: "480 palavras",
+          row3Duration: "5 Minutos", row3Slow: "550 palavras", row3Avg: "650 palavras", row3Fast: "800 palavras",
+          row4Duration: "10 Minutos", row4Slow: "1.100 palavras", row4Avg: "1.300 palavras", row4Fast: "1.600 palavras",
+          p3Start: "Use o temporizador integrado em ",
+          p3End: " para estimar sua duração exata.",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToBlog: "← Назад в блог",
+          category: "Речь и презентация",
+          articleTitle: "Длительность речи по количеству слов: Сколько слов вам нужно?",
+          publishMeta: "Опубликовано: Август 2026 • 4 мин чтения",
+          p1: "Готовите ли вы сценарий для YouTube или презентацию, понимание соотношения слов и времени имеет ключевое значение.",
+          headingSpeed: "Средняя скорость речи",
+          p2Start: "В среднем диктор говорит со скоростью ",
+          p2Bold: "от 130 до 150 слов в минуту (WPM)",
+          p2End: ". Презентации обычно идут со скоростью 125 WPM, а быстрая озвучка — 160 WPM.",
+          headingTable: "Быстрая справочная таблица",
+          thDuration: "Длительность", thSlow: "Медленно (110 WPM)", thAvg: "Средне (130 WPM)", thFast: "Быстро (160 WPM)",
+          row1Duration: "1 минута", row1Slow: "110 слов", row1Avg: "130 слов", row1Fast: "160 слов",
+          row2Duration: "3 минуты", row2Slow: "330 слов", row2Avg: "390 слов", row2Fast: "480 слов",
+          row3Duration: "5 минут", row3Slow: "550 слов", row3Avg: "650 слов", row3Fast: "800 слов",
+          row4Duration: "10 минут", row4Slow: "1 100 слов", row4Avg: "1 300 слов", row4Fast: "1 600 слов",
+          p3Start: "Используйте таймер речи на ",
+          p3End: " для точного расчета времени.",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToBlog: "← 返回博客",
+          category: "演讲与 Presentation",
+          articleTitle: "按字数计算演讲时长：你需要多少个字？",
+          publishMeta: "发布于：2026年8月 • 阅读时间 4 分钟",
+          p1: "无论你是在准备 YouTube 脚本还是演讲，了解字数与演讲时长之间的关系都至关重要。",
+          headingSpeed: "平均演讲速度",
+          p2Start: "普通人的演讲速度大约为 ",
+          p2Bold: "每分钟 130 至 150 个字 (WPM)",
+          p2End: "。带停顿的演讲约为 125 WPM，而快速的配音可达 160 WPM。",
+          headingTable: "快速字数与时长对照表",
+          thDuration: "演讲时长", thSlow: "较慢 (110 WPM)", thAvg: "平均 (130 WPM)", thFast: "较快 (160 WPM)",
+          row1Duration: "1 分钟", row1Slow: "110 字", row1Avg: "130 字", row1Fast: "160 字",
+          row2Duration: "3 分钟", row2Slow: "330 字", row2Avg: "390 字", row2Fast: "480 字",
+          row3Duration: "5 分钟", row3Slow: "550 字", row3Avg: "650 字", row3Fast: "800 字",
+          row4Duration: "10 分钟", row4Slow: "1,100 字", row4Avg: "1,300 字", row4Fast: "1,600 字",
+          p3Start: "使用 ",
+          p3End: " 上的内置朗读计时器来准确估算时长。",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToBlog: "← ブログに戻る",
+          category: "スピーチ & プレゼンテーション",
+          articleTitle: "文字数によるスピーチ時間の計算：何文字必要？",
+          publishMeta: "公開日：2026年8月 • 読了時間 4分",
+          p1: "YouTubeの台本やプレゼンの準備において、文字数と時間の関係を理解することは非常に重要です。",
+          headingSpeed: "平均的な話す速度",
+          p2Start: "一般的な話す速度は ",
+          p2Bold: "1分あたり130〜150単語（WPM）",
+          p2End: " です。間を置くプレゼンは約125 WPM、速いナレーションは160 WPM程度になります。",
+          headingTable: "簡易参照テーブル",
+          thDuration: "スピーチ時間", thSlow: "ゆっくり (110 WPM)", thAvg: "平均 (130 WPM)", thFast: "速い (160 WPM)",
+          row1Duration: "1 分", row1Slow: "110 単語", row1Avg: "130 単語", row1Fast: "160 単語",
+          row2Duration: "3 分", row2Slow: "330 単語", row2Avg: "390 単語", row2Fast: "480 単語",
+          row3Duration: "5 分", row3Slow: "550 単語", row3Avg: "650 単語", row3Fast: "800 単語",
+          row4Duration: "10 分", row4Slow: "1,100 単語", row4Avg: "1,300 単語", row4Fast: "1,600 単語",
+          p3Start: "",
+          p3End: " の内蔵スピーチタイマーを使って正確な時間を測定しましょう。",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToBlog: "← ब्लॉग पर वापस जाएँ",
+          category: "भाषण और प्रस्तुति",
+          articleTitle: "शब्दों की संख्या के आधार पर भाषण की लंबाई: आपको कितने शब्दों की आवश्यकता है?",
+          publishMeta: "प्रकाशित: अगस्त 2026 • 4 मिनट का समय",
+          p1: "चाहे आप YouTube स्क्रिप्ट तैयार कर रहे हों या प्रेजेंटेशन, शब्दों की संख्या और बोलने के समय के संबंध को समझना महत्वपूर्ण है।",
+          headingSpeed: "औसत बोलने की गति",
+          p2Start: "एक औसत वक्ता ",
+          p2Bold: "130 से 150 शब्द प्रति मिनट (WPM)",
+          p2End: " की गति से बोलता है। विराम वाली प्रस्तुतियाँ लगभग 125 WPM होती हैं, जबकि तेज़ वॉयसओवर 160 WPM तक पहुँचते हैं।",
+          headingTable: "त्वरित संदर्भ तालिका",
+          thDuration: "भाषण की अवधि", thSlow: "धीमी गति (110 WPM)", thAvg: "औसत गति (130 WPM)", thFast: "तेज़ गति (160 WPM)",
+          row1Duration: "1 मिनट", row1Slow: "110 शब्द", row1Avg: "130 शब्द", row1Fast: "160 शब्द",
+          row2Duration: "3 मिनट", row2Slow: "330 शब्द", row2Avg: "390 शब्द", row2Fast: "480 शब्द",
+          row3Duration: "5 मिनट", row3Slow: "550 शब्द", row3Avg: "650 शब्द", row3Fast: "800 शब्द",
+          row4Duration: "10 मिनट", row4Slow: "1,100 शब्द", row4Avg: "1,300 शब्द", row4Fast: "1,600 शब्द",
+          p3Start: "सटीक समय का अनुमान लगाने के लिए ",
+          p3End: " के टाइमर का उपयोग करें।",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToBlog: "← ব্লগে ফিরে যান",
+          category: "বক্তৃতা ও প্রেজেন্টেশন",
+          articleTitle: "শব্দ সংখ্যা অনুযায়ী বক্তৃতার সময়: আপনার কত শব্দ প্রয়োজন?",
+          publishMeta: "প্রকাশিত: আগস্ট ২০২৬ • ৪ মিনিট পাঠ",
+          p1: "আপনি ইউটিউব স্ক্রিপ্ট বা প্রেজেন্টেশন তৈরি করছেন যাই হোক না কেন, শব্দ সংখ্যা এবং বলার সময়ের মধ্যে সম্পর্ক বোঝা গুরুত্বপূর্ণ।",
+          headingSpeed: "গড় কথা বলার গতি",
+          p2Start: "একজন সাধারণ বক্তা মিনিটে ",
+          p2Bold: "১৩০ থেকে ১৫০ শব্দ (WPM)",
+          p2End: " গতিতে কথা বলেন। বিরতিসহ বক্তৃতায় সাধারণত ১২৫ WPM হয়, আর দ্রুত ভয়েসওভার ১৬০ WPM পর্যন্ত পৌঁছে।",
+          headingTable: "দ্রুত রেফারেন্স তালিকা",
+          thDuration: "বক্তৃতার সময়কাল", thSlow: "ধীর গতি (১১০ WPM)", thAvg: "গড় গতি (১৩০ WPM)", thFast: "দ্রুত গতি (১৬০ WPM)",
+          row1Duration: "১ মিনিট", row1Slow: "১১০ শব্দ", row1Avg: "১৩০ শব্দ", row1Fast: "১৬০ শব্দ",
+          row2Duration: "৩ মিনিট", row2Slow: "৩৩০ শব্দ", row2Avg: "৩৯০ শব্দ", row2Fast: "৪৮০ শব্দ",
+          row3Duration: "৫ মিনিট", row3Slow: "৫৫০ শব্দ", row3Avg: "৬৫০ শব্দ", row3Fast: "৮০০ শব্দ",
+          row4Duration: "১০ মিনিট", row4Slow: "১,১০০ শব্দ", row4Avg: "১,৩০০ শব্দ", row4Fast: "১,৬০০ শব্দ",
+          p3Start: "সঠিক সময় অনুমান করতে ",
+          p3End: " এর স্পিচ টাইমার ব্যবহার করুন।",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToBlog: "← بلاگ پر واپس جائیں",
+          category: "تقریر اور پریزنٹیشن",
+          articleTitle: "الفاظ کی تعداد کے لحاظ سے تقریر کا وقت: آپ کو کتنے الفاظ کی ضرورت ہے؟",
+          publishMeta: "شائع شدہ: اگست 2026 • 4 منٹ کی پڑھائی",
+          p1: "چاہے آپ یوٹیوب اسکرپٹ تیار کر رہے ہوں یا یونیورسٹی کی پریزنٹیشن، الفاظ کی تعداد اور بولنے کے وقت کا تعلق سمجھنا ضروری ہے۔",
+          headingSpeed: "بولنے کی اوسط رفتار",
+          p2Start: "ایک عام مقرر ",
+          p2Bold: "130 سے 150 الفاظ فی منٹ (WPM)",
+          p2End: " کی رفتار سے بولتا ہے۔ وقفوں کے ساتھ پریزنٹیشن عام طور پر 125 WPM ہوتی ہے، جبکہ تیز وائس اوور 160 WPM تک پہنچتے ہیں۔",
+          headingTable: "فوری حوالہ جاتی جدول",
+          thDuration: "تقریر کا دورانیہ", thSlow: "سست رفتار (110 WPM)", thAvg: "اوسط رفتار (130 WPM)", thFast: "تیز رفتار (160 WPM)",
+          row1Duration: "1 منٹ", row1Slow: "110 الفاظ", row1Avg: "130 الفاظ", row1Fast: "160 الفاظ",
+          row2Duration: "3 منٹ", row2Slow: "330 الفاظ", row2Avg: "390 الفاظ", row2Fast: "480 الفاظ",
+          row3Duration: "5 منٹ", row3Slow: "550 الفاظ", row3Avg: "650 الفاظ", row3Fast: "800 الفاظ",
+          row4Duration: "10 منٹ", row4Slow: "1,100 الفاظ", row4Avg: "1,300 الفاظ", row4Fast: "1,600 الفاظ",
+          p3Start: "صحیح دورانیے کا اندازہ لگانے کے لیے ",
+          p3End: " کا اسپیچ ٹائمر استعمال کریں۔",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
 
-      var translations = {
-        en: {
-          backToBlog: "← Back to Blog",
-          category: "Speech & Presentation",
-          articleTitle: "Speech Length by Word Count: How Many Words Do You Need?",
-          publishMeta: "Published: August 2026 • 4 min read",
-          p1: "Whether you are preparing a YouTube script, a TED talk, or a university presentation, understanding the relationship between word count and speaking time is crucial.",
-          headingSpeed: "Average Speaking Speed",
-          p2Start: "The average speaker talks at a rate of ",
-          p2Bold: "130 to 150 words per minute (WPM)",
-          p2End: ". Presentation speeches with pauses typically sit around 125 WPM, while fast-paced video voiceovers hit 160 WPM.",
-          headingTable: "Quick Word-to-Speech Reference Table",
-          thDuration: "Speech Duration",
-          thSlow: "Slow Pace (110 WPM)",
-          thAvg: "Average Pace (130 WPM)",
-          thFast: "Fast Pace (160 WPM)",
-          row1Duration: "1 Minute", row1Slow: "110 words", row1Avg: "130 words", row1Fast: "160 words",
-          row2Duration: "3 Minutes", row2Slow: "330 words", row2Avg: "390 words", row2Fast: "480 words",
-          row3Duration: "5 Minutes", row3Slow: "550 words", row3Avg: "650 words", row3Fast: "800 words",
-          row4Duration: "10 Minutes", row4Slow: "1,100 words", row4Avg: "1,300 words", row4Fast: "1,600 words",
-          p3Start: "Use the built-in speech timer on ",
-          p3End: " to accurately estimate your exact speaking duration in real-time.",
-          footerDesc: "Professional text analysis and counting tools.",
-          privacyPolicy: "Privacy Policy",
-          termsOfService: "Terms of Service",
-          contactUs: "Contact Us",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — All rights reserved"
-        },
-        ar: {
-          backToBlog: "← العودة للمدونة",
-          category: "الخطابة والعروض التقديمية",
-          articleTitle: "حساب طول الخطاب حسب عدد الكلمات: كم كلمة تحتاج؟",
-          publishMeta: "تاريخ النشر: أغسطس 2026 • قراءة في 4 دقائق",
-          p1: "سواء كنت تعد نصًا لفيديو يوتيوب، أو كلمة لمنصة TED، أو عرضًا تقديميًا جامعيًا، فإن فهم العلاقة بين عدد الكلمات وزمن الإلقاء أمر بالغ الأهمية.",
-          headingSpeed: "متوسط سرعة التحدث",
-          p2Start: "يتحدث المتحدث المتوسط بمعدل ",
-          p2Bold: "130 إلى 150 كلمة في الدقيقة (WPM)",
-          p2End: ". وعادة ما تكون العروض التقديمية التي تتخللها وقفات حوالي 125 كلمة/دقيقة، بينما يصل التعليق الصوتي السريع إلى 160 كلمة/دقيقة.",
-          headingTable: "جدول مرجعي سريع لتحويل الكلمات إلى وقت",
-          thDuration: "مدة الخطاب",
-          thSlow: "بطيء (110 كلمة/د)",
-          thAvg: "متوسط (130 كلمة/د)",
-          thFast: "سريع (160 كلمة/د)",
-          row1Duration: "دقيقة واحدة", row1Slow: "110 كلمة", row1Avg: "130 كلمة", row1Fast: "160 كلمة",
-          row2Duration: "3 دقائق", row2Slow: "330 كلمة", row2Avg: "390 كلمة", row2Fast: "480 كلمة",
-          row3Duration: "5 دقائق", row3Slow: "550 كلمة", row3Avg: "650 كلمة", row3Fast: "800 كلمة",
-          row4Duration: "10 دقائق", row4Slow: "1,100 كلمة", row4Avg: "1,300 كلمة", row4Fast: "1,600 كلمة",
-          p3Start: "استخدم مؤقت الخطاب المدمج في ",
-          p3End: " لتقدير مدة إلقائك بدقة في الوقت الفعلي.",
-          footerDesc: "أدوات احترافية لتحليل النصوص وحسابها.",
-          privacyPolicy: "سياسة الخصوصية",
-          termsOfService: "شروط الاستخدام",
-          contactUs: "اتصل بنا",
-          blog: "المدونة",
-          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
-        },
-        de: {
-          backToBlog: "← Zurück zum Blog",
-          category: "Rede & Präsentation",
-          articleTitle: "Redelänge nach Wortanzahl: Wie viele Wörter brauchen Sie?",
-          publishMeta: "Veröffentlicht: August 2026 • 4 Min. Lesezeit",
-          p1: "Egal ob Sie ein YouTube-Skript, einen TED-Talk oder eine Präsentation vorbereiten: Das Verhältnis von Wortanzahl zu Sprechzeit ist entscheidend.",
-          headingSpeed: "Durchschnittliche Sprechgeschwindigkeit",
-          p2Start: "Der durchschnittliche Redner spricht ",
-          p2Bold: "130 bis 150 Wörter pro Minute (WPM)",
-          p2End: ". Präsentationen liegen meist bei 125 WPM, schnelle Voiceover bei 160 WPM.",
-          headingTable: "Referenztabelle: Wörter in Sprechzeit",
-          thDuration: "Dauer", thSlow: "Langsam (110 WPM)", thAvg: "Durchschnitt (130 WPM)", thFast: "Schnell (160 WPM)",
-          row1Duration: "1 Minute", row1Slow: "110 Wörter", row1Avg: "130 Wörter", row1Fast: "160 Wörter",
-          row2Duration: "3 Minuten", row2Slow: "330 Wörter", row2Avg: "390 Wörter", row2Fast: "480 Wörter",
-          row3Duration: "5 Minuten", row3Slow: "550 Wörter", row3Avg: "650 Wörter", row3Fast: "800 Wörter",
-          row4Duration: "10 Minuten", row4Slow: "1.100 Wörter", row4Avg: "1.300 Wörter", row4Fast: "1.600 Wörter",
-          p3Start: "Nutzen Sie den integrierten Sprach-Timer auf ",
-          p3End: " für eine genaue Schätzung.",
-          footerDesc: "Professionelle Textanalyse- und Zählwerkzeuge.",
-          privacyPolicy: "Datenschutz",
-          termsOfService: "Nutzungsbedingungen",
-          contactUs: "Kontakt",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
-        },
-        fr: {
-          backToBlog: "← Retour au Blog",
-          category: "Discours & Présentation",
-          articleTitle: "Durée d'un discours par nombre de mots : De combien de mots avez-vous besoin ?",
-          publishMeta: "Publié : Août 2026 • 4 min de lecture",
-          p1: "Que vous prépariez un script YouTube ou une présentation, comprendre la relation entre nombre de mots et temps de parole est essentiel.",
-          headingSpeed: "Vitesse moyenne de parole",
-          p2Start: "Un orateur moyen parle à un rythme de ",
-          p2Bold: "130 à 150 mots par minute (WPM)",
-          p2End: ". Les présentations se situent vers 125 WPM, tandis que les voix off rapides atteignent 160 WPM.",
-          headingTable: "Tableau de référence rapide",
-          thDuration: "Durée", thSlow: "Lent (110 WPM)", thAvg: "Moyen (130 WPM)", thFast: "Rapide (160 WPM)",
-          row1Duration: "1 Minute", row1Slow: "110 mots", row1Avg: "130 mots", row1Fast: "160 mots",
-          row2Duration: "3 Minutes", row2Slow: "330 mots", row2Avg: "390 mots", row2Fast: "480 mots",
-          row3Duration: "5 Minutes", row3Slow: "550 mots", row3Avg: "650 mots", row3Fast: "800 mots",
-          row4Duration: "10 Minutes", row4Slow: "1 100 mots", row4Avg: "1 300 mots", row4Fast: "1 600 mots",
-          p3Start: "Utilisez le minuteur de discours intégré sur ",
-          p3End: " pour une estimation précise.",
-          footerDesc: "Outils professionnels d'analyse et de comptage de texte.",
-          privacyPolicy: "Politique de confidentialité",
-          termsOfService: "Conditions d'utilisation",
-          contactUs: "Contactez-nous",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Tous droits réservés"
-        },
-        es: {
-          backToBlog: "← Volver al Blog",
-          category: "Discurso y Presentación",
-          articleTitle: "Duración del discurso por número de palabras: ¿Cuántas palabras necesitas?",
-          publishMeta: "Publicado: Agosto 2026 • 4 min de lectura",
-          p1: "Ya sea que prepares un guion para YouTube o una presentación, comprender la relación entre palabras y tiempo es crucial.",
-          headingSpeed: "Velocidad promedio de habla",
-          p2Start: "Un orador promedio habla a una velocidad de ",
-          p2Bold: "130 a 150 palabras por minuto (WPM)",
-          p2End: ". Las presentaciones suelen estar en torno a 125 WPM, mientras que las locuciones rápidas alcanzan las 160 WPM.",
-          headingTable: "Tabla de referencia rápida",
-          thDuration: "Duración", thSlow: "Lento (110 WPM)", thAvg: "Promedio (130 WPM)", thFast: "Rápido (160 WPM)",
-          row1Duration: "1 Minuto", row1Slow: "110 palabras", row1Avg: "130 palabras", row1Fast: "160 palabras",
-          row2Duration: "3 Minutos", row2Slow: "330 palabras", row2Avg: "390 palabras", row2Fast: "480 palabras",
-          row3Duration: "5 Minutos", row3Slow: "550 palabras", row3Avg: "650 palabras", row3Fast: "800 palabras",
-          row4Duration: "10 Minutos", row4Slow: "1,100 palabras", row4Avg: "1,300 palabras", row4Fast: "1,600 palabras",
-          p3Start: "Utiliza el temporizador de voz integrado en ",
-          p3End: " para estimar la duración con precisión.",
-          footerDesc: "Herramientas profesionales de análisis y recuento de texto.",
-          privacyPolicy: "Política de Privacidad",
-          termsOfService: "Términos de Servicio",
-          contactUs: "Contáctenos",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Todos los derechos reservados"
-        },
-        it: {
-          backToBlog: "← Torna al Blog",
-          category: "Discorso & Presentazione",
-          articleTitle: "Lunghezza del discorso per numero di parole: Quante parole servono?",
-          publishMeta: "Pubblicato: Agosto 2026 • 4 min di lettura",
-          p1: "Che tu stia preparando uno script per YouTube o una presentazione, comprendere la relazione tra parole e tempo è fondamentale.",
-          headingSpeed: "Velocità media di parlata",
-          p2Start: "Un oratore medio parla a un ritmo di ",
-          p2Bold: "da 130 a 150 parole al minuto (WPM)",
-          p2End: ". Le presentazioni si attestano intorno a 125 WPM, mentre i voiceover veloci raggiungono 160 WPM.",
-          headingTable: "Tabella di riferimento rapida",
-          thDuration: "Durata", thSlow: "Lento (110 WPM)", thAvg: "Medio (130 WPM)", thFast: "Veloce (160 WPM)",
-          row1Duration: "1 Minuto", row1Slow: "110 parole", row1Avg: "130 parole", row1Fast: "160 parole",
-          row2Duration: "3 Minuti", row2Slow: "330 parole", row2Avg: "390 parole", row2Fast: "480 parole",
-          row3Duration: "5 Minuti", row3Slow: "550 parole", row3Avg: "650 parole", row3Fast: "800 parole",
-          row4Duration: "10 Minuti", row4Slow: "1.100 parole", row4Avg: "1.300 parole", row4Fast: "1.600 parole",
-          p3Start: "Usa il timer per discorsi integrato su ",
-          p3End: " per calcolare la durata esatta.",
-          footerDesc: "Strumenti professionali di analisi e conteggio del testo.",
-          privacyPolicy: "Politica sulla Privacy",
-          termsOfService: "Termini di Servizio",
-          contactUs: "Contattaci",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
-        },
-        nl: {
-          backToBlog: "← Terug naar Blog",
-          category: "Speech & Presentatie",
-          articleTitle: "Speechlengte op basis van woordenaantal: Hoeveel woorden heb je nodig?",
-          publishMeta: "Gepubliceerd: Augustus 2026 • 4 min leestijd",
-          p1: "Of je nu een YouTube-script of een presentatie voorbereidt, inzicht in de relatie tussen woordenaantal en spreektijd is essentieel.",
-          headingSpeed: "Gemiddelde spreeksnelheid",
-          p2Start: "Een gemiddelde spreker spreekt  ",
-          p2Bold: "130 tot 150 woorden per minute (WPM)",
-          p2End: ". Presentaties liggen rond de 125 WPM, snelle voice-overs behalen 160 WPM.",
-          headingTable: "Snelle referentietabel",
-          thDuration: "Duur", thSlow: "Langzaam (110 WPM)", thAvg: "Gemiddeld (130 WPM)", thFast: "Snel (160 WPM)",
-          row1Duration: "1 Minuut", row1Slow: "110 woorden", row1Avg: "130 woorden", row1Fast: "160 woorden",
-          row2Duration: "3 Minuten", row2Slow: "330 woorden", row2Avg: "390 woorden", row2Fast: "480 woorden",
-          row3Duration: "5 Minuten", row3Slow: "550 woorden", row3Avg: "650 woorden", row3Fast: "800 woorden",
-          row4Duration: "10 Minuten", row4Slow: "1.100 woorden", row4Avg: "1.300 woorden", row4Fast: "1.600 woorden",
-          p3Start: "Gebruik de ingebouwde spraaktimer op ",
-          p3End: " voor een nauwkeurige schatting.",
-          footerDesc: "Professionele tekstanalyse- en telfuncties.",
-          privacyPolicy: "Privacybeleid",
-          termsOfService: "Servicevoorwaarden",
-          contactUs: "Neem contact op",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
-        },
-        tr: {
-          backToBlog: "← Bloğa Dön",
-          category: "Konuşma ve Sunum",
-          articleTitle: "Kelime Sayısına Göre Konuşma Süresi: Kaç Kelimeye İhtiyacınız Var?",
-          publishMeta: "Yayınlanma: Ağustos 2026 • 4 dk okuma",
-          p1: "Bir YouTube senaryosu veya sunum hazırlarken, kelime sayısı ile konuşma süresi arasındaki ilişkiyi anlamak çok önemlidir.",
-          headingSpeed: "Ortalama Konuşma Hızı",
-          p2Start: "Ortalama bir konuşmacı dakikada ",
-          p2Bold: "130 ila 150 kelime (WPM)",
-          p2End: " hızında konuşur. Duraklamalı sunumlar yaklaşık 125 WPM, hızlı seslendirmeler ise 160 WPM'ye ulaşır.",
-          headingTable: "Hızlı Referans Tablosu",
-          thDuration: "Konuşma Süresi", thSlow: "Yavaş (110 WPM)", thAvg: "Ortalama (130 WPM)", thFast: "Hızlı (160 WPM)",
-          row1Duration: "1 Dakika", row1Slow: "110 kelime", row1Avg: "130 kelime", row1Fast: "160 kelime",
-          row2Duration: "3 Dakika", row2Slow: "330 kelime", row2Avg: "390 kelime", row2Fast: "480 kelime",
-          row3Duration: "5 Dakika", row3Slow: "550 kelime", row3Avg: "650 kelime", row3Fast: "800 kelime",
-          row4Duration: "10 Dakika", row4Slow: "1.100 kelime", row4Avg: "1.300 kelime", row4Fast: "1.600 kelime",
-          p3Start: "Tam konuşma sürenizi tahmin etmek için ",
-          p3End: " üzerindeki konuşma zamanlayıcısını kullanın.",
-          footerDesc: "Profesyonel metin analizi ve sayım araçları.",
-          privacyPolicy: "Gizlilik Politikası",
-          termsOfService: "Kullanım Şartları",
-          contactUs: "Bize Ulaşın",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
-        },
-        pt: {
-          backToBlog: "← Voltar ao Blog",
-          category: "Discurso e Apresentação",
-          articleTitle: "Duração do discurso por número de palavras: De quantas palavras você precisa?",
-          publishMeta: "Publicado: Agosto 2026 • 4 min de leitura",
-          p1: "Seja preparando um roteiro do YouTube ou uma apresentação, entender a relação entre palavras e tempo é crucial.",
-          headingSpeed: "Velocidade média de fala",
-          p2Start: "Um orador médio fala a uma taxa de ",
-          p2Bold: "130 a 150 palavras por minuto (WPM)",
-          p2End: ". Apresentações costumam ficar em 125 WPM, enquanto locuções rápidas atingem 160 WPM.",
-          headingTable: "Tabela de referência rápida",
-          thDuration: "Duração", thSlow: "Lento (110 WPM)", thAvg: "Médio (130 WPM)", thFast: "Rápido (160 WPM)",
-          row1Duration: "1 Minuto", row1Slow: "110 palavras", row1Avg: "130 palavras", row1Fast: "160 palavras",
-          row2Duration: "3 Minutos", row2Slow: "330 palavras", row2Avg: "390 palavras", row2Fast: "480 palavras",
-          row3Duration: "5 Minutos", row3Slow: "550 palavras", row3Avg: "650 palavras", row3Fast: "800 palavras",
-          row4Duration: "10 Minutos", row4Slow: "1.100 palavras", row4Avg: "1.300 palavras", row4Fast: "1.600 palavras",
-          p3Start: "Use o temporizador integrado em ",
-          p3End: " para estimar sua duração exata.",
-          footerDesc: "Ferramentas profissionais de análise e contagem de texto.",
-          privacyPolicy: "Política de Privacidade",
-          termsOfService: "Termos de Serviço",
-          contactUs: "Fale Conosco",
-          blog: "Blog",
-          footer: "© 2026 TextCount.net — Todos os direitos reservados"
-        },
-        ru: {
-          backToBlog: "← Назад в блог",
-          category: "Речь и презентация",
-          articleTitle: "Длительность речи по количеству слов: Сколько слов вам нужно?",
-          publishMeta: "Опубликовано: Август 2026 • 4 мин чтения",
-          p1: "Готовите ли вы сценарий для YouTube или презентацию, понимание соотношения слов и времени имеет ключевое значение.",
-          headingSpeed: "Средняя скорость речи",
-          p2Start: "В среднем диктор говорит со скоростью ",
-          p2Bold: "от 130 до 150 слов в минуту (WPM)",
-          p2End: ". Презентации обычно идут со скоростью 125 WPM, а быстрая озвучка — 160 WPM.",
-          headingTable: "Быстрая справочная таблица",
-          thDuration: "Длительность", thSlow: "Медленно (110 WPM)", thAvg: "Средне (130 WPM)", thFast: "Быстро (160 WPM)",
-          row1Duration: "1 минута", row1Slow: "110 слов", row1Avg: "130 слов", row1Fast: "160 слов",
-          row2Duration: "3 минуты", row2Slow: "330 слов", row2Avg: "390 слов", row2Fast: "480 слов",
-          row3Duration: "5 минут", row3Slow: "550 слов", row3Avg: "650 слов", row3Fast: "800 слов",
-          row4Duration: "10 минут", row4Slow: "1 100 слов", row4Avg: "1 300 слов", row4Fast: "1 600 слов",
-          p3Start: "Используйте таймер речи на ",
-          p3End: " для точного расчета времени.",
-          footerDesc: "Профессиональные инструменты анализа и подсчета текста.",
-          privacyPolicy: "Политика конфиденциальности",
-          termsOfService: "Условия использования",
-          contactUs: "Связаться с нами",
-          blog: "Блог",
-          footer: "© 2026 TextCount.net — Все права защищены"
-        },
-        zh: {
-          backToBlog: "← 返回博客",
-          category: "演讲与 Presentation",
-          articleTitle: "按字数计算演讲时长：你需要多少个字？",
-          publishMeta: "发布于：2026年8月 • 阅读时间 4 分钟",
-          p1: "无论你是在准备 YouTube 脚本还是演讲，了解字数与演讲时长之间的关系都至关重要。",
-          headingSpeed: "平均演讲速度",
-          p2Start: "普通人的演讲速度大约为 ",
-          p2Bold: "每分钟 130 至 150 个字 (WPM)",
-          p2End: "。带停顿的演讲约为 125 WPM，而快速的配音可达 160 WPM。",
-          headingTable: "快速字数与时长对照表",
-          thDuration: "演讲时长", thSlow: "较慢 (110 WPM)", thAvg: "平均 (130 WPM)", thFast: "较快 (160 WPM)",
-          row1Duration: "1 分钟", row1Slow: "110 字", row1Avg: "130 字", row1Fast: "160 字",
-          row2Duration: "3 分钟", row2Slow: "330 字", row2Avg: "390 字", row2Fast: "480 字",
-          row3Duration: "5 分钟", row3Slow: "550 字", row3Avg: "650 字", row3Fast: "800 字",
-          row4Duration: "10 分钟", row4Slow: "1,100 字", row4Avg: "1,300 字", row4Fast: "1,600 字",
-          p3Start: "使用 ",
-          p3End: " 上的内置朗读计时器来准确估算时长。",
-          footerDesc: "专业的文本分析和统计工具。",
-          privacyPolicy: "隐私政策",
-          termsOfService: "服务条款",
-          contactUs: "联系我们",
-          blog: "博客",
-          footer: "© 2026 TextCount.net — 保留所有权利"
-        },
-        ja: {
-          backToBlog: "← ブログに戻る",
-          category: "スピーチ & プレゼンテーション",
-          articleTitle: "文字数によるスピーチ時間の計算：何文字必要？",
-          publishMeta: "公開日：2026年8月 • 読了時間 4分",
-          p1: "YouTubeの台本やプレゼンの準備において、文字数と時間の関係を理解することは非常に重要です。",
-          headingSpeed: "平均的な話す速度",
-          p2Start: "一般的な話す速度は ",
-          p2Bold: "1分あたり130〜150単語（WPM）",
-          p2End: " です。間を置くプレゼンは約125 WPM、速いナレーションは160 WPM程度になります。",
-          headingTable: "簡易参照テーブル",
-          thDuration: "スピーチ時間", thSlow: "ゆっくり (110 WPM)", thAvg: "平均 (130 WPM)", thFast: "速い (160 WPM)",
-          row1Duration: "1 分", row1Slow: "110 単語", row1Avg: "130 単語", row1Fast: "160 単語",
-          row2Duration: "3 分", row2Slow: "330 単語", row2Avg: "390 単語", row2Fast: "480 単語",
-          row3Duration: "5 分", row3Slow: "550 単語", row3Avg: "650 単語", row3Fast: "800 単語",
-          row4Duration: "10 分", row4Slow: "1,100 単語", row4Avg: "1,300 単語", row4Fast: "1,600 単語",
-          p3Start: "",
-          p3End: " の内蔵スピーチタイマーを使って正確な時間を測定しましょう。",
-          footerDesc: "プロフェッショナルなテキスト分析および集計ツール。",
-          privacyPolicy: "プライバシーポリシー",
-          termsOfService: "利用規約",
-          contactUs: "お問い合わせ",
-          blog: "ブログ",
-          footer: "© 2026 TextCount.net — All rights reserved"
-        },
-        hi: {
-          backToBlog: "← ब्लॉग पर वापस जाएँ",
-          category: "भाषण और प्रस्तुति",
-          articleTitle: "शब्दों की संख्या के आधार पर भाषण की लंबाई: आपको कितने शब्दों की आवश्यकता है?",
-          publishMeta: "प्रकाशित: अगस्त 2026 • 4 मिनट का समय",
-          p1: "चाहे आप YouTube स्क्रिप्ट तैयार कर रहे हों या प्रेजेंटेशन, शब्दों की संख्या और बोलने के समय के संबंध को समझना महत्वपूर्ण है।",
-          headingSpeed: "औसत बोलने की गति",
-          p2Start: "एक औसत वक्ता ",
-          p2Bold: "130 से 150 शब्द प्रति मिनट (WPM)",
-          p2End: " की गति से बोलता है। विराम वाली प्रस्तुतियाँ लगभग 125 WPM होती हैं, जबकि तेज़ वॉयसओवर 160 WPM तक पहुँचते हैं।",
-          headingTable: "त्वरित संदर्भ तालिका",
-          thDuration: "भाषण की अवधि", thSlow: "धीमी गति (110 WPM)", thAvg: "औसत गति (130 WPM)", thFast: "तेज़ गति (160 WPM)",
-          row1Duration: "1 मिनट", row1Slow: "110 शब्द", row1Avg: "130 शब्द", row1Fast: "160 शब्द",
-          row2Duration: "3 मिनट", row2Slow: "330 शब्द", row2Avg: "390 शब्द", row2Fast: "480 शब्द",
-          row3Duration: "5 मिनट", row3Slow: "550 शब्द", row3Avg: "650 शब्द", row3Fast: "800 शब्द",
-          row4Duration: "10 मिनट", row4Slow: "1,100 शब्द", row4Avg: "1,300 शब्द", row4Fast: "1,600 शब्द",
-          p3Start: "सटीक समय का अनुमान लगाने के लिए ",
-          p3End: " के टाइमर का उपयोग करें।",
-          footerDesc: "पेशेवर पाठ विश्लेषण और गिनती उपकरण.",
-          privacyPolicy: "गोपनीयता नीति",
-          termsOfService: "सेवा की शर्तें",
-          contactUs: "संपर्क करें",
-          blog: "ब्लॉग",
-          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
-        },
-        bn: {
-          backToBlog: "← ব্লগে ফিরে যান",
-          category: "বক্তৃতা ও প্রেজেন্টেশন",
-          articleTitle: "শব্দ সংখ্যা অনুযায়ী বক্তৃতার সময়: আপনার কত শব্দ প্রয়োজন?",
-          publishMeta: "প্রকাশিত: আগস্ট ২০২৬ • ৪ মিনিট পাঠ",
-          p1: "আপনি ইউটিউব স্ক্রিপ্ট বা প্রেজেন্টেশন তৈরি করছেন যাই হোক না কেন, শব্দ সংখ্যা এবং বলার সময়ের মধ্যে সম্পর্ক বোঝা গুরুত্বপূর্ণ।",
-          headingSpeed: "গড় কথা বলার গতি",
-          p2Start: "একজন সাধারণ বক্তা মিনিটে ",
-          p2Bold: "১৩০ থেকে ১৫০ শব্দ (WPM)",
-          p2End: " গতিতে কথা বলেন। বিরতিসহ বক্তৃতায় সাধারণত ১২৫ WPM হয়, আর দ্রুত ভয়েসওভার ১৬০ WPM পর্যন্ত পৌঁছে।",
-          headingTable: "দ্রুত রেফারেন্স তালিকা",
-          thDuration: "বক্তৃতার সময়কাল", thSlow: "ধীর গতি (১১০ WPM)", thAvg: "গড় গতি (১৩০ WPM)", thFast: "দ্রুত গতি (১৬০ WPM)",
-          row1Duration: "১ মিনিট", row1Slow: "১১০ শব্দ", row1Avg: "১৩০ শব্দ", row1Fast: "১৬০ শব্দ",
-          row2Duration: "৩ মিনিট", row2Slow: "৩৩০ শব্দ", row2Avg: "৩৯০ শব্দ", row2Fast: "৪৮০ শব্দ",
-          row3Duration: "৫ মিনিট", row3Slow: "৫৫০ শব্দ", row3Avg: "৬৫০ শব্দ", row3Fast: "৮০০ শব্দ",
-          row4Duration: "১০ মিনিট", row4Slow: "১,১০০ শব্দ", row4Avg: "১,৩০০ শব্দ", row4Fast: "১,৬০০ শব্দ",
-          p3Start: "সঠিক সময় অনুমান করতে ",
-          p3End: " এর স্পিচ টাইমার ব্যবহার করুন।",
-          footerDesc: "পেশাদার পাঠ বিশ্লেষণ এবং গণনার সরঞ্জাম।",
-          privacyPolicy: "গোপনীয়তা নীতি",
-          termsOfService: "পরিষেবার শর্তق",
-          contactUs: "যোগাযোগ করুন",
-          blog: "ব্লগ",
-          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
-        },
-        ur: {
-          backToBlog: "← بلاگ پر واپس جائیں",
-          category: "تقریر اور پریزنٹیشن",
-          articleTitle: "الفاظ کی تعداد کے لحاظ سے تقریر کا وقت: آپ کو کتنے الفاظ کی ضرورت ہے؟",
-          publishMeta: "شائع شدہ: اگست 2026 • 4 منٹ کی پڑھائی",
-          p1: "چاہے آپ یوٹیوب اسکرپٹ تیار کر رہے ہوں یا یونیورسٹی کی پریزنٹیشن، الفاظ کی تعداد اور بولنے کے وقت کا تعلق سمجھنا ضروری ہے۔",
-          headingSpeed: "بولنے کی اوسط رفتار",
-          p2Start: "ایک عام مقرر ",
-          p2Bold: "130 سے 150 الفاظ فی منٹ (WPM)",
-          p2End: " کی رفتار سے بولتا ہے۔ وقفوں کے ساتھ پریزنٹیشن عام طور پر 125 WPM ہوتی ہے، جبکہ تیز وائس اوور 160 WPM تک پہنچتے ہیں۔",
-          headingTable: "فوری حوالہ جاتی جدول",
-          thDuration: "تقریر کا دورانیہ", thSlow: "سست رفتار (110 WPM)", thAvg: "اوسط رفتار (130 WPM)", thFast: "تیز رفتار (160 WPM)",
-          row1Duration: "1 منٹ", row1Slow: "110 الفاظ", row1Avg: "130 الفاظ", row1Fast: "160 الفاظ",
-          row2Duration: "3 منٹ", row2Slow: "330 الفاظ", row2Avg: "390 الفاظ", row2Fast: "480 الفاظ",
-          row3Duration: "5 منٹ", row3Slow: "550 الفاظ", row3Avg: "650 الفاظ", row3Fast: "800 الفاظ",
-          row4Duration: "10 منٹ", row4Slow: "1,100 الفاظ", row4Avg: "1,300 الفاظ", row4Fast: "1,600 الفاظ",
-          p3Start: "صحیح دورانیے کا اندازہ لگانے کے لیے ",
-          p3End: " کا اسپیچ ٹائمر استعمال کریں۔",
-          footerDesc: "پیشہ ورانہ متن کا تجزیہ اور گنتی کے اوزار۔",
-          privacyPolicy: "پالیسی",
-          termsOfService: "شرائط",
-          contactUs: "رابطہ کریں",
-          blog: "بلاگ",
-          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
-        }
-      };
+      var langSelect = document.getElementById("lang-select");
 
-      var langSelect = document.getElementById("lang-select");
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
 
-      function getSavedLang() {
-        var savedLang = localStorage.getItem("site_lang");
-        if (savedLang && translations[savedLang]) return savedLang;
-        return "en";
-      }
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.articleTitle + " - TextCount.net";
 
-      function setLanguage(lang) {
-        var data = translations[lang] || translations.en;
-        document.documentElement.lang = lang;
-        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
-        
-        document.title = data.articleTitle + " - TextCount.net";
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
 
-        document.querySelectorAll("[data-i18n]").forEach(function (el) {
-          var key = el.getAttribute("data-i18n");
-          if (data[key]) el.textContent = data[key];
-        });
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
 
-        langSelect.value = lang;
-        localStorage.setItem("site_lang", lang);
-      }
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
 
-      langSelect.addEventListener("change", function () {
-        setLanguage(this.value);
-      });
+      var initLang = getSavedLang();
+      setLanguage(initLang);
 
-      var initLang = getSavedLang();
-      setLanguage(initLang);
-
-    })();
-  </script>
+    })();
+  </script>
 </body>
 </html>
