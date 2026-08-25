@@ -73,9 +73,9 @@
     </div>
   </header>
 
-  <!-- محتوى المقال -->
+  <!-- محتوى المقال (تم إزالة الإطار الرمادي والخلفية الخاصة بالبطاقة ليصبح مندمجاً مع الخلفية العامة) -->
   <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
-    <article class="bg-card-dark border border-border-dark rounded-2xl p-6 sm:p-10 shadow-lg">
+    <article class="p-0 sm:p-4">
       
       <!-- معلومات المقال -->
       <div class="mb-6 border-b border-border-dark pb-6">
@@ -102,7 +102,7 @@
           Most SEO experts recommend maintaining a keyword density between <strong>1% and 2%</strong> (or up to 3% for competitive terms). This means if your blog post is 1,000 words long, your primary keyword should naturally appear about 10 to 20 times. 
         </p>
 
-        <div class="bg-base-dark border border-border-dark p-4 rounded-xl my-4 text-slate-300 text-sm">
+        <div class="bg-card-dark border border-border-dark p-4 rounded-xl my-4 text-slate-300 text-sm">
           <p data-i18n="boxText">💡 <strong class="text-accent-sky">Pro Tip:</strong> Use tools like TextCount.net to instantly analyze your word frequency and ensure you stay within a natural, penalty-free range.</p>
         </div>
 
@@ -111,9 +111,9 @@
           Keyword stuffing—repeating a keyword unnaturally—harms user experience and triggers search engine penalties. Instead, focus on these practices:
         </p>
         <ul class="list-disc pl-5 space-y-2 text-slate-300">
-          <li><strong data-i18n="li1Title">Use LSI Keywords:</strong> Incorporate synonyms and related terms naturally.</li>
-          <li><strong data-i18n="li2Title">Write for Humans First:</strong> Prioritize clear reading flow over machine optimization.</li>
-          <li><strong data-i18n="li3Title">Spread Evenly:</strong> Distribute keywords across headings, introduction, and conclusion.</li>
+          <li><strong><span data-i18n="li1Title">Use LSI Keywords:</span></strong> <span data-i18n="li1Desc">Incorporate synonyms and related terms naturally.</span></li>
+          <li><strong><span data-i18n="li2Title">Write for Humans First:</span></strong> <span data-i18n="li2Desc">Prioritize clear reading flow over machine optimization.</span></li>
+          <li><strong><span data-i18n="li3Title">Spread Evenly:</span></strong> <span data-i18n="li3Desc">Distribute keywords across headings, introduction, and conclusion.</span></li>
         </ul>
 
         <h2 data-i18n="h2_4" class="text-xl font-bold text-slate-100 mt-6">Conclusion</h2>
@@ -148,7 +148,6 @@
 
       var translations = {
         en: {
-          backToHome: "← Back to Tool",
           backToBlog: "← Back to Blog",
           cat: "SEO Metrics",
           artTitle: "What is Keyword Density and How to Optimize It",
@@ -176,7 +175,6 @@
           footerContact: "Contact Us"
         },
         ar: {
-          backToHome: "← العودة للأداة",
           backToBlog: "← العودة للمدونة",
           cat: "مقاييس السيو",
           artTitle: "ما هي كثافة الكلمات المفتاحية وكيف تحسنها",
@@ -204,7 +202,6 @@
           footerContact: "اتصل بنا"
         },
         de: {
-          backToHome: "← Zurück zum Tool",
           backToBlog: "← Zurück zum Blog",
           cat: "SEO-Metriken",
           artTitle: "Was ist Keyword-Dichte und wie optimiert man sie",
@@ -218,8 +215,11 @@
           h2_3: "Keyword-Stuffing vermeiden",
           p_3: "Unnatürliche Wiederholungen schaden dem SEO.",
           li1Title: "LSI-Keywords nutzen",
+          li1Desc: "Inkorporieren Sie Synonyme und verwandte Begriffe natürlich.",
           li2Title: "Für Menschen schreiben",
+          li2Desc: "Priorisieren Sie den Lesefluss.",
           li3Title: "Gleichmäßig verteilen",
+          li3Desc: "Verteilen Sie Keywords im Text.",
           h2_4: "Fazit",
           p_4: "Ausgewogenheit ist der Schlüssel zum Erfolg.",
           footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
@@ -229,7 +229,6 @@
           footerContact: "Kontakt"
         },
         fr: {
-          backToHome: "← Retour à l'outil",
           backToBlog: "← Retour au blog",
           cat: "Métriques SEO",
           artTitle: "Qu'est-ce que la densité de mots-clés et comment l'optimiser",
@@ -243,8 +242,11 @@
           h2_3: "Éviter le bourrage",
           p_3: "Répéter un mot à l'excès nuit au référencement.",
           li1Title: "Mots-clés LSI",
+          li1Desc: "Incorporez des synonymes naturellement.",
           li2Title: "Écrire pour l'humain",
+          li2Desc: "Privilégiez la fluidité de lecture.",
           li3Title: "Répartition uniforme",
+          li3Desc: "Répartissez les mots-clés.",
           h2_4: "Conclusion",
           p_4: "Trouvez le juste équilibre pour réussir.",
           footer: "© 2026 TextCount.net — Tous droits réservés",
@@ -254,7 +256,6 @@
           footerContact: "Contact"
         },
         es: {
-          backToHome: "← Volver",
           backToBlog: "← Volver al blog",
           cat: "Métricas SEO",
           artTitle: "Qué es la densidad de palabras clave y cómo optimizarla",
@@ -268,8 +269,11 @@
           h2_3: "Evitar el relleno",
           p_3: "No abuses de las repeticiones.",
           li1Title: "Palabras LSI",
+          li1Desc: "Incorpora sinónimos de forma natural.",
           li2Title: "Escribir para humanos",
+          li2Desc: "Prioriza la lectura.",
           li3Title: "Distribución uniforme",
+          li3Desc: "Distribuye las palabras clave.",
           h2_4: "Conclusión",
           p_4: "El equilibrio es clave.",
           footer: "© 2026 TextCount.net — Todos los derechos reservados",
@@ -279,7 +283,6 @@
           footerContact: "Contacto"
         },
         it: {
-          backToHome: "← Torna",
           backToBlog: "← Torna al blog",
           cat: "Metriche SEO",
           artTitle: "Cos'è la densità delle parole chiave",
@@ -293,8 +296,11 @@
           h2_3: "Evitare il keyword stuffing",
           p_3: "Attenzione alle ripetizioni.",
           li1Title: "Parole LSI",
+          li1Desc: "Usa sinonimi correlati.",
           li2Title: "Scrivere per le persone",
+          li2Desc: "1° la lettura.",
           li3Title: "Distribuzione",
+          li3Desc: "Distribuisci le keyword.",
           h2_4: "Conclusione",
           p_4: "L'equilibrio paga.",
           footer: "© 2026 TextCount.net",
@@ -304,7 +310,6 @@
           footerContact: "Contatti"
         },
         nl: {
-          backToHome: "← Terug",
           backToBlog: "← Terug naar blog",
           cat: "SEO Metriek",
           artTitle: "Wat is keyword density",
@@ -318,8 +323,11 @@
           h2_3: "Voorkom stuffing",
           p_3: "Natuurlijk schrijven.",
           li1Title: "LSI",
+          li1Desc: "Gebruik synoniemen.",
           li2Title: "Voor mensen",
+          li2Desc: "Prioriteit aan leesbaarheid.",
           li3Title: "Spreiden",
+          li3Desc: "Spreid zoekwoorden.",
           h2_4: "Conclusie",
           p_4: "Balans is key.",
           footer: "© 2026 TextCount.net",
@@ -329,7 +337,6 @@
           footerContact: "Contact"
         },
         tr: {
-          backToHome: "← Geri",
           backToBlog: "← Bloga Dön",
           cat: "SEO Metrikleri",
           artTitle: "Anahtar Kelime Yoğunluğu Nedir",
@@ -343,8 +350,11 @@
           h2_3: "Yığılmadan Kaçınma",
           p_3: "Doğal yazın.",
           li1Title: "LSI",
+          li1Desc: "Eş anlamlıları kullanın.",
           li2Title: "İnsanlar için",
+          li2Desc: "Okunabilirliği önceliklendirin.",
           li3Title: "Dağılım",
+          li3Desc: "Anahtar kelimeleri dağıtın.",
           h2_4: "Sonuç",
           p_4: "Denge önemlidir.",
           footer: "© 2026 TextCount.net",
@@ -354,7 +364,6 @@
           footerContact: "İletişim"
         },
         pt: {
-          backToHome: "← Voltar",
           backToBlog: "← Voltar ao Blog",
           cat: "Métricas SEO",
           artTitle: "O que é Densidade de Palavras-Chave",
@@ -368,8 +377,11 @@
           h2_3: "Evitar excessos",
           p_3: "Escreva naturalmente.",
           li1Title: "LSI",
+          li1Desc: "Use sinônimos naturalmente.",
           li2Title: "Para humanos",
+          li2Desc: "Priorize a leitura.",
           li3Title: "Distribuição",
+          li3Desc: "Distribua palavras-chave.",
           h2_4: "Conclusão",
           p_4: "Equilíbrio.",
           footer: "© 2026 TextCount.net",
@@ -379,7 +391,6 @@
           footerContact: "Contato"
         },
         ru: {
-          backToHome: "← Назад",
           backToBlog: "← К блогу",
           cat: "SEO Метрики",
           artTitle: "Что такое плотность ключевых слов",
@@ -393,8 +404,11 @@
           h2_3: "Избегайте спама",
           p_3: "Пишите для людей.",
           li1Title: "LSI",
+          li1Desc: "Используйте синонимы.",
           li2Title: "Для людей",
+          li2Desc: "Читаемость превыше всего.",
           li3Title: "Баланс",
+          li3Desc: "Распределяйте ключи.",
           h2_4: "Итог",
           p_4: "Важен баланс.",
           footer: "© 2026 TextCount.net",
@@ -404,7 +418,6 @@
           footerContact: "Контакты"
         },
         zh: {
-          backToHome: "← 返回",
           backToBlog: "← 返回博客",
           cat: "SEO 指标",
           artTitle: "什么是关键词密度以及如何进行优化",
@@ -418,8 +431,11 @@
           h2_3: "如何避免关键词堆砌",
           p_3: "自然写作，避免过度重复。",
           li1Title: "LSI 关键词",
+          li1Desc: "自然地融入同义词。",
           li2Title: "为读者写作",
+          li2Desc: "优先考虑阅读体验。",
           li3Title: "均匀分布",
+          li3Desc: "在文章中合理分布。",
           h2_4: "结论",
           p_4: "平衡是成功关键。",
           footer: "© 2026 TextCount.net",
@@ -429,7 +445,6 @@
           footerContact: "联系我们"
         },
         ja: {
-          backToHome: "← 戻る",
           backToBlog: "← ブログに戻る",
           cat: "SEO指標",
           artTitle: "キーワード密度とは？その最適化方法",
@@ -443,8 +458,11 @@
           h2_3: "キーワードの詰め込みを防ぐ",
           p_3: "自然な文章を心がけましょう。",
           li1Title: "LSIキーワード",
+          li1Desc: "類義語を自然に取り入れます。",
           li2Title: "読者のために書く",
+          li2Desc: "読みやすさを最優先します。",
           li3Title: "均等に配置",
+          li3Desc: "キーワードを分散させます。",
           h2_4: "まとめ",
           p_4: "バランスが成功の鍵です。",
           footer: "© 2026 TextCount.net",
@@ -454,7 +472,6 @@
           footerContact: "お問い合わせ"
         },
         hi: {
-          backToHome: "← वापस",
           backToBlog: "← ब्लॉग पर वापस",
           cat: "SEO मेट्रیکس",
           artTitle: "कीवर्ड घनत्व क्या है और इसे कैसे अनुकूलित करें",
@@ -468,8 +485,11 @@
           h2_3: "बचें",
           p_3: "स्वाभाविक रूप से लिखें।",
           li1Title: "LSI",
+          li1Desc: "पर्याایوں का स्वाभाविक उपयोग करें।",
           li2Title: "मानव प्रथम",
+          li2Desc: "पठनीयता को प्राथमिकता दें।",
           li3Title: "फैलाव",
+          li3Desc: "कीवर्ड वितरित करें।",
           h2_4: "निष्कर्ष",
           p_4: "संतुलन जरूरी है।",
           footer: "© 2026 TextCount.net",
@@ -479,7 +499,6 @@
           footerContact: "संपर्क"
         },
         bn: {
-          backToHome: "← ফিরে যান",
           backToBlog: "← ব্লগ এ ফিরুন",
           cat: "এসইও মেট্রিক্স",
           artTitle: "কিওয়ার্ড ডেনসিটি কী এবং কীভাবে অপ্টিমাইজ করবেন",
@@ -488,15 +507,18 @@
           h2_1: "বোঝা",
           p_1: "কিওয়ার্ড অনুপাত।",
           h2_2: "আদর্শ সীমা",
-          p_2: "১% থেকে ২%。",
+          p_2: "১% থেকে ২%।",
           boxText: "💡 টিপস: TextCount.net ব্যবহার করুন।",
           h2_3: "স্টাফিং এড়ানো",
           p_3: "প্রাকৃতিকভাবে লিখুন।",
           li1Title: "LSI",
+          li1Desc: "সমার্থক শব্দ ব্যবহার করুন।",
           li2Title: "পাঠকদের জন্য",
+          li2Desc: "পঠনযোগ্যতাকে প্রাধান্য দিন।",
           li3Title: "সঠিক বিতরণ",
+          li3Desc: "সঠিকভাবে বিতরণ করুন।",
           h2_4: "উপসংহার",
-          p_4: "ভারসাম্য বজায় রাখুন।",
+          p_4: "ভারসাম্য বজায় রাখুন।",
           footer: "© 2026 TextCount.net",
           footerAbout: "আমাদের সম্পর্কে",
           footerPrivacy: "গোপনীয়তা",
@@ -504,7 +526,6 @@
           footerContact: "যোগাযোগ"
         },
         ur: {
-          backToHome: "← واپس",
           backToBlog: "← بلاگ پر واپس",
           cat: "SEO میٹرکس",
           artTitle: "Keyword Density کیا ہے और اس کی اصلاح کیسے کی جائے",
@@ -518,8 +539,12 @@
           h2_3: "بچنا",
           p_3: "قدرتی انداز میں لکھیں۔",
           li1Title: "LSI کی ورڈز",
+          li1Desc: "مترادفات کو قدرتی طور پر شامل کریں۔",
           li2Title: "پہلے انسانوں کے لیے لکھیں",
+          li2Desc: "پڑھنے میں روانی کو ترجیح دیں۔",
           li3Title: "متوازن تقسیم",
+          li3Title: "متوازن تقسیم",
+          li3Desc: "کی ورڈز کو درست طریقے سے پھیلائیں۔",
           h2_4: "نتیجہ",
           p_4: "توازن کامیابی کی کلید ہے۔",
           footer: "© 2026 TextCount.net",
