@@ -57,6 +57,20 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://textcount.pages.dev/blog/meta-title-description-length.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://textcount.pages.dev/blog/keyword-density-optimization.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- الصفحات الثابتة والتنظيمية -->
   <url>
     <loc>https://textcount.pages.dev/about.html</loc>
