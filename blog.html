@@ -1,126 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog & Writing Resources - TextCount.net</title>
+  <title id="page-title">Blog & Writing Resources - TextCount.net</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
         }
       }
     };
   </script>
-  <style>
-    /* Hide top Google Translate banner and fix top offset */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
 
-    /* Dark theme customization for the Google Translate dropdown widget */
-    .goog-te-gadget-simple {
-      background-color: #1e293b !important;
-      border: 1px solid #334155 !important;
-      padding: 4px 8px !important;
-      border-radius: 0.5rem !important;
-      font-size: 0.875rem !important;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
     }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: #f8fafc !important;
-    }
-    .goog-te-gadget-icon { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      margin: 0 !important;
-    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
   </style>
 </head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/" id="back-link" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
-        <!-- Google Translate Widget Mount Point -->
-        <div id="google_translate_element"></div>
+        <a href="/" data-i18n="backToHome" class="text-sm text-accent-sky hover:underline">&larr; Back to Tool</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
       </div>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
-    <h1 id="blog-title" class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
-    <p id="blog-desc" class="text-slate-400 mb-8">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
+    <h1 data-i18n="blogTitle" class="text-3xl font-bold text-slate-50 mb-3">Writing & SEO Resources</h1>
+    <p data-i18n="blogDesc" class="text-slate-400 mb-8">Guides, tips, and insights to help you write better content and optimize your word count for search engines.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Article 1 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
-          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content</span>
+          <span data-i18n="cat1" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content</span>
           <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
-            <a href="blog/seo-word-count-guide.html" class="hover:underline">The Ultimate Word Count Guide for SEO in 2026</a>
+            <a href="blog/seo-word-count-guide.html" data-i18n="art1Title" class="hover:underline">The Ultimate Word Count Guide for SEO in 2026</a>
           </h2>
-          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+          <p data-i18n="art1Desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
             Discover the ideal word counts for blog posts, product pages, and social media content to boost your Google rankings.
           </p>
         </div>
         <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
-          <span>5 min read</span>
-          <a href="blog/seo-word-count-guide.html" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
+          <span data-i18n="art1ReadTime">5 min read</span>
+          <a href="blog/seo-word-count-guide.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
         </div>
       </article>
 
       <!-- Article 2 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
-          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Social Media</span>
+          <span data-i18n="cat2" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Social Media</span>
           <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
-            <a href="blog/social-media-character-limits.html" class="hover:underline">Social Media Character Limits Guide (2026)</a>
+            <a href="blog/social-media-character-limits.html" data-i18n="art2Title" class="hover:underline">Social Media Character Limits Guide (2026)</a>
           </h2>
-          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+          <p data-i18n="art2Desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
             Master post length rules across X (Twitter), LinkedIn, and Instagram to write uninterrupted captions that convert.
           </p>
         </div>
         <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
-          <span>4 min read</span>
-          <a href="blog/social-media-character-limits.html" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
+          <span data-i18n="art2ReadTime">4 min read</span>
+          <a href="blog/social-media-character-limits.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
         </div>
       </article>
 
       <!-- Article 3 -->
       <article class="bg-card-dark border border-border-dark rounded-xl p-6 flex flex-col justify-between hover:border-accent-sky transition">
         <div>
-          <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Speech & Speaking</span>
+          <span data-i18n="cat3" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Speech & Speaking</span>
           <h2 class="text-lg font-bold text-slate-100 mt-2 mb-3">
-            <a href="blog/speech-length-by-word-count.html" class="hover:underline">Speech Length by Word Count: How Many Words?</a>
+            <a href="blog/speech-length-by-word-count.html" data-i18n="art3Title" class="hover:underline">Speech Length by Word Count: How Many Words?</a>
           </h2>
-          <p class="text-slate-400 text-sm line-clamp-3 mb-4">
+          <p data-i18n="art3Desc" class="text-slate-400 text-sm line-clamp-3 mb-4">
             Calculate exact speech durations for YouTube video scripts, presentations, and TED talks based on speaking speeds.
           </p>
         </div>
         <div class="flex items-center justify-between text-xs text-slate-500 border-t border-border-dark pt-4 mt-2">
-          <span>4 min read</span>
-          <a href="blog/speech-length-by-word-count.html" class="text-accent-sky font-medium hover:underline">Read &rarr;</a>
+          <span data-i18n="art3ReadTime">4 min read</span>
+          <a href="blog/speech-length-by-word-count.html" class="text-accent-sky font-medium hover:underline"><span data-i18n="readMore">Read</span> &rarr;</a>
         </div>
       </article>
     </div>
   </main>
 
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToHome: "← Back to Tool",
+          blogTitle: "Writing & SEO Resources",
+          blogDesc: "Guides, tips, and insights to help you write better content and optimize your word count for search engines.",
+          cat1: "SEO & Content",
+          art1Title: "The Ultimate Word Count Guide for SEO in 2026",
+          art1Desc: "Discover the ideal word counts for blog posts, product pages, and social media content to boost your Google rankings.",
+          art1ReadTime: "5 min read",
+          cat2: "Social Media",
+          art2Title: "Social Media Character Limits Guide (2026)",
+          art2Desc: "Master post length rules across X (Twitter), LinkedIn, and Instagram to write uninterrupted captions that convert.",
+          art2ReadTime: "4 min read",
+          cat3: "Speech & Speaking",
+          art3Title: "Speech Length by Word Count: How Many Words?",
+          art3Desc: "Calculate exact speech durations for YouTube video scripts, presentations, and TED talks based on speaking speeds.",
+          art3ReadTime: "4 min read",
+          readMore: "Read",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToHome: "← العودة للأداة",
+          blogTitle: "موارد الكتابة وسيو (SEO)",
+          blogDesc: "أدلة ونصائح ورؤى لمساعدتك في كتابة محتوى أفضل وتحسين عدد الكلمات لمحركات البحث.",
+          cat1: "تحسين محركات البحث والمحتوى",
+          art1Title: "الدليل الشامل لعدد الكلمات في SEO لعام 2026",
+          art1Desc: "اكتشف عدد الكلمات المثالي لمقالات المدونة ورسائل المنتجات ومحتوى وسائل التواصل لتعزيز ترتيبك في جوجل.",
+          art1ReadTime: "قراءة 5 دقائق",
+          cat2: "وسائل التواصل الاجتماعي",
+          art2Title: "دليل حدود الحروف لوسائل التواصل الاجتماعي (2026)",
+          art2Desc: "تعرف على قواعد طول المنشورات في X (تويتر) وLinkedIn وInstagram لكتابة تعليقات جذابة وبدون انقطاع.",
+          art2ReadTime: "قراءة 4 دقائق",
+          cat3: "الخطابة والحديث",
+          art3Title: "طول الخطاب حسب عدد الكلمات: كم كلمة تحتاج؟",
+          art3Desc: "احسب مدة الخطاب الدقيقة لنصوص فيديوهات يوتيوب والعروض التقديمية وكلمات TED بناءً على سرعة الحديث.",
+          art3ReadTime: "قراءة 4 دقائق",
+          readMore: "اقرأ",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToHome: "← Zurück zum Tool",
+          blogTitle: "Schreib- & SEO-Ressourcen",
+          blogDesc: "Anleitungen und Tipps für bessere Inhalte und SEO-Optimierung.",
+          cat1: "SEO & Content",
+          art1Title: "Der ultimative Wortanzahl-Leitfaden für SEO (2026)",
+          art1Desc: "Entdecken Sie die ideale Wortanzahl für Blogbeiträge und Produktseiten.",
+          art1ReadTime: "5 Min. Lesezeit",
+          cat2: "Social Media",
+          art2Title: "Leitfaden für Social-Media-Zeichenlimits (2026)",
+          art2Desc: "Meistern Sie Beitragslängen auf X, LinkedIn und Instagram.",
+          art2ReadTime: "4 Min. Lesezeit",
+          cat3: "Rede & Vortrag",
+          art3Title: "Redelänge nach Wortanzahl: Wie viele Wörter?",
+          art3Desc: "Berechnen Sie exakte Redezeiten für Videos und Präsentationen.",
+          art3ReadTime: "4 Min. Lesezeit",
+          readMore: "Lesen",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToHome: "← Retour à l'outil",
+          blogTitle: "Ressources Rédaction & SEO",
+          blogDesc: "Guides et conseils pour rédiger de meilleurs contenus et optimiser le nombre de mots.",
+          cat1: "SEO & Contenu",
+          art1Title: "Guide ultime du nombre de mots pour le SEO en 2026",
+          art1Desc: "Découvrez la longueur idéale pour vos articles et pages produits.",
+          art1ReadTime: "5 min de lecture",
+          cat2: "Réseaux Sociaux",
+          art2Title: "Guide des limites de caractères sur les réseaux sociaux (2026)",
+          art2Desc: "Maîtrisez la longueur de vos publications sur X, LinkedIn et Instagram.",
+          art2ReadTime: "4 min de lecture",
+          cat3: "Discours & Prise de parole",
+          art3Title: "Durée d'un discours selon le nombre de mots",
+          art3Desc: "Calculez la durée exacte pour vos scripts YouTube et présentations.",
+          art3ReadTime: "4 min de lecture",
+          readMore: "Lire",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToHome: "← Volver a la herramienta",
+          blogTitle: "Recursos de Redacción y SEO",
+          blogDesc: "Guías y consejos para escribir mejor contenido y optimizar el recuento de palabras.",
+          cat1: "SEO y Contenido",
+          art1Title: "Guía definitiva de recuento de palabras para SEO en 2026",
+          art1Desc: "Descubra la cantidad ideal de palabras para blogs y páginas de productos.",
+          art1ReadTime: "5 min de lectura",
+          cat2: "Redes Sociales",
+          art2Title: "Guía de límites de caracteres en redes sociales (2026)",
+          art2Desc: "Domine las reglas de longitud en X, LinkedIn e Instagram.",
+          art2ReadTime: "4 min de lectura",
+          cat3: "Discursos y Oratoria",
+          art3Title: "Duración del discurso por recuento de palabras",
+          art3Desc: "Calcule la duración exacta para guiones de YouTube y presentaciones.",
+          art3ReadTime: "4 min de lectura",
+          readMore: "Leer",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToHome: "← Torna allo strumento",
+          blogTitle: "Risorse di Scrittura e SEO",
+          blogDesc: "Guide e consigli per scrivere contenuti migliori e ottimizzare il conteggio parole.",
+          cat1: "SEO e Contenuti",
+          art1Title: "Guida definitiva al conteggio parole per la SEO (2026)",
+          art1Desc: "Scopri il conteggio parole ideale per articoli di blog e pagine prodotto.",
+          art1ReadTime: "5 min di lettura",
+          cat2: "Social Media",
+          art2Title: "Guida ai limiti di caratteri sui Social Media (2026)",
+          art2Desc: "Domina le regole di lunghezza dei post su X, LinkedIn e Instagram.",
+          art2ReadTime: "4 min di lettura",
+          cat3: "Discorsi e Oratoria",
+          art3Title: "Lunghezza del discorso in base al conteggio parole",
+          art3Desc: "Calcola la durata esatta per script YouTube e presentazioni.",
+          art3ReadTime: "4 min di lettura",
+          readMore: "Leggi",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToHome: "← Terug naar de tool",
+          blogTitle: "Schrijf- & SEO-bronnen",
+          blogDesc: "Gidsen en tips voor betere inhoud en SEO-optimalisatie.",
+          cat1: "SEO & Content",
+          art1Title: "De ultieme gids voor woordenaantal voor SEO in 2026",
+          art1Desc: "Ontdek het ideale aantal woorden voor blogposts en productpagina's.",
+          art1ReadTime: "5 min leestijd",
+          cat2: "Sociale Media",
+          art2Title: "Gids voor karakterlimieten op sociale media (2026)",
+          art2Desc: "Beheers de regels voor berichtlengte op X, LinkedIn en Instagram.",
+          art2ReadTime: "4 min leestijd",
+          cat3: "Spreken & Toespraken",
+          art3Title: "Lengte van toespraak op basis van woordenaantal",
+          art3Desc: "Bereken exacte spreektijden voor YouTube-scripts en presentaties.",
+          art3ReadTime: "4 min leestijd",
+          readMore: "Lezen",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToHome: "← Araca Geri Dön",
+          blogTitle: "Yazım ve SEO Kaynakları",
+          blogDesc: "Daha iyi içerik yazmak ve kelime sayınızı SEO için optimize etmek için kılavuzlar.",
+          cat1: "SEO ve İçerik",
+          art1Title: "SEO İçin Kapsamlı Kelime Sayısı Kılavuzu (2026)",
+          art1Desc: "Blog yazıları ve ürün sayfaları için ideal kelime sayılarını keşfedin.",
+          art1ReadTime: "5 dk okuma",
+          cat2: "Sosyal Medya",
+          art2Title: "Sosyal Medya Karakter Sınırları Kılavuzu (2026)",
+          art2Desc: "X, LinkedIn ve Instagram'da gönderi uzunluğu kurallarında uzmanlaşın.",
+          art2ReadTime: "4 dk okuma",
+          cat3: "Konuşma ve Hitabet",
+          art3Title: "Kelime Sayısına Göre Konuşma Süresi",
+          art3Desc: "YouTube metinleri ve sunumlar için kesin konuşma sürelerini hesaplayın.",
+          art3ReadTime: "4 dk okuma",
+          readMore: "Oku",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToHome: "← Voltar à Ferramenta",
+          blogTitle: "Recursos de Escrita e SEO",
+          blogDesc: "Guias e dicas para escrever melhores conteúdos e otimizar a contagem de palavras.",
+          cat1: "SEO e Conteúdo",
+          art1Title: "Guia definitivo de contagem de palavras para SEO em 2026",
+          art1Desc: "Descubra a contagem ideal de palavras para posts de blog e páginas de produtos.",
+          art1ReadTime: "5 min de leitura",
+          cat2: "Redes Sociais",
+          art2Title: "Guia de limites de caracteres nas redes sociais (2026)",
+          art2Desc: "Domine as regras de tamanho no X, LinkedIn e Instagram.",
+          art2ReadTime: "4 min de leitura",
+          cat3: "Discurso e Oratória",
+          art3Title: "Duração do discurso por contagem de palavras",
+          art3Desc: "Calcule a duração exata para roteiros do YouTube e apresentações.",
+          art3ReadTime: "4 min de leitura",
+          readMore: "Ler",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToHome: "← Назад к инструменту",
+          blogTitle: "Ресурсы по копирайтингу и SEO",
+          blogDesc: "Руководства и советы для создания лучшего контента и SEO-оптимизации.",
+          cat1: "SEO и Контент",
+          art1Title: "Полное руководство по количеству слов для SEO в 2026 году",
+          art1Desc: "Узнайте идеальное количество слов для статей и страниц товаров.",
+          art1ReadTime: "5 мин чтения",
+          cat2: "Социальные сети",
+          art2Title: "Ограничения на количество символов в соцсетях (2026)",
+          art2Desc: "Освойте правила длины постов в X, LinkedIn и Instagram.",
+          art2ReadTime: "4 мин чтения",
+          cat3: "Речи и выступления",
+          art3Title: "Длительность речи по количеству слов",
+          art3Desc: "Рассчитайте точное время для сценариев YouTube и презентаций.",
+          art3ReadTime: "4 мин чтения",
+          readMore: "Читать",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToHome: "← 返回工具",
+          blogTitle: "写作与 SEO 资源",
+          blogDesc: "旨在帮助您编写更好内容并优化字数的指南与技巧。",
+          cat1: "SEO 与内容",
+          art1Title: "2026 年 SEO 终极字数指南",
+          art1Desc: "探索博客文章和产品页面的最佳字数，提升 Google 排名。",
+          art1ReadTime: "阅读时间 5 分钟",
+          cat2: "社交媒体",
+          art2Title: "社交媒体字符限制指南（2026年）",
+          art2Desc: "掌握 X、LinkedIn 和 Instagram 的文案字数规则。",
+          art2ReadTime: "阅读时间 4 分钟",
+          cat3: "演讲与口craft",
+          art3Title: "按字数计算演讲时长：需要多少字？",
+          art3Desc: "计算 YouTube 视频脚本和演示文稿的准确演讲时长。",
+          art3ReadTime: "阅读时间 4 分钟",
+          readMore: "阅读",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToHome: "← ツールに戻る",
+          blogTitle: "ライティング＆SEOリソース",
+          blogDesc: "より良いコンテンツを作成し、文字数を最適化するためのガイドとヒント。",
+          cat1: "SEO＆コンテンツ",
+          art1Title: "2026年版 SEOのための文字数・単語数完全ガイド",
+          art1Desc: "Google検索順位を上げるためのブログや商品ページの最適な文字数。",
+          art1ReadTime: "読了時間 5分",
+          cat2: "SNS",
+          art2Title: "SNS文字数制限ガイド（2026年版）",
+          art2Desc: "X、LinkedIn、Instagramでの投稿文字数ルールをマスター。",
+          art2ReadTime: "読了時間 4分",
+          cat3: "スピーチ＆プレゼン",
+          art3Title: "文字数から計算するスピーチ時間：何文字必要？",
+          art3Desc: "YouTubeスクリプトやプレゼンの正確な話し時間を計算。",
+          art3ReadTime: "読了時間 4分",
+          readMore: "読む",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToHome: "← टूल पर वापस जाएँ",
+          blogTitle: "लेखन और SEO संसाधन",
+          blogDesc: "बेहतर सामग्री लिखने और खोज इंजन के लिए शब्द गणना को अनुकूलित करने के लिए गाइड।",
+          cat1: "SEO और सामग्री",
+          art1Title: "2026 में SEO के लिए अंतिम शब्द गणना गाइड",
+          art1Desc: "गूगल रैंकिंग बढ़ाने के लिए ब्लॉग पोस्ट के लिए आदर्श शब्द संख्या जानें।",
+          art1ReadTime: "5 मिनट का पठन",
+          cat2: "सोशल मीडिया",
+          art2Title: "सोशल मीडिया वर्ण सीमा गाइड (2026)",
+          art2Desc: "X, LinkedIn और Instagram पर पोस्ट की लंबाई के नियमों में महारत हासिल करें।",
+          art2ReadTime: "4 मिनट का पठन",
+          cat3: "भाषण और बोलना",
+          art3Title: "शब्द संख्या के अनुसार भाषण की लंबाई: कितने शब्द?",
+          art3Desc: "YouTube वीडियो स्क्रिप्ट और प्रस्तुतियों के लिए सटीक समय की गणना करें।",
+          art3ReadTime: "4 मिनट का पठन",
+          readMore: "पढ़ें",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToHome: "← টুলে ফিরে যান",
+          blogTitle: "রাইটিং ও এসইও রিসোর্স",
+          blogDesc: "উন্নত কন্টেন্ট লিখতে এবং সার্চ ইঞ্জিনের জন্য শব্দ সংখ্যা অপ্টিমাইজ করার গাইড।",
+          cat1: "এসইও ও কন্টেন্ট",
+          art1Title: "২০২৬ সালে এসইও-এর জন্য শব্দ সংখ্যার চূড়ান্ত গাইড",
+          art1Desc: "ব্লগ পোস্ট এবং প্রোডাক্ট পেজের জন্য আদর্শ শব্দ সংখ্যা আবিষ্কার করুন।",
+          art1ReadTime: "৫ মিনিট পড়ার সময়",
+          cat2: "সোশ্যাল মিডিয়া",
+          art2Title: "সোশ্যাল মিডিয়া ক্যারেক্টার লিমিট গাইড (২০২৬)",
+          art2Desc: "X, LinkedIn, এবং Instagram-এ পোস্টের দৈর্ঘ্যের নিয়ম আয়ত্ত করুন।",
+          art2ReadTime: "৪ মিনিট পড়ার সময়",
+          cat3: "বক্তৃতা ও বিবরণ",
+          art3Title: "শব্দ সংখ্যা অনুযায়ী বক্তব্যের দৈর্ঘ্য: কত শব্দ প্রয়োজন?",
+          art3Desc: "ইউটিউব স্ক্রিপ্ট এবং প্রেজেন্টেশনের জন্য সঠিক সময় গণনা করুন।",
+          art3ReadTime: "৪ মিনিট পড়ার সময়",
+          readMore: "পড়ুন",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToHome: "← ٹول پر واپس جائیں",
+          blogTitle: "رائٹنگ اور SEO وسائل",
+          blogDesc: "بہتر مواد لکھنے اور سرچ انجن کے لیے الفاظ کی تعداد کو بہتر بنانے کی رہنمائی۔",
+          cat1: "SEO اور مواد",
+          art1Title: "2026 میں SEO کے لیے الفاظ کی تعداد کی حتمی گائیڈ",
+          art1Desc: "گوگل رینکنگ کو بڑھانے کے لیے بلاگ پوسٹس کے لیے مثالی الفاظ کی تعداد دریافت کریں۔",
+          art1ReadTime: "5 منٹ کا مطالعہ",
+          cat2: "سوشل میڈیا",
+          art2Title: "سوشل میڈیا حروف کی حد کی گائیڈ (2026)",
+          art2Desc: "X، LinkedIn اور Instagram پر پوسٹ کی لمبائی کے قواعد میں مہارت حاصل کریں۔",
+          art2ReadTime: "4 منٹ کا مطالعہ",
+          cat3: "تقریر اور خطاب",
+          art3Title: "الفاظ کی تعداد کے لحاظ سے تقریر کی لمبائی",
+          art3Desc: "یوٹیوب اسکرپٹس اور پریزنٹیشنز کے لیے تقریر کے درست وقت کا حساب لگائیں۔",
+          art3ReadTime: "4 منٹ کا مطالعہ",
+          readMore: "پڑھیں",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.blogTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
