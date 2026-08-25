@@ -60,8 +60,10 @@
   textarea::-webkit-scrollbar-thumb { background-color: #334155; border-radius: 999px; }
   select#lang-select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.65rem center; background-size: 1.1em; }
   html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
-  .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; }
-  .faq-item.active .faq-content { max-height: 500px; }
+  
+  /* تعديل إخفاء وإظهار الإجابة عند الضغط */
+  .faq-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out; padding-top: 0; padding-bottom: 0; }
+  .faq-item.active .faq-content { max-height: 500px; opacity: 1; padding-bottom: 1.25rem; }
   .faq-item.active svg { transform: rotate(180deg); }
 </style>
 </head>
@@ -282,7 +284,7 @@
           <span data-i18n="faqQ1" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA1"></p>
         </div>
       </div>
@@ -293,7 +295,7 @@
           <span data-i18n="faqQ2" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA2"></p>
         </div>
       </div>
@@ -304,7 +306,7 @@
           <span data-i18n="faqQ3" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA3"></p>
         </div>
       </div>
@@ -315,7 +317,7 @@
           <span data-i18n="faqQ4" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA4"></p>
         </div>
       </div>
@@ -326,40 +328,40 @@
           <span data-i18n="faqQ5" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA5"></p>
         </div>
       </div>
 
-      <!-- FAQ 6 (New Creator-focused) -->
+      <!-- FAQ 6 -->
       <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
         <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
           <span data-i18n="faqQ6" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA6"></p>
         </div>
       </div>
 
-      <!-- FAQ 7 (New Creator-focused) -->
+      <!-- FAQ 7 -->
       <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
         <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
           <span data-i18n="faqQ7" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA7"></p>
         </div>
       </div>
 
-      <!-- FAQ 8 (New Creator-focused) -->
+      <!-- FAQ 8 -->
       <div class="faq-item bg-card-dark border border-border-dark rounded-xl overflow-hidden transition">
         <button type="button" class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
           <span data-i18n="faqQ8" class="font-bold text-slate-100 text-base md:text-lg"></span>
           <svg class="w-5 h-5 text-accent-sky shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-content px-5 pb-5 text-slate-400 text-sm md:text-base leading-relaxed">
+        <div class="faq-content px-5 text-slate-400 text-sm md:text-base leading-relaxed">
           <p data-i18n="faqA8"></p>
         </div>
       </div>
@@ -1029,7 +1031,7 @@
       faqQ8: "Hızlı biçimlendirme butonları nasıl kullanılır?",
       faqA8: "Tek tıkla boşlukları temizlemenizi ve harf düzenini değiştirmenizi sağlar.",
       copyBtn: "Metni Kopyala",
-      copiedBtn: "Kopyalandı!",
+      copiedBtn: "Kopylandı!",
       clearBtn: "Tümünü Temizle",
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Tüm hakları saklıdır",
@@ -1113,7 +1115,7 @@
       blogLink: "Blog",
       footer: "© 2026 TextCount.net — Todos os direitos reservados",
       aboutUsLink: "Sobre Nós",
-      privacyPolicyLink: "Privacidade",
+      privacyPolicyLink: "Privacidad",
       termsOfServiceLink: "Termos",
       contactUsLink: "Contato",
       unitSec: "seg",
@@ -1407,7 +1409,7 @@
       faqA3: "हाँ, TextCount.net 100% मुफ़्त है और इसकी कोई सीमा नहीं है।",
       faqQ4: "क्या मेरे टेक्स्ट सर्वर पर सहेजे जाते हैं?",
       faqA4: "नहीं, कोई भी टेक्स्ट सहेजा नहीं जाता है; सभी प्रक्रियाएं आपके ब्राउज़र में होती हैं।",
-      faqQ5: "पढ़نے और बोलने के समय कैलकुलेटर वीडियो निर्माताओं की कैसे मदद करते हैं?",
+      faqQ5: "पढ़ने और बोलने के समय कैलकुलेटर वीडियो निर्माताओं की कैसे मदद करते हैं?",
       faqA5: "वे वीडियो स्क्रिप्ट के बोलने के समय का सटीक अनुमान लगाने में मदद करते हैं।",
       faqQ6: "कीवर्ड घनत्व विश्लेषण के क्या लाभ हैं?",
       faqA6: "यह कीवर्ड स्टफिंग से बचने और सर्च रैंकिंग सुधारने में मदद करता है।",
@@ -1452,7 +1454,7 @@
       limitTikTok: "টিকটক ক্যাপশন",
       guideTitle: "TextCount.net ব্যবহারের সম্পূর্ণ নির্দেশিকা",
       guideH1: "টেক্সট বিশ্লেষণের ভূমিকা",
-      guideP1: "TextCount.net কন্টেন্ট স্রষ্টা এবং লেখকদের জন্য একটি অসাধারণ রিয়েল-টাইম টুল।",
+      guideP1: "TextCount.net কন্টেন্ট স্রষ্টা এবং লেখকদের জন্য একটি অসাধারণ রিয়েল-टाइम টুল।",
       guideH2: "মূল কাউন্টার এবং পারফরম্যান্স সূচক",
       guideP2: "ওপরের প্যানেলে থাকা সূচকগুলো আপনার লেখার গঠন বুঝতে সাহায্য করে:",
       guideLi1Title: "মোট অক্ষর (স্পেসসহ)",
@@ -1467,7 +1469,7 @@
       guideH4: "প্ল্যাটফর্ম সীমা ট্র্যাকিং",
       guideH5: "SEO এর জন্য কীওয়ার্ড ঘনত্ব বিশ্লেষণ",
       guideH6: "কেন কনটেন্ট নির্মাতারা শব্দ কাউন্টারের উপর নির্ভর করেন",
-      guideP6: "লেখকরা বিভিন্ন প্ল্যাটফর্মের প্রয়োজনীয়তা পূরণ করতে রিয়েল-টাইম টুল ব্যবহার করেন।",
+      guideP6: "লেখকরা বিভিন্ন প্ল্যাটফর্মের প্রয়োজনীয়তা পূরণ করতে রিয়েল-टाइम টুল ব্যবহার করেন।",
       faqTitle: "কনটেন্ট নির্মাতাদের জন্য সাধারণ জিজ্ঞাসা (FAQ)",
       faqQ1: "TextCount.net কীভাবে শব্দ এবং অক্ষর গণনা করে?",
       faqA1: "এটি আপনার ব্রাউজারে রিয়েল-টাইমে স্থানীয়ভাবে গণনা করে সম্পূর্ণ গোপনীয়তা নিশ্চিত করে।",
@@ -1478,7 +1480,7 @@
       faqQ4: "আমার টেক্সট কি সার্ভারে সংরক্ষণ করা হয়?",
       faqA4: "না, কোনো টেক্সট সংরক্ষণ করা হয় না; সমস্ত প্রক্রিয়াকরণ ব্রাউজারে locally সম্পন্ন হয়।",
       faqQ5: "পড়ার এবং বলার সময় ক্যালকুলেটর ভিডিও নির্মাতাদের কীভাবে সাহায্য করে?",
-      faqA5: "এগুলি ভিডিও স্ক্রিপ্টের ভয়েসওভার সময় নিখুঁতভাবে অনুমান করতে সাহায্য করে।",
+      faqA5: "এগুলি ভিডিও স্ক্রিপ্টের ভয়েসওভার সময় নিখুটভাবে অনুমান করতে সাহায্য করে।",
       faqQ6: "কীওয়ার্ড ঘনত্ব বিশ্লেষণের সুবিধা কী?",
       faqA6: "এটি কীওয়ার্ড স্টাফিং এড়াতে এবং সার্চ র‍্যাঙ্কিং উন্নত করতে সাহায্য করে।",
       faqQ7: "টুলটি কি বিভিন্ন ভাষা সমর্থন করে?",
@@ -1668,37 +1670,43 @@
       return;
     }
 
-    var freq = {};
-    var stops = stopWordsDb[currentLang] || stopWordsDb.en;
-
-    wordsArr.forEach(function(w) {
-      var clean = w.toLowerCase().replace(/[^\w\u0600-\u06FF\u0750-\u077F\u0900-\u097F\u0980-\u09FF\u3040-\u30FF\u4E00-\u9FFF]/g, "");
-      if (clean.length > 1 && !stops.includes(clean)) {
-        freq[clean] = (freq[clean] || 0) + 1;
-      }
+    var cleanWords = wordsArr.map(function(w) {
+      return w.toLowerCase().replace(/[\d\.,\/#!$%\^&\*;:{}=\-_`~()?"'«»]/g, "");
+    }).filter(function(w) {
+      return w.length > 2;
     });
 
-    var sorted = Object.keys(freq).map(function(key) {
-      return [key, freq[key]];
-    }).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 5);
+    var stopWords = stopWordsDb[currentLang] || stopWordsDb.en;
+    var filtered = cleanWords.filter(function(w) {
+      return stopWords.indexOf(w) === -1 && w.trim() !== "";
+    });
 
-    if (sorted.length === 0) {
+    if (filtered.length === 0) {
       listEl.innerHTML = '<p class="text-slate-500 text-sm">' + data.noKeywordsFound + '</p>';
       return;
     }
 
+    var counts = {};
+    filtered.forEach(function(w) {
+      counts[w] = (counts[w] || 0) + 1;
+    });
+
+    var sorted = Object.keys(counts).map(function(w) {
+      return { word: w, count: counts[w] };
+    }).sort(function(a, b) {
+      return b.count - a.count;
+    }).slice(0, 5);
+
     var html = "";
     sorted.forEach(function(item) {
-      var pct = ((item[1] / wordsArr.length) * 100).toFixed(1);
-      html += '<div class="flex items-center justify-between text-sm">' +
-        '<span class="font-medium text-slate-200">' + item[0] + '</span>' +
-        '<div class="flex items-center gap-3">' +
-          '<span class="text-xs text-slate-400 font-mono-nums">' + item[1] + ' (' + pct + '%)</span>' +
-          '<div class="w-24 h-1.5 bg-base-dark rounded-full overflow-hidden border border-border-dark">' +
-            '<div class="h-full bg-accent-sky" style="width:' + Math.min(pct * 5, 100) + '%"></div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
+      var pct = ((item.count / wordsArr.length) * 100).toFixed(1);
+      html += '<div class="flex items-center justify-between text-sm bg-base-dark p-2.5 rounded-lg border border-border-dark">' +
+              '<span class="font-medium text-slate-200 capitalize">' + item.word + '</span>' +
+              '<div class="flex items-center gap-3 font-mono-nums text-xs">' +
+              '<span class="text-slate-400">' + item.count + ' times</span>' +
+              '<span class="bg-accent-sky/10 text-accent-sky px-2 py-0.5 rounded font-semibold">' + pct + '%</span>' +
+              '</div>' +
+              '</div>';
     });
     listEl.innerHTML = html;
   }
@@ -1706,19 +1714,74 @@
   function updateLimit(id, val, max) {
     var countEl = document.getElementById("count-" + id);
     var barEl = document.getElementById("bar-" + id);
+    if (!countEl || !barEl) return;
+
     countEl.textContent = val + " / " + max;
-    var pct = Math.min((val / max) * 100, 100);
+    var pct = Math.min(100, (val / max) * 100);
     barEl.style.width = pct + "%";
-    barEl.className = val > max ? "h-full bg-red-500 transition-all duration-300" : "h-full bg-accent-sky transition-all duration-300";
+
+    if (val > max) {
+      barEl.className = "h-full bg-red-500 transition-all duration-300";
+      countEl.className = "font-mono-nums text-sm text-red-400 font-semibold";
+    } else {
+      barEl.className = "h-full bg-accent-sky transition-all duration-300";
+      countEl.className = "font-mono-nums text-sm text-accent-sky";
+    }
   }
 
-  // FAQ Accordion Handler
+  textInput.addEventListener("input", updateStats);
+
+  langSelect.addEventListener("change", function(e) {
+    setLanguage(e.target.value);
+  });
+
+  document.getElementById("btn-clean-spaces").addEventListener("click", function() {
+    textInput.value = textInput.value.replace(/\s+/g, " ").trim();
+    updateStats();
+  });
+
+  document.getElementById("btn-uppercase").addEventListener("click", function() {
+    textInput.value = textInput.value.toUpperCase();
+    updateStats();
+  });
+
+  document.getElementById("btn-lowercase").addEventListener("click", function() {
+    textInput.value = textInput.value.toLowerCase();
+    updateStats();
+  });
+
+  document.getElementById("btn-titlecase").addEventListener("click", function() {
+    textInput.value = textInput.value.toLowerCase().replace(/(^\w{1})|(\s+\w{1})/g, function(match) {
+      return match.toUpperCase();
+    });
+    updateStats();
+  });
+
+  document.getElementById("copy-btn").addEventListener("click", function() {
+    if (!textInput.value) return;
+    navigator.clipboard.writeText(textInput.value);
+    var currentLang = langSelect.value;
+    var data = translations[currentLang] || translations.en;
+    var labelEl = document.getElementById("copy-btn-label");
+    var originalText = labelEl.textContent;
+    labelEl.textContent = data.copiedBtn;
+    setTimeout(function() {
+      labelEl.textContent = originalText;
+    }, 2000);
+  });
+
+  document.getElementById("clear-btn").addEventListener("click", function() {
+    textInput.value = "";
+    updateStats();
+    textInput.focus();
+  });
+
+  // FAQ Accordion Toggle
   document.querySelectorAll(".faq-toggle").forEach(function(btn) {
     btn.addEventListener("click", function() {
       var item = this.parentElement;
       var isActive = item.classList.contains("active");
       
-      // Optional: Close all other items
       document.querySelectorAll(".faq-item").forEach(function(el) {
         el.classList.remove("active");
       });
@@ -1729,53 +1792,9 @@
     });
   });
 
-  document.getElementById("btn-clean-spaces").addEventListener("click", function() {
-    textInput.value = textInput.value.replace(/\s+/g, ' ').trim();
-    updateStats();
-  });
-  document.getElementById("btn-uppercase").addEventListener("click", function() {
-    textInput.value = textInput.value.toUpperCase();
-    updateStats();
-  });
-  document.getElementById("btn-lowercase").addEventListener("click", function() {
-    textInput.value = textInput.value.toLowerCase();
-    updateStats();
-  });
-  document.getElementById("btn-titlecase").addEventListener("click", function() {
-    textInput.value = textInput.value.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    updateStats();
-  });
-
-  document.getElementById("clear-btn").addEventListener("click", function () {
-    textInput.value = "";
-    updateStats();
-  });
-
-  document.getElementById("copy-btn").addEventListener("click", function () {
-    if(!textInput.value) return;
-    navigator.clipboard.writeText(textInput.value).then(function() {
-      var label = document.getElementById("copy-btn-label");
-      var original = label.textContent;
-      var currentLang = langSelect.value;
-      label.textContent = (translations[currentLang] || translations.en).copiedBtn;
-      setTimeout(function() { label.textContent = original; }, 2000);
-    });
-  });
-
-  langSelect.addEventListener("change", function () {
-    var lang = this.value;
-    var url = new URL(window.location);
-    url.searchParams.set("lang", lang);
-    window.history.pushState({}, "", url);
-    setLanguage(lang);
-  });
-
-  textInput.addEventListener("input", updateStats);
-
-  var initLang = getLang();
-  setLanguage(initLang);
-
+  setLanguage(getLang());
 })();
 </script>
+
 </body>
 </html>
