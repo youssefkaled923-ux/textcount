@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">What is Keyword Density and How to Optimize It - TextCount.net</title>
+  
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722744839434318"
+     crossorigin="anonymous"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
+    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
+  </style>
+</head>
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+
+  <!-- الهيدر الرئيسي -->
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <div class="flex items-center gap-4">
+        <a href="/blog.html" data-i18n="backToBlog" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- محتوى المقال -->
+  <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
+    <article class="bg-card-dark border border-border-dark rounded-2xl p-6 sm:p-10 shadow-lg">
+      
+      <!-- معلومات المقال -->
+      <div class="mb-6 border-b border-border-dark pb-6">
+        <span data-i18n="cat" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO Metrics</span>
+        <h1 data-i18n="artTitle" class="text-2xl sm:text-4xl font-extrabold text-slate-50 mt-2 mb-3 leading-tight">
+          What is Keyword Density and How to Optimize It
+        </h1>
+        <div class="flex items-center gap-4 text-xs text-slate-400">
+          <span data-i18n="readTime">4 min read</span>
+          <span>•</span>
+          <span data-i18n="publishDate">Updated for 2026</span>
+        </div>
+      </div>
+
+      <!-- نص المقال التفصيلي -->
+      <div class="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <h2 data-i18n="h2_1" class="text-xl font-bold text-slate-100 mt-6">Understanding Keyword Density</h2>
+        <p data-i18n="p_1">
+          Keyword density refers to the percentage of times a specific keyword or phrase appears in your text compared to the total word count. In modern SEO, calculating this metric helps ensure your content remains relevant to search engines without crossing the line into manipulative practices.
+        </p>
+
+        <h2 data-i18n="h2_2" class="text-xl font-bold text-slate-100 mt-6">The Ideal Percentage Range</h2>
+        <p data-i18n="p_2">
+          Most SEO experts recommend maintaining a keyword density between <strong>1% and 2%</strong> (or up to 3% for competitive terms). This means if your blog post is 1,000 words long, your primary keyword should naturally appear about 10 to 20 times. 
+        </p>
+
+        <div class="bg-base-dark border border-border-dark p-4 rounded-xl my-4 text-slate-300 text-sm">
+          <p data-i18n="boxText">💡 <strong class="text-accent-sky">Pro Tip:</strong> Use tools like TextCount.net to instantly analyze your word frequency and ensure you stay within a natural, penalty-free range.</p>
+        </div>
+
+        <h2 data-i18n="h2_3" class="text-xl font-bold text-slate-100 mt-6">How to Avoid Keyword Stuffing</h2>
+        <p data-i18n="p_3">
+          Keyword stuffing—repeating a keyword unnaturally—harms user experience and triggers search engine penalties. Instead, focus on these practices:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+          <li><strong data-i18n="li1Title">Use LSI Keywords:</strong> Incorporate synonyms and related terms naturally.</li>
+          <li><strong data-i18n="li2Title">Write for Humans First:</strong> Prioritize clear reading flow over machine optimization.</li>
+          <li><strong data-i18n="li3Title">Spread Evenly:</strong> Distribute keywords across headings, introduction, and conclusion.</li>
+        </ul>
+
+        <h2 data-i18n="h2_4" class="text-xl font-bold text-slate-100 mt-6">Conclusion</h2>
+        <p data-i18n="p_4">
+          Balancing keyword optimization with high-quality writing is the key to ranking success in 2026. Keep your metrics checked, focus on value, and watch your organic traffic grow.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- التذييل (Footer) -->
+  <footer class="border-t border-border-dark py-6 px-4 text-center text-slate-500 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
+      <div class="flex items-center flex-wrap justify-center gap-3 text-slate-400">
+        <a href="/about.html" data-i18n="footerAbout" class="hover:text-accent-sky transition">About</a>
+        <span>•</span>
+        <a href="/privacy.html" data-i18n="footerPrivacy" class="hover:text-accent-sky transition">Privacy Policy</a>
+        <span>•</span>
+        <a href="/terms.html" data-i18n="footerTerms" class="hover:text-accent-sky transition">Terms of Use</a>
+        <span>•</span>
+        <a href="/contact.html" data-i18n="footerContact" class="hover:text-accent-sky transition">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- سكربت الترجمة للغات المتعددة -->
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToHome: "← Back to Tool",
+          backToBlog: "← Back to Blog",
+          cat: "SEO Metrics",
+          artTitle: "What is Keyword Density and How to Optimize It",
+          readTime: "4 min read",
+          publishDate: "Updated for 2026",
+          h2_1: "Understanding Keyword Density",
+          p_1: "Keyword density refers to the percentage of times a specific keyword or phrase appears in your text compared to the total word count. In modern SEO, calculating this metric helps ensure your content remains relevant to search engines without crossing the line into manipulative practices.",
+          h2_2: "The Ideal Percentage Range",
+          p_2: "Most SEO experts recommend maintaining a keyword density between 1% and 2% (or up to 3% for competitive terms). This means if your blog post is 1,000 words long, your primary keyword should naturally appear about 10 to 20 times.",
+          boxText: "💡 Pro Tip: Use tools like TextCount.net to instantly analyze your word frequency and ensure you stay within a natural, penalty-free range.",
+          h2_3: "How to Avoid Keyword Stuffing",
+          p_3: "Keyword stuffing—repeating a keyword unnaturally—harms user experience and triggers search engine penalties. Instead, focus on these practices:",
+          li1Title: "Use LSI Keywords:",
+          li1Desc: "Incorporate synonyms and related terms naturally.",
+          li2Title: "Write for Humans First:",
+          li2Desc: "Prioritize clear reading flow over machine optimization.",
+          li3Title: "Spread Evenly:",
+          li3Desc: "Distribute keywords across headings, introduction, and conclusion.",
+          h2_4: "Conclusion",
+          p_4: "Balancing keyword optimization with high-quality writing is the key to ranking success in 2026. Keep your metrics checked, focus on value, and watch your organic traffic grow.",
+          footer: "© 2026 TextCount.net — All rights reserved",
+          footerAbout: "About",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Use",
+          footerContact: "Contact Us"
+        },
+        ar: {
+          backToHome: "← العودة للأداة",
+          backToBlog: "← العودة للمدونة",
+          cat: "مقاييس السيو",
+          artTitle: "ما هي كثافة الكلمات المفتاحية وكيف تحسنها",
+          readTime: "قراءة 4 دقائق",
+          publishDate: "محدث لعام 2026",
+          h2_1: "فهم كثافة الكلمات المفتاحية",
+          p_1: "تشير كثافة الكلمات المفتاحية إلى النسبة المئوية لتكرار كلمة أو عبارة معينة في النص مقارنة بإجمالي عدد الكلمات. في السيو الحديث، يساعد حساب هذا المقياس في ضمان ملاءمة محتواك لمحركات البحث دون الوقوع في ممارسات التلاعب.",
+          h2_2: "النسبة المئوية المثالية",
+          p_2: "يوصي معظم خبراء السيو بالحفاظ على كثافة الكلمات المفتاحية بين 1% و2% (أو تصل إلى 3% للكلمات التنافسية). هذا يعني أنه إذا كان مقالك مكوناً من 1000 كلمة، يجب أن تظهر الكلمة المفتاحية الأساسية بشكل طبيعي ما بين 10 إلى 20 مرة.",
+          boxText: "💡 نصيحة احترافية: استخدم أدوات TextCount.net لتحليل تكرار الكلمات فورياً والتأكد من بقائك ضمن النطاق الطبيعي الآمن.",
+          h2_3: "كيفية تجنب حشو الكلمات المفتاحية",
+          p_3: "حشو الكلمات المفتاحية -أي تكرار الكلمة بشكل غير طبيعي- يضر بتجربة المستخدم ويؤدي لعقوبات محركات البحث. بدلاً من ذلك، ركز على الآتي:",
+          li1Title: "استخدام كلمات LSI البديلة:",
+          li1Desc: "إدراج المرادفات والكلمات ذات الصلة بشكل طبيعي.",
+          li2Title: "الكتابة للبشر أولاً:",
+          li2Desc: "إعطاء الأولوية لسهولة القراءة بطلاقة على حساب تحسين الآلات.",
+          li3Title: "التوزيع المتوازن:",
+          li3Desc: "توزيع الكلمات المفتاحية عبر العناوين والمقدمة والخاتمة.",
+          h2_4: "الخاتمة",
+          p_4: "إن موازنة تحسين الكلمات المفتاحية مع الكتابة عالية الجودة هو مفتاح النجاح والتصدر في 2026. راقب مقاييسك، ركز على القيمة، وراقب نمو زياراتك العضوية.",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة",
+          footerAbout: "من نحن",
+          footerPrivacy: "سياسة الخصوصية",
+          footerTerms: "شروط الاستخدام",
+          footerContact: "اتصل بنا"
+        },
+        de: {
+          backToHome: "← Zurück zum Tool",
+          backToBlog: "← Zurück zum Blog",
+          cat: "SEO-Metriken",
+          artTitle: "Was ist Keyword-Dichte und wie optimiert man sie",
+          readTime: "4 Min. Lesezeit",
+          publishDate: "Aktualisiert für 2026",
+          h2_1: "Keyword-Dichte verstehen",
+          p_1: "Die Keyword-Dichte bezeichnet den Prozentsatz, mit dem ein bestimmtes Keyword im Text erscheint.",
+          h2_2: "Der ideale Prozentbereich",
+          p_2: "Experten empfehlen eine Dichte zwischen 1% und 2%.",
+          boxText: "💡 Profi-Tipp: Nutzen Sie TextCount.net zur Analyse.",
+          h2_3: "Keyword-Stuffing vermeiden",
+          p_3: "Unnatürliche Wiederholungen schaden dem SEO.",
+          li1Title: "LSI-Keywords nutzen",
+          li2Title: "Für Menschen schreiben",
+          li3Title: "Gleichmäßig verteilen",
+          h2_4: "Fazit",
+          p_4: "Ausgewogenheit ist der Schlüssel zum Erfolg.",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
+          footerAbout: "Über uns",
+          footerPrivacy: "Datenschutz",
+          footerTerms: "Nutzungsbedingungen",
+          footerContact: "Kontakt"
+        },
+        fr: {
+          backToHome: "← Retour à l'outil",
+          backToBlog: "← Retour au blog",
+          cat: "Métriques SEO",
+          artTitle: "Qu'est-ce que la densité de mots-clés et comment l'optimiser",
+          readTime: "4 min de lecture",
+          publishDate: "Mis à jour pour 2026",
+          h2_1: "Comprendre la densité",
+          p_1: "La densité de mots-clés désigne le pourcentage d'apparition d'un mot.",
+          h2_2: "La plage idéale",
+          p_2: "Il est conseillé de maintenir une densité entre 1% et 2%.",
+          boxText: "💡 Astuce : Utilisez TextCount.net pour analyser vos textes.",
+          h2_3: "Éviter le bourrage",
+          p_3: "Répéter un mot à l'excès nuit au référencement.",
+          li1Title: "Mots-clés LSI",
+          li2Title: "Écrire pour l'humain",
+          li3Title: "Répartition uniforme",
+          h2_4: "Conclusion",
+          p_4: "Trouvez le juste équilibre pour réussir.",
+          footer: "© 2026 TextCount.net — Tous droits réservés",
+          footerAbout: "À propos",
+          footerPrivacy: "Confidentialité",
+          footerTerms: "Conditions",
+          footerContact: "Contact"
+        },
+        es: {
+          backToHome: "← Volver",
+          backToBlog: "← Volver al blog",
+          cat: "Métricas SEO",
+          artTitle: "Qué es la densidad de palabras clave y cómo optimizarla",
+          readTime: "4 min de lectura",
+          publishDate: "Actualizado 2026",
+          h2_1: "Comprender la densidad",
+          p_1: "Porcentaje de aparición de una palabra clave.",
+          h2_2: "Rango ideal",
+          p_2: "Se recomienda entre 1% y 2%.",
+          boxText: "💡 Consejo: Usa TextCount.net.",
+          h2_3: "Evitar el relleno",
+          p_3: "No abuses de las repeticiones.",
+          li1Title: "Palabras LSI",
+          li2Title: "Escribir para humanos",
+          li3Title: "Distribución uniforme",
+          h2_4: "Conclusión",
+          p_4: "El equilibrio es clave.",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados",
+          footerAbout: "Sobre nosotros",
+          footerPrivacy: "Privacidad",
+          footerTerms: "Términos",
+          footerContact: "Contacto"
+        },
+        it: {
+          backToHome: "← Torna",
+          backToBlog: "← Torna al blog",
+          cat: "Metriche SEO",
+          artTitle: "Cos'è la densità delle parole chiave",
+          readTime: "4 min",
+          publishDate: "Aggiornato 2026",
+          h2_1: "Comprensione",
+          p_1: "Percentuale di ripetizione.",
+          h2_2: "Range ideale",
+          p_2: "Tra 1% e 2%.",
+          boxText: "💡 Consiglio: Usa TextCount.net.",
+          h2_3: "Evitare il keyword stuffing",
+          p_3: "Attenzione alle ripetizioni.",
+          li1Title: "Parole LSI",
+          li2Title: "Scrivere per le persone",
+          li3Title: "Distribuzione",
+          h2_4: "Conclusione",
+          p_4: "L'equilibrio paga.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Chi siamo",
+          footerPrivacy: "Privacy",
+          footerTerms: "Termini",
+          footerContact: "Contatti"
+        },
+        nl: {
+          backToHome: "← Terug",
+          backToBlog: "← Terug naar blog",
+          cat: "SEO Metriek",
+          artTitle: "Wat is keyword density",
+          readTime: "4 min",
+          publishDate: "2026",
+          h2_1: "Begrijpen",
+          p_1: "Percentage zoekwoorden.",
+          h2_2: "Ideaal bereik",
+          p_2: "1% tot 2%.",
+          boxText: "💡 Tip: Gebruik TextCount.net.",
+          h2_3: "Voorkom stuffing",
+          p_3: "Natuurlijk schrijven.",
+          li1Title: "LSI",
+          li2Title: "Voor mensen",
+          li3Title: "Spreiden",
+          h2_4: "Conclusie",
+          p_4: "Balans is key.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Over ons",
+          footerPrivacy: "Privacy",
+          footerTerms: "Voorwaarden",
+          footerContact: "Contact"
+        },
+        tr: {
+          backToHome: "← Geri",
+          backToBlog: "← Bloga Dön",
+          cat: "SEO Metrikleri",
+          artTitle: "Anahtar Kelime Yoğunluğu Nedir",
+          readTime: "4 dk",
+          publishDate: "2026",
+          h2_1: "Anlamak",
+          p_1: "Kelime oranı.",
+          h2_2: "İdeal Aralık",
+          p_2: "%1 ile %2 arası.",
+          boxText: "💡 İpucu: TextCount.net kullanın.",
+          h2_3: "Yığılmadan Kaçınma",
+          p_3: "Doğal yazın.",
+          li1Title: "LSI",
+          li2Title: "İnsanlar için",
+          li3Title: "Dağılım",
+          h2_4: "Sonuç",
+          p_4: "Denge önemlidir.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Hakkımızda",
+          footerPrivacy: "Gizlilik",
+          footerTerms: "Şartlar",
+          footerContact: "İletişim"
+        },
+        pt: {
+          backToHome: "← Voltar",
+          backToBlog: "← Voltar ao Blog",
+          cat: "Métricas SEO",
+          artTitle: "O que é Densidade de Palavras-Chave",
+          readTime: "4 min",
+          publishDate: "2026",
+          h2_1: "Compreender",
+          p_1: "Percentual de termos.",
+          h2_2: "Intervalo ideal",
+          p_2: "1% a 2%.",
+          boxText: "💡 Dica: Use TextCount.net.",
+          h2_3: "Evitar excessos",
+          p_3: "Escreva naturalmente.",
+          li1Title: "LSI",
+          li2Title: "Para humanos",
+          li3Title: "Distribuição",
+          h2_4: "Conclusão",
+          p_4: "Equilíbrio.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Sobre",
+          footerPrivacy: "Privacidade",
+          footerTerms: "Termos",
+          footerContact: "Contato"
+        },
+        ru: {
+          backToHome: "← Назад",
+          backToBlog: "← К блогу",
+          cat: "SEO Метрики",
+          artTitle: "Что такое плотность ключевых слов",
+          readTime: "4 мин",
+          publishDate: "2026",
+          h2_1: "Суть",
+          p_1: "Процент ключевых слов.",
+          h2_2: "Диапазон",
+          p_2: "От 1% до 2%.",
+          boxText: "💡 Совет: Используйте TextCount.net.",
+          h2_3: "Избегайте спама",
+          p_3: "Пишите для людей.",
+          li1Title: "LSI",
+          li2Title: "Для людей",
+          li3Title: "Баланс",
+          h2_4: "Итог",
+          p_4: "Важен баланс.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "О нас",
+          footerPrivacy: "Конфиденциальность",
+          footerTerms: "Условия",
+          footerContact: "Контакты"
+        },
+        zh: {
+          backToHome: "← 返回",
+          backToBlog: "← 返回博客",
+          cat: "SEO 指标",
+          artTitle: "什么是关键词密度以及如何进行优化",
+          readTime: "阅读 4 分钟",
+          publishDate: "2026年更新",
+          h2_1: "理解关键词密度",
+          p_1: "关键词密度指特定词语在文本中的出现比例。",
+          h2_2: "理想比例范围",
+          p_2: "建议保持在 1% 到 2% 之间。",
+          boxText: "💡 提示：使用 TextCount.net 进行分析。",
+          h2_3: "如何避免关键词堆砌",
+          p_3: "自然写作，避免过度重复。",
+          li1Title: "LSI 关键词",
+          li2Title: "为读者写作",
+          li3Title: "均匀分布",
+          h2_4: "结论",
+          p_4: "平衡是成功关键。",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "关于我们",
+          footerPrivacy: "隐私政策",
+          footerTerms: "使用条款",
+          footerContact: "联系我们"
+        },
+        ja: {
+          backToHome: "← 戻る",
+          backToBlog: "← ブログに戻る",
+          cat: "SEO指標",
+          artTitle: "キーワード密度とは？その最適化方法",
+          readTime: "読了4分",
+          publishDate: "2026年更新",
+          h2_1: "キーワード密度とは",
+          p_1: "特定のキーワードが出現する割合です。",
+          h2_2: "理想的な比率",
+          p_2: "1%から2%を維持することが推奨されます。",
+          boxText: "💡 ヒント: TextCount.netをご利用ください。",
+          h2_3: "キーワードの詰め込みを防ぐ",
+          p_3: "自然な文章を心がけましょう。",
+          li1Title: "LSIキーワード",
+          li2Title: "読者のために書く",
+          li3Title: "均等に配置",
+          h2_4: "まとめ",
+          p_4: "バランスが成功の鍵です。",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "運営会社",
+          footerPrivacy: "プライバシー",
+          footerTerms: "利用規約",
+          footerContact: "お問い合わせ"
+        },
+        hi: {
+          backToHome: "← वापस",
+          backToBlog: "← ब्लॉग पर वापस",
+          cat: "SEO मेट्रیکس",
+          artTitle: "कीवर्ड घनत्व क्या है और इसे कैसे अनुकूलित करें",
+          readTime: "4 मिनट",
+          publishDate: "2026",
+          h2_1: "समझना",
+          p_1: "कीवर्ड प्रतिशत।",
+          h2_2: "आदर्श सीमा",
+          p_2: "1% से 2%。",
+          boxText: "💡 सुझाव: TextCount.net का उपयोग करें।",
+          h2_3: "बचें",
+          p_3: "स्वाभाविक रूप से लिखें।",
+          li1Title: "LSI",
+          li2Title: "मानव प्रथम",
+          li3Title: "फैलाव",
+          h2_4: "निष्कर्ष",
+          p_4: "संतुलन जरूरी है।",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "हमारे बारे में",
+          footerPrivacy: "गोपनीयता",
+          footerTerms: "शर्तें",
+          footerContact: "संपर्क"
+        },
+        bn: {
+          backToHome: "← ফিরে যান",
+          backToBlog: "← ব্লগ এ ফিরুন",
+          cat: "এসইও মেট্রিক্স",
+          artTitle: "কিওয়ার্ড ডেনসিটি কী এবং কীভাবে অপ্টিমাইজ করবেন",
+          readTime: "৪ মিনিট",
+          publishDate: "২০২৬",
+          h2_1: "বোঝা",
+          p_1: "কিওয়ার্ড অনুপাত।",
+          h2_2: "আদর্শ সীমা",
+          p_2: "১% থেকে ২%。",
+          boxText: "💡 টিপস: TextCount.net ব্যবহার করুন।",
+          h2_3: "স্টাফিং এড়ানো",
+          p_3: "প্রাকৃতিকভাবে লিখুন।",
+          li1Title: "LSI",
+          li2Title: "পাঠকদের জন্য",
+          li3Title: "সঠিক বিতরণ",
+          h2_4: "উপসংহার",
+          p_4: "ভারসাম্য বজায় রাখুন।",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "আমাদের সম্পর্কে",
+          footerPrivacy: "গোপনীয়তা",
+          footerTerms: "শর্তাবলী",
+          footerContact: "যোগাযোগ"
+        },
+        ur: {
+          backToHome: "← واپس",
+          backToBlog: "← بلاگ پر واپس",
+          cat: "SEO میٹرکس",
+          artTitle: "Keyword Density کیا ہے और اس کی اصلاح کیسے کی جائے",
+          readTime: "4 منٹ",
+          publishDate: "2026",
+          h2_1: "تعارف",
+          p_1: "کی ورڈ کا تناسب۔",
+          h2_2: "مثالی حد",
+          p_2: "1% سے 2%。",
+          boxText: "💡 ٹپ: TextCount.net استعمال کریں۔",
+          h2_3: "بچنا",
+          p_3: "قدرتی انداز میں لکھیں۔",
+          li1Title: "LSI کی ورڈز",
+          li2Title: "پہلے انسانوں کے لیے لکھیں",
+          li3Title: "متوازن تقسیم",
+          h2_4: "نتیجہ",
+          p_4: "توازن کامیابی کی کلید ہے۔",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "ہمارے بارے میں",
+          footerPrivacy: "رازداری",
+          footerTerms: "شرائط",
+          footerContact: "رابطہ"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.artTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
+  </script>
+</body>
+</html>
