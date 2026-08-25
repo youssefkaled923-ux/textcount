@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Meta Titles and Descriptions Best Practices - TextCount.net</title>
+  
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722744839434318"
+     crossorigin="anonymous"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
+    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
+  </style>
+</head>
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+
+  <!-- الهيدر الرئيسي -->
+  <header class="border-b border-border-dark py-4 px-6">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+      <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
+      <div class="flex items-center gap-4">
+        <a href="/blog.html" data-i18n="backToBlog" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- محتوى المقال -->
+  <main class="max-w-4xl mx-auto px-4 py-10 flex-1 w-full">
+    <article class="bg-card-dark border border-border-dark rounded-2xl p-6 sm:p-10 shadow-lg">
+      
+      <!-- معلومات المقال -->
+      <div class="mb-6 border-b border-border-dark pb-6">
+        <span data-i18n="cat" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">On-Page SEO</span>
+        <h1 data-i18n="artTitle" class="text-2xl sm:text-4xl font-extrabold text-slate-50 mt-2 mb-3 leading-tight">
+          Meta Titles and Descriptions Best Practices
+        </h1>
+        <div class="flex items-center gap-4 text-xs text-slate-400">
+          <span data-i18n="readTime">3 min read</span>
+          <span>•</span>
+          <span data-i18n="publishDate">Updated for 2026</span>
+        </div>
+      </div>
+
+      <!-- نص المقال التفصيلي -->
+      <div class="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <h2 data-i18n="h2_1" class="text-xl font-bold text-slate-100 mt-6">Why Meta Tags Matter</h2>
+        <p data-i18n="p_1">
+          Meta titles and descriptions serve as your webpage's storefront in search engine results pages (SERPs). Optimizing them not only helps search engines understand your context better but also directly drives organic click-through rates (CTR).
+        </p>
+
+        <h2 data-i18n="h2_2" class="text-xl font-bold text-slate-100 mt-6">Optimal Character Lengths</h2>
+        <p data-i18n="p_2">
+          To prevent Google from cutting off your text with an ellipsis (...), keep your tags within these safety limits:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+          <li><strong data-i18n="li1Title">Meta Titles:</strong> Keep them between 50 to 60 characters (roughly 500-600 pixels wide).</li>
+          <li><strong data-i18n="li2Title">Meta Descriptions:</strong> Aim for 120 to 150 characters to deliver a compelling summary.</li>
+        </ul>
+
+        <div class="bg-base-dark border border-border-dark p-4 rounded-xl my-4 text-slate-300 text-sm">
+          <p data-i18n="boxText">💡 <strong class="text-accent-sky">Pro Tip:</strong> Use TextCount.net's character counter to check your meta elements instantly before pushing them live.</p>
+        </div>
+
+        <h2 data-i18n="h2_3" class="text-xl font-bold text-slate-100 mt-6">Writing High-Converting Snippets</h2>
+        <p data-i18n="p_3">
+          A good meta description acts as an ad copy. Include your primary keyword early, add a clear value proposition, and finish with a strong call-to-action (like "Learn more" or "Calculate now").
+        </p>
+
+        <h2 data-i18n="h2_4" class="text-xl font-bold text-slate-100 mt-6">Conclusion</h2>
+        <p data-i18n="p_4">
+          Mastering on-page elements like titles and descriptions is a fast way to gain more traffic without needing extra backlinks. Keep them crisp, relevant, and properly measured.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- التذييل (Footer) -->
+  <footer class="border-t border-border-dark py-6 px-4 text-center text-slate-500 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
+      <div class="flex items-center flex-wrap justify-center gap-3 text-slate-400">
+        <a href="/about.html" data-i18n="footerAbout" class="hover:text-accent-sky transition">About</a>
+        <span>•</span>
+        <a href="/privacy.html" data-i18n="footerPrivacy" class="hover:text-accent-sky transition">Privacy Policy</a>
+        <span>•</span>
+        <a href="/terms.html" data-i18n="footerTerms" class="hover:text-accent-sky transition">Terms of Use</a>
+        <span>•</span>
+        <a href="/contact.html" data-i18n="footerContact" class="hover:text-accent-sky transition">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- سكربت الترجمة للغات المتعددة -->
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToBlog: "← Back to Blog",
+          cat: "On-Page SEO",
+          artTitle: "Meta Titles and Descriptions Best Practices",
+          readTime: "3 min read",
+          publishDate: "Updated for 2026",
+          h2_1: "Why Meta Tags Matter",
+          p_1: "Meta titles and descriptions serve as your webpage's storefront in search engine results pages (SERPs). Optimizing them not only helps search engines understand your context better but also directly drives organic click-through rates (CTR).",
+          h2_2: "Optimal Character Lengths",
+          p_2: "To prevent Google from cutting off your text with an ellipsis (...), keep your tags within these safety limits:",
+          li1Title: "Meta Titles:",
+          li2Title: "Meta Descriptions:",
+          boxText: "💡 Pro Tip: Use TextCount.net's character counter to check your meta elements instantly before pushing them live.",
+          h2_3: "Writing High-Converting Snippets",
+          p_3: "A good meta description acts as an ad copy. Include your primary keyword early, add a clear value proposition, and finish with a strong call-to-action.",
+          h2_4: "Conclusion",
+          p_4: "Mastering on-page elements like titles and descriptions is a fast way to gain more traffic without needing extra backlinks. Keep them crisp, relevant, and properly measured.",
+          footer: "© 2026 TextCount.net — All rights reserved",
+          footerAbout: "About",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Use",
+          footerContact: "Contact Us"
+        },
+        ar: {
+          backToBlog: "← العودة للمدونة",
+          cat: "السيو الداخلي",
+          artTitle: "أفضل ممارسات عناوين وأوصاف الميتا (Meta)",
+          readTime: "قراءة 3 دقائق",
+          publishDate: "محدث لعام 2026",
+          h2_1: "لماذا تعتبر وسوم الميتا مهمة؟",
+          p_1: "تعتبر عناوين وأوصاف الميتا بمثابة واجهة متجرك الإلكتروني في صفحات نتائج محركات البحث (SERPs). يساعد تحسينها محركات البحث على فهم محتواك بشكل أفضل، كما يرفع معدل النقر العضوي (CTR) بشكل مباشر.",
+          h2_2: "الأطوال المثالية للحروف",
+          p_2: "لتجنب قيام جوجل بقطع نصك وإضافة نقاط الحذف (...), حافظ على بقاء وسومك ضمن هذه الحدود الآمنة:",
+          li1Title: "عناوين الميتا (Meta Titles):",
+          li2Title: "أوصاف الميتا (Meta Descriptions):",
+          boxText: "💡 نصيحة احترافية: استخدم عداد الحروف في TextCount.net للتحقق من عناصر الميتا الخاصة بك فورياً قبل نشرها.",
+          h2_3: "كتابة مقتطفات عالية التحويل",
+          p_3: "يعمل وصف الميتا الجيد كإعلان ترويجي. قم تضمين كلمتك المفتاحية في وقت مبكر، وأضف قيمة واضحة، واختتم بدعوة قوية لاتخاذ إجراء.",
+          h2_4: "الخاتمة",
+          p_4: "إن إتقان عناصر السيو الداخلي مثل العناوين والأوصاف يعد طريقة سريعة لجذب المزيد من الزيارات دون الحاجة لروابط خلفية إضافية. اجعلها موجزة وذات صلة ومقاسة بعناية.",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة",
+          footerAbout: "من نحن",
+          footerPrivacy: "سياسة الخصوصية",
+          footerTerms: "شروط الاستخدام",
+          footerContact: "اتصل بنا"
+        },
+        de: {
+          backToBlog: "← Zurück zum Blog",
+          cat: "On-Page SEO",
+          artTitle: "Meta-Titel und -Beschreibungen Best Practices",
+          readTime: "3 Min. Lesezeit",
+          publishDate: "Aktualisiert für 2026",
+          h2_1: "Warum Meta-Tags wichtig sind",
+          p_1: "Sie dienen als Schaufenster Ihrer Website in den SERPs.",
+          h2_2: "Optimale Zeichenlängen",
+          p_2: "Halten Sie die Grenzen ein, um Kürzungen zu vermeiden.",
+          li1Title: "Meta-Titel:",
+          li2Title: "Meta-Beschreibungen:",
+          boxText: "💡 Profi-Tipp: Nutzen Sie TextCount.net.",
+          h2_3: "Conversion-starke Snippets schreiben",
+          p_3: "Nutzen Sie klare Handlungsaufforderungen.",
+          h2_4: "Fazit",
+          p_4: "Optimieren Sie Ihre On-Page-Elemente.",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
+          footerAbout: "Über uns",
+          footerPrivacy: "Datenschutz",
+          footerTerms: "Nutzungsbedingungen",
+          footerContact: "Kontakt"
+        },
+        fr: {
+          backToBlog: "← Retour au blog",
+          cat: "SEO On-Page",
+          artTitle: "Bonnes pratiques pour les balises Meta Title et Description",
+          readTime: "3 min de lecture",
+          publishDate: "Mis à jour pour 2026",
+          h2_1: "Pourquoi les balises Meta comptent",
+          p_1: "Elles agissent comme la vitrine de votre page dans les SERP.",
+          h2_2: "Longueurs de caractères optimales",
+          p_2: "Respectez les limites pour éviter les troncatures.",
+          li1Title: "Meta Titres :",
+          li2Title: "Meta Descriptions :",
+          boxText: "💡 Astuce : Utilisez TextCount.net.",
+          h2_3: "Rédiger des extraits performants",
+          p_3: "Incluez votre mot-clé principal rapidement.",
+          h2_4: "Conclusion",
+          p_4: "Maîtrisez ces éléments on-page.",
+          footer: "© 2026 TextCount.net — Tous droits réservés",
+          footerAbout: "À propos",
+          footerPrivacy: "Confidentialité",
+          footerTerms: "Conditions",
+          footerContact: "Contact"
+        },
+        es: {
+          backToBlog: "← Volver al blog",
+          cat: "SEO On-Page",
+          artTitle: "Mejores prácticas para títulos y descripciones Meta",
+          readTime: "3 min de lectura",
+          publishDate: "Actualizado 2026",
+          h2_1: "Por qué importan las metaetiquetas",
+          p_1: "Son el escaparate de tu página web.",
+          h2_2: "Longitudes óptimas",
+          p_2: "Mantén tus etiquetas dentro de los límites de seguridad.",
+          li1Title: "Meta Títulos:",
+          li2Title: "Meta Descripciones:",
+          boxText: "💡 Consejo: Usa TextCount.net.",
+          h2_3: "Escribir fragmentos atractivos",
+          p_3: "Incluye tu palabra clave principal pronto.",
+          h2_4: "Conclusión",
+          p_4: "Domina los elementos on-page.",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados",
+          footerAbout: "Sobre nosotros",
+          footerPrivacy: "Privacidad",
+          footerTerms: "Términos",
+          footerContact: "Contacto"
+        },
+        it: {
+          backToBlog: "← Torna al blog",
+          cat: "SEO On-Page",
+          artTitle: "Best practice per Meta Title e Description",
+          readTime: "3 min",
+          publishDate: "Aggiornato 2026",
+          h2_1: "Perché i Meta Tag contano",
+          p_1: "Sono la vetrina della tua pagina.",
+          h2_2: "Lunghezze ottimali",
+          p_2: "Rispetta i limiti di caratteri.",
+          li1Title: "Meta Title:",
+          li2Title: "Meta Description:",
+          boxText: "💡 Consiglio: Usa TextCount.net.",
+          h2_3: "Scrivere snippet efficaci",
+          p_3: "Includi la parola chiave principale.",
+          h2_4: "Conclusione",
+          p_4: "Ottimizza la SEO on-page.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Chi siamo",
+          footerPrivacy: "Privacy",
+          footerTerms: "Termini",
+          footerContact: "Contatti"
+        },
+        nl: {
+          backToBlog: "← Terug naar blog",
+          cat: "On-Page SEO",
+          artTitle: "Beste praktijken voor Meta Titels en Omschrijvingen",
+          readTime: "3 min",
+          publishDate: "2026",
+          h2_1: "Waarom Meta Tags belangrijk zijn",
+          p_1: "Het is de etalage van je webpagina.",
+          h2_2: "Optimale lengtes",
+          p_2: "Houd je aan de limieten.",
+          li1Title: "Meta Titels:",
+          li2Title: "Meta Omschrijvingen:",
+          boxText: "💡 Tip: Gebruik TextCount.net.",
+          h2_3: "Sterke snippets schrijven",
+          p_3: "Gebruik een duidelijke call-to-action.",
+          h2_4: "Conclusie",
+          p_4: "Beheers on-page elementen.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Over ons",
+          footerPrivacy: "Privacy",
+          footerTerms: "Voorwaarden",
+          footerContact: "Contact"
+        },
+        tr: {
+          backToBlog: "← Bloga Dön",
+          cat: "On-Page SEO",
+          artTitle: "Meta Başlık ve Açıklamaları İçin En İyi Uygulamalar",
+          readTime: "3 dk",
+          publishDate: "2026",
+          h2_1: "Meta Etiketleri Neden Önemli?",
+          p_1: "SERP'lerde web sayfanızın vitrinidir.",
+          h2_2: "İdeal Karakter Uzunlukları",
+          p_2: "Kırpılmaları önlemek için sınırları koruyun.",
+          li1Title: "Meta Başlıklar:",
+          li2Title: "Meta Açıklamalar:",
+          boxText: "💡 İpucu: TextCount.net kullanın.",
+          h2_3: "Dönüştüren Snippet'lar Yazmak",
+          p_3: "Anahtar kelimenizi erken ekleyin.",
+          h2_4: "Sonuç",
+          p_4: "On-page öğelerinde uzmanlaşın.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Hakkımızda",
+          footerPrivacy: "Gizlilik",
+          footerTerms: "Şartlar",
+          footerContact: "İletişim"
+        },
+        pt: {
+          backToBlog: "← Voltar ao Blog",
+          cat: "SEO On-Page",
+          artTitle: "Boas Práticas para Títulos e Descrições Meta",
+          readTime: "3 min",
+          publishDate: "2026",
+          h2_1: "Por que as Meta Tags importam",
+          p_1: "Elas funcionam como a vitrine da sua página.",
+          h2_2: "Comprimentos ideais",
+          p_2: "Mantenha dentro dos limites de segurança.",
+          li1Title: "Meta Títulos:",
+          li2Title: "Meta Descrições:",
+          boxText: "💡 Dica: Use TextCount.net.",
+          h2_3: "Escrevendo snippets de alta conversão",
+          p_3: "Inclua sua palavra-chave principal.",
+          h2_4: "Conclusão",
+          p_4: "Domine os elementos on-page.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "Sobre",
+          footerPrivacy: "Privacidade",
+          footerTerms: "Termos",
+          footerContact: "Contato"
+        },
+        ru: {
+          backToBlog: "← К блогу",
+          cat: "On-Page SEO",
+          artTitle: "Лучшие практики для мета-тегов Title и Description",
+          readTime: "3 мин",
+          publishDate: "2026",
+          h2_1: "Почему мета-теги важны",
+          p_1: "Они служат витриной вашей страницы в выдаче.",
+          h2_2: "Оптимальная длина",
+          p_2: "Соблюдайте лимиты символов.",
+          li1Title: "Мета-заголовки:",
+          li2Title: "Мета-описания:",
+          boxText: "💡 Совет: Используйте TextCount.net.",
+          h2_3: "Создание эффективных сниппетов",
+          p_3: "Используйте ключевое слово вовремя.",
+          h2_4: "Заключение",
+          p_4: "Освойте внутреннюю оптимизацию.",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "О нас",
+          footerPrivacy: "Конфиденциальность",
+          footerTerms: "Условия",
+          footerContact: "Контакты"
+        },
+        zh: {
+          backToBlog: "← 返回博客",
+          cat: "页面 SEO",
+          artTitle: "Meta 标题和描述的最佳实践",
+          readTime: "阅读 3 分钟",
+          publishDate: "2026年更新",
+          h2_1: "为什么 Meta 标签很重要",
+          p_1: "它们充当您网页在搜索结果中的门面。",
+          h2_2: "最佳字符长度",
+          p_2: "保持在安全范围内以避免被截断。",
+          li1Title: "Meta 标题：",
+          li2Title: "Meta 描述：",
+          boxText: "💡 提示：使用 TextCount.net 检查。",
+          h2_3: "编写高转化摘要",
+          p_3: "尽早包含您的主要关键词。",
+          h2_4: "结论",
+          p_4: "掌握页面优化元素。",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "关于我们",
+          footerPrivacy: "隐私政策",
+          footerTerms: "使用条款",
+          footerContact: "联系我们"
+        },
+        ja: {
+          backToBlog: "← ブログに戻る",
+          cat: "オンページSEO",
+          artTitle: "メタタイトルとメタディスクリプションのベストプラクティス",
+          readTime: "読了3分",
+          publishDate: "2026年更新",
+          h2_1: "メタタグが重要な理由",
+          p_1: "検索結果でのWEBページの「看板」として機能します。",
+          h2_2: "最適な文字数制限",
+          p_2: "テキストが省略されないよう制限内に収めましょう。",
+          li1Title: "メタタイトル：",
+          li2Title: "メタディスクリプション：",
+          boxText: "💡 ヒント: TextCount.netをご利用ください。",
+          h2_3: "コンバージョンを促すスニペットの書き方",
+          p_3: "主要キーワードを早めに含めましょう。",
+          h2_4: "まとめ",
+          p_4: "オンページ要素をマスターしましょう。",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "運営会社",
+          footerPrivacy: "プライバシー",
+          footerTerms: "利用規約",
+          footerContact: "お問い合わせ"
+        },
+        hi: {
+          backToBlog: "← ब्लॉग पर वापस",
+          cat: "ऑन-पेज SEO",
+          artTitle: "मेटा शीर्षक और विवरण सर्वोत्तम अभ्यास",
+          readTime: "3 मिनट",
+          publishDate: "2026",
+          h2_1: "मेटा टैग क्यों महत्वपूर्ण हैं",
+          p_1: "यह खोज परिणामों में आपका स्टोरफ्रंट है।",
+          h2_2: "इष्टतम वर्ण लंबाई",
+          p_2: "सुरक्षित सीमाओं के भीतर रहें।",
+          li1Title: "मेटा शीर्षक:",
+          li2Title: "मेटा विवरण:",
+          boxText: "💡 सुझाव: TextCount.net का उपयोग करें।",
+          h2_3: "स्निपेट लिखना",
+          p_3: "अपना मुख्य कीवर्ड जल्दी शामिल करें।",
+          h2_4: "निष्कर्ष",
+          p_4: "ऑन-पेज तत्वों में महारत हासिल करें।",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "हमारे बारे में",
+          footerPrivacy: "गोपनीयता",
+          footerTerms: "शर्तें",
+          footerContact: "संपर्क"
+        },
+        bn: {
+          backToBlog: "← ব্লগ এ ফিরুন",
+          cat: "অন-পেজ এসইও",
+          artTitle: "মেটা টাইটেল এবং ডেসক্রিপশনের সেরা অভ্যাস",
+          readTime: "৩ মিনিট",
+          publishDate: "২০২৬",
+          h2_1: "মেটা ট্যাগ কেন গুরুত্বপূর্ণ",
+          p_1: "এটি সার্চ রেজাল্টে আপনার ওয়েব পেজের শোকেস।",
+          h2_2: "আদর্শ ক্যারেক্টার দৈর্ঘ্য",
+          p_2: "নিরাপদ সীমার মধ্যে রাখুন।",
+          li1Title: "মেটা টাইটেল:",
+          li2Title: "মেটা ডেসক্রিপশন:",
+          boxText: "💡 টিপস: TextCount.net ব্যবহার করুন।",
+          h2_3: "কার্যকর স্নিপেট লেখা",
+          p_3: "প্রধান কিওয়ার্ড আগে রাখুন।",
+          h2_4: "উপসংহার",
+          p_4: "অন-পেজ উপাদান আয়ত্ত করুন।",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "আমাদের সম্পর্কে",
+          footerPrivacy: "গোপনীয়ता",
+          footerTerms: "শর্তাবলী",
+          footerContact: "যোগাযোগ"
+        },
+        ur: {
+          backToBlog: "← بلاگ پر واپس",
+          cat: "آن پیج SEO",
+          artTitle: "میٹا ٹائٹلز اور ڈسکرپشن کے بہترین طریقے",
+          readTime: "3 منٹ",
+          publishDate: "2026",
+          h2_1: "میٹا ٹیگز کیوں اہم ہیں",
+          p_1: "یہ سرچ نتائج میں آپ کے صفحے کا شوکیس ہیں۔",
+          h2_2: "حروف की إستعمالی حد",
+          p_2: "متن کو کٹنے سے بچانے کے لیے حدود کا خیال رکھیں۔",
+          li1Title: "میٹا ٹائٹلز:",
+          li2Title: "میٹا ڈسکرپشنز:",
+          boxText: "💡 ٹپ: TextCount.net استعمال کریں۔",
+          h2_3: "مؤثر اسنیپ لکھنا",
+          p_3: "اپنا بنیادی کی ورڈ جلد شامل کریں۔",
+          h2_4: "نتیجہ",
+          p_4: "آن پیج عناصر پر عبور حاصل کریں۔",
+          footer: "© 2026 TextCount.net",
+          footerAbout: "ہمارے بارے میں",
+          footerPrivacy: "رازداری",
+          footerTerms: "شرائط",
+          footerContact: "رابطہ"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.artTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
+  </script>
+</body>
+</html>
