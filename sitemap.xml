@@ -5,7 +5,7 @@
   <!-- الصفحة الرئيسية وتعدد اللغات -->
   <url>
     <loc>https://textcount.pages.dev/</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     
@@ -30,7 +30,7 @@
   <!-- صفحة المدونة الرئيسية -->
   <url>
     <loc>https://textcount.pages.dev/blog.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,21 +38,21 @@
   <!-- مقالات المدونة -->
   <url>
     <loc>https://textcount.pages.dev/blog/seo-word-count-guide.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://textcount.pages.dev/blog/social-media-character-limits.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://textcount.pages.dev/blog/speech-length-by-word-count.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -60,21 +60,21 @@
   <!-- الصفحات الثابتة والتنظيمية -->
   <url>
     <loc>https://textcount.pages.dev/about.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://textcount.pages.dev/privacy.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://textcount.pages.dev/contact.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
