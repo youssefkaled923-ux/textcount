@@ -162,9 +162,7 @@
   </footer>
 
   <script>
-    (function () {
-      "use strict";
-
+    document.addEventListener("DOMContentLoaded", function () {
       var translations = {
         en: {
           backToBlog: "← Back to Blog",
@@ -533,7 +531,7 @@
         bn: {
           backToBlog: "← ব্লগে ফিরে যান",
           category: "কন্টেন্ট কৌশল এবং মাস্টারক্লাস",
-          articleTitle: "AI যুগে কন্টেন্ট রাইটিং কৌশল: ২০২৬ সালের সম্পূর্ণ গাইড",
+          articleTitle: "AI যুগে কন্টেন্ট রাইটিং কৌশল: ২০ ২৬ সালের সম্পূর্ণ গাইড",
           publishMeta: "প্রকাশিত: আগস্ট ২০২৬ • ১২ মিনিট পাঠ",
           introText: "সার্চ ইঞ্জিনগুলো এখন আসল মানবিক অভিজ্ঞতাকে (E-E-A-T) প্রাধান্য দেয়। ২০২৬ সালে সেরা কন্টেন্ট লেখার উপায় জানুন।",
           p1Title: "1. ২০২৬ সালে E-E-A-T এর গুরুত্ব",
@@ -608,18 +606,19 @@
           if (data[key]) el.textContent = data[key];
         });
 
-        langSelect.value = lang;
+        if (langSelect) langSelect.value = lang;
         localStorage.setItem("site_lang", lang);
       }
 
-      langSelect.addEventListener("change", function () {
-        setLanguage(this.value);
-      });
+      if (langSelect) {
+        langSelect.addEventListener("change", function () {
+          setLanguage(this.value);
+        });
+      }
 
       var initLang = getSavedLang();
       setLanguage(initLang);
-
-    })();
+    });
   </script>
 </body>
 </html>
