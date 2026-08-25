@@ -65,7 +65,7 @@
 <body class="bg-base-dark text-slate-100 min-h-screen flex flex-col">
 
 <header class="sticky top-0 z-50 bg-base-dark/90 backdrop-blur border-b border-border-dark">
-  <div class="max-w-4xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+  <div class="max-w-4xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
     <div class="flex items-center gap-2">
       <span class="relative flex h-2.5 w-2.5">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-sky opacity-60"></span>
@@ -73,9 +73,20 @@
       </span>
       <a href="/" class="font-mono-nums text-lg md:text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
     </div>
-    <div class="flex items-center gap-4">
+
+    <!-- Blog Search Bar Component -->
+    <div class="relative flex-1 max-w-xs mx-2">
+      <form id="blog-search-form" action="blog.html" method="GET" class="relative">
+        <input type="text" name="q" id="blog-search-input" data-i18n-placeholder="searchPlaceholder" placeholder="Search blog..." class="w-full bg-card-dark border border-border-dark text-slate-100 text-xs md:text-sm rounded-lg pl-3 pr-8 py-1.5 focus:outline-none focus:ring-2 focus:ring-accent-sky placeholder-slate-500">
+        <button type="submit" aria-label="Search" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-accent-sky transition">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="flex items-center gap-3">
       <a href="blog.html" data-i18n="blogLink" class="text-sm font-medium text-slate-300 hover:text-accent-sky transition">Blog</a>
-      <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+      <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-1.5 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
         <option value="ar">العربية</option>
         <option value="en">English</option>
         <option value="de">Deutsch</option>
@@ -266,6 +277,7 @@
       heading: "عداد الحروف والكلمات",
       subheading: "أداة فورية ومجانية لتحليل النصوص لصناع المحتوى والمسوقين",
       placeholder: "ابدأ الكتابة أو الصق نصك هنا...",
+      searchPlaceholder: "ابحث في المدونة...",
       cleanSpacesBtn: "✨ إزالة المسافات الزائدة",
       uppercaseBtn: "حروف كبيرة (UPPER)",
       lowercaseBtn: "حروف صغيرة (lower)",
@@ -307,6 +319,7 @@
       heading: "Character & Word Counter",
       subheading: "An instant, free tool to analyze your text for marketers and creators",
       placeholder: "Start typing or paste your text here...",
+      searchPlaceholder: "Search blog...",
       cleanSpacesBtn: "✨ Clean Extra Spaces",
       uppercaseBtn: "UPPERCASE",
       lowercaseBtn: "lowercase",
@@ -348,6 +361,7 @@
       heading: "Zeichen- & Wortzähler",
       subheading: "Kostenloses Online-Tool zur Textanalyse für Marketer und Ersteller",
       placeholder: "Tippen Sie oder fügen Sie Ihren Text hier ein...",
+      searchPlaceholder: "Blog durchsuchen...",
       cleanSpacesBtn: "✨ Leerzeichen bereinigen",
       uppercaseBtn: "GROSSBUCHSTABEN",
       lowercaseBtn: "kleinbuchstaben",
@@ -389,6 +403,7 @@
       heading: "Compteur de Caractères et Mots",
       subheading: "Outil gratuit pour analyser votre texte pour créateurs et spécialistes",
       placeholder: "Commencez à taper ou collez votre texte ici...",
+      searchPlaceholder: "Rechercher sur le blog...",
       cleanSpacesBtn: "✨ Nettoyer les espaces",
       uppercaseBtn: "MAJUSCULES",
       lowercaseBtn: "minuscules",
@@ -430,6 +445,7 @@
       heading: "Contador de Caracteres y Palabras",
       subheading: "Herramienta gratuita para analizar textos para creadores y especialistas",
       placeholder: "Empieza a escribir o pega tu texto aquí...",
+      searchPlaceholder: "Buscar en el blog...",
       cleanSpacesBtn: "✨ Limpiar espacios",
       uppercaseBtn: "MAYÚSCULAS",
       lowercaseBtn: "minúsculas",
@@ -471,6 +487,7 @@
       heading: "Conteggio Caratteri e Parole",
       subheading: "Strumento gratuito per analizzare i tuoi testi per creator e marketer",
       placeholder: "Inizia a digitare o incolla il testo qui...",
+      searchPlaceholder: "Cerca nel blog...",
       cleanSpacesBtn: "✨ Rimuovi spazi extra",
       uppercaseBtn: "MAIUSCOLO",
       lowercaseBtn: "minuscolo",
@@ -512,6 +529,7 @@
       heading: "Tekens- en Woordenteller",
       subheading: "Gratis online tool om uw tekst te analyseren voor makers en marketeers",
       placeholder: "Begin met typen of plak uw tekst hier...",
+      searchPlaceholder: "Doorzoek blog...",
       cleanSpacesBtn: "✨ Extra spaties wissen",
       uppercaseBtn: "HOOFDLETTERS",
       lowercaseBtn: "kleine letters",
@@ -553,6 +571,7 @@
       heading: "Karakter ve Kelime Sayacı",
       subheading: "İçerik üreticileri ve pazarlamacılar için ücretsiz metin analiz aracı",
       placeholder: "Yazmaya başlayın veya metninizi buraya yapıştırın...",
+      searchPlaceholder: "Blogda ara...",
       cleanSpacesBtn: "✨ Fazla Boşlukları Temizle",
       uppercaseBtn: "BÜYÜK HARF",
       lowercaseBtn: "küçük harf",
@@ -594,6 +613,7 @@
       heading: "Contador de Caracteres e Palavras",
       subheading: "Ferramenta gratuita para analisar textos para criadores e profissionais",
       placeholder: "Comece a digitar ou cole seu texto aqui...",
+      searchPlaceholder: "Pesquisar no blog...",
       cleanSpacesBtn: "✨ Limpar Espaços Extras",
       uppercaseBtn: "MAIÚSCULAS",
       lowercaseBtn: "minúsculas",
@@ -635,6 +655,7 @@
       heading: "Счетчик Символов и Слов",
       subheading: "Бесплатный инструмент для анализа текста маркетологам и авторам",
       placeholder: "Начните вводить текст или вставьте его сюда...",
+      searchPlaceholder: "Поиск по блогу...",
       cleanSpacesBtn: "✨ Удалить лишние пробелы",
       uppercaseBtn: "ПРОПИСНЫЕ",
       lowercaseBtn: "строчные",
@@ -676,6 +697,7 @@
       heading: "字符与字数统计器",
       subheading: "为内容创作者和出海创作者打造的免费文本实时分析工具",
       placeholder: "在此处开始输入或粘贴您的文本...",
+      searchPlaceholder: "搜索博客...",
       cleanSpacesBtn: "✨ 清理多余空格",
       uppercaseBtn: "转换为大写",
       lowercaseBtn: "转换为小写",
@@ -717,6 +739,7 @@
       heading: "文字数＆単語数 counters",
       subheading: "コンテンツクリエイターのためのリアルタイム無料テキスト解析ツール",
       placeholder: "ここにテキストを入力または貼り付け...",
+      searchPlaceholder: "ブログを検索...",
       cleanSpacesBtn: "✨ 余分なスペースを削除",
       uppercaseBtn: "大文字に変換",
       lowercaseBtn: "小文字に変換",
@@ -758,6 +781,7 @@
       heading: "अक्षर और शब्द काउंटर",
       subheading: "कंटेंट रचनाकारों और विपणनकर्ताओं के लिए नि:शुल्क टेक्स्ट विश्लेषण टूल",
       placeholder: "यहाँ लिखना शुरू करें या टेक्स्ट पेस्ट करें...",
+      searchPlaceholder: "ब्लॉग खोजें...",
       cleanSpacesBtn: "✨ अतिरिक्त स्थान हटाएँ",
       uppercaseBtn: "बड़े अक्षर (UPPER)",
       lowercaseBtn: "छोटे अक्षर (lower)",
@@ -799,6 +823,7 @@
       heading: "অক্ষর এবং শব্দ কাউন্টার",
       subheading: "মার্কেটার এবং কনটেন্ট নির্মাতাদের জন্য একটি তাত্ক্ষণিক বিনামূল্যে টেক্সট টুল",
       placeholder: "এখানে টাইপ করুন বা টেক্সট পেস্ট করুন...",
+      searchPlaceholder: "ব্লগ খুঁজুন...",
       cleanSpacesBtn: "✨ অতিরিক্ত স্পেস সরান",
       uppercaseBtn: "বড় হাতের অক্ষর",
       lowercaseBtn: "ছোট হাতের অক্ষর",
@@ -840,6 +865,7 @@
       heading: "حروف اور الفاظ کا کاؤنٹر",
       subheading: "مواد تخلیق کاروں کے لیے متن کا تجزیہ کرنے والا مفت اور فوری ٹول",
       placeholder: "یہاں لکھنا شروع کریں یا اپنا متن پیسٹ کریں...",
+      searchPlaceholder: "بلاگ میں تلاش کریں...",
       cleanSpacesBtn: "✨ اضافی فاصلے ختم کریں",
       uppercaseBtn: "बड़े حروف (UPPER)",
       lowercaseBtn: "چھوٹے حروف (lower)",
@@ -918,6 +944,11 @@
     
     document.title = (data.heading || "Character & Word Counter") + " | TextCount.net";
     textInput.placeholder = data.placeholder;
+
+    var blogSearchInput = document.getElementById("blog-search-input");
+    if (blogSearchInput && data.searchPlaceholder) {
+      blogSearchInput.placeholder = data.searchPlaceholder;
+    }
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
