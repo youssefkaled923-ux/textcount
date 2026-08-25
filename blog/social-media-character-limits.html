@@ -1,103 +1,437 @@
-<!DOCTYPE html>
-<html lang="en">
+ؤ<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Character Limits Guide (2026) - TextCount.net</title>
+  <title id="page-title">Social Media Character Limits Guide (2026) - TextCount.net</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
         }
       }
     };
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* إخفاء شريط جوجل العلوي وتصحيح الإزاحة */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    
-    /* تخصيص مظهر قائمة الاختيار لتناسب القالب الداكن */
-    .goog-te-gadget-simple {
-      background-color: #1e293b !important;
-      border: 1px solid #334155 !important;
-      padding: 4px 8px !important;
-      border-radius: 0.5rem !important;
-      font-size: 0.875rem !important;
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
     }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: #f8fafc !important;
-    }
-    .goog-te-gadget-icon { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      margin: 0 !important;
-    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
   </style>
 </head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/blog.html" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
-        <div id="google_translate_element"></div>
+        <a href="/blog.html" data-i18n="backToBlog" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 py-10 flex-1">
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-1 w-full">
     <article>
       <header class="mb-8">
-        <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Social Media Strategy</span>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-50 mt-2 mb-4">Complete Social Media Character Limits Guide (2026)</h1>
-        <p class="text-slate-400 text-sm">Published: August 2026 • 4 min read</p>
+        <span data-i18n="category" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">Social Media Strategy</span>
+        <h1 data-i18n="articleTitle" class="text-3xl md:text-4xl font-bold text-slate-50 mt-2 mb-4">Complete Social Media Character Limits Guide (2026)</h1>
+        <p data-i18n="publishMeta" class="text-slate-400 text-sm">Published: August 2026 • 4 min read</p>
       </header>
 
       <div class="space-y-6 text-slate-300 leading-relaxed">
-        <p>Creating compelling social media copy requires balancing impact with strict character boundaries. Exceeding character limits can cut off key call-to-actions or ruin post formatting.</p>
+        <p data-i18n="p1">Creating compelling social media copy requires balancing impact with strict character boundaries. Exceeding character limits can cut off key call-to-actions or ruin post formatting.</p>
 
-        <h2 class="text-2xl font-bold text-slate-100 mt-8 mb-3">Key Character Limits by Platform</h2>
+        <h2 data-i18n="headingPlatforms" class="text-2xl font-bold text-slate-100 mt-8 mb-3">Key Character Limits by Platform</h2>
         
         <div class="space-y-4">
           <div class="bg-card-dark border border-border-dark p-4 rounded-xl">
-            <h3 class="font-bold text-slate-100">X (Formerly Twitter)</h3>
-            <p class="text-sm text-slate-400 mt-1">Free users have a <strong>280-character limit</strong> per tweet. Premium subscribers can post up to 25,000 characters. Optimal post length remains between 70–100 characters for maximum engagement.</p>
+            <h3 data-i18n="xTitle" class="font-bold text-slate-100">X (Formerly Twitter)</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              <span data-i18n="xText1">Free users have a </span>
+              <strong data-i18n="xLimit" class="text-slate-100">280-character limit</strong>
+              <span data-i18n="xText2"> per tweet. Premium subscribers can post up to 25,000 characters. Optimal post length remains between 70–100 characters for maximum engagement.</span>
+            </p>
           </div>
 
           <div class="bg-card-dark border border-border-dark p-4 rounded-xl">
-            <h3 class="font-bold text-slate-100">LinkedIn</h3>
-            <p class="text-sm text-slate-400 mt-1">Personal posts allow up to <strong>3,000 characters</strong>. However, LinkedIn truncates posts after roughly 140 characters with a "...see more" button. Keep your hook within the first 100 characters.</p>
+            <h3 data-i18n="liTitle" class="font-bold text-slate-100">LinkedIn</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              <span data-i18n="liText1">Personal posts allow up to </span>
+              <strong data-i18n="liLimit" class="text-slate-100">3,000 characters</strong>
+              <span data-i18n="liText2">. However, LinkedIn truncates posts after roughly 140 characters with a "...see more" button. Keep your hook within the first 100 characters.</span>
+            </p>
           </div>
 
           <div class="bg-card-dark border border-border-dark p-4 rounded-xl">
-            <h3 class="font-bold text-slate-100">Instagram</h3>
-            <p class="text-sm text-slate-400 mt-1">Captions support up to <strong>2,200 characters</strong> and 30 hashtags. For best results, place your most critical message before the 125-character fold.</p>
+            <h3 data-i18n="igTitle" class="font-bold text-slate-100">Instagram</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              <span data-i18n="igText1">Captions support up to </span>
+              <strong data-i18n="igLimit" class="text-slate-100">2,200 characters</strong>
+              <span data-i18n="igText2"> and 30 hashtags. For best results, place your most critical message before the 125-character fold.</span>
+            </p>
           </div>
         </div>
 
-        <h2 class="text-2xl font-bold text-slate-100 mt-8 mb-3">How to Stay Within Limits</h2>
-        <p>Before publishing your social captions, paste them into <a href="/" class="text-accent-sky hover:underline">TextCount.net</a> to track character counts live and trim excess fluff effortlessy.</p>
+        <h2 data-i18n="headingStay" class="text-2xl font-bold text-slate-100 mt-8 mb-3">How to Stay Within Limits</h2>
+        <p>
+          <span data-i18n="stayText1">Before publishing your social captions, paste them into </span>
+          <a href="/" class="text-accent-sky hover:underline">TextCount.net</a>
+          <span data-i18n="stayText2"> to track character counts live and trim excess fluff effortlessy.</span>
+        </p>
       </div>
     </article>
   </main>
 
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToBlog: "← Back to Blog",
+          category: "Social Media Strategy",
+          articleTitle: "Complete Social Media Character Limits Guide (2026)",
+          publishMeta: "Published: August 2026 • 4 min read",
+          p1: "Creating compelling social media copy requires balancing impact with strict character boundaries. Exceeding character limits can cut off key call-to-actions or ruin post formatting.",
+          headingPlatforms: "Key Character Limits by Platform",
+          xTitle: "X (Formerly Twitter)",
+          xText1: "Free users have a ",
+          xLimit: "280-character limit",
+          xText2: " per tweet. Premium subscribers can post up to 25,000 characters. Optimal post length remains between 70–100 characters for maximum engagement.",
+          liTitle: "LinkedIn",
+          liText1: "Personal posts allow up to ",
+          liLimit: "3,000 characters",
+          liText2: ". However, LinkedIn truncates posts after roughly 140 characters with a \"...see more\" button. Keep your hook within the first 100 characters.",
+          igTitle: "Instagram",
+          igText1: "Captions support up to ",
+          igLimit: "2,200 characters",
+          igText2: " and 30 hashtags. For best results, place your most critical message before the 125-character fold.",
+          headingStay: "How to Stay Within Limits",
+          stayText1: "Before publishing your social captions, paste them into ",
+          stayText2: " to track character counts live and trim excess fluff effortlessy.",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToBlog: "← العودة للمدونة",
+          category: "إستراتيجية وسائل التواصل الاجتماعي",
+          articleTitle: "الدليل الكامل لحدود الأحرف في وسائل التواصل الاجتماعي (2026)",
+          publishMeta: "تاريخ النشر: أغسطس 2026 • قراءة في 4 دقائق",
+          p1: "يتطلب إنشاء محتوى جذاب لوسائل التواصل الاجتماعي تحقيق التوازن بين التأثير وحدود الأحرف الصارمة. قد يؤدي تجاوز الحدود إلى قطع الدعوات لنشاط معين (CTA) أو إفساد تنسيق المنشور.",
+          headingPlatforms: "أبرز حدود الأحرف حسب المنصة",
+          xTitle: "إكس (تويتر سابقاً)",
+          xText1: "يمتلك المستخدمون المجانيون ",
+          xLimit: "حداً أقصى يبلغ 280 حرفاً",
+          xText2: " لكل تغريدة. يمكن للمشتركين في الخدمة المدفوعة كتابة ما يصل إلى 25,000 حرف. يظل الطول المثالي للمنشور بين 70 و100 حرف لتحقيق أعلى تفاعل.",
+          liTitle: "لينكد إن (LinkedIn)",
+          liText1: "تسمح المنشورات الشخصية بما يصل إلى ",
+          liLimit: "3,000 حرف",
+          liText2: ". ومع ذلك، يقوم لينكد إن باقتطاع المنشورات بعد حوالي 140 حرفاً ويضع زر \"...قراءة المزيد\". اجعل الجملة الافتتاحية ضمن أول 100 حرف.",
+          igTitle: "إنستغرام (Instagram)",
+          igText1: "تدعم التعليقات ما يصل إلى ",
+          igLimit: "2,200 حرف",
+          igText2: " و30 وسم (هاشتاج). للحصول على أفضل النتائج، ضع رسالتك الأكثر أهمية قبل الحد الافتراضي البالغ 125 حرفاً.",
+          headingStay: "كيف تلتزم بالحدود المسموحة",
+          stayText1: "قبل نشر نصوصك، قم بلصقها في ",
+          stayText2: " لمتابعة عدد الأحرف مباشرة وتعديل الزيادات بسهولة.",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToBlog: "← Zurück zum Blog",
+          category: "Social-Media-Strategie",
+          articleTitle: "Vollständiger Leitfaden für Zeichenbegrenzungen in Social Media (2026)",
+          publishMeta: "Veröffentlicht: August 2026 • 4 Min. Lesezeit",
+          p1: "Das Erstellen ansprechender Social-Media-Texte erfordert die Einhaltung strikter Zeichenlimits.",
+          headingPlatforms: "Wichtige Zeichenlimits nach Plattform",
+          xTitle: "X (Ehemals Twitter)",
+          xText1: "Kostenlose Nutzer haben ein ", xLimit: "Limit von 280 Zeichen", xText2: " pro Tweet. Premium-Abonnenten können bis zu 25.000 Zeichen posten.",
+          liTitle: "LinkedIn",
+          liText1: "Persönliche Beiträge erlauben bis zu ", liLimit: "3.000 Zeichen", liText2: ". Beachten Sie jedoch den Kürzungs-Button nach ca. 140 Zeichen.",
+          igTitle: "Instagram",
+          igText1: "Bildunterschriften unterstützen bis zu ", igLimit: "2.200 Zeichen", igText2: " und 30 Hashtags.",
+          headingStay: "So bleiben Sie innerhalb der Limits",
+          stayText1: "Fügen Sie Ihre Texte vor der Veröffentlichung bei ", stayText2: " ein, um Zeichen live zu zählen.",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToBlog: "← Retour au Blog",
+          category: "Stratégie Réseaux Sociaux",
+          articleTitle: "Guide complet des limites de caractères sur les réseaux sociaux (2026)",
+          publishMeta: "Publié : Août 2026 • 4 min de lecture",
+          p1: "Rédiger des publications captivantes exige de respecter les limites de caractères autorisées.",
+          headingPlatforms: "Limites de caractères par plateforme",
+          xTitle: "X (Anciennement Twitter)",
+          xText1: "Les utilisateurs gratuits ont une ", xLimit: "limite de 280 caractères", xText2: " par tweet.",
+          liTitle: "LinkedIn",
+          liText1: "Les publications personnelles autorisent jusqu'à ", liLimit: "3 000 caractères", liText2: ".",
+          igTitle: "Instagram",
+          igText1: "Les légendes prennent en charge jusqu'à ", igLimit: "2 200 caractères", igText2: " et 30 hashtags.",
+          headingStay: "Comment respecter les limites",
+          stayText1: "Collez vos textes sur ", stayText2: " pour vérifier le nombre de caractères en temps réel.",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToBlog: "← Volver al Blog",
+          category: "Estrategia en Redes Sociales",
+          articleTitle: "Guía completa de límites de caracteres en redes sociales (2026)",
+          publishMeta: "Publicado: Agosto 2026 • 4 min de lectura",
+          p1: "Crear textos atractivos para redes sociales requiere adaptarse a los límites de caracteres.",
+          headingPlatforms: "Límites clave por plataforma",
+          xTitle: "X (Antes Twitter)",
+          xText1: "Los usuarios gratuitos tienen un ", xLimit: "límite de 280 caracteres", xText2: " por tweet.",
+          liTitle: "LinkedIn",
+          liText1: "Las publicaciones permiten hasta ", liLimit: "3,000 caracteres", liText2: ".",
+          igTitle: "Instagram",
+          igText1: "Admite hasta ", igLimit: "2,200 caracteres", igText2: " y 30 hashtags.",
+          headingStay: "Cómo mantenerse dentro de los límites",
+          stayText1: "Pega tus textos en ", stayText2: " para contar caracteres en tiempo real.",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToBlog: "← Torna al Blog",
+          category: "Strategia Social Media",
+          articleTitle: "Guida completa ai limiti di caratteri sui social media (2026)",
+          publishMeta: "Pubblicato: Agosto 2026 • 4 min di lettura",
+          p1: "Creare contenuti efficaci richiede il rispetto dei limiti di caratteri di ciascuna piattaforma.",
+          headingPlatforms: "Limiti di caratteri per piattaforma",
+          xTitle: "X (Ex Twitter)",
+          xText1: "Gli utenti gratuiti hanno un ", xLimit: "limite di 280 caratteri", xText2: " per tweet.",
+          liTitle: "LinkedIn",
+          liText1: "I post personali consentono fino a ", liLimit: "3.000 caratteri", liText2: ".",
+          igTitle: "Instagram",
+          igText1: "Supporta fino a ", igLimit: "2.200 caratteri", igText2: " e 30 hashtag.",
+          headingStay: "Come rimanere nei limiti",
+          stayText1: "Incolla i tuoi testi su ", stayText2: " per monitorare i caratteri in tempo reale.",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToBlog: "← Terug naar Blog",
+          category: "Social Media Strategie",
+          articleTitle: "Volledige gids voor tekenlimieten op social media (2026)",
+          publishMeta: "Gepubliceerd: Augustus 2026 • 4 min leestijd",
+          p1: "Het schrijven van sterke berichten vereist rekening houden met strakke limieten.",
+          headingPlatforms: "Belangrijkste limieten per platform",
+          xTitle: "X (Voorheen Twitter)",
+          xText1: "Gratis gebruikers hebben een ", xLimit: "limiet van 280 tekens", xText2: " per tweet.",
+          liTitle: "LinkedIn",
+          liText1: "Berichten toestaan tot ", liLimit: "3.000 tekens", liText2: ".",
+          igTitle: "Instagram",
+          igText1: "Ondersteunt tot ", igLimit: "2.200 tekens", igText2: " en 30 hashtags.",
+          headingStay: "Binnen de limieten blijven",
+          stayText1: "Plak je tekst in ", stayText2: " om het aantal tekens live te volgen.",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToBlog: "← Bloğa Dön",
+          category: "Sosyal Medya Stratejisi",
+          articleTitle: "Sosyal Medya Karakter Sınırları Rehberi (2026)",
+          publishMeta: "Yayınlanma: Ağustos 2026 • 4 dk okuma",
+          p1: "Etkileyici sosyal medya içerikleri oluşturmak karakter sınırlarına uymayı gerektirir.",
+          headingPlatforms: "Platformlara Göre Karakter Sınırları",
+          xTitle: "X (Eski adıyla Twitter)",
+          xText1: "Ücretsiz kullanıcılar için ", xLimit: "280 karakter sınırı", xText2: " bulunmaktadır.",
+          liTitle: "LinkedIn",
+          liText1: "Kişisel gönderiler ", liLimit: "3.000 karaktere", liText2: " kadar izin verir.",
+          igTitle: "Instagram",
+          igText1: "Gönderi açıklamaları ", igLimit: "2.200 karakter", igText2: " ve 30 hashtag destekler.",
+          headingStay: "Sınırlar İçinde Nasıl Kalınır",
+          stayText1: "Metinlerinizi paylaşmadan önce ", stayText2: " adresine yapıştırarak canlı kontrol edin.",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToBlog: "← Voltar ao Blog",
+          category: "Estratégia de Mídias Sociais",
+          articleTitle: "Guia Completo de Limites de Caracteres nas Redes Sociais (2026)",
+          publishMeta: "Publicado: Agosto 2026 • 4 min de leitura",
+          p1: "Criar bons textos para redes sociais exige respeitar os limites de cada plataforma.",
+          headingPlatforms: "Principais limites por plataforma",
+          xTitle: "X (Antigo Twitter)",
+          xText1: "Usuários gratuitos têm um ", xLimit: "limite de 280 caracteres", xText2: " por tweet.",
+          liTitle: "LinkedIn",
+          liText1: "Publicações permitem até ", liLimit: "3.000 caracteres", liText2: ".",
+          igTitle: "Instagram",
+          igText1: "Suporta até ", igLimit: "2.200 caracteres", igText2: " e 30 hashtags.",
+          headingStay: "Como permanecer dentro dos limites",
+          stayText1: "Cole seus textos no ", stayText2: " para acompanhar a contagem em tempo real.",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToBlog: "← Назад в блог",
+          category: "Стратегия в социальных сетях",
+          articleTitle: "Полное руководство по лимитам символов в соцсетях (2026)",
+          publishMeta: "Опубликовано: Август 2026 • 4 мин чтения",
+          p1: "Создание эффективного контента требует соблюдения ограничений по количеству символов.",
+          headingPlatforms: "Лимиты символов по платформам",
+          xTitle: "X (Ранее Twitter)",
+          xText1: "Для бесплатных аккаунтов действует ", xLimit: "лимит в 280 символов", xText2: " на твит.",
+          liTitle: "LinkedIn",
+          liText1: "Личные публикации допускают до ", liLimit: "3 000 символов", liText2: ".",
+          igTitle: "Instagram",
+          igText1: "Подписи поддерживают до ", igLimit: "2 200 символов", igText2: " и 30 хэштегов.",
+          headingStay: "Как не превышать лимиты",
+          stayText1: "Вставляйте тексты في ", stayText2: " для подсчета символов в реальном времени.",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToBlog: "← 返回博客",
+          category: "社交媒体策略",
+          articleTitle: "社交媒体字数与字符限制完整指南 (2026)",
+          publishMeta: "发布于：2026年8月 • 阅读时间 4 分钟",
+          p1: "撰写优质的社交媒体文案需要遵守严格的字符限制。",
+          headingPlatforms: "各平台核心字符限制",
+          xTitle: "X (前 Twitter)",
+          xText1: "免费用户推文限制为 ", xLimit: "280 个字符", xText2: "。",
+          liTitle: "LinkedIn",
+          liText1: "个人动态最多允许 ", liLimit: "3,000 个字符", liText2: "。",
+          igTitle: "Instagram",
+          igText1: "文案最多支持 ", igLimit: "2,200 个字符", igText2: " 和 30 个标签。",
+          headingStay: "如何避免超出限制",
+          stayText1: "发布前将文案粘贴至 ", stayText2: " 即可实时查看字符数。",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToBlog: "← ブログに戻る",
+          category: "SNS戦略",
+          articleTitle: "SNS文字数制限完全ガイド (2026年版)",
+          publishMeta: "公開日：2026年8月 • 読了時間 4分",
+          p1: "魅力的なSNS投稿を作成するには、各プラットフォームの文字数制限を把握することが重要です。",
+          headingPlatforms: "主要プラットフォームの文字数制限",
+          xTitle: "X（旧Twitter）",
+          xText1: "無料ユーザーは1ツイートあたり ", xLimit: "280文字制限", xText2: " です。",
+          liTitle: "LinkedIn",
+          liText1: "個人投稿は最大 ", liLimit: "3,000文字", liText2: " まで可能です。",
+          igTitle: "Instagram",
+          igText1: "キャプションは最大 ", igLimit: "2,200文字", igText2: "、30個のハッシュタグに対応しています。",
+          headingStay: "制限内に収める方法",
+          stayText1: "投稿前に ", stayText2: " にテキストを貼り付けて文字数をリアルタイムで確認しましょう。",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToBlog: "← ब्लॉग पर वापस जाएँ",
+          category: "सोशल मीडिया रणनीति",
+          articleTitle: "सोशल मीडिया वर्ण सीमा संपूर्ण गाइड (2026)",
+          publishMeta: "प्रकाशित: अगस्त 2026 • 4 मिनट का समय",
+          p1: "सोशल मीडिया पोस्ट बनाते समय वर्ण सीमाओं का ध्यान रखना आवश्यक है।",
+          headingPlatforms: "प्लेटफ़ॉर्म के अनुसार वर्ण सीमाएँ",
+          xTitle: "X (पूर्व में Twitter)",
+          xText1: "मुफ़्त उपयोगकर्ताओं के लिए प्रति ट्वीट ", xLimit: "280 वर्णों की सीमा", xText2: " है।",
+          liTitle: "LinkedIn",
+          liText1: "व्यक्तिगत पोस्ट में अधिकतम ", liLimit: "3,000 वर्ण", liText2: " हो सकते हैं।",
+          igTitle: "Instagram",
+          igText1: "कैप्शन में ", igLimit: "2,200 वर्ण", igText2: " और 30 हैशटैग तक की अनुमति है।",
+          headingStay: "सीमा के भीतर कैसे रहें",
+          stayText1: "पोस्ट करने से पहले अपने टेक्स्ट को ", stayText2: " पर पेस्ट करें।",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToBlog: "← ব্লগে ফিরে যান",
+          category: "সোশ্যাল মিডিয়া কৌশল",
+          articleTitle: "সোশ্যাল মিডিয়া ক্যারেক্টার সীমার সম্পূর্ণ গাইড (২০২৬)",
+          publishMeta: "প্রকাশিত: আগস্ট ২০২৬ • ৪ মিনিট পাঠ",
+          p1: "সোশ্যাল মিডিয়া পোস্ট তৈরির ক্ষেত্রে ক্যারেক্টার সীমার দিকে খেয়াল রাখা প্রয়োজন।",
+          headingPlatforms: "প্ল্যাটফর্ম অনুযায়ী ক্যারেক্টার সীমা",
+          xTitle: "X (পূর্বে Twitter)",
+          xText1: "বিনামূল্যে ব্যবহারকারীদের জন্য প্রতি টুইটে ", xLimit: "২৮০ ক্যারেক্টারের সীমা", xText2: " রয়েছে।",
+          liTitle: "LinkedIn",
+          liText1: "ব্যক্তিগত পোস্টে সর্বোচ্চ ", liLimit: "৩,০০০ ক্যারেক্টার", liText2: " ব্যবহার করা যায়।",
+          igTitle: "Instagram",
+          igText1: "ক্যাপশনে সর্বোচ্চ ", igLimit: "২,২০০ ক্যারেক্টার", igText2: " এবং ৩০টি হ্যাশট্যাগ দেওয়া যায়।",
+          headingStay: "সীমার মধ্যে থাকার উপায়",
+          stayText1: "পোস্ট করার আগে আপনার টেক্সট ", stayText2: " এ পেস্ট করে ক্যারেক্টার সংখ্যা পরীক্ষা করুন।",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToBlog: "← بلاگ پر واپس جائیں",
+          category: "سوشل میڈیا حکمت عملی",
+          articleTitle: "سوشل میڈیا حروف کی حد کی مکمل گائیڈ (2026)",
+          publishMeta: "شائع شدہ: اگست 2026 • 4 منٹ کی پڑھائی",
+          p1: "سوشل میڈیا کے لیے مؤثر مواد تیار کرنے کے لیے حروف کی حدود کا خیال رکھنا ضروری ہے۔",
+          headingPlatforms: "پلیٹ فارم کے لحاظ سے حروف کی حدود",
+          xTitle: "X (سابقہ Twitter)",
+          xText1: "مفت صارفین کے لیے فی ٹویٹ ", xLimit: "280 حروف کی حد", xText2: " ہے۔",
+          liTitle: "LinkedIn",
+          liText1: "ذاتی پوسٹس میں ", liLimit: "3,000 حروف", liText2: " تک کی اجازت ہے۔",
+          igTitle: "Instagram",
+          igText1: "کیپشن میں ", igLimit: "2,200 حروف", igText2: " اور 30 ہیش ٹیگز کی اجازت ہوتی ہے۔",
+          headingStay: "حدود کے اندر کیسے رہیں",
+          stayText1: "پوسٹ کرنے سے پہلے اپنا متن ", stayText2: " پر پیسٹ کر کے حروف کی تعداد چیک کریں۔",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.articleTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
