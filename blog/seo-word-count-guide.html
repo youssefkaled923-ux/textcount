@@ -1,84 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Ultimate Word Count Guide for SEO in 2026 - TextCount.net</title>
+  <title id="page-title">The Ultimate Word Count Guide for SEO in 2026 - TextCount.net</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
         }
       }
     };
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* إخفاء شريط جوجل العلوي وتصحيح الإزاحة */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    
-    /* تخصيص مظهر قائمة الاختيار لتناسب القالب الداكن */
-    .goog-te-gadget-simple {
-      background-color: #1e293b !important;
-      border: 1px solid #334155 !important;
-      padding: 4px 8px !important;
-      border-radius: 0.5rem !important;
-      font-size: 0.875rem !important;
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
     }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: #f8fafc !important;
-    }
-    .goog-te-gadget-icon { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      margin: 0 !important;
-    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
   </style>
 </head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+
   <!-- Header -->
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/blog.html" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
-        <div id="google_translate_element"></div>
+        <a href="/blog.html" data-i18n="backToBlog" class="text-sm text-accent-sky hover:underline">&larr; Back to Blog</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-3xl mx-auto px-4 py-10 flex-1">
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-1 w-full">
     <article>
       <header class="mb-8">
-        <span class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content Strategy</span>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-50 mt-2 mb-4">The Ultimate Word Count Guide for SEO in 2026</h1>
-        <p class="text-slate-400 text-sm">Published: August 2026 • 5 min read</p>
+        <span data-i18n="category" class="text-xs font-semibold text-accent-sky uppercase tracking-wider">SEO & Content Strategy</span>
+        <h1 data-i18n="articleTitle" class="text-3xl md:text-4xl font-bold text-slate-50 mt-2 mb-4">The Ultimate Word Count Guide for SEO in 2026</h1>
+        <p data-i18n="publishMeta" class="text-slate-400 text-sm">Published: August 2026 • 5 min read</p>
       </header>
 
       <div class="space-y-6 text-slate-300 leading-relaxed text-base">
-        <p>When creating content for the web, one question constantly arises: <strong>Does word count matter for SEO?</strong> The short answer is yes, but not in the way most people think. Search engines like Google do not rank a page simply because it has 2,000 words. Instead, they rank pages that solve the searcher's query comprehensively.</p>
+        <p>
+          <span data-i18n="p1Start">When creating content for the web, one question constantly arises: </span>
+          <strong data-i18n="p1Bold" class="text-slate-100">Does word count matter for SEO?</strong> 
+          <span data-i18n="p1End">The short answer is yes, but not in the way most people think. Search engines like Google do not rank a page simply because it has 2,000 words. Instead, they rank pages that solve the searcher's query comprehensively.</span>
+        </p>
 
-        <h2 class="text-2xl font-bold text-slate-100 mt-8 mb-3">1. Ideal Word Counts by Content Type</h2>
-        <p>Different types of content require different lengths. Forcing a simple query into a 3,000-word essay will increase bounce rates, while writing a 200-word guide on a complex topic won't satisfy search engines.</p>
+        <h2 data-i18n="heading1" class="text-2xl font-bold text-slate-100 mt-8 mb-3">1. Ideal Word Counts by Content Type</h2>
+        <p data-i18n="p2">Different types of content require different lengths. Forcing a simple query into a 3,000-word essay will increase bounce rates, while writing a 200-word guide on a complex topic won't satisfy search engines.</p>
         
         <ul class="list-disc list-inside space-y-2 pl-2 text-slate-300">
-          <li><strong class="text-slate-100">Short Blog Posts:</strong> 500 – 800 words (Best for quick news or simple announcements).</li>
-          <li><strong class="text-slate-100">Standard Articles:</strong> 1,200 – 1,800 words (Ideal for general guides and how-to posts).</li>
-          <li><strong class="text-slate-100">Pillar Pages & Comprehensive Guides:</strong> 2,500+ words (Best for in-depth educational resources).</li>
-          <li><strong class="text-slate-100">Product Pages:</strong> 300 – 500 words (Focus on specifications and benefits).</li>
+          <li>
+            <strong data-i18n="type1Bold" class="text-slate-100">Short Blog Posts:</strong> 
+            <span data-i18n="type1Text"> 500 – 800 words (Best for quick news or simple announcements).</span>
+          </li>
+          <li>
+            <strong data-i18n="type2Bold" class="text-slate-100">Standard Articles:</strong> 
+            <span data-i18n="type2Text"> 1,200 – 1,800 words (Ideal for general guides and how-to posts).</span>
+          </li>
+          <li>
+            <strong data-i18n="type3Bold" class="text-slate-100">Pillar Pages & Comprehensive Guides:</strong> 
+            <span data-i18n="type3Text"> 2,500+ words (Best for in-depth educational resources).</span>
+          </li>
+          <li>
+            <strong data-i18n="type4Bold" class="text-slate-100">Product Pages:</strong> 
+            <span data-i18n="type4Text"> 300 – 500 words (Focus on specifications and benefits).</span>
+          </li>
         </ul>
 
-        <h2 class="text-2xl font-bold text-slate-100 mt-8 mb-3">2. Quality Over Quantity</h2>
-        <p>Google’s helpful content guidelines emphasize depth and user intent over filler words. Adding unnecessary fluff just to reach a target character count will harm your rankings. Always aim for clear, concise, and actionable information.</p>
+        <h2 data-i18n="heading2" class="text-2xl font-bold text-slate-100 mt-8 mb-3">2. Quality Over Quantity</h2>
+        <p data-i18n="p3">Google’s helpful content guidelines emphasize depth and user intent over filler words. Adding unnecessary fluff just to reach a target character count will harm your rankings. Always aim for clear, concise, and actionable information.</p>
 
-        <h2 class="text-2xl font-bold text-slate-100 mt-8 mb-3">3. How Character and Word Counters Help</h2>
-        <p>Using a real-time tracking tool like <a href="/" class="text-accent-sky hover:underline">TextCount.net</a> ensures your meta titles, meta descriptions, and main content remain within optimal boundaries without manual counting.</p>
+        <h2 data-i18n="heading3" class="text-2xl font-bold text-slate-100 mt-8 mb-3">3. How Character and Word Counters Help</h2>
+        <p>
+          <span data-i18n="p4Start">Using a real-time tracking tool like </span>
+          <a href="/" class="text-accent-sky hover:underline">TextCount.net</a>
+          <span data-i18n="p4End"> ensures your meta titles, meta descriptions, and main content remain within optimal boundaries without manual counting.</span>
+        </p>
 
         <div class="bg-card-dark border border-border-dark p-6 rounded-xl mt-8">
-          <h3 class="text-lg font-bold text-slate-100 mb-2">Key Takeaways</h3>
-          <p class="text-sm text-slate-400">Target depth over length, match your content structure to user intent, and monitor your length metrics during the drafting process.</p>
+          <h3 data-i18n="takeawayTitle" class="text-lg font-bold text-slate-100 mb-2">Key Takeaways</h3>
+          <p data-i18n="takeawayText" class="text-sm text-slate-400">Target depth over length, match your content structure to user intent, and monitor your length metrics during the drafting process.</p>
         </div>
       </div>
     </article>
@@ -86,20 +127,380 @@
 
   <!-- Footer -->
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToBlog: "← Back to Blog",
+          category: "SEO & Content Strategy",
+          articleTitle: "The Ultimate Word Count Guide for SEO in 2026",
+          publishMeta: "Published: August 2026 • 5 min read",
+          p1Start: "When creating content for the web, one question constantly arises: ",
+          p1Bold: "Does word count matter for SEO?",
+          p1End: " The short answer is yes, but not in the way most people think. Search engines like Google do not rank a page simply because it has 2,000 words. Instead, they rank pages that solve the searcher's query comprehensively.",
+          heading1: "1. Ideal Word Counts by Content Type",
+          p2: "Different types of content require different lengths. Forcing a simple query into a 3,000-word essay will increase bounce rates, while writing a 200-word guide on a complex topic won't satisfy search engines.",
+          type1Bold: "Short Blog Posts:", type1Text: " 500 – 800 words (Best for quick news or simple announcements).",
+          type2Bold: "Standard Articles:", type2Text: " 1,200 – 1,800 words (Ideal for general guides and how-to posts).",
+          type3Bold: "Pillar Pages & Comprehensive Guides:", type3Text: " 2,500+ words (Best for in-depth educational resources).",
+          type4Bold: "Product Pages:", type4Text: " 300 – 500 words (Focus on specifications and benefits).",
+          heading2: "2. Quality Over Quantity",
+          p3: "Google’s helpful content guidelines emphasize depth and user intent over filler words. Adding unnecessary fluff just to reach a target character count will harm your rankings. Always aim for clear, concise, and actionable information.",
+          heading3: "3. How Character and Word Counters Help",
+          p4Start: "Using a real-time tracking tool like ",
+          p4End: " ensures your meta titles, meta descriptions, and main content remain within optimal boundaries without manual counting.",
+          takeawayTitle: "Key Takeaways",
+          takeawayText: "Target depth over length, match your content structure to user intent, and monitor your length metrics during the drafting process.",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToBlog: "← العودة للمدونة",
+          category: "تحسين محركات البحث واستراتيجية المحتوى",
+          articleTitle: "دليل عدد الكلمات الموصى به لتحسين محركات البحث (SEO) لعام 2026",
+          publishMeta: "تاريخ النشر: أغسطس 2026 • قراءة في 5 دقائق",
+          p1Start: "عند إنشاء محتوى للويب، يطرح سؤال واحد باستمرار: ",
+          p1Bold: "هل عدد الكلمات يهم لتحسين محركات البحث (SEO)؟",
+          p1End: " الإجابة القصيرة هي نعم، ولكن ليس بالشكل الذي يعتقده معظم الناس. فمحركات البحث مثل جوجل لا ترتب الصفحات لمجرد أنها تحتوي على 2000 كلمة، بل ترتب الصفحات التي تجيب على استفسار الباحث بشكل شامل.",
+          heading1: "1. عدد الكلمات المثالي حسب نوع المحتوى",
+          p2: "تتطلب أنواع المحتوى المختلفة أطوالاً مختلفة. إن تحويل استفسار بسيط إلى مقال من 3000 كلمة سيزيد من معدل الارتداد، في حين إن كتابة دليل من 2000 كلمة حول موضوع معقد لن يرضي محركات البحث.",
+          type1Bold: "منشورات المدونة القصيرة:", type1Text: " 500 – 800 كلمة (الأفضل للأخبار السريعة أو الإعلانات البسيطة).",
+          type2Bold: "المقالات القياسية:", type2Text: " 1,200 – 1,800 كلمة (مثالية للادلة العامة وشروحات كيفية العمل).",
+          type3Bold: "الصفحات المحورية والدلائل الشاملة:", type3Text: " 2,500+ كلمة (الأفضل للموارد التعليمية المتعمقة).",
+          type4Bold: "صفحات المنتجات:", type4Text: " 300 – 500 كلمة (التركيز على المواصفات والفوائد).",
+          heading2: "2. الجودة ترجح على الكمية",
+          p3: "تؤكد إرشادات جوجل للمحتوى النافع على العمق ونية المستخدم بدلاً من الحشو. الحشو غير الضروري فقط للوصول إلى عدد كلمات مستهدف سينعكس سلباً على ترتيبك. احرص دائماً على كتابة معلومات واضحة ومباشرة وقابلة للتطبيق.",
+          heading3: "3. كيف تساعدك أدوات عد الكلمات والأحرف",
+          p4Start: "استخدام أداة تتبع فورية مثل ",
+          p4End: " يضمن بقاء عناوين الميتا، الأوصاف، والمحتوى الرئيسي ضمن الحدود المثالية دون الحاجة للحساب اليدوي.",
+          takeawayTitle: "أبرز النقاط المستفادة",
+          takeawayText: "ركز على العمق بدلاً من الطول، وطابق هيكل محتواك مع قصد المستخدم، وراقب مقاييس الطول أثناء عملية الكتابة.",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToBlog: "← Zurück zum Blog",
+          category: "SEO & Content-Strategie",
+          articleTitle: "Der ultimative Wortanzahl-Leitfaden für SEO im Jahr 2026",
+          publishMeta: "Veröffentlicht: August 2026 • 5 Min. Lesezeit",
+          p1Start: "Beim Erstellen von Webinhalten stellt sich oft eine Frage: ",
+          p1Bold: "Ist die Wortanzahl wichtig für SEO?",
+          p1End: " Die kurze Antwort lautet ja, aber anders als viele denken. Google rankt Seiten nicht nur wegen 2.000 Wörtern, sondern wegen umfassender Antworten.",
+          heading1: "1. Ideale Wortanzahl nach Inhaltstyp",
+          p2: "Verschiedene Inhalte erfordern unterschiedliche Längen. Ein 3.000-Wort-Essay für eine einfache Frage erhöht die Absprungrate.",
+          type1Bold: "Kurze Blogbeiträge:", type1Text: " 500 – 800 Wörter (Ideal für kurze News).",
+          type2Bold: "Standard-Artikel:", type2Text: " 1.200 – 1.800 Wörter (Ideal für Anleitungen).",
+          type3Bold: "Pillar-Pages & Leitfäden:", type3Text: " 2.500+ Wörter (Für ausführliche Ressourcen).",
+          type4Bold: "Produktseiten:", type4Text: " 300 – 500 Wörter (Fokus auf Vorteile).",
+          heading2: "2. Qualität vor Quantität",
+          p3: "Googles Helpful Content Guidelines betonen Tiefe und Nutzerabsicht statt Füllwörter.",
+          heading3: "3. Wie Wortzähler helfen",
+          p4Start: "Ein Echtzeit-Tool wie ", p4End: " stellt sicher, dass Meta-Titel und Inhalte im optimalen Rahmen bleiben.",
+          takeawayTitle: "Wichtigste Erkenntnisse",
+          takeawayText: "Setzen Sie auf Tiefe statt Länge und richten Sie die Struktur an der Nutzerabsicht aus.",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToBlog: "← Retour au Blog",
+          category: "SEO & Stratégie de Contenu",
+          articleTitle: "Le guide ultime du nombre de mots pour le SEO en 2026",
+          publishMeta: "Publié : Août 2026 • 5 min de lecture",
+          p1Start: "Une question revient souvent : ",
+          p1Bold: "Le nombre de mots compte-t-il pour le SEO ?",
+          p1End: " Oui, mais pas comme on le pense. Google privilégie la réponse complète à l'intention de recherche.",
+          heading1: "1. Nombre de mots idéal par тип de contenu",
+          p2: "Chaque type de contenu exige une longueur adaptée.",
+          type1Bold: "Articles courts :", type1Text: " 500 – 800 mots.",
+          type2Bold: "Articles standards :", type2Text: " 1 200 – 1 800 mots.",
+          type3Bold: "Guides complets :", type3Text: " 2 500+ mots.",
+          type4Bold: "Pages produits :", type4Text: " 300 – 500 mots.",
+          heading2: "2. La qualité avant la quantité",
+          p3: "Privilégiez la profondeur et l'intention de l'utilisateur plutôt que le remplissage inutile.",
+          heading3: "3. L'utilité des compteurs de mots",
+          p4Start: "Utilisez ", p4End: " pour vérifier vos balises meta et vos contenus en temps réel.",
+          takeawayTitle: "Points clés",
+          takeawayText: "Visez la profondeur, adaptez votre structure et contrôlez la longueur de vos textes.",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToBlog: "← Volver al Blog",
+          category: "SEO y Estrategia de Contenido",
+          articleTitle: "La guía definitiva sobre el recuento de palabras para SEO en 2026",
+          publishMeta: "Publicado: Agosto 2026 • 5 min de lectura",
+          p1Start: "Al crear contenido web surge una duda: ",
+          p1Bold: "¿Importa la cantidad de palabras para el SEO?",
+          p1End: " Sí, pero lo crucial es responder de forma completa a la intención de búsqueda.",
+          heading1: "1. Recuento ideal según el tipo de contenido",
+          p2: "Cada tipo de contenido requiere una longitud específica.",
+          type1Bold: "Artículos cortos:", type1Text: " 500 – 800 palabras.",
+          type2Bold: "Artículos estándar:", type2Text: " 1,200 – 1,800 palabras.",
+          type3Bold: "Guías completas:", type3Text: " 2,500+ palabras.",
+          type4Bold: "Páginas de producto:", type4Text: " 300 – 500 palabras.",
+          heading2: "2. Calidad sobre cantidad",
+          p3: "Las pautas de Google priorizan la profundidad y la intención del usuario sobre el texto de relleno.",
+          heading3: "3. Cómo ayudan los contadores",
+          p4Start: "Herramientas en tiempo real como ", p4End: " aseguran que mantengas tus metas e intenciones en rangos óptimos.",
+          takeawayTitle: "Conclusiones clave",
+          takeawayText: "Prioriza la profundidad sobre la longitud y optimiza según la intención del usuario.",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToBlog: "← Torna al Blog",
+          category: "SEO & Strategia dei Contenuti",
+          articleTitle: "La guida definitiva al conteggio delle parole per la SEO nel 2026",
+          publishMeta: "Pubblicato: Agosto 2026 • 5 min di lettura",
+          p1Start: "Una domanda frequente è: ",
+          p1Bold: "Il conteggio delle parole è importante per la SEO?",
+          p1End: " Sì, ma conta soprattutto soddisfare l'intento di ricerca dell'utente.",
+          heading1: "1. Conteggio ideale per tipo di contenuto",
+          p2: "Tipologie diverse richiedono lunghezze differenti.",
+          type1Bold: "Post brevi:", type1Text: " 500 – 800 parole.",
+          type2Bold: "Articoli standard:", type2Text: " 1.200 – 1.800 parole.",
+          type3Bold: "Guide complete:", type3Text: " 2.500+ parole.",
+          type4Bold: "Pagine prodotto:", type4Text: " 300 – 500 parole.",
+          heading2: "2. Qualità prima della quantità",
+          p3: "Google premia la profondità del contenuto rispetto ai testi riempitivi.",
+          heading3: "3. Come aiutano i contatori",
+          p4Start: "Usa strumenti come ", p4End: " per controllare meta tag e testi in tempo reale.",
+          takeawayTitle: "Punti chiave",
+          takeawayText: "Punta sulla qualità e rispondi con precisione alle ricerche degli utenti.",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToBlog: "← Terug naar Blog",
+          category: "SEO & Contentstrategie",
+          articleTitle: "De ultieme gids voor het aantal woorden voor SEO in 2026",
+          publishMeta: "Gepubliceerd: Augustus 2026 • 5 min leestijd",
+          p1Start: "Een veelgestelde vraag: ",
+          p1Bold: "Is het aantal woorden belangrijk voor SEO?",
+          p1End: " Ja, maar Google kijkt vooral naar hoe goed je de zoekvraag beantwoordt.",
+          heading1: "1. Ideaal aantal woorden per type content",
+          p2: "Verschillende soorten content vragen om verschillende lengtes.",
+          type1Bold: "Korte blogposts:", type1Text: " 500 – 800 woorden.",
+          type2Bold: "Standaard artikelen:", type2Text: " 1.200 – 1.800 woorden.",
+          type3Bold: "Pillar pages & gidsen:", type3Text: " 2.500+ woorden.",
+          type4Bold: "Productpagina's:", type4Text: " 300 – 500 woorden.",
+          heading2: "2. Kwaliteit boven kwantiteit",
+          p3: "Google verkiest dieپgang boven opvulling om een bepaald aantal woorden te halen.",
+          heading3: "3. Hoe woordtellers helpen",
+          p4Start: "Gebruik een tool zoals ", p4End: " om je meta-titels en inhoud direct te controleren.",
+          takeawayTitle: "Belangrijkste inzichten",
+          takeawayText: "Focus op inhoudelijke diepgang en sluit aan bij de zoekintentie.",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToBlog: "← Bloğa Dön",
+          category: "SEO ve İçerik Stratejisi",
+          articleTitle: "2026 SEO İçin Kelime Sayısı Rehberi",
+          publishMeta: "Yayınlanma: Ağustos 2026 • 5 dk okuma",
+          p1Start: "İçerik üretirken şu soru sıkça sorulur: ",
+          p1Bold: "Kelime sayısı SEO için önemli mi?",
+          p1End: " Evet, ancak önemli olan arama niyetini eksiksiz karşılamaktır.",
+          heading1: "1. İçerik Türüne Göre İdeal Kelime Sayıları",
+          p2: "Farklı içerik türleri farklı uzunluklar gerektirir.",
+          type1Bold: "Kısa Blog Yazıları:", type1Text: " 500 – 800 kelime.",
+          type2Bold: "Standart Makaleler:", type2Text: " 1.200 – 1.800 kelime.",
+          type3Bold: "Kapsamlı Rehberler:", type3Text: " 2.500+ kelime.",
+          type4Bold: "Ürün Sayfaları:", type4Text: " 300 – 500 kelime.",
+          heading2: "2. Nicelik Değil Nitelik",
+          p3: "Gereksiz kelime kalabalığı sıralamanıza zarar verebilir.",
+          heading3: "3. Sayaç Araçları Nasıl Yardımcı Olur?",
+          p4Start: "Gerekli sınırları korumak için ", p4End: " gibi canlı araçlar kullanın.",
+          takeawayTitle: "Önemli İpuçları",
+          takeawayText: "Uzunluktan ziyade derinliğe odaklanın ve kullanıcı amacına uygun yazın.",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToBlog: "← Voltar ao Blog",
+          category: "SEO e Estratégia de Conteúdo",
+          articleTitle: "O guia definitivo de contagem de palavras para SEO em 2026",
+          publishMeta: "Publicado: Agosto 2026 • 5 min de leitura",
+          p1Start: "Ao criar conteúdo, surge a dúvida: ",
+          p1Bold: "A contagem de palavras importa para o SEO?",
+          p1End: " Sim, mas o foco do Google é responder plenamente à intenção do usuário.",
+          heading1: "1. Contagem ideal por tipo de conteúdo",
+          p2: "Diferentes formatos exigem extensões variadas.",
+          type1Bold: "Posts curtos:", type1Text: " 500 – 800 palavras.",
+          type2Bold: "Artigos padrão:", type2Text: " 1.200 – 1.800 palavras.",
+          type3Bold: "Guias completos:", type3Text: " 2.500+ palavras.",
+          type4Bold: "Páginas de produto:", type4Text: " 300 – 500 palavras.",
+          heading2: "2. Qualidade antes da quantidade",
+          p3: "Evite textos desnecessários apenas para atingir uma meta de palavras.",
+          heading3: "3. Como os contadores ajudam",
+          p4Start: "Ferramentas como o ", p4End: " ajudam a manter metas e títulos no tamanho correto.",
+          takeawayTitle: "Principais conclusões",
+          takeawayText: "Priorize a profundidade e alinhe o texto com o que o usuário procura.",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToBlog: "← Назад в блог",
+          category: "SEO и контент-стратегия",
+          articleTitle: "Полное руководство по количеству слов для SEO в 2026 году",
+          publishMeta: "Опубликовано: Август 2026 • 5 мин чтения",
+          p1Start: "При создании контента часто возникает вопрос: ",
+          p1Bold: "Важно ли количество слов для SEO?",
+          p1End: " Да, но поисковые системы оценивают полноту ответа на запрос пользователя.",
+          heading1: "1. Идеальный объем по типам контента",
+          p2: "Разным форматам требуется разный объем текста.",
+          type1Bold: "Короткие посты:", type1Text: " 500 – 800 слов.",
+          type2Bold: "Стандартные статьи:", type2Text: " 1 200 – 1 800 слов.",
+          type3Bold: "Подробные гайды:", type3Text: " 2 500+ слов.",
+          type4Bold: "Карточки товаров:", type4Text: " 300 – 500 слов.",
+          heading2: "2. Качество важнее количества",
+          p3: "Алгоритмы Google ценят глубокое раскрытие темы без лишней «воды».",
+          heading3: "3. Зачем нужны счетчики слов",
+          p4Start: "Используйте ", p4End: " для контроля объема текста и мета-тегов в реальном времени.",
+          takeawayTitle: "Главные выводы",
+          takeawayText: "Фокусируйтесь на качестве информации и намерении пользователя.",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToBlog: "← 返回博客",
+          category: "SEO 与内容策略",
+          articleTitle: "2026 年 SEO 文章字数终极指南",
+          publishMeta: "发布于：2026年8月 • 阅读时间 5 分钟",
+          p1Start: "创作网页内容时，人们常问：",
+          p1Bold: "字数对 SEO 重要吗？",
+          p1End: " 答案是肯定的，但关键在于是否全面解答了用户的搜索意图。",
+          heading1: "1. 不同内容类型的理想字数",
+          p2: "不同类型的文章所需篇幅不同。",
+          type1Bold: "短篇博客：", type1Text: " 500 – 800 字。",
+          type2Bold: "标准文章：", type2Text: " 1,200 – 1,800 字。",
+          type3Bold: "深度指南：", type3Text: " 2,500+ 字。",
+          type4Bold: "产品页面：", type4Text: " 300 – 500 字。",
+          heading2: "2. 质量胜于数量",
+          p3: "避免为了凑字数而添加废话，专注于清晰高效地传递核心内容。",
+          heading3: "3. 字数计算工具有何帮助",
+          p4Start: "使用 ", p4End: " 实时监测字数，确保 Meta 标签与正文符合最佳规范。",
+          takeawayTitle: "核心要点",
+          takeawayText: "注重内容深度，契合搜索意图，并在写作时实时把控字数。",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToBlog: "← ブログに戻る",
+          category: "SEO & コンテンツ戦略",
+          articleTitle: "2026年版 SEOのための文字数・単語数完全ガイド",
+          publishMeta: "公開日：2026年8月 • 読了時間 5分",
+          p1Start: "コンテンツ制作においてよくある疑問：",
+          p1Bold: "文字数はSEOに影響するのか？",
+          p1End: " 結論から言えば影響しますが、検索意図を満たすことが最も重要です。",
+          heading1: "1. コンテンツタイプ別の理想的な文字数",
+          p2: "目的や種類によって適切な長さは異なります。",
+          type1Bold: "ショート記事：", type1Text: " 500〜800語。",
+          type2Bold: " standard 標準記事：", type2Text: " 1,200〜1,800語。",
+          type3Bold: "網羅的なガイド：", type3Text: " 2,500語以上。",
+          type4Bold: "商品ページ：", type4Text: " 300〜500語。",
+          heading2: "2. 質は量に勝る",
+          p3: "文字数を稼ぐための無駄な文章は避け、質の高い情報を提供しましょう。",
+          heading3: "3. カウンターツールの活用",
+          p4Start: "", p4End: " などのリアルタイムツールでメタタグや本文の長さを調整できます。",
+          takeawayTitle: "まとめ",
+          takeawayText: "長さよりも内容の深さを意識し、ユーザーの検索意図に応える構成にしましょう。",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToBlog: "← ब्लॉग पर वापस जाएँ",
+          category: "SEO और कंटेंट रणनीति",
+          articleTitle: "2026 में SEO के लिए वर्ड काउंट की संपूर्ण गाइड",
+          publishMeta: "प्रकाशित: अगस्त 2026 • 5 मिनट का समय",
+          p1Start: "कंटेंट बनाते समय यह सवाल अक्सर उठता है: ",
+          p1Bold: "क्या शब्दों की संख्या SEO के लिए मायने रखती है?",
+          p1End: " संक्षिप्त उत्तर हाँ है, लेकिन सर्च इंटेंट को पूरा करना सबसे महत्वपूर्ण है।",
+          heading1: "1. कंटेंट के प्रकार के अनुसार आदर्श शब्द संख्या",
+          p2: "विभिन्न प्रकार की सामग्री के लिए अलग-अलग लंबाई की आवश्यकता होती है।",
+          type1Bold: "छोटे ब्लॉग पोस्ट:", type1Text: " 500 – 800 शब्द।",
+          type2Bold: "मानक लेख:", type2Text: " 1,200 – 1,800 शब्द।",
+          type3Bold: "विस्तृत गाइड:", type3Text: " 2,500+ शब्द।",
+          type4Bold: "उत्पाद पृष्ठ:", type4Text: " 300 – 500 शब्द।",
+          heading2: "2. मात्रा से अधिक गुणवत्ता",
+          p3: "गूगल उपयोगकर्ता के अनुभव और गहराई को प्राथमिकता देता है।",
+          heading3: "3. काउंटर टूल कैसे मदद करते हैं",
+          p4Start: "सही लंबाई बनाए रखने के लिए ", p4End: " जैसे टूल का उपयोग करें।",
+          takeawayTitle: "मुख्य बातें",
+          takeawayText: "लंबाई से अधिक गहराई पर ध्यान दें और उपयोगकर्ता की आवश्यकता के अनुसार लिखें।",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToBlog: "← ব্লগে ফিরে যান",
+          category: "SEO এবং কন্টেন্ট কৌশল",
+          articleTitle: "২০২৬ সালের জন্য SEO ওয়ার্ড কাউন্টের সেরা গাইড",
+          publishMeta: "প্রকাশিত: আগস্ট ২০২৬ • ৫ মিনিট পাঠ",
+          p1Start: "ওয়েব কন্টেন্ট তৈরির সময় একটি প্রশ্ন প্রায়ই আসে: ",
+          p1Bold: "শব্দ সংখ্যা কি SEO এর জন্য গুরুত্বপূর্ণ?",
+          p1End: " সংক্ষেপে উত্তর হলো হ্যাঁ, তবে সার্চ ইন্টেন্ট পূরণ করাই মূল বিষয়।",
+          heading1: "1. কন্টেন্টের ধরন অনুযায়ী আদর্শ শব্দ সংখ্যা",
+          p2: "বিভিন্ন ধরণের কন্টেন্টের জন্য ভিন্ন দৈর্ঘ্যের প্রয়োজন হয়।",
+          type1Bold: "ছোট ব্লগ পোস্ট:", type1Text: " ৫০০ – ৮০০ শব্দ।",
+          type2Bold: "সাধারণ আর্টিকেলে:", type2Text: " ১,২০০ – ১,৮০০ শব্দ।",
+          type3Bold: "বিস্তারিত গাইড:", type3Text: " ২,৫০০+ শব্দ।",
+          type4Bold: "প্রোডাক্ট পেজ:", type4Text: " ৩০০ – ৫০০ শব্দ।",
+          heading2: "2. পরিমাণের চেয়ে গুণমান সেরা",
+          p3: "অহেতুক কথা বাড়ানোর চেয়ে স্পষ্ট তথ্য উপস্থাপন করা গুরুত্বপূর্ণ।",
+          heading3: "3. ওয়ার্ড কাউন্টারের সুবিধা",
+          p4Start: "সঠিক দৈর্ঘ্য বজায় রাখতে ", p4End: " এর মতো টুল ব্যবহার করুন।",
+          takeawayTitle: "মূল শিক্ষা",
+          takeawayText: "দৈর্ঘ্যের চেয়ে তথ্যের গভীরতায় মনোযোগ দিন এবং ইউজারের চাহিদা পূরণ করুন।",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToBlog: "← بلاگ پر واپس جائیں",
+          category: "SEO اور مواد کی حکمت عملی",
+          articleTitle: "2026 میں SEO کے لیے الفاظ کی تعداد کی مکمل گائیڈ",
+          publishMeta: "شائع شدہ: اگست 2026 • 5 منٹ کی پڑھائی",
+          p1Start: "مواد تیار کرتے وقت یہ سوال بار بار سامنے آتا ہے: ",
+          p1Bold: "کیا الفاظ کی تعداد SEO کے لیے اہم ہے؟",
+          p1End: " مختصر جواب ہاں ہے، لیکن سب سے اہم صارف کی تلاش کے مقصد کو پورا کرنا ہے۔",
+          heading1: "1. مواد کی قسم کے لحاظ سے الفاظ کی مناسب تعداد",
+          p2: "مختلف قسم کے مواد کے لیے مختلف لمبائی کی ضرورت ہوتی ہے۔",
+          type1Bold: "چھوٹی بلاگ پوسٹس:", type1Text: " 500 – 800 الفاظ۔",
+          type2Bold: "معیاری مضامین:", type2Text: " 1,200 – 1,800 الفاظ۔",
+          type3Bold: "جامع گائیڈز:", type3Text: " 2,500+ الفاظ۔",
+          type4Bold: "پروڈکٹ کے صفحات:", type4Text: " 300 – 500 الفاظ۔",
+          heading2: "2. مقدار پر معیار کو ترجیح دیں",
+          p3: "الفاظ کی تعداد پوری کرنے کے لیے غیر ضروری مواد شامل کرنے سے رینکنگ متاثر ہو سکتی ہے۔",
+          heading3: "3. کاؤنٹر ٹولز کیسے مدد کرتے ہیں",
+          p4Start: "میٹا کی تفصیلات اور متن کو حد میں رکھنے کے لیے ", p4End: " کا استعمال کریں۔",
+          takeawayTitle: "اہم نکات",
+          takeawayText: "لمبائی کے بجائے معلومات کی گہرائی پر توجہ دیں اور صارف کے مقصد کے مطابق لکھیں۔",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.articleTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
