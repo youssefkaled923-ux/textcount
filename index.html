@@ -9,6 +9,25 @@
 <meta id="meta-description" name="description" content="Free online character and word counter for marketers and content creators. Instantly check Google title/description limits, X post length, and TikTok caption length.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' font-weight='bold' fill='%2338bdf8' text-anchor='middle'%3ETc%3C/text%3E%3C/svg%3E">
 
+<!-- Google Analytics Tools (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Schema Markup (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TextCount.net",
+  "url": "https://textcount.net/"
+}
+</script>
+
 <!-- Google AdSense Script -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
 
@@ -208,6 +227,13 @@
     </div>
   </section>
 
+  <!-- Author Info (E-E-A-T Trust) -->
+  <section class="mt-10 p-5 bg-card-dark border border-border-dark rounded-xl">
+    <div class="author-info">
+      <p class="text-sm text-slate-300">Written by <strong class="text-accent-sky">TextCount Team</strong> — Last updated: 2026</p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
@@ -224,6 +250,12 @@
     </div>
   </div>
 </footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-top: 1px solid #334155;">
+  <p style="margin: 0; font-size: 14px;">We use cookies to ensure you get the best experience. <a href="privacy.html" style="color: #38bdf8; text-decoration: underline;">Learn more</a></p>
+  <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #38bdf8; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Accept</button>
+</div>
 
 <script>
 (function () {
