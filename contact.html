@@ -1,79 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - TextCount.net</title>
+  <title id="page-title">Contact Us - TextCount.net</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'base-dark': '#0f172a', 'card-dark': '#1e293b', 'border-dark': '#334155', 'accent-sky': '#38bdf8' }
+          colors: { 
+            'base-dark': '#0f172a', 
+            'card-dark': '#1e293b', 
+            'border-dark': '#334155', 
+            'accent-sky': '#38bdf8' 
+          }
         }
       }
     };
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* إخفاء شريط جوجل العلوي وتصحيح الإزاحة */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    
-    /* تخصيص مظهر قائمة الاختيار لتناسب القالب الداكن */
-    .goog-te-gadget-simple {
-      background-color: #1e293b !important;
-      border: 1px solid #334155 !important;
-      padding: 4px 8px !important;
-      border-radius: 0.5rem !important;
-      font-size: 0.875rem !important;
+    body { font-family: 'Inter', 'Tajawal', system-ui, sans-serif; }
+    select#lang-select { 
+      -webkit-appearance: none; 
+      appearance: none; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2338bdf8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat; 
+      background-position: right 0.65rem center; 
+      background-size: 1.1em; 
     }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: #f8fafc !important;
-    }
-    .goog-te-gadget-icon { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      margin: 0 !important;
-    }
+    html[dir="rtl"] select#lang-select { background-position: left 0.65rem center; }
   </style>
 </head>
-<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+<body class="bg-base-dark text-slate-100 min-h-screen flex flex-col justify-between">
+
   <header class="border-b border-border-dark py-4 px-6">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
       <a href="/" class="text-xl font-bold text-slate-50">TextCount<span class="text-accent-sky">.net</span></a>
       <div class="flex items-center gap-4">
-        <a href="/" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
-        <div id="google_translate_element"></div>
+        <a href="/" data-i18n="backToHome" class="text-sm text-accent-sky hover:underline">&larr; Back to Home</a>
+        
+        <!-- قائمة اختيار اللغة -->
+        <select id="lang-select" aria-label="Language selector" class="bg-card-dark border border-border-dark text-slate-100 text-sm rounded-lg pl-3 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-accent-sky cursor-pointer">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="hi">हिन्दी</option>
+          <option value="bn">বাংলা</option>
+          <option value="ur">اردو</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <main class="max-w-xl mx-auto px-4 py-12 flex-1 text-center">
-    <h1 class="text-3xl font-bold text-slate-50 mb-4">Contact Us</h1>
-    <p class="text-slate-400 mb-8 leading-relaxed">Have questions, feedback, or need help? We would love to hear from you!</p>
+  <main class="max-w-xl mx-auto px-4 py-12 flex-1 text-center w-full">
+    <h1 data-i18n="contactTitle" class="text-3xl font-bold text-slate-50 mb-4">Contact Us</h1>
+    <p data-i18n="contactDesc" class="text-slate-400 mb-8 leading-relaxed">Have questions, feedback, or need help? We would love to hear from you!</p>
 
     <div class="bg-card-dark border border-border-dark rounded-2xl p-8 shadow-lg">
-      <p class="text-sm text-slate-400 mb-2">Send us an email at:</p>
-      <a href="mailto:support@textcount.net" class="text-xl md:text-2xl font-bold text-accent-sky hover:underline break-all">
+      <p data-i18n="contactEmailLabel" class="text-sm text-slate-400 mb-2">Send us an email at:</p>
+      <a href="mailto:support@textcount.pages.dev" class="text-xl md:text-2xl font-bold text-accent-sky hover:underline break-all">
         support@textcount.pages.dev
       </a>
     </div>
   </main>
 
   <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p>© 2026 TextCount.net — All rights reserved</p>
+    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
   </footer>
 
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ar,en,de,fr,es,it,nl,tr,pt,ru,zh-CN,ja,hi,bn,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <script>
+    (function () {
+      "use strict";
+
+      var translations = {
+        en: {
+          backToHome: "← Back to Home",
+          contactTitle: "Contact Us",
+          contactDesc: "Have questions, feedback, or need help? We would love to hear from you!",
+          contactEmailLabel: "Send us an email at:",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        ar: {
+          backToHome: "← العودة للرئيسية",
+          contactTitle: "اتصل بنا",
+          contactDesc: "هل لديك أسئلة أو ملاحظات أو تحتاج إلى مساعدة؟ يسعدنا التواصل معك!",
+          contactEmailLabel: "أرسل لنا بريدًا إلكترونيًا على:",
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+        },
+        de: {
+          backToHome: "← Zurück zur Startseite",
+          contactTitle: "Kontaktieren Sie uns",
+          contactDesc: "Haben Sie Fragen, Feedback oder benötigen Sie Hilfe? Wir freuen uns von Ihnen zu hören!",
+          contactEmailLabel: "Senden Sie uns eine E-Mail an:",
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+        },
+        fr: {
+          backToHome: "← Retour à l'accueil",
+          contactTitle: "Contactez-nous",
+          contactDesc: "Vous avez des questions, des commentaires ou besoin d'aide ? Nous aimerions avoir de vos nouvelles !",
+          contactEmailLabel: "Envoyez-nous un e-mail à :",
+          footer: "© 2026 TextCount.net — Tous droits réservés"
+        },
+        es: {
+          backToHome: "← Volver al inicio",
+          contactTitle: "Contáctenos",
+          contactDesc: "¿Tiene preguntas, comentarios o necesita ayuda? ¡Nos encantaría saber de usted!",
+          contactEmailLabel: "Envíenos un correo electrónico a:",
+          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+        },
+        it: {
+          backToHome: "← Torna alla Home",
+          contactTitle: "Contattaci",
+          contactDesc: "Hai domande, feedback o hai bisogno di aiuto? Ci piacerebbe avere твои новости!",
+          contactEmailLabel: "Inviaci un'e-mail a:",
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+        },
+        nl: {
+          backToHome: "← Terug naar Home",
+          contactTitle: "Neem contact op",
+          contactDesc: "Heeft u vragen, feedback of hulp nodig? We horen graag van u!",
+          contactEmailLabel: "Stuur ons een e-mail op:",
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+        },
+        tr: {
+          backToHome: "← Ana Sayfaya Dön",
+          contactTitle: "Bize Ulaşın",
+          contactDesc: "Sorularınız, geri bildirimleriniz mi var yokسا yardıma mı ihtiyacınız var? Sizden haber almaktan mutlu oluruz!",
+          contactEmailLabel: "Bize e-posta gönderin:",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+        },
+        pt: {
+          backToHome: "← Voltar ao Início",
+          contactTitle: "Fale Conosco",
+          contactDesc: "Tem dúvidas, comentários ou precisa de ajuda? Adoraríamos ouvir você!",
+          contactEmailLabel: "Envie-nos um e-mail para:",
+          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+        },
+        ru: {
+          backToHome: "← Вернуться на главную",
+          contactTitle: "Связаться с нами",
+          contactDesc: "Есть вопросы, отзывы или нужна помощь? Мы будем рады получить от вас сообщение!",
+          contactEmailLabel: "Отправьте нам письмо на:",
+          footer: "© 2026 TextCount.net — Все права защищены"
+        },
+        zh: {
+          backToHome: "← 返回首页",
+          contactTitle: "联系我们",
+          contactDesc: "有疑问、建议或需要帮助？我们期待收到您的来信！",
+          contactEmailLabel: "发邮件给我们：",
+          footer: "© 2026 TextCount.net — 保留所有权利"
+        },
+        ja: {
+          backToHome: "← ホームに戻る",
+          contactTitle: "お問い合わせ",
+          contactDesc: "ご質問、フィードバック、またはサポートが必要ですか？お気軽にご連絡ください！",
+          contactEmailLabel: "メールをお送りください：",
+          footer: "© 2026 TextCount.net — All rights reserved"
+        },
+        hi: {
+          backToHome: "← होम पर वापस जाएँ",
+          contactTitle: "हमसे संपर्क करें",
+          contactDesc: "क्या आपके पास प्रश्न, प्रतिक्रिया है या मदद चाहिए? हम आपसे सुनना पसंद करेंगे!",
+          contactEmailLabel: "हमें ईमेल भेजें:",
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+        },
+        bn: {
+          backToHome: "← হোমে ফিরে যান",
+          contactTitle: "আমাদের সাথে যোগাযোগ করুন",
+          contactDesc: "আপনার কি কোনো প্রশ্ন, প্রতিক্রিয়া আছে বা সাহায্য প্রয়োজন? আমরা আপনার কথা শুনতে চাই!",
+          contactEmailLabel: "আমাদের ইমেইল পাঠান:",
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+        },
+        ur: {
+          backToHome: "← ہوم پر واپس جائیں",
+          contactTitle: "ہم سے رابطہ کریں",
+          contactDesc: "سوالات، رائے، یا مدد کی ضرورت ہے؟ ہم آپ سے سننا پسند کریں گے!",
+          contactEmailLabel: "ہمیں ای میل بھیجیں:",
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+        }
+      };
+
+      var langSelect = document.getElementById("lang-select");
+
+      function getSavedLang() {
+        var savedLang = localStorage.getItem("site_lang");
+        if (savedLang && translations[savedLang]) return savedLang;
+        return "en";
+      }
+
+      function setLanguage(lang) {
+        var data = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === "ar" || lang === "ur") ? "rtl" : "ltr";
+        
+        document.title = data.contactTitle + " - TextCount.net";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (data[key]) el.textContent = data[key];
+        });
+
+        langSelect.value = lang;
+        localStorage.setItem("site_lang", lang);
+      }
+
+      langSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+      });
+
+      var initLang = getSavedLang();
+      setLanguage(initLang);
+
+    })();
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
