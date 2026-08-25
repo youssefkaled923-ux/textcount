@@ -124,8 +124,17 @@
     </article>
   </main>
 
-  <footer class="border-t border-border-dark py-6 text-center text-slate-500 text-xs">
-    <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
+  <!-- الفوتر المحدث ليشمل الروابط الإضافية -->
+  <footer class="border-t border-border-dark py-6 px-6 text-slate-400 text-xs">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-start">
+      <p data-i18n="footer">© 2026 TextCount.net — All rights reserved</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/about.html" data-i18n="footerAbout" class="hover:text-accent-sky transition-colors">من نحن</a>
+        <a href="/privacy.html" data-i18n="footerPrivacy" class="hover:text-accent-sky transition-colors">سياسة الخصوصية</a>
+        <a href="/terms.html" data-i18n="footerTerms" class="hover:text-accent-sky transition-colors">شروط الاستخدام</a>
+        <a href="/contact.html" data-i18n="footerContact" class="hover:text-accent-sky transition-colors">اتصل بنا</a>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -155,7 +164,11 @@
           headingStay: "How to Stay Within Limits",
           stayText1: "Before publishing your social captions, paste them into ",
           stayText2: " to track character counts live and trim excess fluff effortlessy.",
-          footer: "© 2026 TextCount.net — All rights reserved"
+          footer: "© 2026 TextCount.net — All rights reserved",
+          footerAbout: "About Us",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Use",
+          footerContact: "Contact Us"
         },
         ar: {
           backToBlog: "← العودة للمدونة",
@@ -179,7 +192,11 @@
           headingStay: "كيف تلتزم بالحدود المسموحة",
           stayText1: "قبل نشر نصوصك، قم بلصقها في ",
           stayText2: " لمتابعة عدد الأحرف مباشرة وتعديل الزيادات بسهولة.",
-          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة"
+          footer: "© 2026 TextCount.net — جميع الحقوق محفوظة",
+          footerAbout: "من نحن",
+          footerPrivacy: "سياسة الخصوصية",
+          footerTerms: "شروط الاستخدام",
+          footerContact: "اتصل بنا"
         },
         de: {
           backToBlog: "← Zurück zum Blog",
@@ -196,7 +213,11 @@
           igText1: "Bildunterschriften unterstützen bis zu ", igLimit: "2.200 Zeichen", igText2: " und 30 Hashtags.",
           headingStay: "So bleiben Sie innerhalb der Limits",
           stayText1: "Fügen Sie Ihre Texte vor der Veröffentlichung bei ", stayText2: " ein, um Zeichen live zu zählen.",
-          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten"
+          footer: "© 2026 TextCount.net — Alle Rechte vorbehalten",
+          footerAbout: "Über uns",
+          footerPrivacy: "Datenschutz",
+          footerTerms: "Nutzungsbedingungen",
+          footerContact: "Kontakt"
         },
         fr: {
           backToBlog: "← Retour au Blog",
@@ -213,7 +234,11 @@
           igText1: "Les légendes prennent en charge jusqu'à ", igLimit: "2 200 caractères", igText2: " et 30 hashtags.",
           headingStay: "Comment respecter les limites",
           stayText1: "Collez vos textes sur ", stayText2: " pour vérifier le nombre de caractères en temps réel.",
-          footer: "© 2026 TextCount.net — Tous droits réservés"
+          footer: "© 2026 TextCount.net — Tous droits réservés",
+          footerAbout: "À propos",
+          footerPrivacy: "Confidentialité",
+          footerTerms: "Conditions d'utilisation",
+          footerContact: "Contact"
         },
         es: {
           backToBlog: "← Volver al Blog",
@@ -230,7 +255,11 @@
           igText1: "Admite hasta ", igLimit: "2,200 caracteres", igText2: " y 30 hashtags.",
           headingStay: "Cómo mantenerse dentro de los límites",
           stayText1: "Pega tus textos en ", stayText2: " para contar caracteres en tiempo real.",
-          footer: "© 2026 TextCount.net — Todos los derechos reservados"
+          footer: "© 2026 TextCount.net — Todos los derechos reservados",
+          footerAbout: "Sobre nosotros",
+          footerPrivacy: "Política de Privacidad",
+          footerTerms: "Términos de Uso",
+          footerContact: "Contacto"
         },
         it: {
           backToBlog: "← Torna al Blog",
@@ -247,7 +276,11 @@
           igText1: "Supporta fino a ", igLimit: "2.200 caratteri", igText2: " e 30 hashtag.",
           headingStay: "Come rimanere nei limiti",
           stayText1: "Incolla i tuoi testi su ", stayText2: " per monitorare i caratteri in tempo reale.",
-          footer: "© 2026 TextCount.net — Tutti i diritti riservati"
+          footer: "© 2026 TextCount.net — Tutti i diritti riservati",
+          footerAbout: "Chi siamo",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Termini di Utilizzo",
+          footerContact: "Contatti"
         },
         nl: {
           backToBlog: "← Terug naar Blog",
@@ -264,7 +297,11 @@
           igText1: "Ondersteunt tot ", igLimit: "2.200 tekens", igText2: " en 30 hashtags.",
           headingStay: "Binnen de limieten blijven",
           stayText1: "Plak je tekst in ", stayText2: " om het aantal tekens live te volgen.",
-          footer: "© 2026 TextCount.net — Alle rechten voorbehouden"
+          footer: "© 2026 TextCount.net — Alle rechten voorbehouden",
+          footerAbout: "Over ons",
+          footerPrivacy: "Privacybeleid",
+          footerTerms: "Gebruiksvoorwaarden",
+          footerContact: "Contact"
         },
         tr: {
           backToBlog: "← Bloğa Dön",
@@ -280,8 +317,12 @@
           igTitle: "Instagram",
           igText1: "Gönderi açıklamaları ", igLimit: "2.200 karakter", igText2: " ve 30 hashtag destekler.",
           headingStay: "Sınırlar İçinde Nasıl Kalınır",
-          stayText1: "Metinlerinizi paylaşmadan önce ", stayTest2: " adresine yapıştırarak canlı kontrol edin.",
-          footer: "© 2026 TextCount.net — Tüm hakları saklıdır"
+          stayText1: "Metinlerinizi paylaşmadan önce ", stayText2: " adresine yapıştırarak canlı kontrol edin.",
+          footer: "© 2026 TextCount.net — Tüm hakları saklıdır",
+          footerAbout: "Hakkımızda",
+          footerPrivacy: "Gizlilik Politikası",
+          footerTerms: "Kullanım Şartları",
+          footerContact: "İletişim"
         },
         pt: {
           backToBlog: "← Voltar ao Blog",
@@ -298,7 +339,11 @@
           igText1: "Suporta até ", igLimit: "2.200 caracteres", igText2: " e 30 hashtags.",
           headingStay: "Como permanecer dentro dos limites",
           stayText1: "Cole seus textos no ", stayText2: " para acompanhar a contagem em tempo real.",
-          footer: "© 2026 TextCount.net — Todos os direitos reservados"
+          footer: "© 2026 TextCount.net — Todos os direitos reservados",
+          footerAbout: "Sobre nós",
+          footerPrivacy: "Política de Privacidade",
+          footerTerms: "Termos de Uso",
+          footerContact: "Contato"
         },
         ru: {
           backToBlog: "← Назад в блог",
@@ -315,7 +360,11 @@
           igText1: "Подписи поддерживают до ", igLimit: "2 200 символов", igText2: " и 30 хэштегов.",
           headingStay: "Как не превышать лимиты",
           stayText1: "Вставляйте тексты в ", stayText2: " для подсчета символов в реальном времени.",
-          footer: "© 2026 TextCount.net — Все права защищены"
+          footer: "© 2026 TextCount.net — Все права защищены",
+          footerAbout: "О нас",
+          footerPrivacy: "Политика конфиденциальности",
+          footerTerms: "Условия использования",
+          footerContact: "Контакты"
         },
         zh: {
           backToBlog: "← 返回博客",
@@ -332,7 +381,11 @@
           igText1: "文案最多支持 ", igLimit: "2,200 个字符", igText2: " 和 30 个标签。",
           headingStay: "如何避免超出限制",
           stayText1: "发布前将文案粘贴至 ", stayText2: " 即可实时查看字符数。",
-          footer: "© 2026 TextCount.net — 保留所有权利"
+          footer: "© 2026 TextCount.net — 保留所有权利",
+          footerAbout: "关于我们",
+          footerPrivacy: "隐私政策",
+          footerTerms: "使用条款",
+          footerContact: "联系我们"
         },
         ja: {
           backToBlog: "← ブログに戻る",
@@ -349,7 +402,11 @@
           igText1: "キャプションは最大 ", igLimit: "2,200文字", igText2: "、30個のハッシュタグに対応しています。",
           headingStay: "制限内に収める方法",
           stayText1: "投稿前に ", stayText2: " にテキストを貼り付けて文字数をリアルタイムで確認しましょう。",
-          footer: "© 2026 TextCount.net — All rights reserved"
+          footer: "© 2026 TextCount.net — All rights reserved",
+          footerAbout: "運営会社",
+          footerPrivacy: "プライバシーポリシー",
+          footerTerms: "利用規約",
+          footerContact: "お問い合わせ"
         },
         hi: {
           backToBlog: "← ब्लॉग पर वापस जाएँ",
@@ -366,7 +423,11 @@
           igText1: "कैप्शन में ", igLimit: "2,200 वर्ण", igText2: " और 30 हैशटैग तक की अनुमति है।",
           headingStay: "सीमा के भीतर कैसे रहें",
           stayText1: "पोस्ट करने से पहले अपने टेक्स्ट को ", stayText2: " पर पेस्ट करें।",
-          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित"
+          footer: "© 2026 TextCount.net — सर्वाधिकार सुरक्षित",
+          footerAbout: "हमारे بارے में",
+          footerPrivacy: "गोपनीयता नीति",
+          footerTerms: "उपयोग की शर्तें",
+          footerContact: "संपर्क करें"
         },
         bn: {
           backToBlog: "← ব্লগে ফিরে যান",
@@ -383,7 +444,11 @@
           igText1: "ক্যাপশনে সর্বোচ্চ ", igLimit: "২,২০০ ক্যারেক্টার", igText2: " এবং ৩০টি হ্যাশট্যাগ দেওয়া যায়।",
           headingStay: "সীমার মধ্যে থাকার উপায়",
           stayText1: "পোস্ট করার আগে আপনার টেক্সট ", stayText2: " এ পেস্ট করে ক্যারেক্টার সংখ্যা পরীক্ষা করুন।",
-          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত"
+          footer: "© 2026 TextCount.net — সর্বস্বত্ব সংরক্ষিত",
+          footerAbout: "আমাদের সম্পর্কে",
+          footerPrivacy: "গোপনীয়তা নীতি",
+          footerTerms: "ব্যবহারের শর্তাবলী",
+          footerContact: "যোগাযোগ"
         },
         ur: {
           backToBlog: "← بلاگ پر واپس جائیں",
@@ -400,7 +465,11 @@
           igText1: "کیپشن میں ", igLimit: "2,200 حروف", igText2: " اور 30 ہیش ٹیگز کی اجازت ہوتی ہے۔",
           headingStay: "حدود کے اندر کیسے رہیں",
           stayText1: "پوسٹ کرنے سے پہلے اپنا متن ", stayText2: " پر پیسٹ کر کے حروف کی تعداد چیک کریں۔",
-          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں"
+          footer: "© 2026 TextCount.net — جملہ حقوق محفوظ ہیں",
+          footerAbout: "हमारे بارے में",
+          footerPrivacy: "رازداری کی پالیسی",
+          footerTerms: "استعمال کی شرائط",
+          footerContact: "ہم سے رابطہ کریں"
         }
       };
 
